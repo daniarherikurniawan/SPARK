@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/home/daniar/documents/SPARK/spark-1.6.1/}test-tags...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/home/daniar/documents/testing/SPARK/spark-1.6.1/}test-tags...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: org.apache.spark#spark-test-tags_2.10;1.6.1[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.5 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@14e9faad[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@27d2112f[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.5[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.5 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.10.5] org.scala-lang#scala-library;2.10.5[0m
@@ -158,7 +158,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->junit#junit;4.11 [test->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.novocode#junit-interface;0.11 [test->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.novocode#junit-interface;0.11 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@61ff780a[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@416b9ffa[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.novocode#junit-interface;0.11[0m
 [0m[[0mdebug[0m] [0m	found com.novocode#junit-interface;0.11 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.novocode#junit-interface;0.11 [test->runtime][0m
@@ -427,19 +427,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.5!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.5!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4931ms :: artifacts dl 40ms[0m
-[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 compile produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 runtime produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 test produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 provided produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 optional produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 compile-internal produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 runtime-internal produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 test-internal produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 plugin produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 sources produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 docs produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 pom produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 scala-tool produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (4931ms resolve - 40ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 885ms :: artifacts dl 70ms[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 compile produced in /home/daniar/documents/testing/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 runtime produced in /home/daniar/documents/testing/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 test produced in /home/daniar/documents/testing/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 provided produced in /home/daniar/documents/testing/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 optional produced in /home/daniar/documents/testing/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 compile-internal produced in /home/daniar/documents/testing/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 runtime-internal produced in /home/daniar/documents/testing/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 test-internal produced in /home/daniar/documents/testing/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 plugin produced in /home/daniar/documents/testing/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 sources produced in /home/daniar/documents/testing/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 docs produced in /home/daniar/documents/testing/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 pom produced in /home/daniar/documents/testing/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 scala-tool produced in /home/daniar/documents/testing/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (885ms resolve - 70ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
