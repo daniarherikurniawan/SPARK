@@ -18,12 +18,11 @@
 	python res-generator/generate_list_int.py
 
 # Run the cluster
-	cd cd spark-1.6.1/
+	cd spark-1.6.1/
 	$ build/sbt clean assembly # Create a normal assembly
-	$ ./bin/spark-shell # Use spark with the normal assembly
+
 	$ export SPARK_PREPEND_CLASSES=true
-	$ ./bin/spark-shell # Now it's using compiled classes
-	# ... do some local development ... #
+
 	$ build/sbt compile
 	# ... do some local development ... #
 
