@@ -36,7 +36,7 @@ spark-1.6.1/unsafe/target/
 spark-1.6.1/project/project/target/
 spark-1.6.1/project/target/
 spark-1.6.1/yarn/target/
-spark-1.6.1/tags/target/
+
 allfileshas.txt
 bigobjects.txt
 bigtosmall.txt
