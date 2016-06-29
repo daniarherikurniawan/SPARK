@@ -3,7 +3,7 @@ print  "Start Batch Operation!"
 import os
 import random
 
-os.chdir('../generated_file/')
+os.chdir('generated_file/')
 
 fo = open("list_int", 'w')
 
