@@ -36,3 +36,13 @@
 	./sbin/start-slave.sh spark://192.168.1.3:7077 --host '192.168.1.12' --memory 1g --cores 2
 	
 	./bin/spark-submit sort.py --master spark://192.168.1.3:7077 --deploy-mode cluster 
+
+
+
+#install java 8
+
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-i586.rpm"
+
+sudo yum localinstall jdk.rpm
+
+bash -c "export JAVA_HOME=/usr/java/jdk1.8.0_92/jre"
