@@ -34,7 +34,6 @@ spark-1.6.1/streaming/target/
 spark-1.6.1/tools/target/
 spark-1.6.1/unsafe/target/
 spark-1.6.1/yarn/target/
-generated_file/
 allfileshas.txt
 bigobjects.txt
 bigtosmall.txt
