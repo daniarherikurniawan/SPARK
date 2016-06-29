@@ -33,6 +33,8 @@ spark-1.6.1/sql/hive/target/
 spark-1.6.1/streaming/target/
 spark-1.6.1/tools/target/
 spark-1.6.1/unsafe/target/
+spark-1.6.1/project/project/target/
+spark-1.6.1/project/target/
 spark-1.6.1/yarn/target/
 allfileshas.txt
 bigobjects.txt
