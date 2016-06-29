@@ -1,0 +1,29 @@
+/usr/lib/jvm/java-8-oracle/
+DANIAR
+NOTE: SPARK_PREPEND_CLASSES is set, placing locally compiled Spark classes ahead of assembly.
+Spark Command: /usr/lib/jvm/java-8-oracle//bin/java -cp /home/daniar/documents/SPARK/spark-1.6.1/conf/:/home/daniar/documents/SPARK/spark-1.6.1/core/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/repl/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/mllib/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/bagel/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/graphx/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/streaming/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/tools/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/sql/catalyst/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/sql/core/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/sql/hive/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/sql/hive-thriftserver/target/scala-2.10/classes:/home/daniar/documents/SPARK/spark-1.6.1/yarn/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/launcher/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/network/common/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/network/shuffle/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/network/yarn/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/core/target/jars/*:/home/daniar/documents/SPARK/spark-1.6.1/assembly/target/scala-2.10/spark-assembly-1.6.1-hadoop2.7.2.jar:/home/daniar/documents/SPARK/spark-1.6.1/lib_managed/jars/datanucleus-core-3.2.10.jar:/home/daniar/documents/SPARK/spark-1.6.1/lib_managed/jars/datanucleus-api-jdo-3.2.6.jar:/home/daniar/documents/SPARK/spark-1.6.1/lib_managed/jars/datanucleus-rdbms-3.2.9.jar -Xms1g -Xmx1g org.apache.spark.deploy.master.Master --ip daniar-X450JF --port 7077 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/06/26 11:06:53 INFO Master: Registered signal handlers for [TERM, HUP, INT]
+16/06/26 11:06:53 WARN Utils: Your hostname, daniar-X450JF resolves to a loopback address: 127.0.1.1; using 192.168.43.28 instead (on interface wlan0)
+16/06/26 11:06:53 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+16/06/26 11:06:54 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/06/26 11:06:54 INFO SecurityManager: Changing view acls to: daniar
+16/06/26 11:06:54 INFO SecurityManager: Changing modify acls to: daniar
+16/06/26 11:06:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/06/26 11:06:55 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+16/06/26 11:06:55 INFO Master: Starting Spark master at spark://daniar-X450JF:7077
+16/06/26 11:06:55 INFO Master: Running Spark version 1.6.1
+16/06/26 11:06:57 INFO Server: jetty-8.y.z-SNAPSHOT
+16/06/26 11:06:57 INFO AbstractConnector: Started SelectChannelConnector@0.0.0.0:8080
+16/06/26 11:06:57 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+16/06/26 11:06:57 INFO MasterWebUI: Started MasterWebUI at http://192.168.43.28:8080
+16/06/26 11:06:57 INFO Server: jetty-8.y.z-SNAPSHOT
+16/06/26 11:06:57 INFO AbstractConnector: Started SelectChannelConnector@daniar-X450JF:6066
+16/06/26 11:06:57 INFO Utils: Successfully started service on port 6066.
+16/06/26 11:06:57 INFO StandaloneRestServer: Started REST server for submitting applications on port 6066
+16/06/26 11:06:57 INFO Master: I have been elected leader! New state: ALIVE
+16/06/26 11:07:22 INFO Master: Registering worker 192.168.43.28:47218 with 8 cores, 10.6 GB RAM
+16/06/26 11:07:22 INFO Master: Registering worker 192.168.43.28:60968 with 8 cores, 10.6 GB RAM
+16/06/26 11:07:24 INFO Master: Registering worker 192.168.43.28:42760 with 8 cores, 10.6 GB RAM
+16/06/26 11:26:59 ERROR Master: RECEIVED SIGNAL 15: SIGTERM

@@ -1,0 +1,371 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/06/29 03:50:07 INFO CoarseGrainedExecutorBackend: Registered signal handlers for [TERM, HUP, INT]
+16/06/29 03:50:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/06/29 03:50:09 INFO SecurityManager: Changing view acls to: daniar
+16/06/29 03:50:09 INFO SecurityManager: Changing modify acls to: daniar
+16/06/29 03:50:09 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/06/29 03:50:13 INFO SecurityManager: Changing view acls to: daniar
+16/06/29 03:50:13 INFO SecurityManager: Changing modify acls to: daniar
+16/06/29 03:50:13 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/06/29 03:50:16 INFO Slf4jLogger: Slf4jLogger started
+16/06/29 03:50:16 INFO Remoting: Starting remoting
+16/06/29 03:50:17 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkExecutorActorSystem@192.168.1.3:60953]
+16/06/29 03:50:17 INFO Utils: Successfully started service 'sparkExecutorActorSystem' on port 60953.
+16/06/29 03:50:18 INFO DiskBlockManager: Created local directory at /tmp/spark-b3fa9abd-2afb-4131-a34b-7c54d6367195/executor-25d52195-87c9-433d-9dbc-94ac2819919d/blockmgr-8a755aa6-510b-4b29-9358-e2979f0569d4
+16/06/29 03:50:18 INFO MemoryStore: MemoryStore started with capacity 511.1 MB
+16/06/29 03:50:19 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@192.168.1.3:50479
+16/06/29 03:50:19 INFO CoarseGrainedExecutorBackend: Daniarrrr null
+16/06/29 03:50:19 INFO CoarseGrainedExecutorBackend: Daniarrrr 2
+16/06/29 03:50:19 INFO WorkerWatcher: Connecting to worker spark://Worker@192.168.1.3:36697
+16/06/29 03:50:19 INFO CoarseGrainedExecutorBackend: Daniarrrr ---- executor address NettyRpcEndpointRef(null) name :Executor
+16/06/29 03:50:19 INFO CoarseGrainedExecutorBackend: Successfully registered with driver daniarr -- 192.168.1.11
+16/06/29 03:50:19 INFO Executor: Starting executor ID 2 on host 192.168.1.11
+16/06/29 03:50:19 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35327.
+16/06/29 03:50:19 INFO NettyBlockTransferService: Server created on 35327
+16/06/29 03:50:19 INFO BlockManagerMaster: Trying to register BlockManager
+16/06/29 03:50:19 INFO BlockManagerMaster: Registered BlockManager
+16/06/29 03:51:16 INFO CoarseGrainedExecutorBackend: Got assigned task 11
+16/06/29 03:51:16 INFO CoarseGrainedExecutorBackend: daniarr ---- executor task org.apache.spark.executor.Executor@5533434d
+16/06/29 03:51:16 INFO Executor: Running task 3.0 in stage 2.0 (TID 11)
+16/06/29 03:51:16 INFO Executor: Fetching http://192.168.1.3:36925/files/sort.py with timestamp 1467146997095
+16/06/29 03:51:17 INFO Utils: Fetching http://192.168.1.3:36925/files/sort.py to /tmp/spark-b3fa9abd-2afb-4131-a34b-7c54d6367195/executor-25d52195-87c9-433d-9dbc-94ac2819919d/spark-85b10d84-794c-4437-960e-6366e0d4d14c/fetchFileTemp5008453884374202174.tmp
+16/06/29 03:51:17 INFO Utils: Copying /tmp/spark-b3fa9abd-2afb-4131-a34b-7c54d6367195/executor-25d52195-87c9-433d-9dbc-94ac2819919d/spark-85b10d84-794c-4437-960e-6366e0d4d14c/-17468843621467146997095_cache to /home/daniar/documents/SPARK/spark-1.6.1/work/app-20160629035001-0002/2/./sort.py
+16/06/29 03:51:19 INFO TorrentBroadcast: Started reading broadcast variable 3
+16/06/29 03:51:23 ERROR RetryingBlockFetcher: Exception while beginning fetch of 1 outstanding blocks 
+java.io.IOException: Failed to connect to /192.168.1.11:41011
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.start(RetryingBlockFetcher.java:120)
+	at org.apache.spark.network.netty.NettyBlockTransferService.fetchBlocks(NettyBlockTransferService.scala:99)
+	at org.apache.spark.network.BlockTransferService.fetchBlockSync(BlockTransferService.scala:89)
+	at org.apache.spark.storage.BlockManager$$anonfun$doGetRemote$2.apply(BlockManager.scala:588)
+	at org.apache.spark.storage.BlockManager$$anonfun$doGetRemote$2.apply(BlockManager.scala:585)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:47)
+	at org.apache.spark.storage.BlockManager.doGetRemote(BlockManager.scala:585)
+	at org.apache.spark.storage.BlockManager.getRemoteBytes(BlockManager.scala:578)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$readBlocks$1.org$apache$spark$broadcast$TorrentBroadcast$$anonfun$$getRemote$1(TorrentBroadcast.scala:127)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$readBlocks$1$$anonfun$1.apply(TorrentBroadcast.scala:137)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$readBlocks$1$$anonfun$1.apply(TorrentBroadcast.scala:137)
+	at scala.Option.orElse(Option.scala:257)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$readBlocks$1.apply$mcVI$sp(TorrentBroadcast.scala:137)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$readBlocks$1.apply(TorrentBroadcast.scala:120)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$readBlocks$1.apply(TorrentBroadcast.scala:120)
+	at scala.collection.immutable.List.foreach(List.scala:318)
+	at org.apache.spark.broadcast.TorrentBroadcast.org$apache$spark$broadcast$TorrentBroadcast$$readBlocks(TorrentBroadcast.scala:120)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$readBroadcastBlock$1.apply(TorrentBroadcast.scala:175)
+	at org.apache.spark.util.Utils$.tryOrIOException(Utils.scala:1219)
+	at org.apache.spark.broadcast.TorrentBroadcast.readBroadcastBlock(TorrentBroadcast.scala:165)
+	at org.apache.spark.broadcast.TorrentBroadcast._value$lzycompute(TorrentBroadcast.scala:64)
+	at org.apache.spark.broadcast.TorrentBroadcast._value(TorrentBroadcast.scala:64)
+	at org.apache.spark.broadcast.TorrentBroadcast.getValue(TorrentBroadcast.scala:88)
+	at org.apache.spark.broadcast.Broadcast.value(Broadcast.scala:70)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:65)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:41)
+	at org.apache.spark.scheduler.Task.run(Task.scala:89)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:214)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: No route to host: /192.168.1.11:41011
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/29 03:51:23 INFO RetryingBlockFetcher: Retrying fetch (1/3) for 1 outstanding blocks after 5000 ms
+16/06/29 03:51:32 ERROR RetryingBlockFetcher: Exception while beginning fetch of 1 outstanding blocks (after 1 retries)
+java.io.IOException: Failed to connect to /192.168.1.11:41011
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: No route to host: /192.168.1.11:41011
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/29 03:51:32 INFO RetryingBlockFetcher: Retrying fetch (2/3) for 1 outstanding blocks after 5000 ms
+16/06/29 03:51:40 ERROR RetryingBlockFetcher: Exception while beginning fetch of 1 outstanding blocks (after 2 retries)
+java.io.IOException: Failed to connect to /192.168.1.11:41011
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: No route to host: /192.168.1.11:41011
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/29 03:51:40 INFO RetryingBlockFetcher: Retrying fetch (3/3) for 1 outstanding blocks after 5000 ms
+16/06/29 03:51:48 ERROR RetryingBlockFetcher: Exception while beginning fetch of 1 outstanding blocks (after 3 retries)
+java.io.IOException: Failed to connect to /192.168.1.11:41011
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: No route to host: /192.168.1.11:41011
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/29 03:51:48 WARN BlockManager: Failed to fetch remote block broadcast_3_piece0 from BlockManagerId(0, 192.168.1.11, 41011) (failed attempt 1)
+java.io.IOException: Failed to connect to /192.168.1.11:41011
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: No route to host: /192.168.1.11:41011
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/29 03:51:53 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.7 KB, free 4.7 KB)
+16/06/29 03:51:54 INFO TorrentBroadcast: Reading broadcast variable 3 took 35702 ms
+16/06/29 03:51:57 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 7.5 KB, free 12.2 KB)
+16/06/29 03:52:01 INFO HadoopRDD: Input split: file:/home/daniar/documents/SPARK/generated_file/list_int:100663296+27487794
+16/06/29 03:52:01 INFO TorrentBroadcast: Started reading broadcast variable 0
+16/06/29 03:52:04 ERROR RetryingBlockFetcher: Exception while beginning fetch of 1 outstanding blocks 
+java.io.IOException: Failed to connect to /192.168.1.11:41011
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.start(RetryingBlockFetcher.java:120)
+	at org.apache.spark.network.netty.NettyBlockTransferService.fetchBlocks(NettyBlockTransferService.scala:99)
+	at org.apache.spark.network.BlockTransferService.fetchBlockSync(BlockTransferService.scala:89)
+	at org.apache.spark.storage.BlockManager$$anonfun$doGetRemote$2.apply(BlockManager.scala:588)
+	at org.apache.spark.storage.BlockManager$$anonfun$doGetRemote$2.apply(BlockManager.scala:585)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:47)
+	at org.apache.spark.storage.BlockManager.doGetRemote(BlockManager.scala:585)
+	at org.apache.spark.storage.BlockManager.getRemoteBytes(BlockManager.scala:578)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$readBlocks$1.org$apache$spark$broadcast$TorrentBroadcast$$anonfun$$getRemote$1(TorrentBroadcast.scala:127)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$readBlocks$1$$anonfun$1.apply(TorrentBroadcast.scala:137)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$readBlocks$1$$anonfun$1.apply(TorrentBroadcast.scala:137)
+	at scala.Option.orElse(Option.scala:257)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$readBlocks$1.apply$mcVI$sp(TorrentBroadcast.scala:137)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$readBlocks$1.apply(TorrentBroadcast.scala:120)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$org$apache$spark$broadcast$TorrentBroadcast$$readBlocks$1.apply(TorrentBroadcast.scala:120)
+	at scala.collection.immutable.List.foreach(List.scala:318)
+	at org.apache.spark.broadcast.TorrentBroadcast.org$apache$spark$broadcast$TorrentBroadcast$$readBlocks(TorrentBroadcast.scala:120)
+	at org.apache.spark.broadcast.TorrentBroadcast$$anonfun$readBroadcastBlock$1.apply(TorrentBroadcast.scala:175)
+	at org.apache.spark.util.Utils$.tryOrIOException(Utils.scala:1219)
+	at org.apache.spark.broadcast.TorrentBroadcast.readBroadcastBlock(TorrentBroadcast.scala:165)
+	at org.apache.spark.broadcast.TorrentBroadcast._value$lzycompute(TorrentBroadcast.scala:64)
+	at org.apache.spark.broadcast.TorrentBroadcast._value(TorrentBroadcast.scala:64)
+	at org.apache.spark.broadcast.TorrentBroadcast.getValue(TorrentBroadcast.scala:88)
+	at org.apache.spark.broadcast.Broadcast.value(Broadcast.scala:70)
+	at org.apache.spark.rdd.HadoopRDD.getJobConf(HadoopRDD.scala:144)
+	at org.apache.spark.rdd.HadoopRDD$$anon$1.<init>(HadoopRDD.scala:212)
+	at org.apache.spark.rdd.HadoopRDD.compute(HadoopRDD.scala:208)
+	at org.apache.spark.rdd.HadoopRDD.compute(HadoopRDD.scala:101)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:306)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:270)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:306)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:270)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:70)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:306)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:270)
+	at org.apache.spark.api.python.PairwiseRDD.compute(PythonRDD.scala:342)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:306)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:270)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:73)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:41)
+	at org.apache.spark.scheduler.Task.run(Task.scala:89)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:214)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: No route to host: /192.168.1.11:41011
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/29 03:52:04 INFO RetryingBlockFetcher: Retrying fetch (1/3) for 1 outstanding blocks after 5000 ms
+16/06/29 03:52:12 ERROR RetryingBlockFetcher: Exception while beginning fetch of 1 outstanding blocks (after 1 retries)
+java.io.IOException: Failed to connect to /192.168.1.11:41011
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: No route to host: /192.168.1.11:41011
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/29 03:52:12 INFO RetryingBlockFetcher: Retrying fetch (2/3) for 1 outstanding blocks after 5000 ms
+16/06/29 03:52:20 ERROR RetryingBlockFetcher: Exception while beginning fetch of 1 outstanding blocks (after 2 retries)
+java.io.IOException: Failed to connect to /192.168.1.11:41011
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: No route to host: /192.168.1.11:41011
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/29 03:52:20 INFO RetryingBlockFetcher: Retrying fetch (3/3) for 1 outstanding blocks after 5000 ms
+16/06/29 03:52:28 ERROR RetryingBlockFetcher: Exception while beginning fetch of 1 outstanding blocks (after 3 retries)
+java.io.IOException: Failed to connect to /192.168.1.11:41011
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: No route to host: /192.168.1.11:41011
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/29 03:52:28 WARN BlockManager: Failed to fetch remote block broadcast_0_piece0 from BlockManagerId(0, 192.168.1.11, 41011) (failed attempt 1)
+java.io.IOException: Failed to connect to /192.168.1.11:41011
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.NoRouteToHostException: No route to host: /192.168.1.11:41011
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/29 03:52:28 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 21.8 KB, free 34.0 KB)
+16/06/29 03:52:28 INFO TorrentBroadcast: Reading broadcast variable 0 took 27008 ms
+16/06/29 03:52:29 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 315.4 KB, free 349.4 KB)
+16/06/29 03:52:32 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+16/06/29 03:52:32 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+16/06/29 03:52:32 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+16/06/29 03:52:32 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+16/06/29 03:52:32 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+16/06/29 03:52:59 INFO PythonRunner: Times: total = 25426, boot = 11347, init = 656, finish = 13423
+16/06/29 03:53:02 INFO Executor: Finished task 3.0 in stage 2.0 (TID 11). 2321 bytes result sent to driver
+16/06/29 03:54:55 INFO Executor: Told to re-register on heartbeat
+16/06/29 03:54:55 INFO BlockManager: BlockManager re-registering with master
+16/06/29 03:54:55 INFO BlockManagerMaster: Trying to register BlockManager
+16/06/29 03:54:55 INFO BlockManagerMaster: Registered BlockManager
+16/06/29 03:54:55 INFO BlockManager: Reporting 4 blocks to the master.
+16/06/29 03:56:38 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+16/06/29 03:56:39 INFO MemoryStore: MemoryStore cleared
+16/06/29 03:56:39 INFO BlockManager: BlockManager stopped
+16/06/29 03:56:39 ERROR CoarseGrainedExecutorBackend: Driver 192.168.1.3:50479 disassociated! Shutting down.
+16/06/29 03:56:39 ERROR WorkerWatcher: Lost connection to worker rpc endpoint spark://Worker@192.168.1.3:36697. Exiting.
+16/06/29 03:56:39 INFO ShutdownHookManager: Shutdown hook called
+16/06/29 03:56:39 INFO ShutdownHookManager: Deleting directory /tmp/spark-b3fa9abd-2afb-4131-a34b-7c54d6367195/executor-25d52195-87c9-433d-9dbc-94ac2819919d/spark-85b10d84-794c-4437-960e-6366e0d4d14c

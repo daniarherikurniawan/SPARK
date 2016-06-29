@@ -1,0 +1,445 @@
+[0m[[0minfo[0m] [0mUpdating {file:/home/daniar/documents/SPARK/spark-1.6.1/}test-tags...[0m
+[0m[[0mdebug[0m] [0m:: resolving dependencies :: org.apache.spark#spark-test-tags_2.10;1.6.1[0m
+[0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
+[0m[[0mdebug[0m] [0m	validate = true[0m
+[0m[[0mdebug[0m] [0m	refresh = false[0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.5 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@14e9faad[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.5[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.5 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	[2.10.5] org.scala-lang#scala-library;2.10.5[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scalatest#scalatest_2.10;2.2.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scalatest#scalatest_2.10;2.2.1 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scalatest#scalatest_2.10;2.2.1[0m
+[0m[[0mdebug[0m] [0m	found org.scalatest#scalatest_2.10;2.2.1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-reflect;2.10.4 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.10.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.10.4[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-reflect;2.10.4 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	[2.10.4] org.scala-lang#scala-reflect;2.10.4[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.spark-project.spark#unused;1.0.0 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.spark-project.spark#unused;1.0.0 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.spark-project.spark#unused;1.0.0[0m
+[0m[[0mdebug[0m] [0m	found org.spark-project.spark#unused;1.0.0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving com.google.guava#guava;14.0.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.guava#guava;14.0.1 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.guava#guava;14.0.1[0m
+[0m[[0mdebug[0m] [0m	found com.google.guava#guava;14.0.1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->junit#junit;4.11 [test->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving junit#junit;4.11 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: junit#junit;4.11 {test=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: junit#junit;4.11[0m
+[0m[[0mdebug[0m] [0m	found junit#junit;4.11 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->junit#junit;4.11 [test->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->junit#junit;4.11 [test->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit;4.11->org.hamcrest#hamcrest-core;1.3 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.hamcrest#hamcrest-core;1.3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.hamcrest#hamcrest-core;1.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.hamcrest#hamcrest-core;1.3[0m
+[0m[[0mdebug[0m] [0m	found org.hamcrest#hamcrest-core;1.3 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit;4.11->org.hamcrest#hamcrest-core;1.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit;4.11->org.hamcrest#hamcrest-core;1.3 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit;4.11->org.hamcrest#hamcrest-core;1.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit;4.11->org.hamcrest#hamcrest-core;1.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit;4.11->org.hamcrest#hamcrest-core;1.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->junit#junit;4.11 [test->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.novocode#junit-interface;0.11 [test->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving com.novocode#junit-interface;0.11 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@61ff780a[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.novocode#junit-interface;0.11[0m
+[0m[[0mdebug[0m] [0m	found com.novocode#junit-interface;0.11 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.novocode#junit-interface;0.11 [test->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.novocode#junit-interface;0.11 [test->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->junit#junit;4.11 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->junit#junit;4.11 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->junit#junit;4.11 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->junit#junit;4.11 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->org.scala-sbt#test-interface;1.0 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-sbt#test-interface;1.0 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-sbt#test-interface;1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-sbt#test-interface;1.0[0m
+[0m[[0mdebug[0m] [0m	found org.scala-sbt#test-interface;1.0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->org.scala-sbt#test-interface;1.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->org.scala-sbt#test-interface;1.0 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->org.scala-sbt#test-interface;1.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->junit#junit;4.11 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->junit#junit;4.11 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->org.scala-sbt#test-interface;1.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->org.scala-sbt#test-interface;1.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.novocode#junit-interface;0.11 [test->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [provided][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'optional'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [optional][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile-internal'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [compile-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [provided][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [runtime-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [optional][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [test-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalatest#scalatest_2.10;2.2.1->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scalatest#scalatest_2.10;2.2.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project.spark#unused;1.0.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.google.guava#guava;14.0.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->junit#junit;4.11 [test->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->junit#junit;4.11 [test->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->junit#junit;4.11 [test->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit;4.11->org.hamcrest#hamcrest-core;1.3 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit;4.11->org.hamcrest#hamcrest-core;1.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit;4.11->org.hamcrest#hamcrest-core;1.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies junit#junit;4.11->org.hamcrest#hamcrest-core;1.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->junit#junit;4.11 [test->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.novocode#junit-interface;0.11 [test->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.novocode#junit-interface;0.11 [test->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.novocode#junit-interface;0.11 [test->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->junit#junit;4.11 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->junit#junit;4.11 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->org.scala-sbt#test-interface;1.0 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->org.scala-sbt#test-interface;1.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->junit#junit;4.11 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->junit#junit;4.11 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->org.scala-sbt#test-interface;1.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novocode#junit-interface;0.11->org.scala-sbt#test-interface;1.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->com.novocode#junit-interface;0.11 [test->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [provided][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'plugin'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [plugin][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0 [plugin->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0 {plugin=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0[0m
+[0m[[0mdebug[0m] [0m	found org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0 [plugin->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0 [plugin->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0->org.scala-lang#scala-compiler;2.10.5 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-compiler;2.10.5 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.10.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.10.5[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-compiler;2.10.5 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0->org.scala-lang#scala-compiler;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-reflect;2.10.5 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-reflect;2.10.5 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.10.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.10.5[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-reflect;2.10.5 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	[2.10.5] org.scala-lang#scala-reflect;2.10.5[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-reflect;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.5->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.5->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0->org.scala-lang#scala-compiler;2.10.5 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0->org.scala-lang#scala-compiler;2.10.5 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-reflect;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-reflect;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.5->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.5->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0->org.scala-lang#scala-compiler;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0->org.scala-lang#scala-compiler;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0 [plugin->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'sources'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [sources][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'docs'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [docs][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'pom'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [pom][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'scala-tool'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.apache.spark#spark-test-tags_2.10;1.6.1 [scala-tool][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-compiler;2.10.5 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-compiler;2.10.5 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-compiler;2.10.5 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-library;2.10.5 [compile->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-library;2.10.5 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-library;2.10.5 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-library;2.10.5 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-library;2.10.5 [compile->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-reflect;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-reflect;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.5->org.scala-lang#scala-library;2.10.5 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.5->org.scala-lang#scala-library;2.10.5 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-reflect;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#scala-reflect;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.5->org.scala-lang#scala-library;2.10.5 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.5->org.scala-lang#scala-library;2.10.5 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-compiler;2.10.5 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-compiler;2.10.5 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#jline;2.10.5 [optional->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#jline;2.10.5 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#jline;2.10.5 {optional=[compile(*), master(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#jline;2.10.5[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#jline;2.10.5 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#jline;2.10.5 [optional->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.5->org.fusesource.jansi#jansi;1.4 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.fusesource.jansi#jansi;1.4 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.fusesource.jansi#jansi;1.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.fusesource.jansi#jansi;1.4[0m
+[0m[[0mdebug[0m] [0m	found org.fusesource.jansi#jansi;1.4 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.5->org.fusesource.jansi#jansi;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.spark#spark-test-tags_2.10;1.6.1->org.scala-lang#scala-library;2.10.5 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m	resolved ivy file produced in cache[0m
+[0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.5!scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalatest#scalatest_2.10;2.2.1!scalatest_2.10.jar(bundle)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.spark-project.spark#unused;1.0.0!unused.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.guava#guava;14.0.1!guava.jar(bundle)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.4!scala-reflect.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] junit#junit;4.11!junit.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.novocode#junit-interface;0.11!junit-interface.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.hamcrest#hamcrest-core;1.3!hamcrest-core.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.spark-project#genjavadoc-plugin_2.10.5;0.9-spark0!genjavadoc-plugin_2.10.5.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.5!scala-compiler.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.5!scala-reflect.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.5!jline.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4931ms :: artifacts dl 40ms[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 compile produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 runtime produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 test produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 provided produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 optional produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 compile-internal produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 runtime-internal produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 test-internal produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 plugin produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 sources produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 docs produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 pom produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.apache.spark#spark-test-tags_2.10;1.6.1 scala-tool produced in /home/daniar/documents/SPARK/spark-1.6.1/tags/target/resolution-cache/reports/org.apache.spark-spark-test-tags_2.10-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (4931ms resolve - 40ms download)[0m
+[0m[[0minfo[0m] [0mDone updating.[0m

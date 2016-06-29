@@ -1,0 +1,147 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/06/17 13:03:46 INFO CoarseGrainedExecutorBackend: Registered signal handlers for [TERM, HUP, INT]
+16/06/17 13:03:46 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/06/17 13:03:46 INFO SecurityManager: Changing view acls to: daniar
+16/06/17 13:03:46 INFO SecurityManager: Changing modify acls to: daniar
+16/06/17 13:03:46 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/06/17 13:03:47 INFO SecurityManager: Changing view acls to: daniar
+16/06/17 13:03:47 INFO SecurityManager: Changing modify acls to: daniar
+16/06/17 13:03:47 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/06/17 13:03:48 INFO Slf4jLogger: Slf4jLogger started
+16/06/17 13:03:48 INFO Remoting: Starting remoting
+16/06/17 13:03:48 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkExecutorActorSystem@192.168.1.10:49507]
+16/06/17 13:03:48 INFO Utils: Successfully started service 'sparkExecutorActorSystem' on port 49507.
+16/06/17 13:03:48 INFO DiskBlockManager: Created local directory at /tmp/spark-91d7a295-aef1-45d7-945a-f1e1c28c3b9f/executor-42cde298-5c08-4373-837a-52335409af46/blockmgr-37b72c39-7154-404e-aada-d7ba2c3d2e07
+16/06/17 13:03:48 INFO MemoryStore: MemoryStore started with capacity 511.1 MB
+16/06/17 13:03:49 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@192.168.1.12:49687
+16/06/17 13:03:49 INFO CoarseGrainedExecutorBackend: Daniarrrr
+16/06/17 13:03:49 INFO WorkerWatcher: Connecting to worker spark://Worker@192.168.1.10:37969
+16/06/17 13:03:49 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+16/06/17 13:03:49 INFO Executor: Starting executor ID 0 on host 192.168.1.3
+16/06/17 13:03:49 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43425.
+16/06/17 13:03:49 INFO NettyBlockTransferService: Server created on 43425
+16/06/17 13:03:49 INFO BlockManagerMaster: Trying to register BlockManager
+16/06/17 13:03:49 INFO BlockManagerMaster: Registered BlockManager
+16/06/17 13:03:49 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+16/06/17 13:03:49 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+16/06/17 13:03:49 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+16/06/17 13:03:49 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+16/06/17 13:03:49 INFO Executor: Fetching http://192.168.1.12:38168/files/sort.py with timestamp 1466143424475
+16/06/17 13:03:49 INFO Utils: Fetching http://192.168.1.12:38168/files/sort.py to /tmp/spark-91d7a295-aef1-45d7-945a-f1e1c28c3b9f/executor-42cde298-5c08-4373-837a-52335409af46/spark-025cdcf0-9a7a-407b-97a3-6922e831ea99/fetchFileTemp5279729990214690236.tmp
+16/06/17 13:03:49 INFO Utils: Copying /tmp/spark-91d7a295-aef1-45d7-945a-f1e1c28c3b9f/executor-42cde298-5c08-4373-837a-52335409af46/spark-025cdcf0-9a7a-407b-97a3-6922e831ea99/-11797208431466143424475_cache to /home/daniar/documents/SPARK/spark-1.6.1/work/app-20160617130345-0000/0/./sort.py
+16/06/17 13:03:50 INFO TorrentBroadcast: Started reading broadcast variable 1
+16/06/17 13:03:50 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.7 KB, free 3.7 KB)
+16/06/17 13:03:50 INFO TorrentBroadcast: Reading broadcast variable 1 took 410 ms
+16/06/17 13:03:50 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 6.1 KB, free 9.8 KB)
+16/06/17 13:03:50 INFO HadoopRDD: Input split: file:/home/daniar/documents/SPARK/generated_file/list_int:25630218+12815109
+16/06/17 13:03:50 INFO TorrentBroadcast: Started reading broadcast variable 0
+16/06/17 13:03:50 INFO HadoopRDD: Input split: file:/home/daniar/documents/SPARK/generated_file/list_int:38445327+12815109
+16/06/17 13:03:50 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 21.8 KB, free 31.6 KB)
+16/06/17 13:03:50 INFO TorrentBroadcast: Reading broadcast variable 0 took 27 ms
+16/06/17 13:03:51 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 315.4 KB, free 347.0 KB)
+16/06/17 13:03:51 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+16/06/17 13:03:51 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+16/06/17 13:03:51 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+16/06/17 13:03:51 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+16/06/17 13:03:51 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+16/06/17 13:04:04 INFO PythonRunner: Times: total = 12822, boot = 200, init = 105, finish = 12517
+16/06/17 13:04:04 INFO Executor: Finished task 3.0 in stage 0.0 (TID 3). 2129 bytes result sent to driver
+16/06/17 13:04:04 INFO CoarseGrainedExecutorBackend: Got assigned task 9
+16/06/17 13:04:04 INFO Executor: Running task 9.0 in stage 0.0 (TID 9)
+16/06/17 13:04:04 INFO HadoopRDD: Input split: file:/home/daniar/documents/SPARK/generated_file/list_int:115335981+12815109
+16/06/17 13:04:04 INFO PythonRunner: Times: total = 13070, boot = 205, init = 52, finish = 12813
+16/06/17 13:04:04 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 2129 bytes result sent to driver
+16/06/17 13:04:11 INFO PythonRunner: Times: total = 7207, boot = -78, init = 92, finish = 7193
+16/06/17 13:04:11 INFO Executor: Finished task 9.0 in stage 0.0 (TID 9). 2129 bytes result sent to driver
+16/06/17 13:04:11 INFO CoarseGrainedExecutorBackend: Got assigned task 11
+16/06/17 13:04:11 INFO Executor: Running task 1.0 in stage 1.0 (TID 11)
+16/06/17 13:04:11 INFO CoarseGrainedExecutorBackend: Got assigned task 14
+16/06/17 13:04:11 INFO TorrentBroadcast: Started reading broadcast variable 2
+16/06/17 13:04:11 INFO Executor: Running task 4.0 in stage 1.0 (TID 14)
+16/06/17 13:04:11 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.7 KB, free 350.7 KB)
+16/06/17 13:04:11 INFO TorrentBroadcast: Reading broadcast variable 2 took 73 ms
+16/06/17 13:04:11 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 5.9 KB, free 356.5 KB)
+16/06/17 13:04:11 INFO HadoopRDD: Input split: file:/home/daniar/documents/SPARK/generated_file/list_int:51260436+12815109
+16/06/17 13:04:11 INFO HadoopRDD: Input split: file:/home/daniar/documents/SPARK/generated_file/list_int:12815109+12815109
+16/06/17 13:04:24 INFO PythonRunner: Times: total = 12804, boot = -273, init = 308, finish = 12769
+16/06/17 13:04:24 INFO Executor: Finished task 1.0 in stage 1.0 (TID 11). 2317 bytes result sent to driver
+16/06/17 13:04:24 INFO CoarseGrainedExecutorBackend: Got assigned task 18
+16/06/17 13:04:24 INFO Executor: Running task 8.0 in stage 1.0 (TID 18)
+16/06/17 13:04:24 INFO HadoopRDD: Input split: file:/home/daniar/documents/SPARK/generated_file/list_int:102520872+12815109
+16/06/17 13:04:24 INFO PythonRunner: Times: total = 13024, boot = -7278, init = 7300, finish = 13002
+16/06/17 13:04:24 INFO Executor: Finished task 4.0 in stage 1.0 (TID 14). 2314 bytes result sent to driver
+16/06/17 13:04:24 INFO CoarseGrainedExecutorBackend: Got assigned task 19
+16/06/17 13:04:24 INFO Executor: Running task 9.0 in stage 1.0 (TID 19)
+16/06/17 13:04:24 INFO HadoopRDD: Input split: file:/home/daniar/documents/SPARK/generated_file/list_int:115335981+12815109
+16/06/17 13:04:33 INFO PythonRunner: Times: total = 8843, boot = -35, init = 53, finish = 8825
+16/06/17 13:04:33 INFO Executor: Finished task 9.0 in stage 1.0 (TID 19). 2291 bytes result sent to driver
+16/06/17 13:04:34 INFO PythonRunner: Times: total = 9721, boot = -13, init = 32, finish = 9702
+16/06/17 13:04:34 INFO Executor: Finished task 8.0 in stage 1.0 (TID 18). 2309 bytes result sent to driver
+16/06/17 13:04:34 INFO CoarseGrainedExecutorBackend: Got assigned task 20
+16/06/17 13:04:34 INFO Executor: Running task 0.0 in stage 2.0 (TID 20)
+16/06/17 13:04:34 INFO TorrentBroadcast: Started reading broadcast variable 3
+16/06/17 13:04:34 INFO CoarseGrainedExecutorBackend: Got assigned task 23
+16/06/17 13:04:34 INFO Executor: Running task 3.0 in stage 2.0 (TID 23)
+16/06/17 13:04:34 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.7 KB, free 361.3 KB)
+16/06/17 13:04:34 INFO TorrentBroadcast: Reading broadcast variable 3 took 32 ms
+16/06/17 13:04:34 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 7.5 KB, free 368.8 KB)
+16/06/17 13:04:34 INFO HadoopRDD: Input split: file:/home/daniar/documents/SPARK/generated_file/list_int:38445327+12815109
+16/06/17 13:04:34 INFO HadoopRDD: Input split: file:/home/daniar/documents/SPARK/generated_file/list_int:0+12815109
+16/06/17 13:04:57 INFO PythonRunner: Times: total = 22048, boot = -522, init = 576, finish = 21994
+16/06/17 13:04:57 INFO Executor: Finished task 0.0 in stage 2.0 (TID 20). 2325 bytes result sent to driver
+16/06/17 13:04:57 INFO CoarseGrainedExecutorBackend: Got assigned task 29
+16/06/17 13:04:57 INFO Executor: Running task 9.0 in stage 2.0 (TID 29)
+16/06/17 13:04:57 INFO HadoopRDD: Input split: file:/home/daniar/documents/SPARK/generated_file/list_int:115335981+12815109
+16/06/17 13:04:57 INFO PythonRunner: Times: total = 22250, boot = -1170, init = 1218, finish = 22202
+16/06/17 13:04:57 INFO Executor: Finished task 3.0 in stage 2.0 (TID 23). 2325 bytes result sent to driver
+16/06/17 13:05:11 INFO PythonRunner: Times: total = 14238, boot = -146, init = 186, finish = 14198
+16/06/17 13:05:11 INFO Executor: Finished task 9.0 in stage 2.0 (TID 29). 2325 bytes result sent to driver
+16/06/17 13:05:12 INFO CoarseGrainedExecutorBackend: Got assigned task 30
+16/06/17 13:05:12 INFO Executor: Running task 0.0 in stage 3.0 (TID 30)
+16/06/17 13:05:12 INFO CoarseGrainedExecutorBackend: Got assigned task 33
+16/06/17 13:05:12 INFO Executor: Running task 3.0 in stage 3.0 (TID 33)
+16/06/17 13:05:12 INFO MapOutputTrackerWorker: Updating epoch to 1 and clearing cache
+16/06/17 13:05:12 INFO TorrentBroadcast: Started reading broadcast variable 4
+16/06/17 13:05:12 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 27.2 KB, free 396.0 KB)
+16/06/17 13:05:12 INFO TorrentBroadcast: Reading broadcast variable 4 took 23 ms
+16/06/17 13:05:12 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 75.0 KB, free 471.0 KB)
+16/06/17 13:05:13 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+16/06/17 13:05:13 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+16/06/17 13:05:13 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@192.168.1.12:49687)
+16/06/17 13:05:13 INFO MapOutputTrackerWorker: Got the output locations
+16/06/17 13:05:13 INFO ShuffleBlockFetcherIterator: Getting 10 non-empty blocks out of 10 blocks
+16/06/17 13:05:13 INFO ShuffleBlockFetcherIterator: Getting 10 non-empty blocks out of 10 blocks
+16/06/17 13:05:13 INFO ShuffleBlockFetcherIterator: Started 2 remote fetches in 37 ms
+16/06/17 13:05:13 INFO ShuffleBlockFetcherIterator: Started 2 remote fetches in 38 ms
+16/06/17 13:05:19 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+16/06/17 13:05:20 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+16/06/17 13:05:32 INFO PythonRunner: Times: total = 19023, boot = -15943, init = 16024, finish = 18942
+16/06/17 13:05:32 INFO FileOutputCommitter: Saved output of task 'attempt_201606171304_0003_m_000000_30' to file:/home/daniar/documents/SPARK/generated_file/result_py/_temporary/0/task_201606171304_0003_m_000000
+16/06/17 13:05:32 INFO SparkHadoopMapRedUtil: attempt_201606171304_0003_m_000000_30: Committed
+16/06/17 13:05:32 INFO Executor: Finished task 0.0 in stage 3.0 (TID 30). 2146 bytes result sent to driver
+16/06/17 13:05:32 INFO CoarseGrainedExecutorBackend: Got assigned task 36
+16/06/17 13:05:32 INFO Executor: Running task 6.0 in stage 3.0 (TID 36)
+16/06/17 13:05:32 INFO ShuffleBlockFetcherIterator: Getting 10 non-empty blocks out of 10 blocks
+16/06/17 13:05:32 INFO ShuffleBlockFetcherIterator: Started 2 remote fetches in 11 ms
+16/06/17 13:05:34 INFO PythonRunner: Times: total = 21078, boot = -1753, init = 1806, finish = 21025
+16/06/17 13:05:34 INFO FileOutputCommitter: Saved output of task 'attempt_201606171304_0003_m_000003_33' to file:/home/daniar/documents/SPARK/generated_file/result_py/_temporary/0/task_201606171304_0003_m_000003
+16/06/17 13:05:34 INFO SparkHadoopMapRedUtil: attempt_201606171304_0003_m_000003_33: Committed
+16/06/17 13:05:34 INFO Executor: Finished task 3.0 in stage 3.0 (TID 33). 2146 bytes result sent to driver
+16/06/17 13:05:34 INFO CoarseGrainedExecutorBackend: Got assigned task 37
+16/06/17 13:05:34 INFO Executor: Running task 7.0 in stage 3.0 (TID 37)
+16/06/17 13:05:34 INFO ShuffleBlockFetcherIterator: Getting 10 non-empty blocks out of 10 blocks
+16/06/17 13:05:34 INFO ShuffleBlockFetcherIterator: Started 3 remote fetches in 45 ms
+16/06/17 13:05:41 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+16/06/17 13:05:55 INFO PythonRunner: Times: total = 22986, boot = -175, init = 201, finish = 22960
+16/06/17 13:05:55 INFO FileOutputCommitter: Saved output of task 'attempt_201606171304_0003_m_000006_36' to file:/home/daniar/documents/SPARK/generated_file/result_py/_temporary/0/task_201606171304_0003_m_000006
+16/06/17 13:05:55 INFO SparkHadoopMapRedUtil: attempt_201606171304_0003_m_000006_36: Committed
+16/06/17 13:05:55 INFO Executor: Finished task 6.0 in stage 3.0 (TID 36). 2146 bytes result sent to driver
+16/06/17 13:05:55 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+16/06/17 13:06:15 INFO PythonRunner: Times: total = 40661, boot = -69, init = 101, finish = 40629
+16/06/17 13:06:15 INFO FileOutputCommitter: Saved output of task 'attempt_201606171304_0003_m_000007_37' to file:/home/daniar/documents/SPARK/generated_file/result_py/_temporary/0/task_201606171304_0003_m_000007
+16/06/17 13:06:15 INFO SparkHadoopMapRedUtil: attempt_201606171304_0003_m_000007_37: Committed
+16/06/17 13:06:15 INFO Executor: Finished task 7.0 in stage 3.0 (TID 37). 2146 bytes result sent to driver
+16/06/17 13:06:15 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+16/06/17 13:06:15 INFO MemoryStore: MemoryStore cleared
+16/06/17 13:06:15 INFO BlockManager: BlockManager stopped
+16/06/17 13:06:15 ERROR WorkerWatcher: Lost connection to worker rpc endpoint spark://Worker@192.168.1.10:37969. Exiting.

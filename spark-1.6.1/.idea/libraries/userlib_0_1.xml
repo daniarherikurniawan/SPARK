@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="userlib-0.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/python/test_support/userlib-0.1.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="resources">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sql/hive/src/test/resources/hive-hcatalog-core-0.13.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sql/hive/src/test/resources/TestUDTF.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sql/hive/src/test/resources/hive-contrib-0.13.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,38 @@
+----------------------------------------------------------------
+Thu May 26 01:08:25 WIB 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0154-e91a-70fd-000011516de8 
+on database directory /home/daniar/documents/SPARK/spark-1.6.1/core/target/JdbcRDDSuiteDb with class loader sun.misc.Launcher$AppClassLoader@51521cc1 
+Loaded from file:/home/daniar/.ivy2/cache/org.apache.derby/derby/jars/derby-10.10.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_74-b02
+user.dir=/home/daniar/documents/SPARK/spark-1.6.1/core
+os.name=Linux
+os.arch=amd64
+os.version=3.19.0-51-generic
+derby.system.home=null
+Warning: The database is booted with derby.system.durability=test. In this mode, it is possible that database may not be able to recover, committed transactions may be lost, database may be in an inconsistent state. Please use this mode only when these consequences are acceptable  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Thu May 26 01:08:27 WIB 2016:
+Shutting down instance a816c00e-0154-e91a-70fd-000011516de8 on database directory /home/daniar/documents/SPARK/spark-1.6.1/core/target/JdbcRDDSuiteDb with class loader sun.misc.Launcher$AppClassLoader@51521cc1 
+----------------------------------------------------------------
+Thu May 26 01:08:27 WIB 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance 7815c0b6-0154-e91a-70fd-000011516de8 
+on database directory /home/daniar/documents/SPARK/spark-1.6.1/core/target/JdbcRDDSuiteDb with class loader sun.misc.Launcher$AppClassLoader@51521cc1 
+Loaded from file:/home/daniar/.ivy2/cache/org.apache.derby/derby/jars/derby-10.10.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_74-b02
+user.dir=/home/daniar/documents/SPARK/spark-1.6.1/core
+os.name=Linux
+os.arch=amd64
+os.version=3.19.0-51-generic
+derby.system.home=null
+Warning: The database is booted with derby.system.durability=test. In this mode, it is possible that database may not be able to recover, committed transactions may be lost, database may be in an inconsistent state. Please use this mode only when these consequences are acceptable  
+
+Warning: The database was at least at one time booted with derby.system.durability=test. As a result of this mode being used, it is possible that the database may not be able to recover, committed transactions may be lost, and the database may be in an inconsistent state. This may cause unexpected errors.
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Thu May 26 01:08:28 WIB 2016:
+Shutting down instance 7815c0b6-0154-e91a-70fd-000011516de8 on database directory /home/daniar/documents/SPARK/spark-1.6.1/core/target/JdbcRDDSuiteDb with class loader sun.misc.Launcher$AppClassLoader@51521cc1 

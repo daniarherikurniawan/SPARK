@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="spark-network-yarn-1.6.1-hadoop2.6.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/network/yarn/target/scala-2.10/spark-network-yarn-1.6.1-hadoop2.6.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

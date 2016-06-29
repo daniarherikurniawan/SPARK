@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/scala" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="spark-network-yarn-1.6.1-hadoop2.6.0" level="project" />
+    <orderEntry type="library" name="sbt-launch-0.13.7" level="project" />
+    <orderEntry type="module" module-name="test23" />
+    <orderEntry type="module" module-name="test2" />
+    <orderEntry type="module" module-name="test18" />
+    <orderEntry type="module" module-name="test13" />
+    <orderEntry type="module" module-name="main15" />
+    <orderEntry type="module" module-name="main24" />
+    <orderEntry type="module" module-name="test4" />
+    <orderEntry type="module" module-name="test7" />
+    <orderEntry type="module" module-name="test12" />
+    <orderEntry type="module" module-name="main19" />
+    <orderEntry type="module" module-name="main16" />
+  </component>
+</module>

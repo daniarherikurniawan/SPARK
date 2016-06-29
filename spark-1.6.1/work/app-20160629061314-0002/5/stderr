@@ -1,0 +1,27 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/06/29 06:13:18 INFO CoarseGrainedExecutorBackend: Registered signal handlers for [TERM, HUP, INT]
+16/06/29 06:13:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/06/29 06:13:20 INFO SecurityManager: Changing view acls to: daniar
+16/06/29 06:13:20 INFO SecurityManager: Changing modify acls to: daniar
+16/06/29 06:13:20 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/06/29 06:13:23 INFO SecurityManager: Changing view acls to: daniar
+16/06/29 06:13:23 INFO SecurityManager: Changing modify acls to: daniar
+16/06/29 06:13:23 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/06/29 06:13:25 INFO Slf4jLogger: Slf4jLogger started
+16/06/29 06:13:25 INFO Remoting: Starting remoting
+16/06/29 06:13:26 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkExecutorActorSystem@192.168.1.3:46389]
+16/06/29 06:13:26 INFO Utils: Successfully started service 'sparkExecutorActorSystem' on port 46389.
+16/06/29 06:13:26 INFO DiskBlockManager: Created local directory at /tmp/spark-e8a335b4-6e8f-495f-a38c-8845f530c07b/executor-083b98ed-cde7-4a58-b90b-c3db17f6de93/blockmgr-a162f783-1349-403e-a6e0-c59ee6786259
+16/06/29 06:13:26 INFO MemoryStore: MemoryStore started with capacity 511.1 MB
+16/06/29 06:13:27 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@192.168.1.3:55642
+16/06/29 06:13:27 INFO CoarseGrainedExecutorBackend: Daniarrrr null
+16/06/29 06:13:27 INFO CoarseGrainedExecutorBackend: Daniarrrr 2
+16/06/29 06:13:27 INFO CoarseGrainedExecutorBackend: Daniarrrr ---- executor address NettyRpcEndpointRef(null) name :Executor
+16/06/29 06:13:27 INFO WorkerWatcher: Connecting to worker spark://Worker@192.168.1.3:43084
+16/06/29 06:13:27 INFO CoarseGrainedExecutorBackend: Successfully registered with driver daniarr -- 192.168.1.11
+16/06/29 06:13:27 INFO Executor: Starting executor ID 5 on host 192.168.1.11
+16/06/29 06:13:27 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 58248.
+16/06/29 06:13:27 INFO NettyBlockTransferService: Server created on 58248
+16/06/29 06:13:27 INFO BlockManagerMaster: Trying to register BlockManager
+16/06/29 06:13:27 INFO BlockManagerMaster: Registered BlockManager
+16/06/29 06:13:57 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown

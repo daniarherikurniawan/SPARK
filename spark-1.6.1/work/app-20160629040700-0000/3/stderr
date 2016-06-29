@@ -1,0 +1,63 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/06/29 04:07:03 INFO CoarseGrainedExecutorBackend: Registered signal handlers for [TERM, HUP, INT]
+16/06/29 04:07:04 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/06/29 04:07:04 INFO SecurityManager: Changing view acls to: daniar
+16/06/29 04:07:04 INFO SecurityManager: Changing modify acls to: daniar
+16/06/29 04:07:04 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/06/29 04:07:06 INFO SecurityManager: Changing view acls to: daniar
+16/06/29 04:07:06 INFO SecurityManager: Changing modify acls to: daniar
+16/06/29 04:07:06 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/06/29 04:07:07 INFO Slf4jLogger: Slf4jLogger started
+16/06/29 04:07:07 INFO Remoting: Starting remoting
+16/06/29 04:07:08 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkExecutorActorSystem@192.168.1.3:53177]
+16/06/29 04:07:08 INFO Utils: Successfully started service 'sparkExecutorActorSystem' on port 53177.
+16/06/29 04:07:08 INFO DiskBlockManager: Created local directory at /tmp/spark-3503d853-3577-4b3d-b422-b003253f1d12/executor-951379a0-1b11-4426-b77d-c196a7446ea9/blockmgr-91579382-3c7c-4161-a144-261ed5406b28
+16/06/29 04:07:08 INFO MemoryStore: MemoryStore started with capacity 511.1 MB
+16/06/29 04:07:09 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@192.168.1.3:57310
+16/06/29 04:07:09 INFO CoarseGrainedExecutorBackend: Daniarrrr null
+16/06/29 04:07:09 INFO CoarseGrainedExecutorBackend: Daniarrrr ---- executor address NettyRpcEndpointRef(null) name :Executor
+16/06/29 04:07:09 INFO WorkerWatcher: Connecting to worker spark://Worker@192.168.1.3:39260
+16/06/29 04:07:09 INFO CoarseGrainedExecutorBackend: Daniarrrr 2
+16/06/29 04:07:09 INFO CoarseGrainedExecutorBackend: Successfully registered with driver daniarr -- 192.168.1.11
+16/06/29 04:07:09 INFO Executor: Starting executor ID 3 on host 192.168.1.11
+16/06/29 04:07:09 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 58872.
+16/06/29 04:07:09 INFO NettyBlockTransferService: Server created on 58872
+16/06/29 04:07:09 INFO BlockManagerMaster: Trying to register BlockManager
+16/06/29 04:07:09 INFO BlockManagerMaster: Registered BlockManager
+16/06/29 04:07:09 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+16/06/29 04:07:09 INFO CoarseGrainedExecutorBackend: daniarr ---- executor task org.apache.spark.executor.Executor@1291ea70
+16/06/29 04:07:09 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+16/06/29 04:07:09 INFO CoarseGrainedExecutorBackend: daniarr ---- executor task org.apache.spark.executor.Executor@1291ea70
+16/06/29 04:07:10 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+16/06/29 04:07:10 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+16/06/29 04:07:10 INFO Executor: Fetching http://192.168.1.3:42082/files/sort.py with timestamp 1467148017036
+16/06/29 04:07:11 INFO Utils: Fetching http://192.168.1.3:42082/files/sort.py to /tmp/spark-3503d853-3577-4b3d-b422-b003253f1d12/executor-951379a0-1b11-4426-b77d-c196a7446ea9/spark-50b3e937-781e-405a-b3a4-17393ebafae9/fetchFileTemp3168630790609159646.tmp
+16/06/29 04:07:11 INFO Utils: Copying /tmp/spark-3503d853-3577-4b3d-b422-b003253f1d12/executor-951379a0-1b11-4426-b77d-c196a7446ea9/spark-50b3e937-781e-405a-b3a4-17393ebafae9/-11888453991467148017036_cache to /home/daniar/documents/SPARK/spark-1.6.1/work/app-20160629040700-0000/3/./sort.py
+16/06/29 04:07:12 INFO TorrentBroadcast: Started reading broadcast variable 1
+16/06/29 04:07:13 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.7 KB, free 3.7 KB)
+16/06/29 04:07:14 INFO TorrentBroadcast: Reading broadcast variable 1 took 1882 ms
+16/06/29 04:07:14 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 6.1 KB, free 9.8 KB)
+16/06/29 04:07:14 INFO HadoopRDD: Input split: file:/home/daniar/documents/SPARK/generated_file/list_int:100663296+27487794
+16/06/29 04:07:14 INFO HadoopRDD: Input split: file:/home/daniar/documents/SPARK/generated_file/list_int:67108864+33554432
+16/06/29 04:07:14 INFO TorrentBroadcast: Started reading broadcast variable 0
+16/06/29 04:07:14 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 21.8 KB, free 31.6 KB)
+16/06/29 04:07:14 INFO TorrentBroadcast: Reading broadcast variable 0 took 13 ms
+16/06/29 04:07:14 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 315.4 KB, free 347.0 KB)
+16/06/29 04:07:15 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+16/06/29 04:07:15 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+16/06/29 04:07:15 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+16/06/29 04:07:15 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+16/06/29 04:07:15 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+16/06/29 04:07:32 INFO PythonRunner: Times: total = 16950, boot = 486, init = 162, finish = 16302
+16/06/29 04:07:33 INFO Executor: Finished task 3.0 in stage 0.0 (TID 3). 2130 bytes result sent to driver
+16/06/29 04:07:36 INFO PythonRunner: Times: total = 21194, boot = 488, init = 148, finish = 20558
+16/06/29 04:07:36 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 2130 bytes result sent to driver
+16/06/29 04:09:10 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+16/06/29 04:09:10 INFO MemoryStore: MemoryStore cleared
+16/06/29 04:09:10 INFO BlockManager: BlockManager stopped
+16/06/29 04:09:10 ERROR WorkerWatcher: Lost connection to worker rpc endpoint spark://Worker@192.168.1.3:39260. Exiting.
+16/06/29 04:09:11 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/06/29 04:09:11 INFO ShutdownHookManager: Shutdown hook called
+16/06/29 04:09:11 INFO ShutdownHookManager: Deleting directory /tmp/spark-3503d853-3577-4b3d-b422-b003253f1d12/executor-951379a0-1b11-4426-b77d-c196a7446ea9/spark-50b3e937-781e-405a-b3a4-17393ebafae9
+16/06/29 04:09:11 WARN CoarseGrainedExecutorBackend: An unknown (192.168.1.3:39260) driver disconnected.
+16/06/29 04:09:11 ERROR CoarseGrainedExecutorBackend: Driver 192.168.1.3:57310 disassociated! Shutting down.

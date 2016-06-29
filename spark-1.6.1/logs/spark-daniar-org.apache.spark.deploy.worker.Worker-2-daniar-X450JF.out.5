@@ -1,0 +1,450 @@
+/usr/lib/jvm/java-8-oracle
+DANIAR
+NOTE: SPARK_PREPEND_CLASSES is set, placing locally compiled Spark classes ahead of assembly.
+Spark Command: /usr/lib/jvm/java-8-oracle/bin/java -cp /home/daniar/documents/SPARK/spark-1.6.1/conf/:/home/daniar/documents/SPARK/spark-1.6.1/core/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/repl/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/mllib/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/bagel/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/graphx/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/streaming/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/tools/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/sql/catalyst/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/sql/core/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/sql/hive/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/sql/hive-thriftserver/target/scala-2.10/classes:/home/daniar/documents/SPARK/spark-1.6.1/yarn/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/launcher/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/network/common/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/network/shuffle/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/network/yarn/target/scala-2.10/classes/:/home/daniar/documents/SPARK/spark-1.6.1/core/target/jars/*:/home/daniar/documents/SPARK/spark-1.6.1/assembly/target/scala-2.10/spark-assembly-1.6.1-hadoop2.7.2.jar:/home/daniar/documents/SPARK/spark-1.6.1/lib_managed/jars/datanucleus-core-3.2.10.jar:/home/daniar/documents/SPARK/spark-1.6.1/lib_managed/jars/datanucleus-api-jdo-3.2.6.jar:/home/daniar/documents/SPARK/spark-1.6.1/lib_managed/jars/datanucleus-rdbms-3.2.9.jar -Xms1g -Xmx1g org.apache.spark.deploy.worker.Worker --webui-port 8082 spark://daniar-X450JF:7077
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/06/26 11:07:21 INFO Worker: Registered signal handlers for [TERM, HUP, INT]
+16/06/26 11:07:21 WARN Utils: Your hostname, daniar-X450JF resolves to a loopback address: 127.0.1.1; using 192.168.43.28 instead (on interface wlan0)
+16/06/26 11:07:21 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+16/06/26 11:07:21 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/06/26 11:07:21 INFO SecurityManager: Changing view acls to: daniar
+16/06/26 11:07:21 INFO SecurityManager: Changing modify acls to: daniar
+16/06/26 11:07:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/06/26 11:07:21 INFO Utils: Successfully started service 'sparkWorker' on port 47218.
+16/06/26 11:07:21 INFO Worker: Starting Spark worker 192.168.43.28:47218 with 8 cores, 10.6 GB RAM
+16/06/26 11:07:21 INFO Worker: Running Spark version 1.6.1
+16/06/26 11:07:21 INFO Worker: Spark home: /home/daniar/documents/SPARK/spark-1.6.1
+16/06/26 11:07:21 INFO Server: jetty-8.y.z-SNAPSHOT
+16/06/26 11:07:22 INFO AbstractConnector: Started SelectChannelConnector@0.0.0.0:8082
+16/06/26 11:07:22 INFO Utils: Successfully started service 'WorkerUI' on port 8082.
+16/06/26 11:07:22 INFO WorkerWebUI: Started WorkerWebUI at http://192.168.43.28:8082
+16/06/26 11:07:22 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:07:22 INFO Worker: Successfully registered with master spark://daniar-X450JF:7077
+16/06/26 11:27:00 INFO Worker: daniar-X450JF:7077 Disassociated !
+16/06/26 11:27:00 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/06/26 11:27:00 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:27:00 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:27:00 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:27:08 INFO Worker: Retrying connection to master (attempt # 1)
+16/06/26 11:27:08 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:27:08 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:27:08 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:27:16 INFO Worker: Retrying connection to master (attempt # 2)
+16/06/26 11:27:16 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:27:16 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:27:16 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:27:24 INFO Worker: Retrying connection to master (attempt # 3)
+16/06/26 11:27:24 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:27:24 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:27:24 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:27:32 INFO Worker: Retrying connection to master (attempt # 4)
+16/06/26 11:27:32 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:27:32 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:27:32 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:27:40 INFO Worker: Retrying connection to master (attempt # 5)
+16/06/26 11:27:40 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:27:40 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:27:40 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:27:48 INFO Worker: Retrying connection to master (attempt # 6)
+16/06/26 11:27:48 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:27:48 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:27:48 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:28:38 INFO Worker: Retrying connection to master (attempt # 7)
+16/06/26 11:28:38 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:28:38 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:28:38 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:29:28 INFO Worker: Retrying connection to master (attempt # 8)
+16/06/26 11:29:28 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:29:28 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:29:28 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:30:18 INFO Worker: Retrying connection to master (attempt # 9)
+16/06/26 11:30:18 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:30:18 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:30:18 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:31:08 INFO Worker: Retrying connection to master (attempt # 10)
+16/06/26 11:31:08 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:31:08 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:31:08 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:31:58 INFO Worker: Retrying connection to master (attempt # 11)
+16/06/26 11:31:58 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:31:58 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:31:58 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:32:48 INFO Worker: Retrying connection to master (attempt # 12)
+16/06/26 11:32:48 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:32:48 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:32:48 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:33:38 INFO Worker: Retrying connection to master (attempt # 13)
+16/06/26 11:33:38 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:33:38 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:33:38 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:34:28 INFO Worker: Retrying connection to master (attempt # 14)
+16/06/26 11:34:28 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:34:28 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:34:28 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:35:18 INFO Worker: Retrying connection to master (attempt # 15)
+16/06/26 11:35:18 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:35:18 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:35:18 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:36:08 INFO Worker: Retrying connection to master (attempt # 16)
+16/06/26 11:36:08 INFO Worker: Connecting to master daniar-X450JF:7077...
+16/06/26 11:36:08 INFO TransportClientFactory: Found inactive connection to daniar-X450JF/127.0.1.1:7077, creating a new one.
+16/06/26 11:36:08 WARN Worker: Failed to connect to master daniar-X450JF:7077
+java.io.IOException: Failed to connect to daniar-X450JF/127.0.1.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:200)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:183)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: daniar-X450JF/127.0.1.1:7077
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/06/26 11:36:58 ERROR Worker: All masters are unresponsive! Giving up.

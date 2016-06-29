@@ -1,0 +1,59 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/06/29 06:16:28 INFO CoarseGrainedExecutorBackend: Registered signal handlers for [TERM, HUP, INT]
+16/06/29 06:16:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/06/29 06:16:30 INFO SecurityManager: Changing view acls to: daniar
+16/06/29 06:16:30 INFO SecurityManager: Changing modify acls to: daniar
+16/06/29 06:16:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/06/29 06:16:34 INFO SecurityManager: Changing view acls to: daniar
+16/06/29 06:16:34 INFO SecurityManager: Changing modify acls to: daniar
+16/06/29 06:16:34 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/06/29 06:16:35 INFO Slf4jLogger: Slf4jLogger started
+16/06/29 06:16:35 INFO Remoting: Starting remoting
+16/06/29 06:16:36 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkExecutorActorSystem@192.168.1.3:55722]
+16/06/29 06:16:36 INFO Utils: Successfully started service 'sparkExecutorActorSystem' on port 55722.
+16/06/29 06:16:37 INFO DiskBlockManager: Created local directory at /tmp/spark-e4c54497-96fb-4e07-8973-03d9e9613d72/executor-637abbd1-9965-4689-890a-6e245b6c1c07/blockmgr-ef9c4214-971f-40a8-b555-c3bf6296ba52
+16/06/29 06:16:37 INFO MemoryStore: MemoryStore started with capacity 511.1 MB
+16/06/29 06:16:38 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@192.168.1.3:45610
+16/06/29 06:16:38 INFO CoarseGrainedExecutorBackend: Daniarrrr null
+16/06/29 06:16:38 INFO CoarseGrainedExecutorBackend: Daniarrrr ---- executor address NettyRpcEndpointRef(null) name :Executor
+16/06/29 06:16:38 INFO CoarseGrainedExecutorBackend: Daniarrrr 2
+16/06/29 06:16:38 INFO WorkerWatcher: Connecting to worker spark://Worker@192.168.1.3:43077
+16/06/29 06:16:38 INFO CoarseGrainedExecutorBackend: Successfully registered with driver daniarr -- 192.168.1.3
+16/06/29 06:16:38 INFO Executor: Starting executor ID 4 on host 192.168.1.3
+16/06/29 06:16:38 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 59461.
+16/06/29 06:16:38 INFO NettyBlockTransferService: Server created on 59461
+16/06/29 06:16:38 INFO BlockManagerMaster: Trying to register BlockManager
+16/06/29 06:16:39 INFO BlockManagerMaster: Registered BlockManager
+16/06/29 06:18:12 INFO CoarseGrainedExecutorBackend: Got assigned task 12
+16/06/29 06:18:12 INFO CoarseGrainedExecutorBackend: daniarr ---- executor task org.apache.spark.executor.Executor@4e1bb67a
+16/06/29 06:18:12 INFO Executor: Running task 0.0 in stage 3.0 (TID 12)
+16/06/29 06:18:12 INFO Executor: Fetching http://192.168.1.3:39691/files/sort.py with timestamp 1467155785923
+16/06/29 06:18:37 INFO Utils: Fetching http://192.168.1.3:39691/files/sort.py to /tmp/spark-e4c54497-96fb-4e07-8973-03d9e9613d72/executor-637abbd1-9965-4689-890a-6e245b6c1c07/spark-3cf04639-8a4a-4d64-9cb2-07d6b9479348/fetchFileTemp7404564111006965462.tmp
+16/06/29 06:18:37 INFO Utils: Copying /tmp/spark-e4c54497-96fb-4e07-8973-03d9e9613d72/executor-637abbd1-9965-4689-890a-6e245b6c1c07/spark-3cf04639-8a4a-4d64-9cb2-07d6b9479348/-12221078031467155785923_cache to /home/daniar/documents/SPARK/spark-1.6.1/work/app-20160629061626-0000/4/./sort.py
+16/06/29 06:18:41 INFO MapOutputTrackerWorker: Updating epoch to 1 and clearing cache
+16/06/29 06:18:44 INFO TorrentBroadcast: Started reading broadcast variable 4
+16/06/29 06:18:48 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 27.2 KB, free 27.2 KB)
+16/06/29 06:18:48 INFO TorrentBroadcast: Reading broadcast variable 4 took 4079 ms
+16/06/29 06:18:51 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 75.0 KB, free 102.2 KB)
+16/06/29 06:18:55 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+16/06/29 06:18:55 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+16/06/29 06:18:55 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+16/06/29 06:18:55 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+16/06/29 06:18:55 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+16/06/29 06:18:56 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+16/06/29 06:18:56 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@192.168.1.3:45610)
+16/06/29 06:18:56 INFO MapOutputTrackerWorker: Got the output locations
+16/06/29 06:18:56 INFO ShuffleBlockFetcherIterator: Getting 4 non-empty blocks out of 4 blocks
+16/06/29 06:18:56 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 45 ms
+16/06/29 06:20:04 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+16/06/29 06:20:44 INFO PythonRunner: Times: total = 105507, boot = 7293, init = 589, finish = 97625
+16/06/29 06:20:44 INFO FileOutputCommitter: Saved output of task 'attempt_201606290617_0003_m_000000_12' to file:/home/daniar/documents/SPARK/generated_file/result_py/_temporary/0/task_201606290617_0003_m_000000
+16/06/29 06:20:44 INFO SparkHadoopMapRedUtil: attempt_201606290617_0003_m_000000_12: Committed
+16/06/29 06:20:44 INFO Executor: Finished task 0.0 in stage 3.0 (TID 12). 2146 bytes result sent to driver
+16/06/29 06:20:48 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+16/06/29 06:20:49 INFO MemoryStore: MemoryStore cleared
+16/06/29 06:20:49 INFO BlockManager: BlockManager stopped
+16/06/29 06:20:49 ERROR WorkerWatcher: Lost connection to worker rpc endpoint spark://Worker@192.168.1.3:43077. Exiting.
+16/06/29 06:20:49 ERROR CoarseGrainedExecutorBackend: Driver 192.168.1.3:45610 disassociated! Shutting down.
+16/06/29 06:20:49 INFO ShutdownHookManager: Shutdown hook called
+16/06/29 06:20:50 INFO ShutdownHookManager: Deleting directory /tmp/spark-e4c54497-96fb-4e07-8973-03d9e9613d72/executor-637abbd1-9965-4689-890a-6e245b6c1c07/spark-3cf04639-8a4a-4d64-9cb2-07d6b9479348
