@@ -5,7 +5,7 @@ import random
 
 os.chdir('../generated_file/')
 
-fo = open("list_int_test", 'w')
+fo = open("list_int", 'w')
 
 num = 0
 
