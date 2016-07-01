@@ -48,3 +48,18 @@ sudo yum localinstall jdk-java-8.rpm
 setenv JAVA_HOME /usr/java/jdk1.8.0_92/jre
 or
 setenv JAVA_HOME /users/daniar/java_home/jre
+
+
+
+#install maven 3.3.3
+
+wget http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
+tar xvf apache-maven-3.3.3-bin.tar.gz
+
+setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
+
+
+
+#scratch 
+
+sudo build/sbt clean assembly -mem 1500 evicted
