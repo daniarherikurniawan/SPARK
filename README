@@ -43,6 +43,6 @@
 
 wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-i586.rpm"
 
-sudo yum localinstall jdk.rpm
+sudo yum localinstall jdk-java-8.rpm
 
-bash -c "export JAVA_HOME=/usr/java/jdk1.8.0_92/jre"
+setenv JAVA_HOME /users/daniar/java_home/jre

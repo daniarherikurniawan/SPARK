@@ -39,6 +39,7 @@ spark-1.6.1/yarn/target/
 spark-1.6.1/tags/target/
 spark-1.6.1/python/lib/pyspark.zip
 spark-1.6.1/target/streams/$global/clean/$global/streams/out
+spark-1.6.1/.idea/workspace.xml
 
 allfileshas.txt
 bigobjects.txt
