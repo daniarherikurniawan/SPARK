@@ -3,13 +3,13 @@
 
 ## Overview
 
-WebAssembly or wasm is a new, portable, size- and load-time-efficient format suitable for compilation to the web.
+> WebAssembly or wasm is a new, portable, size- and load-time-efficient format suitable for compilation to the web.
 
-WebAssembly is currently being designed as an open standard by a [W3C Community Group](https://www.w3.org/community/webassembly/) that includes representatives from all major browsers. *Expect the contents of this repository to be in flux: everything is still under discussion.*
+> WebAssembly is currently being designed as an open standard by a [W3C Community Group](https://www.w3.org/community/webassembly/) that includes representatives from all major browsers. *Expect the contents of this repository to be in flux: everything is still under discussion.*
 
 - **WebAssembly is efficient and fast**:
 
-## Check which file is slowing down the git push :
+### Check which file is slowing down the git push :
 
 - **Write all file SHA1s to a text file:**
 
@@ -28,34 +28,36 @@ WebAssembly is currently being designed as an open standard by a [W3C Community 
 - **Now you can look at the file bigtosmall.txt in order to decide which files you want to remove from your Git history.**
 
 
-## Generate integer to be sorted:
+### Generate integer to be sorted:
 	python res-generator/generate_list_int.py
 
-## Run the cluster
-	cd spark-1.6.1/
-	$ build/sbt clean assembly # Create a normal assembly
+### Run the cluster
+```sh
+cd spark-1.6.1/
 
-	$ export SPARK_PREPEND_CLASSES=true
+$ build/sbt clean assembly # Create a normal assembly
 
-	$ build/sbt compile
-	# ... do some local development ... #
+$ export SPARK_PREPEND_CLASSES=true
 
-
-	./sbin/start-master.sh --host '192.168.1.3'
-	
-	spark://n2.testspark.cs331-uc.emulab.net:7077
-
-	./sbin/start-slave.sh spark://n2.testspark.cs331-uc.emulab.net:7077 --memory 1g --cores 2
-	
-	./sbin/start-slave.sh spark://192.168.1.3:7077 --host '192.168.1.11' --memory 1g --cores 2
-	
-	./sbin/start-slave.sh spark://192.168.1.3:7077 --host '192.168.1.12' --memory 1g --cores 2
-	
-	./bin/spark-submit sort.py --master spark://n2.testspark.cs331-uc.emulab.net:7077 --deploy-mode cluster 
+$ build/sbt compile
+# ... do some local development ... #
 
 
+./sbin/start-master.sh --host '192.168.1.3'
 
-## Install java 8
+spark://n2.testspark.cs331-uc.emulab.net:7077
+
+./sbin/start-slave.sh spark://n2.testspark.cs331-uc.emulab.net:7077 --memory 1g --cores 2
+
+./sbin/start-slave.sh spark://192.168.1.3:7077 --host '192.168.1.11' --memory 1g --cores 2
+
+./sbin/start-slave.sh spark://192.168.1.3:7077 --host '192.168.1.12' --memory 1g --cores 2
+
+./bin/spark-submit sort.py --master spark://n2.testspark.cs331-uc.emulab.net:7077 --deploy-mode cluster 
+```
+
+
+### Install java 8
 
 	wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-i586.rpm"
 
@@ -64,7 +66,7 @@ WebAssembly is currently being designed as an open standard by a [W3C Community 
 	setenv JAVA_HOME /usr/java/jdk1.8.0_92/jre
 	
 
-## Install maven 3.3.3 (not needed | Just FYI)
+### Install maven 3.3.3 (not needed | Just FYI)
 
 	wget http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
 
@@ -73,13 +75,13 @@ WebAssembly is currently being designed as an open standard by a [W3C Community 
 	setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 
 
-## Scratch 
+### Scratch 
 - setenv SPARK_PREPEND_CLASSES true
 - sudo build/sbt clean assembly -mem 1500 evicted
 - sudo build/sbt compile -mem 1500 evicted (make sure that master and slave are terminated)
 
 
-## Additional notes
+### Additional notes
 - sha1sum file.jar
 - wget -O - "http://localhost:8080/" >> spark_home.html
 - cp SPARK/ backup_spark/ -r
