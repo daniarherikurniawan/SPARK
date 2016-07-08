@@ -2,7 +2,7 @@
 
 
 
-##To check wich file is slowing down the git push :
+##Check which file is slowing down the git push :
 
 - Write all file SHA1s to a text file:
 
@@ -48,19 +48,16 @@
 
 
 
-##install java 8
+##Install java 8
 
-wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-i586.rpm"
+	wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-i586.rpm"
 
-sudo yum localinstall jdk-java-8.rpm
+	sudo yum localinstall jdk-java-8.rpm
 
-setenv JAVA_HOME /usr/java/jdk1.8.0_92/jre
-or
-setenv JAVA_HOME /users/daniar/java_home/jre
+	setenv JAVA_HOME /usr/java/jdk1.8.0_92/jre
+	
 
-
-
-##install maven 3.3.3 (not needed | Just FYI)
+##Install maven 3.3.3 (not needed | Just FYI)
 
 	wget http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
 
@@ -69,13 +66,13 @@ setenv JAVA_HOME /users/daniar/java_home/jre
 	setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 
 
-##scratch 
+##Scratch 
 - setenv SPARK_PREPEND_CLASSES true
 - sudo build/sbt clean assembly -mem 1500 evicted
 - sudo build/sbt compile -mem 1500 evicted (make sure that master and slave are terminated)
 
 
-##additional
+##Additional Notes
 - sha1sum file.jar
 - wget -O - "http://localhost:8080/" >> spark_home.html
 - cp SPARK/ backup_spark/ -r
