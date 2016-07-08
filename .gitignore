@@ -40,6 +40,9 @@ todo_list.txt
 #spark-1.6.1/python/lib/pyspark.zip
 #spark-1.6.1/target/streams/$global/clean/$global/streams/out
 #spark-1.6.1/.idea/workspace.xml
+
+spark-1.6.1/work/
+generated_driver_log/
 spark-1.6.1/assembly/target/scala-2.10/spark-assembly-1.6.1-hadoop2.7.2.jar
 allfileshas.txt
 bigobjects.txt
