@@ -5,9 +5,9 @@
 ##To check wich file is slowing down the git push :
 
 - Write all file SHA1s to a text file:
-  	git rev-list --objects --all | sort -k 2 > allfileshas.txt
+git rev-list --objects --all | sort -k 2 > allfileshas.txt
 - Sort the blobs from biggest to smallest and write results to text file:
-	git gc && git verify-pack -v .git/objects/pack/pack-*.idx | egrep "^\w+ blob\W+[0-9]+ [0-9]+ [0-9]+$" | sort -k 3 -n -r > bigobjects.txt
+git gc && git verify-pack -v .git/objects/pack/pack-*.idx | egrep "^\w+ blob\W+[0-9]+ [0-9]+ [0-9]+$" | sort -k 3 -n -r > bigobjects.txt
 - Combine both text files to get file name/sha1/size information:
 	for SHA in `cut -f 1 -d\  < bigobjects.txt`; do
 	echo $(grep $SHA bigobjects.txt) $(grep $SHA allfileshas.txt) | awk '{print $1,$3,$7}' >> bigtosmall.txt done;
