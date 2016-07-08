@@ -10,6 +10,8 @@
 
 - **WebAssembly is efficient and fast**:
 
+
+
 ### Check which file is slowing down the git push :
 
 - **Write all file SHA1s to a text file:**
@@ -29,8 +31,11 @@
 - **Now you can look at the file bigtosmall.txt in order to decide which files you want to remove from your Git history.**
 
 
+
 ### Generate integer to be sorted:
 	python res-generator/generate_list_int.py
+
+
 
 ### Run the cluster
 ```sh
@@ -42,7 +47,6 @@ $ export SPARK_PREPEND_CLASSES=true
 
 $ build/sbt compile
 # ... do some local development ... #
-
 
 ./sbin/start-master.sh --host '192.168.1.3'
 
@@ -56,6 +60,7 @@ spark://n2.testspark.cs331-uc.emulab.net:7077
 
 ./bin/spark-submit sort.py --master spark://n2.testspark.cs331-uc.emulab.net:7077 --deploy-mode cluster 
 ```
+
 
 
 ### Install java 8
@@ -78,10 +83,13 @@ tar xvf apache-maven-3.3.3-bin.tar.gz
 setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 ```
 
+
+
 ### Scratch 
 - setenv SPARK_PREPEND_CLASSES true
 - sudo build/sbt clean assembly -mem 1500 evicted
 - sudo build/sbt compile -mem 1500 evicted (make sure that master and slave are terminated)
+
 
 
 ### Additional notes
