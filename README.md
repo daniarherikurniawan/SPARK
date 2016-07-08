@@ -1,8 +1,6 @@
 # SPARK
 
-> There are two parts of explanation in this file :
-> 1. HowTo Run Spark on [Emulab](https://www.emulab.net/)
-> 2. Unstructured Notes for Debugging
+> There are two parts of explanation in this file : **HowTo Run Spark on [Emulab](https://www.emulab.net/)** and **Unstructured Notes for Debugging**
 
 
 
