@@ -60,23 +60,23 @@ setenv JAVA_HOME /users/daniar/java_home/jre
 
 
 
-##install maven 3.3.3
+##install maven 3.3.3 (not needed | Just FYI)
 
-wget http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
-tar xvf apache-maven-3.3.3-bin.tar.gz
+	wget http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
 
-setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
+	tar xvf apache-maven-3.3.3-bin.tar.gz
 
+	setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 
 
 ##scratch 
-setenv SPARK_PREPEND_CLASSES true
-sudo build/sbt clean assembly -mem 1500 evicted
-sudo build/sbt compile -mem 1500 evicted (make sure that master and slave are terminated)
+- setenv SPARK_PREPEND_CLASSES true
+- sudo build/sbt clean assembly -mem 1500 evicted
+- sudo build/sbt compile -mem 1500 evicted (make sure that master and slave are terminated)
 
 
 ##additional
-sha1sum file.jar
-wget -O - "http://localhost:8080/" >> spark_home.html
-cp SPARK/ backup_spark/ -r
-check size : du -sh
+- sha1sum file.jar
+- wget -O - "http://localhost:8080/" >> spark_home.html
+- cp SPARK/ backup_spark/ -r
+- check size : du -sh
