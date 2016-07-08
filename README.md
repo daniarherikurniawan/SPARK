@@ -7,7 +7,7 @@
 ## 1. HowTo Run Spark on [Emulab](https://www.emulab.net/)
 
 ### Overview
-
+> The Spark that we want to build is not the full version of Spark. It means that the current Spark is not compiling any extensions for particular systems such as Hive, Docker, Flume, etc. Actually there is no difference for the main functionality. The extension is only needed when we want to integrate Spark with other systems. In this research, I do not need any external integration, so I just modify the [pom.xml](https://github.com/daniarherikurniawan/SPARK/blob/master/spark-1.6.1/pom.xml) file to compile the necessary package for my research purpose.   
 
 
 ## 2. Unstructured Notes for Debugging
