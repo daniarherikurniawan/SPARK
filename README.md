@@ -34,48 +34,48 @@
 
 ### Run the cluster
 ```sh
-	cd spark-1.6.1/
+cd spark-1.6.1/
 
-	$ build/sbt clean assembly # Create a normal assembly
+$ build/sbt clean assembly # Create a normal assembly
 
-	$ export SPARK_PREPEND_CLASSES=true
+$ export SPARK_PREPEND_CLASSES=true
 
-	$ build/sbt compile
-	# ... do some local development ... #
+$ build/sbt compile
+# ... do some local development ... #
 
 
-	./sbin/start-master.sh --host '192.168.1.3'
+./sbin/start-master.sh --host '192.168.1.3'
 
-	spark://n2.testspark.cs331-uc.emulab.net:7077
+spark://n2.testspark.cs331-uc.emulab.net:7077
 
-	./sbin/start-slave.sh spark://n2.testspark.cs331-uc.emulab.net:7077 --memory 1g --cores 2
+./sbin/start-slave.sh spark://n2.testspark.cs331-uc.emulab.net:7077 --memory 1g --cores 2
 
-	./sbin/start-slave.sh spark://192.168.1.3:7077 --host '192.168.1.11' --memory 1g --cores 2
+./sbin/start-slave.sh spark://192.168.1.3:7077 --host '192.168.1.11' --memory 1g --cores 2
 
-	./sbin/start-slave.sh spark://192.168.1.3:7077 --host '192.168.1.12' --memory 1g --cores 2
+./sbin/start-slave.sh spark://192.168.1.3:7077 --host '192.168.1.12' --memory 1g --cores 2
 
-	./bin/spark-submit sort.py --master spark://n2.testspark.cs331-uc.emulab.net:7077 --deploy-mode cluster 
+./bin/spark-submit sort.py --master spark://n2.testspark.cs331-uc.emulab.net:7077 --deploy-mode cluster 
 ```
 
 
 ### Install java 8
 ```sh
-	wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-i586.rpm"
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-i586.rpm"
 
-	sudo yum localinstall jdk-java-8.rpm
+sudo yum localinstall jdk-java-8.rpm
 
-	setenv JAVA_HOME /usr/java/jdk1.8.0_92/jre
+setenv JAVA_HOME /usr/java/jdk1.8.0_92/jre
 ```
 	
 
 ### Install maven 3.3.3 (not needed | Just FYI)
 
 ```sh
-	wget http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
+wget http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
 
-	tar xvf apache-maven-3.3.3-bin.tar.gz
+tar xvf apache-maven-3.3.3-bin.tar.gz
 
-	setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
+setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 ```
 
 ### Scratch 
