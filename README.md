@@ -46,7 +46,7 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 	setenv JAVA_HOME /usr/java/jdk1.8.0_92/jre
 	``` 
-7. Then tell the Spark that we want to would not compile everything from the start
+7. Then tell the Spark that we would not compile everything from the start
 	
 	``` setenv SPARK_PREPEND_CLASSES true ```
 
@@ -54,7 +54,11 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	
 	``` build/sbt compile ```
 	
-	To compile just the core and it just need a few minutes. 
+	To compile just the core and it just need a few minutes. Btw, you have to make sure that your Spark is not running during this step. You can simply run :
+
+	``` ./sbin/stop-all.sh ```
+
+	To stop any Spark instances.
 
 9. Run the Spark as described in [this file](http://spark.apache.org/docs/latest/spark-standalone.html). The simple one is by running :
 	
