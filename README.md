@@ -61,7 +61,9 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	
 	``` sudo build/sbt compile -mem 1500 evicted ```
 	
-	To compile just the core and it just need a few minutes. Btw, you have to make sure that your Spark is not running during this step. You can simply run :
+	To compile just the core and it just need a few minutes. 
+	***[Note: It will failed at the first try due to dependency error. But after the second try it will success]***
+	Btw, you have to make sure that your Spark is not running during this step. You can simply run :
 
 	``` ./sbin/stop-all.sh ```
 
