@@ -48,7 +48,11 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	``` 
 7. Then tell the Spark that we would not compile everything from the start
 	
-	``` setenv SPARK_PREPEND_CLASSES true ```
+	``` 
+	setenv SPARK_PREPEND_CLASSES true 
+	or
+	export SPARK_PREPEND_CLASSES=true [if you are working on Ubuntu]
+	``` 
 
 8. Do some local development! You can modify the source in ***core*** folder as you need and then run:
 	
@@ -68,7 +72,10 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	
 	``` python res-generator/generate_list_int.py ```
 
-11. All of the task will be run as Python apps which can be found in file [sort.py](https://github.com/daniarherikurniawan/SPARK/blob/master/spark-1.6.1/sort.py). You can create your own task and specify the process as you need.
+11. All of the task will be run as Python apps which can be found in file [sort.py](https://github.com/daniarherikurniawan/SPARK/blob/master/spark-1.6.1/sort.py). You can create your own task and specify the process as you need. To submit the app, use this following command:
+
+	``` ./bin/spark-submit sort.py --master spark://n1.testspark.cs331-uc.emulab.net:7077 --deploy-mode cluster 
+	```
 
 12. The log files will be stored in folder [generated_driver_log](https://github.com/daniarherikurniawan/SPARK/tree/master/generated_driver_log).
 

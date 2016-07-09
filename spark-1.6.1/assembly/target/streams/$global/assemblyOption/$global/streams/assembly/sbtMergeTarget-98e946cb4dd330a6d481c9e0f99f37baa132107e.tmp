@@ -1,3 +1,0 @@
-tachyon.underfs.hdfs.HdfsUnderFileSystemFactory
-tachyon.underfs.s3.S3UnderFileSystemFactory
-tachyon.underfs.local.LocalUnderFileSystemFactory
