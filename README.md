@@ -89,6 +89,7 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 	Of course you need to know the URL in order to get the detail visualizations. You can get the URL by opening Spark visualization when you run Spark in your local machine. In Emulab, we cannot exactly see the web page. That is why you need to understand the bigger picture of the visualization before analyzing the downloaded html page from Emulab's node.
 
+	> Apparently, you don't need to download all the page manually. You can visit ***http://n1.testspark.cs331-uc.emulab.net:8080/ ***. The link is not always the same, it depends on your project name, your experiment name, and the port that is open in your Emulab server.
 
 
 
