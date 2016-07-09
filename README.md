@@ -32,7 +32,7 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 2. Edit the pom.xml file so it just compile the core Spark. It will reduce the compile time and the size as well.
 3. Create a normal assembly. All of the codes and jars should be kept as its original position. The total size is around 700MB.
 
->```sh $ build/sbt clean assembly```
+>$ build/sbt clean assembly
 
 4. Upload all the codes and jars to Emulab. You can use Github, but it cannot be done easily because Github only allows maximum 100 MB size for a single file. You can include that file into gitignore and add it later. There are some ways to upload the file that is bigger than 100 MB, including: Use Filezilla, upload to Google Drive, and Upload as Github released apps. I reccomend you to use the first technique after working around. 
 5. Now, we can continue our work on Emulab. As I mention before, the OS Image that I use is FEDORA15-DAGENT-JAVA. I think we can use any other OS as long as it is compatible with Java 8.
