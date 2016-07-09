@@ -41,10 +41,11 @@ todo_list.txt
 #spark-1.6.1/target/streams/$global/clean/$global/streams/out
 #spark-1.6.1/.idea/workspace.xml
 
+#this files will be updated during compilation 
 spark-1.6.1/project/project/target/
 spark-1.6.1/assembly/target/
 spark-1.6.1/target/
-
+spark-1.6.1/core/target/streams/$global/evicted/
 
 
 spark-1.6.1/logs/
