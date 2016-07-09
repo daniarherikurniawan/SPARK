@@ -134,7 +134,7 @@ $ build/sbt compile
 
 spark://n2.testspark.cs331-uc.emulab.net:7077
 
-./sbin/start-slave.sh spark://n2.testspark.cs331-uc.emulab.net:7077 --memory 1g --cores 2
+./sbin/start-slave.sh spark://n1.testspark.cs331-uc.emulab.net:7077 --memory 1g --cores 2
 
 ./sbin/start-slave.sh spark://192.168.1.3:7077 --host '192.168.1.11' --memory 1g --cores 2
 
