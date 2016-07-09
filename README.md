@@ -46,8 +46,25 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 	setenv JAVA_HOME /usr/java/jdk1.8.0_92/jre
 	``` 
+7. Then tell the Spark that we want to would not compile everything from the start
+	``` setenv SPARK_PREPEND_CLASSES true ```
+8. Do some local development! You can modify the source in ***core*** folder as you need and then run:
+	``` build/sbt compile ```
+	To compile just the core and it just need a few minutes. 
 
+9. Run the Spark as described in [this file](http://spark.apache.org/docs/latest/spark-standalone.html). The simple one is by running :
+	``` ./sbin/start-all.sh ```
 
+10. Create the payload. It depends on what kind of process you need. In my case, I want Spark to sort the array of integers in ascending order and then save the result in the folder generated_file/result_py. So I create a Python program to generate the integers by running:
+	``` python res-generator/generate_list_int.py ```
+
+11. All of the task will be run as Python apps which can be found in file [sort.py](https://github.com/daniarherikurniawan/SPARK/blob/master/spark-1.6.1/sort.py). You can create your own task and specify the process as you need.
+
+12. The log files will be stored in folder [generated_driver_log](https://github.com/daniarherikurniawan/SPARK/tree/master/generated_driver_log).
+
+13. For the ease, you can retrieve the html page of master and slave nodes by running:
+	```wget -O - "http://localhost:8080/" >> spark_home.html```
+	Of course you need to know the URL in order to get the detail visualizations. You can get the URL by opening Spark visualization when you run Spark in your local machine. In Emulab, we cannot exactly see the web page. That is why you need to understand the bigger picture of the visualization before analyzing the downloaded html page from Emulab's node.
 
 ## 2. Unstructured Notes for Debugging
 
