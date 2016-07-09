@@ -41,6 +41,12 @@ todo_list.txt
 #spark-1.6.1/target/streams/$global/clean/$global/streams/out
 #spark-1.6.1/.idea/workspace.xml
 
+spark-1.6.1/project/project/target/
+spark-1.6.1/assembly/target/
+spark-1.6.1/target/
+
+
+
 spark-1.6.1/logs/
 spark-1.6.1/work/
 generated_driver_log/
