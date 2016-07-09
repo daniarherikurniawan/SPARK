@@ -5,7 +5,7 @@ import shutil,os
 if os.path.exists("/tmp/sort_result"):
     shutil.rmtree("/tmp/sort_result")
 
-conf = SparkConf().setAppName("Sorting").setMaster("spark://n2.testspark.cs331-uc.emulab.net:7077").set("spark.eventLog.enabled","true").set("spark.eventLog.dir","../generated_driver_log/").set("spark.speculation","true")
+conf = SparkConf().setAppName("Sorting").setMaster("spark://n1.testspark.cs331-uc.emulab.net:7077").set("spark.eventLog.enabled","true").set("spark.eventLog.dir","../generated_driver_log/").set("spark.speculation","true")
 
 sc = SparkContext(conf=conf)
 text_file = sc.textFile("../generated_file/list_int",2)
