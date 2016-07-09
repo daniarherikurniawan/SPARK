@@ -1,0 +1,30 @@
+set ns [new Simulator]                  
+source tb_compat.tcl
+
+set n1 [$ns node]
+set n2 [$ns node]
+set n3 [$ns node]
+set n4 [$ns node]
+set n5 [$ns node]
+
+set lan0 [$ns make-cloud "$n1 $n2 $n3 $n4 $n5 " 100Mb 0ms]
+
+tb-set-node-os $n1 FEDORA15-DAGENT-JAVA
+tb-set-node-os $n2 FEDORA15-DAGENT-JAVA
+tb-set-node-os $n3 FEDORA15-DAGENT-JAVA
+tb-set-node-os $n4 FEDORA15-DAGENT-JAVA
+tb-set-node-os $n5 FEDORA15-DAGENT-JAVA
+
+tb-set-hardware $n1 d710
+tb-set-hardware $n2 d710
+tb-set-hardware $n3 d710
+tb-set-hardware $n4 d710
+tb-set-hardware $n5 d710
+
+tb-set-node-rpms $n1 /proj/cs331-uc/resources//iperf-2.0.5-3.fc15.i686.rpm
+tb-set-node-rpms $n2 /proj/cs331-uc/resources//iperf-2.0.5-3.fc15.i686.rpm
+tb-set-node-rpms $n3 /proj/cs331-uc/resources//iperf-2.0.5-3.fc15.i686.rpm
+tb-set-node-rpms $n4 /proj/cs331-uc/resources//iperf-2.0.5-3.fc15.i686.rpm
+tb-set-node-rpms $n5 /proj/cs331-uc/resources//iperf-2.0.5-3.fc15.i686.rpm
+
+$ns run
