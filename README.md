@@ -52,7 +52,7 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 8. Do some local development! You can modify the source in ***core*** folder as you need and then run:
 	
-	``` build/sbt compile ```
+	``` sudo build/sbt compile -mem 1500 evicted ```
 	
 	To compile just the core and it just need a few minutes. Btw, you have to make sure that your Spark is not running during this step. You can simply run :
 
