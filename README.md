@@ -28,7 +28,7 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 > Here is the step by step process that we need to follow in order to realize the main goal (Run and compile Spark on Emulab)
 
 ###Step by Step
-1. Download the Spark's source codes
+1. Download the Spark's source codes or just simply clone this repository in your local machine. The version that I use in this repo is 1.6.1.
 2. Edit the pom.xml file so it just compile the core Spark. It will reduce the compile time and the size as well.
 3. Create a normal assembly. All of the codes and jars should be kept as its original position. The total size is around 700MB.
 
@@ -36,7 +36,7 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 4. Upload all the codes and jars to Emulab. You can use Github, but it cannot be done easily because Github only allows maximum 100 MB size for a single file. You can include that file into gitignore and add it later. There are some ways to upload the file that is bigger than 100 MB, including: Use Filezilla, upload to Google Drive, and Upload as Github released apps. I reccomend you to use the first technique after working around. 
 5. Now, we can continue our work on Emulab. As I mention before, the OS Image that I use is FEDORA15-DAGENT-JAVA. I think we can use any other OS as long as it is compatible with Java 8.
-6. Since the OS that I used is not having java 8. Here are the way to install and set the environment variable.
+6. Since the OS that I used is not having java 8. Here are the way to install and set the environment variable. We have to do this every single time we start Emulab.
 	```
 	wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-i586.rpm"
 
