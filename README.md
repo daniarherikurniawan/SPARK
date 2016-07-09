@@ -74,17 +74,10 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 	Of course you need to know the URL in order to get the detail visualizations. You can get the URL by opening Spark visualization when you run Spark in your local machine. In Emulab, we cannot exactly see the web page. That is why you need to understand the bigger picture of the visualization before analyzing the downloaded html page from Emulab's node.
 
+
+
+
 ## 2. Unstructured Notes for Debugging
-
-### Overview
-
-> WebAssembly or wasm is a new, portable, size- and load-time-efficient format suitable for compilation to the web.
-
-> WebAssembly is currently being designed as an open standard by a [W3C Community Group](https://www.w3.org/community/webassembly/) that includes representatives from all major browsers. *Expect the contents of this repository to be in flux: everything is still under discussion.*
-
-- **WebAssembly is efficient and fast**:
-
-
 
 ### Check which file is slowing down the git push :
 
