@@ -46,6 +46,11 @@ spark-1.6.1/target/
 spark-1.6.1/core/target/
 spark-1.6.1/project/target/
 
+#showed up after I import the project to IntelijIdea
+spark-1.6.1/core/src/.idea/
+spark-1.6.1/core/src/main/main.iml
+spark-1.6.1/network/yarn/target/
+spark-1.6.1/yarn/target/
 
 spark-1.6.1/logs/
 spark-1.6.1/work/

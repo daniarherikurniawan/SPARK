@@ -2,8 +2,8 @@ from pyspark import SparkContext,SparkConf
 import shutil,os
 
 # non-spark code
-if os.path.exists("/tmp/sort_result"):
-    shutil.rmtree("/tmp/sort_result")
+if os.path.exists("../generated_file/result_py"):
+    shutil.rmtree("../generated_file/result_py")
 
 conf = SparkConf().setAppName("Sorting").setMaster("spark://n1.testspark.cs331-uc.emulab.net:7077").set("spark.eventLog.enabled","true").set("spark.eventLog.dir","../generated_driver_log/").set("spark.speculation","true")
 
