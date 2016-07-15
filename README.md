@@ -37,7 +37,7 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 4. Upload all the codes and jars to Emulab. You can use Github, but it cannot be done easily because Github only allows maximum 100 MB size for a single file. You can include that file into gitignore and add it later. There are some ways to upload the file that is bigger than 100 MB, including: Use Filezilla, upload to Google Drive, and Upload as Github released apps. I reccomend you to use the first technique after working around. 
 5. Now, we can continue our work on Emulab. As I mention before, the OS Image that I use is FEDORA15-DAGENT-JAVA. I think we can use any other OS as long as it is compatible with Java 8.
 
-6. Upload manual to the Emulab the jar of spark-1.6.1/assembly/target/scala-2.10/ using Filezilla
+6. Upload manual to the Emulab the jar of spark-1.6.1/assembly/target/scala-2.10/ using Filezilla [you can ignore this step if you don't have enough internet speed]
 
 7. Since the OS that I used is not having java 8. Here are the way to install and set the environment variable. We have to do this every single time we start Emulab.
 	```
@@ -49,6 +49,18 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 	setenv JAVA_HOME /usr/java/jdk1.8.0_92/jre
 	``` 
+	> If you clone this repository, you can simply run ***bash scripts.sh*** right after login in the emulab server. To update the script, you can run 
+	```
+	cp /proj/cs331-uc/daniar/SPARK/EMULAB/scripts.sh /users/daniar/ 
+	chmod u+x scripts.sh
+
+	and run:
+	bash scripts.sh 
+	```
+
+	In the above script, I clone the repository at cp /proj/cs331-uc/daniar/SPARK/ and /users/daniar/ is my current directory after I got logged in.  
+
+
 8. Then tell the Spark that we would not compile everything from the start
 	
 	``` 
