@@ -55,6 +55,8 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	chmod u+x scripts.sh
 	and run:
 	bash scripts.sh 
+	move directory to:
+	cd /proj/cs331-uc/daniar/SPARK/spark-1.6.1/
 	```
 
 	> In the above script, I clone the repository at cp /proj/cs331-uc/daniar/SPARK/ and /users/daniar/ is my current directory after I got logged in.  
