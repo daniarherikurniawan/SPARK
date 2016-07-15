@@ -53,12 +53,11 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	```
 	cp /proj/cs331-uc/daniar/SPARK/EMULAB/scripts.sh /users/daniar/ 
 	chmod u+x scripts.sh
-
 	and run:
 	bash scripts.sh 
 	```
 
-	In the above script, I clone the repository at cp /proj/cs331-uc/daniar/SPARK/ and /users/daniar/ is my current directory after I got logged in.  
+	> In the above script, I clone the repository at cp /proj/cs331-uc/daniar/SPARK/ and /users/daniar/ is my current directory after I got logged in.  
 
 
 8. Then tell the Spark that we would not compile everything from the start
