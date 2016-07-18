@@ -137,17 +137,17 @@ class CoarseGrainedSchedulerBackend(scheduler: TaskSchedulerImpl, val rpcEnv: Rp
     override def receiveAndReply(context: RpcCallContext): PartialFunction[Any, Unit] = {
 
       case RegisterExecutor(executorId, executorRef, hostPort, cores, logUrls) =>
-        logInfo("Daniarrrr --- RegisterExecutor " + hostPort)
+        logInfo(" CoarseGrainedSchedulerBackendScala: Daniarrrr --- RegisterExecutor " + hostPort)
         if (executorDataMap.contains(executorId)) {
           context.reply(RegisterExecutorFailed("Duplicate executor ID: " + executorId))
         } else {
           // If the executor's rpc env is not listening for incoming connections, `hostPort`
           // will be null, and the client connection should be used to contact the executor.
           val executorAddress = if (executorRef.address != null) {
-              logInfo("martin -- daniarrr  execAdr is not null " + executorRef.address)
+              logInfo("CoarseGrainedSchedulerBackend: martin -- daniarrr  execAdr is not null " + executorRef.address)
               executorRef.address
             } else {
-              logInfo("martin -- execAdr is null " + context.senderAddress)
+              logInfo("CoarseGrainedSchedulerBackend: martin -- execAdr is null " + context.senderAddress)
               context.senderAddress
             }
           logInfo(s"Registered executor $executorRef ($executorAddress) with ID $executorId")

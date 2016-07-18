@@ -251,7 +251,7 @@ private[spark] class TaskSchedulerImpl(
     for (i <- 0 until shuffledOffers.size) {
       val execId = shuffledOffers(i).executorId
 
-      //if (execId contains martin_counter.toString()) { // martin -- start
+      if (execId contains martin_counter.toString()) { // martin -- start
       //martin: do hacking here.. if execId !contains "exId" then "continue" (to the next loop)
       //martin: flag
       //logInfo("martin -- resourceOfferSingleTaskSet execId: " + execId + " offers " + shuffledOffers(i) + " locality " + maxLocality)
@@ -287,7 +287,7 @@ private[spark] class TaskSchedulerImpl(
             return launchedTask
         }
       }
-      //} // martin -- end
+      } // martin -- end
     }
 
     // martin: printed after some1

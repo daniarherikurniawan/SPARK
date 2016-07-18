@@ -73,6 +73,7 @@ private[spark] class TaskSchedulerImpl(
   // CPUs to request per task
   val CPUS_PER_TASK = conf.getInt("spark.task.cpus", 1)
 
+  var martin_counter = 0
   // TaskSetManagers are not thread safe, so any access to one should be synchronized
   // on this class.
   private val taskSetsByStageIdAndAttempt = new HashMap[Int, HashMap[Int, TaskSetManager]]
@@ -246,6 +247,10 @@ private[spark] class TaskSchedulerImpl(
     var launchedTask = false
     for (i <- 0 until shuffledOffers.size) {
       val execId = shuffledOffers(i).executorId
+
+
+      if (execId contains martin_counter.toString()) { // martin -- start
+
       val host = shuffledOffers(i).host
 //      logInfo("daniarrr -- " + i + " Taskscheduler implementation " + host)
       if (availableCpus(i) >= CPUS_PER_TASK) {
@@ -269,6 +274,7 @@ private[spark] class TaskSchedulerImpl(
             return launchedTask
         }
       }
+      } // martin -- end
     }
     return launchedTask
   }
@@ -298,10 +304,11 @@ private[spark] class TaskSchedulerImpl(
 
     // Randomly shuffle offers to avoid always placing tasks on the same set of workers.
     // Important! Daniar!!!
-    // original: val shuffledOffers = Random.shuffle(offers)
+    // original:
+    val shuffledOffers = Random.shuffle(offers)
 
     // new:
-    val shuffledOffers = offers
+//    val shuffledOffers = offers
 
     // Build a list of tasks to assign to each worker.
     val tasks = shuffledOffers.map(o => new ArrayBuffer[TaskDescription](o.cores))
