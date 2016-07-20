@@ -247,7 +247,7 @@ private[spark] class TaskSchedulerImpl(
       tasks: Seq[ArrayBuffer[TaskDescription]]) : Boolean = {
     var launchedTask = false
     val sortedOffers = shuffledOffers.sortWith(_.host < _.host)
-    shuffledOffers = sortedOffers
+
     logInfo("DANIAR: DO HACK CHECK before loop  sorted = "+shuffledOffers)
     for (i <- 0 until shuffledOffers.size) {
       val execId = shuffledOffers(i).executorId
@@ -255,7 +255,8 @@ private[spark] class TaskSchedulerImpl(
 
 //      if (execId contains martin_counter.toString()) { // martin -- start
 
-      val host = shuffledOffers(i).host
+      val host = sortedOffers(i).host
+//      val host = shuffledOffers(i).host
 //      executorId: String, host: String, cores: Int
       logInfo("DANIAR: CHECK THE HOST HERE Taskscheduler implementation " + host)
       if (availableCpus(i) >= CPUS_PER_TASK) {
