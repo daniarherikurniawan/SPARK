@@ -13,6 +13,3 @@ counts = text_file.map(lambda a : (int(a),a)).sortByKey("true")
 
 #print counts.collect()
 counts.saveAsTextFile("../generated_file/result_py")
-
-echo("daniar: done")
-

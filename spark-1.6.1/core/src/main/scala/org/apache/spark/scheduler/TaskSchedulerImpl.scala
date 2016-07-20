@@ -249,7 +249,7 @@ private[spark] class TaskSchedulerImpl(
       val execId = shuffledOffers(i).executorId
 
 
-      if (execId contains martin_counter.toString()) { // martin -- start
+//      if (execId contains martin_counter.toString()) { // martin -- start
 
       val host = shuffledOffers(i).host
 //      logInfo("daniarrr -- " + i + " Taskscheduler implementation " + host)
@@ -274,7 +274,7 @@ private[spark] class TaskSchedulerImpl(
             return launchedTask
         }
       }
-      } // martin -- end
+//      } // martin -- end
     }
     return launchedTask
   }
