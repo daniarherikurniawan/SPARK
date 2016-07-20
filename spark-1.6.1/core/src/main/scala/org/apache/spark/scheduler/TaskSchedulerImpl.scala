@@ -310,9 +310,9 @@ private[spark] class TaskSchedulerImpl(
     // Randomly shuffle offers to avoid always placing tasks on the same set of workers.
     // Important! Daniar!!!
     // original:
-    val shuffledOffers = Random.shuffle(offers)
-
-    shuffledOffers = shuffledOffers.sortWith(_.host < _.host)
+//    val shuffledOffers = Random.shuffle(offers)
+    // modified
+    val shuffledOffers = offers.sortWith(_.host < _.host)
     logInfo("DANIAR: DO HACK ABOUT THE OFFERS sorted = "+shuffledOffers)
 
     // new:
