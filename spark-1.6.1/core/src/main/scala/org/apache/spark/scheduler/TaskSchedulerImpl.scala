@@ -246,8 +246,8 @@ private[spark] class TaskSchedulerImpl(
       availableCpus: Array[Int],
       tasks: Seq[ArrayBuffer[TaskDescription]]) : Boolean = {
     var launchedTask = false
-//    val sortedOffers = shuffledOffers.sortWith(_.host < _.host)
-//    shuffledOffers = sortedOffers
+    val sortedOffers = shuffledOffers.sortWith(_.host < _.host)
+    shuffledOffers = sortedOffers
     logInfo("DANIAR: DO HACK CHECK before loop  sorted = "+shuffledOffers)
     for (i <- 0 until shuffledOffers.size) {
       val execId = shuffledOffers(i).executorId
@@ -311,9 +311,9 @@ private[spark] class TaskSchedulerImpl(
     // Randomly shuffle offers to avoid always placing tasks on the same set of workers.
     // Important! Daniar!!!
     // original:
-    val shuffledOffers = Random.shuffle(offers)
+    var shuffledOffers = Random.shuffle(offers)
     // modified
-    val sortedOffer = shuffledOffers.sortWith(_.host < _.host)
+    var sortedOffer = shuffledOffers.sortWith(_.host < _.host)
     shuffledOffers = sortedOffer
     logInfo("DANIAR: DO HACK ABOUT THE OFFERS offers = "+offers)
 
