@@ -145,7 +145,10 @@ private[spark] class SparkDeploySchedulerBackend(
   }
 
   override def sufficientResourcesRegistered(): Boolean = {
-    totalCoreCount.get() >= totalExpectedCores * minRegisteredRatio
+    logInfo("DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala")
+
+//    totalCoreCount.get() >= totalExpectedCores * minRegisteredRatio
+    totalCoreCount.get() >= 6
   }
 
   override def applicationId(): String =
