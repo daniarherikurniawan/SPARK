@@ -188,6 +188,7 @@ class DAGScheduler(
    * Called by the TaskSetManager to report task's starting.
    */
   def taskStarted(task: Task[_], taskInfo: TaskInfo) {
+    logInfo("DANIAR DAGScheduler.scala  "+taskInfo+"    "+task)
     eventProcessLoop.post(BeginEvent(task, taskInfo))
   }
 

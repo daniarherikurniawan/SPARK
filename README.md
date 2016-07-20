@@ -203,3 +203,9 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 - wget -O - "http://localhost:8080/" >> spark_home.html
 - cp SPARK/ backup_spark/ -r
 - check size : du -sh
+
+
+###Finding
+- worker will connect to driver
+- worker will create executor as the number specified when starting the worker
+- CoarseGrainedExecutorBackend will be run by the worker 
