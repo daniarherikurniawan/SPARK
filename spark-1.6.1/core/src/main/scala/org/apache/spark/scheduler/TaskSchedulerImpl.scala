@@ -248,7 +248,7 @@ private[spark] class TaskSchedulerImpl(
     var launchedTask = false
     val sortedOffers = shuffledOffers.sortWith(_.host < _.host)
 
-    logInfo("DANIAR: DO HACK CHECK loop  sorted = "+shuffledOffers)
+//    logInfo("DANIAR: DO HACK CHECK loop  sorted = "+shuffledOffers)
     for (i <- 0 until shuffledOffers.size) {
       val execId = shuffledOffers(i).executorId
 
@@ -316,7 +316,7 @@ private[spark] class TaskSchedulerImpl(
     // modified
     var sortedOffer = shuffledOffers.sortWith(_.host < _.host)
     shuffledOffers = sortedOffer
-    logInfo("DANIAR: DO HACK ABOUT THE OFFERS offers = "+offers)
+//    logInfo("DANIAR: DO HACK ABOUT THE OFFERS offers = "+offers)
 
     // new:
 //    val shuffledOffers = offers
