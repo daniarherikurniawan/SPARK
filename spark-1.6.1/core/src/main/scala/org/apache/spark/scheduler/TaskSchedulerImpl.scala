@@ -246,8 +246,8 @@ private[spark] class TaskSchedulerImpl(
       tasks: Seq[ArrayBuffer[TaskDescription]]) : Boolean = {
     var launchedTask = false
 
-
-    logInfo("DANIAR: CHECK before loop")
+    var sortedOffers = shuffledOffers.sortWith(_.host < _.host)
+    logInfo("DANIAR: CHECK before loop  sorted = "+sortedOffers)
     for (i <- 0 until shuffledOffers.size) {
       val execId = shuffledOffers(i).executorId
 
