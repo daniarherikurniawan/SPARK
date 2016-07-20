@@ -241,12 +241,12 @@ private[spark] class TaskSchedulerImpl(
   private def resourceOfferSingleTaskSet(
       taskSet: TaskSetManager,
       maxLocality: TaskLocality,
-      shuffledOffers: Seq[WorkerOffer],
+      // original : shuffledOffers: Seq[WorkerOffer]
+      shuffledOffers: Seq[WorkerOffer].sortWith(_.host < _.host),
       availableCpus: Array[Int],
       tasks: Seq[ArrayBuffer[TaskDescription]]) : Boolean = {
     var launchedTask = false
 
-    shuffledOffers = shuffledOffers.sortWith(_.host < _.host)
     logInfo("DANIAR: DO HACK CHECK before loop  sorted = "+shuffledOffers)
     for (i <- 0 until shuffledOffers.size) {
       val execId = shuffledOffers(i).executorId
@@ -310,9 +310,9 @@ private[spark] class TaskSchedulerImpl(
     // Randomly shuffle offers to avoid always placing tasks on the same set of workers.
     // Important! Daniar!!!
     // original:
-    val shuffledOffers = Random.shuffle(offers)
+//    val shuffledOffers = Random.shuffle(offers)
     // modified
-//    val shuffledOffers = offers.sortWith(_.host < _.host)
+    val shuffledOffers = offers.sortWith(_.host < _.host)
     logInfo("DANIAR: DO HACK ABOUT THE OFFERS offers = "+offers)
 
     // new:
