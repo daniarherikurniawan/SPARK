@@ -207,5 +207,5 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 
 ###Finding
 - worker will connect to driver
-- worker will create executor as the number specified when starting the worker
+- worker will create executor as the number specified when submitting the app
 - CoarseGrainedExecutorBackend will be run by the worker 

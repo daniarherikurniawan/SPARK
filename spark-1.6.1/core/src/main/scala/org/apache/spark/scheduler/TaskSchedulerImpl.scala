@@ -245,6 +245,9 @@ private[spark] class TaskSchedulerImpl(
       availableCpus: Array[Int],
       tasks: Seq[ArrayBuffer[TaskDescription]]) : Boolean = {
     var launchedTask = false
+
+
+    logInfo("DANIAR: CHECK before loop")
     for (i <- 0 until shuffledOffers.size) {
       val execId = shuffledOffers(i).executorId
 
@@ -252,30 +255,31 @@ private[spark] class TaskSchedulerImpl(
 //      if (execId contains martin_counter.toString()) { // martin -- start
 
       val host = shuffledOffers(i).host
-//      logInfo("daniarrr -- " + i + " Taskscheduler implementation " + host)
-      if (availableCpus(i) >= CPUS_PER_TASK) {
-        try {
-          for (task <- taskSet.resourceOffer(execId, host, maxLocality)) {
-            tasks(i) += task
-            val tid = task.taskId
-            taskIdToTaskSetManager(tid) = taskSet
-            taskIdToExecutorId(tid) = execId
-            executorIdToTaskCount(execId) += 1
-            executorsByHost(host) += execId
-            availableCpus(i) -= CPUS_PER_TASK
-            assert(availableCpus(i) >= 0)
-            launchedTask = true
-          }
-        } catch {
-          case e: TaskNotSerializableException =>
-            logError(s"Resource offer failed, task set ${taskSet.name} was not serializable")
-            // Do not offer resources for this task, but don't throw an error to allow other
-            // task sets to be submitted.
-            return launchedTask
-        }
-      }
+      logInfo("DANIAR: CHECK THE HOST HERE Taskscheduler implementation " + host)
+  //      if (availableCpus(i) >= CPUS_PER_TASK) {
+  //        try {
+  //          for (task <- taskSet.resourceOffer(execId, host, maxLocality)) {
+  //            tasks(i) += task
+  //            val tid = task.taskId
+  //            taskIdToTaskSetManager(tid) = taskSet
+  //            taskIdToExecutorId(tid) = execId
+  //            executorIdToTaskCount(execId) += 1
+  //            executorsByHost(host) += execId
+  //            availableCpus(i) -= CPUS_PER_TASK
+  //            assert(availableCpus(i) >= 0)
+  //            launchedTask = true
+  //          }
+  //        } catch {
+  //          case e: TaskNotSerializableException =>
+  //            logError(s"Resource offer failed, task set ${taskSet.name} was not serializable")
+  //            // Do not offer resources for this task, but don't throw an error to allow other
+  //            // task sets to be submitted.
+  //            return launchedTask
+  //        }
+  //      }
 //      } // martin -- end
     }
+    logInfo("DANIAR: CHECK after loop")
     return launchedTask
   }
 
