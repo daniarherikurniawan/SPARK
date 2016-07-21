@@ -148,7 +148,7 @@ private[spark] class SparkDeploySchedulerBackend(
 //    logInfo("DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala")
 
 //    totalCoreCount.get() >= totalExpectedCores * minRegisteredRatio
-    totalCoreCount.get() >= 6
+    totalCoreCount.get() >= 24
   }
 
   override def applicationId(): String =
