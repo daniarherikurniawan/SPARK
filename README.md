@@ -130,17 +130,17 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 - The idea is iperf will transfer some amount of data from the client to the host and then they will record the bandwidth.
 - Here is the script:
 
-		```
-		for the host/server (it will listen for the incoming package from the client) :
-		iperf -s    (suppose that the IP is 10.1.1.3) 
+```
+for the host/server (it will listen for the incoming package from the client) :
+iperf -s    (suppose that the IP is 10.1.1.3) 
 
-		for the client :
-		iperf -c 10.1.1.3  
+for the client :
+iperf -c 10.1.1.3  
 
-		you should run the second script in every other node in order to know the bandwidth 
-		between the host and the specified client nodes
+you should run the second script in every other node in order to know the bandwidth 
+between the host and the specified client nodes
 
-		``` 
+``` 
 
 
 ### Check which file is slowing down the git push :
