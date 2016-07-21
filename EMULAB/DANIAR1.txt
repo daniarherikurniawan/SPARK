@@ -1,0 +1,295 @@
+DANIAR
+NOTE: SPARK_PREPEND_CLASSES is set, placing locally compiled Spark classes ahead of assembly.
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/07/20 11:20:59 INFO SparkContext: Running Spark version 1.6.1
+16/07/20 11:20:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/07/20 11:20:59 INFO SecurityManager: Changing view acls to: daniar
+16/07/20 11:20:59 INFO SecurityManager: Changing modify acls to: daniar
+16/07/20 11:20:59 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/07/20 11:20:59 INFO Utils: Successfully started service 'sparkDriver' on port 38715.
+16/07/20 11:21:00 INFO Slf4jLogger: Slf4jLogger started
+16/07/20 11:21:00 INFO Remoting: Starting remoting
+16/07/20 11:21:00 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@155.98.38.147:43258]
+16/07/20 11:21:00 INFO Utils: Successfully started service 'sparkDriverActorSystem' on port 43258.
+16/07/20 11:21:00 INFO SparkEnv: Registering MapOutputTracker
+16/07/20 11:21:00 INFO SparkEnv: Registering BlockManagerMaster
+16/07/20 11:21:00 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-a60b0bbd-2dc9-41cb-a3af-17ed4e98f674
+16/07/20 11:21:00 INFO MemoryStore: MemoryStore started with capacity 511.1 MB
+16/07/20 11:21:00 INFO SparkEnv: Registering OutputCommitCoordinator
+16/07/20 11:21:00 INFO Server: jetty-8.y.z-SNAPSHOT
+16/07/20 11:21:01 INFO AbstractConnector: Started SelectChannelConnector@0.0.0.0:4040
+16/07/20 11:21:01 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+16/07/20 11:21:01 INFO SparkUI: Started SparkUI at http://155.98.38.147:4040
+Java HotSpot(TM) Server VM warning: You have loaded library /tmp/libnetty-transport-native-epoll3019267517868419382.so which might have disabled stack guard. The VM will try to fix the stack guard now.
+It's highly recommended that you fix the library with 'execstack -c <libfile>', or link it with '-z noexecstack'.
+16/07/20 11:21:01 INFO HttpFileServer: HTTP File server directory is /tmp/spark-1e93ee40-2e69-4201-82d2-a07e17865390/httpd-25bb15ec-abc0-4535-863e-d2c9ee6074f5
+16/07/20 11:21:01 INFO HttpServer: Starting HTTP Server
+16/07/20 11:21:01 INFO Server: jetty-8.y.z-SNAPSHOT
+16/07/20 11:21:01 INFO AbstractConnector: Started SocketConnector@0.0.0.0:41598
+16/07/20 11:21:01 INFO Utils: Successfully started service 'HTTP file server' on port 41598.
+16/07/20 11:21:01 INFO Utils: Copying /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py to /tmp/spark-1e93ee40-2e69-4201-82d2-a07e17865390/userFiles-aeb41c17-7e6f-40e1-9efd-7059e27077db/sort.py
+16/07/20 11:21:01 INFO SparkContext: Added file file:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py at http://155.98.38.147:41598/files/sort.py with timestamp 1469035261245
+16/07/20 11:21:01 INFO SparkDeploySchedulerBackend: DaniarrronStartCoarse
+16/07/20 11:21:01 INFO AppClient$ClientEndpoint: Connecting to master spark://n1.testspark.cs331-uc.emulab.net:7077...
+16/07/20 11:21:06 INFO SparkDeploySchedulerBackend: Connected to Spark cluster with app ID app-20160720112106-0000
+16/07/20 11:21:06 INFO TaskSchedulerImpl: Starting speculative execution thread
+16/07/20 11:21:06 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42581.
+16/07/20 11:21:06 INFO NettyBlockTransferService: Server created on 42581
+16/07/20 11:21:06 INFO BlockManagerMaster: Trying to register BlockManager
+16/07/20 11:21:06 INFO BlockManagerMasterEndpoint: Registering block manager 155.98.38.147:42581 with 511.1 MB RAM, BlockManagerId(driver, 155.98.38.147, 42581)
+16/07/20 11:21:06 INFO BlockManagerMaster: Registered BlockManager
+16/07/20 11:21:06 INFO AppClient$ClientEndpoint: Executor added: app-20160720112106-0000/0 on worker-20160720112048-155.98.38.98-54351 (155.98.38.98:54351) with 2 cores
+16/07/20 11:21:06 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160720112106-0000/0 on hostPort 155.98.38.98:54351 with 2 cores, 1024.0 MB RAM
+16/07/20 11:21:06 INFO AppClient$ClientEndpoint: Executor added: app-20160720112106-0000/1 on worker-20160720112050-155.98.38.91-58228 (155.98.38.91:58228) with 2 cores
+16/07/20 11:21:06 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160720112106-0000/1 on hostPort 155.98.38.91:58228 with 2 cores, 1024.0 MB RAM
+16/07/20 11:21:06 INFO AppClient$ClientEndpoint: Executor added: app-20160720112106-0000/2 on worker-20160720112049-155.98.38.100-46392 (155.98.38.100:46392) with 2 cores
+16/07/20 11:21:06 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160720112106-0000/2 on hostPort 155.98.38.100:46392 with 2 cores, 1024.0 MB RAM
+16/07/20 11:21:07 INFO AppClient$ClientEndpoint: Executor updated: app-20160720112106-0000/0 is now RUNNING
+16/07/20 11:21:07 INFO AppClient$ClientEndpoint: Executor updated: app-20160720112106-0000/1 is now RUNNING
+16/07/20 11:21:07 INFO AppClient$ClientEndpoint: Executor updated: app-20160720112106-0000/2 is now RUNNING
+16/07/20 11:21:07 INFO EventLoggingListener: Logging events to file:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/../generated_driver_log/app-20160720112106-0000
+16/07/20 11:21:07 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:07 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:07 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:07 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:07 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:07 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:07 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:07 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:07 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:08 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:08 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:08 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:08 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:08 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:08 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:08 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:08 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:08 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:08 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend:  CoarseGrainedSchedulerBackendScala: Daniarrrr --- RegisterExecutor null
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: CoarseGrainedSchedulerBackend: martin -- execAdr is null pc491.emulab.net:43920
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: Registered executor NettyRpcEndpointRef(null) (pc491.emulab.net:43920) with ID 1
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: Daniarrrrr --- executorDataMap not contains(executorId)
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: Daniarrrrr --- executorDataMap not contains(executorId)
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:09 INFO BlockManagerMasterEndpoint: Registering block manager pc491.emulab.net:53811 with 511.1 MB RAM, BlockManagerId(1, pc491.emulab.net, 53811)
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend:  CoarseGrainedSchedulerBackendScala: Daniarrrr --- RegisterExecutor null
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: CoarseGrainedSchedulerBackend: martin -- execAdr is null pc500.emulab.net:58085
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: Registered executor NettyRpcEndpointRef(null) (pc500.emulab.net:58085) with ID 2
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: Daniarrrrr --- executorDataMap not contains(executorId)
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: Daniarrrrr --- executorDataMap not contains(executorId)
+16/07/20 11:21:09 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:10 INFO BlockManagerMasterEndpoint: Registering block manager pc500.emulab.net:36008 with 511.1 MB RAM, BlockManagerId(2, pc500.emulab.net, 36008)
+16/07/20 11:21:10 INFO SparkDeploySchedulerBackend:  CoarseGrainedSchedulerBackendScala: Daniarrrr --- RegisterExecutor null
+16/07/20 11:21:10 INFO SparkDeploySchedulerBackend: CoarseGrainedSchedulerBackend: martin -- execAdr is null pc498.emulab.net:35274
+16/07/20 11:21:10 INFO SparkDeploySchedulerBackend: Registered executor NettyRpcEndpointRef(null) (pc498.emulab.net:35274) with ID 0
+16/07/20 11:21:10 INFO SparkDeploySchedulerBackend: Daniarrrrr --- executorDataMap not contains(executorId)
+16/07/20 11:21:10 INFO SparkDeploySchedulerBackend: Daniarrrrr --- executorDataMap not contains(executorId)
+16/07/20 11:21:10 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/07/20 11:21:10 INFO SparkDeploySchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+16/07/20 11:21:10 INFO BlockManagerMasterEndpoint: Registering block manager pc498.emulab.net:49941 with 511.1 MB RAM, BlockManagerId(0, pc498.emulab.net, 49941)
+16/07/20 11:21:10 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+16/07/20 11:21:10 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 208.3 KB, free 208.3 KB)
+16/07/20 11:21:10 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 21.8 KB, free 230.0 KB)
+16/07/20 11:21:10 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 155.98.38.147:42581 (size: 21.8 KB, free: 511.1 MB)
+16/07/20 11:21:10 INFO SparkContext: Created broadcast 0 from textFile at NativeMethodAccessorImpl.java:-2
+16/07/20 11:21:10 INFO FileInputFormat: Total input paths to process : 1
+16/07/20 11:21:11 INFO SparkContext: Starting job: sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12
+16/07/20 11:21:11 INFO DAGScheduler: Got job 0 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12) with 3 output partitions
+16/07/20 11:21:11 INFO DAGScheduler: Final stage: ResultStage 0 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12)
+16/07/20 11:21:11 INFO DAGScheduler: Parents of final stage: List()
+16/07/20 11:21:11 INFO DAGScheduler: Missing parents: List()
+16/07/20 11:21:11 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[2] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12), which has no missing parents
+16/07/20 11:21:11 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 6.1 KB, free 236.2 KB)
+16/07/20 11:21:11 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.7 KB, free 239.9 KB)
+16/07/20 11:21:11 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 155.98.38.147:42581 (size: 3.7 KB, free: 511.1 MB)
+16/07/20 11:21:11 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1007
+16/07/20 11:21:11 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 0 (PythonRDD[2] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12)
+16/07/20 11:21:11 INFO TaskSchedulerImpl: Adding task set 0.0 with 3 tasks
+16/07/20 11:21:11 INFO TaskSetManager: SAPIIIIIIIIIIIII  TaskSet 0.0
+16/07/20 11:21:11 INFO TaskSetManager: Daniar: Important! Starting task 0.0 in stage 0.0 (TID 0, pc491.emulab.net, partition 0,PROCESS_LOCAL, 2208 bytes)
+16/07/20 11:21:11 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@7ddeea    ResultTask(0, 0)
+16/07/20 11:21:11 INFO TaskSetManager: Daniar: Important! Starting task 1.0 in stage 0.0 (TID 1, pc498.emulab.net, partition 1,PROCESS_LOCAL, 2208 bytes)
+16/07/20 11:21:11 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@7c14a8    ResultTask(0, 1)
+16/07/20 11:21:11 INFO TaskSetManager: Daniar: Important! Starting task 2.0 in stage 0.0 (TID 2, pc500.emulab.net, partition 2,PROCESS_LOCAL, 2208 bytes)
+16/07/20 11:21:11 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@18316c6    ResultTask(0, 2)
+16/07/20 11:21:11 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/07/20 11:21:11 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/07/20 11:21:11 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/07/20 11:21:11 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on pc500.emulab.net:36008 (size: 3.7 KB, free: 511.1 MB)
+16/07/20 11:21:12 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on pc491.emulab.net:53811 (size: 3.7 KB, free: 511.1 MB)
+16/07/20 11:21:12 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on pc498.emulab.net:49941 (size: 3.7 KB, free: 511.1 MB)
+16/07/20 11:21:12 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on pc500.emulab.net:36008 (size: 21.8 KB, free: 511.1 MB)
+16/07/20 11:21:12 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on pc491.emulab.net:53811 (size: 21.8 KB, free: 511.1 MB)
+16/07/20 11:21:12 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on pc498.emulab.net:49941 (size: 21.8 KB, free: 511.1 MB)
+16/07/20 11:21:23 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers2
+16/07/20 11:21:23 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 12304 ms on pc500.emulab.net (1/3)
+16/07/20 11:21:23 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers1
+16/07/20 11:21:23 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 12566 ms on pc491.emulab.net (2/3)
+16/07/20 11:21:24 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers0
+16/07/20 11:21:24 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 12912 ms on pc498.emulab.net (3/3)
+16/07/20 11:21:24 INFO DAGScheduler: ResultStage 0 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12) finished in 12.955 s
+16/07/20 11:21:24 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+16/07/20 11:21:24 INFO DAGScheduler: Job 0 finished: sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12, took 13.211870 s
+16/07/20 11:21:24 INFO SparkContext: Starting job: sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12
+16/07/20 11:21:24 INFO DAGScheduler: Got job 1 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12) with 3 output partitions
+16/07/20 11:21:24 INFO DAGScheduler: Final stage: ResultStage 1 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12)
+16/07/20 11:21:24 INFO DAGScheduler: Parents of final stage: List()
+16/07/20 11:21:24 INFO DAGScheduler: Missing parents: List()
+16/07/20 11:21:24 INFO DAGScheduler: Submitting ResultStage 1 (PythonRDD[3] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12), which has no missing parents
+16/07/20 11:21:24 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 5.9 KB, free 245.7 KB)
+16/07/20 11:21:24 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.7 KB, free 249.4 KB)
+16/07/20 11:21:24 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 155.98.38.147:42581 (size: 3.7 KB, free: 511.1 MB)
+16/07/20 11:21:24 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1007
+16/07/20 11:21:24 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1 (PythonRDD[3] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12)
+16/07/20 11:21:24 INFO TaskSchedulerImpl: Adding task set 1.0 with 3 tasks
+16/07/20 11:21:24 INFO TaskSetManager: SAPIIIIIIIIIIIII  TaskSet 1.0
+16/07/20 11:21:24 INFO TaskSetManager: Daniar: Important! Starting task 0.0 in stage 1.0 (TID 3, pc491.emulab.net, partition 0,PROCESS_LOCAL, 2208 bytes)
+16/07/20 11:21:24 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@292b20    ResultTask(1, 0)
+16/07/20 11:21:24 INFO TaskSetManager: Daniar: Important! Starting task 1.0 in stage 1.0 (TID 4, pc498.emulab.net, partition 1,PROCESS_LOCAL, 2208 bytes)
+16/07/20 11:21:24 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@1a2c659    ResultTask(1, 1)
+16/07/20 11:21:24 INFO TaskSetManager: Daniar: Important! Starting task 2.0 in stage 1.0 (TID 5, pc500.emulab.net, partition 2,PROCESS_LOCAL, 2208 bytes)
+16/07/20 11:21:24 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@1160403    ResultTask(1, 2)
+16/07/20 11:21:24 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/07/20 11:21:24 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/07/20 11:21:24 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/07/20 11:21:24 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on pc491.emulab.net:53811 (size: 3.7 KB, free: 511.1 MB)
+16/07/20 11:21:24 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on pc500.emulab.net:36008 (size: 3.7 KB, free: 511.1 MB)
+16/07/20 11:21:24 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on pc498.emulab.net:49941 (size: 3.7 KB, free: 511.1 MB)
+16/07/20 11:21:35 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers0
+16/07/20 11:21:35 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 4) in 11556 ms on pc498.emulab.net (1/3)
+16/07/20 11:21:36 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers1
+16/07/20 11:21:36 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 3) in 11854 ms on pc491.emulab.net (2/3)
+16/07/20 11:21:36 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers2
+16/07/20 11:21:36 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 5) in 12151 ms on pc500.emulab.net (3/3)
+16/07/20 11:21:36 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+16/07/20 11:21:36 INFO DAGScheduler: ResultStage 1 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12) finished in 12.153 s
+16/07/20 11:21:36 INFO DAGScheduler: Job 1 finished: sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12, took 12.162379 s
+16/07/20 11:21:36 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+16/07/20 11:21:36 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+16/07/20 11:21:36 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+16/07/20 11:21:36 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+16/07/20 11:21:36 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+16/07/20 11:21:36 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+16/07/20 11:21:36 INFO SparkContext: Starting job: saveAsTextFile at NativeMethodAccessorImpl.java:-2
+16/07/20 11:21:36 INFO DAGScheduler: Registering RDD 5 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12)
+16/07/20 11:21:36 INFO DAGScheduler: Got job 2 (saveAsTextFile at NativeMethodAccessorImpl.java:-2) with 3 output partitions
+16/07/20 11:21:36 INFO DAGScheduler: Final stage: ResultStage 3 (saveAsTextFile at NativeMethodAccessorImpl.java:-2)
+16/07/20 11:21:36 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 2)
+16/07/20 11:21:36 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 2)
+16/07/20 11:21:36 INFO DAGScheduler: Submitting ShuffleMapStage 2 (PairwiseRDD[5] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12), which has no missing parents
+16/07/20 11:21:36 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 7.5 KB, free 256.9 KB)
+16/07/20 11:21:36 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.7 KB, free 261.6 KB)
+16/07/20 11:21:36 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 155.98.38.147:42581 (size: 4.7 KB, free: 511.1 MB)
+16/07/20 11:21:36 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1007
+16/07/20 11:21:36 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 2 (PairwiseRDD[5] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12)
+16/07/20 11:21:36 INFO TaskSchedulerImpl: Adding task set 2.0 with 3 tasks
+16/07/20 11:21:36 INFO TaskSetManager: SAPIIIIIIIIIIIII  TaskSet 2.0
+16/07/20 11:21:36 INFO TaskSetManager: Daniar: Important! Starting task 0.0 in stage 2.0 (TID 6, pc491.emulab.net, partition 0,PROCESS_LOCAL, 2197 bytes)
+16/07/20 11:21:36 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@1a94e3a    ShuffleMapTask(2, 0)
+16/07/20 11:21:36 INFO TaskSetManager: Daniar: Important! Starting task 1.0 in stage 2.0 (TID 7, pc498.emulab.net, partition 1,PROCESS_LOCAL, 2197 bytes)
+16/07/20 11:21:36 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@796292    ShuffleMapTask(2, 1)
+16/07/20 11:21:36 INFO TaskSetManager: Daniar: Important! Starting task 2.0 in stage 2.0 (TID 8, pc500.emulab.net, partition 2,PROCESS_LOCAL, 2197 bytes)
+16/07/20 11:21:36 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@bdb264    ShuffleMapTask(2, 2)
+16/07/20 11:21:36 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/07/20 11:21:36 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/07/20 11:21:36 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/07/20 11:21:36 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on pc500.emulab.net:36008 (size: 4.7 KB, free: 511.1 MB)
+16/07/20 11:21:36 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on pc491.emulab.net:53811 (size: 4.7 KB, free: 511.1 MB)
+16/07/20 11:21:36 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on pc498.emulab.net:49941 (size: 4.7 KB, free: 511.1 MB)
+16/07/20 11:21:53 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers0
+16/07/20 11:21:53 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 7) in 16239 ms on pc498.emulab.net (1/3)
+16/07/20 11:21:53 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers2
+16/07/20 11:21:53 INFO TaskSetManager: Finished task 2.0 in stage 2.0 (TID 8) in 16655 ms on pc500.emulab.net (2/3)
+16/07/20 11:21:53 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers1
+16/07/20 11:21:53 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 6) in 16720 ms on pc491.emulab.net (3/3)
+16/07/20 11:21:53 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+16/07/20 11:21:53 INFO DAGScheduler: ShuffleMapStage 2 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort.py:12) finished in 16.721 s
+16/07/20 11:21:53 INFO DAGScheduler: looking for newly runnable stages
+16/07/20 11:21:53 INFO DAGScheduler: running: Set()
+16/07/20 11:21:53 INFO DAGScheduler: waiting: Set(ResultStage 3)
+16/07/20 11:21:53 INFO DAGScheduler: failed: Set()
+16/07/20 11:21:53 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[10] at saveAsTextFile at NativeMethodAccessorImpl.java:-2), which has no missing parents
+16/07/20 11:21:53 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 75.0 KB, free 336.6 KB)
+16/07/20 11:21:53 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 27.2 KB, free 363.8 KB)
+16/07/20 11:21:53 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 155.98.38.147:42581 (size: 27.2 KB, free: 511.1 MB)
+16/07/20 11:21:53 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1007
+16/07/20 11:21:53 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 3 (MapPartitionsRDD[10] at saveAsTextFile at NativeMethodAccessorImpl.java:-2)
+16/07/20 11:21:53 INFO TaskSchedulerImpl: Adding task set 3.0 with 3 tasks
+16/07/20 11:21:53 INFO TaskSetManager: SAPIIIIIIIIIIIII  TaskSet 3.0
+16/07/20 11:21:53 INFO TaskSetManager: Daniar: Important! Starting task 0.0 in stage 3.0 (TID 9, pc491.emulab.net, partition 0,NODE_LOCAL, 1944 bytes)
+16/07/20 11:21:53 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@143dbf7    ResultTask(3, 0)
+16/07/20 11:21:53 INFO TaskSetManager: Daniar: Important! Starting task 1.0 in stage 3.0 (TID 10, pc498.emulab.net, partition 1,NODE_LOCAL, 1944 bytes)
+16/07/20 11:21:53 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@131bfe3    ResultTask(3, 1)
+16/07/20 11:21:53 INFO TaskSetManager: Daniar: Important! Starting task 2.0 in stage 3.0 (TID 11, pc500.emulab.net, partition 2,NODE_LOCAL, 1944 bytes)
+16/07/20 11:21:53 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@5a014c    ResultTask(3, 2)
+16/07/20 11:21:53 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/07/20 11:21:53 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/07/20 11:21:53 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/07/20 11:21:53 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on pc491.emulab.net:53811 (size: 27.2 KB, free: 511.1 MB)
+16/07/20 11:21:53 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on pc500.emulab.net:36008 (size: 27.2 KB, free: 511.1 MB)
+16/07/20 11:21:53 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on pc498.emulab.net:49941 (size: 27.2 KB, free: 511.1 MB)
+16/07/20 11:21:53 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to pc491.emulab.net:43920
+16/07/20 11:21:53 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to pc500.emulab.net:58085
+16/07/20 11:21:53 INFO MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 178 bytes
+16/07/20 11:21:53 INFO MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 178 bytes
+16/07/20 11:21:53 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to pc498.emulab.net:35274
+16/07/20 11:22:09 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers1
+16/07/20 11:22:09 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 9) in 15809 ms on pc491.emulab.net (1/3)
+16/07/20 11:22:17 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers2
+16/07/20 11:22:17 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 11) in 23358 ms on pc500.emulab.net (2/3)
+16/07/20 11:22:22 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers0
+16/07/20 11:22:22 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 10) in 28648 ms on pc498.emulab.net (3/3)
+16/07/20 11:22:22 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+16/07/20 11:22:22 INFO DAGScheduler: ResultStage 3 (saveAsTextFile at NativeMethodAccessorImpl.java:-2) finished in 28.651 s
+16/07/20 11:22:22 INFO DAGScheduler: Job 2 finished: saveAsTextFile at NativeMethodAccessorImpl.java:-2, took 45.480563 s
+16/07/20 11:22:22 INFO SparkContext: Invoking stop() from shutdown hook
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/api,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/static,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/executors,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/environment,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/storage,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+16/07/20 11:22:22 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/jobs,null}
+16/07/20 11:22:22 INFO SparkUI: Stopped Spark web UI at http://155.98.38.147:4040
+16/07/20 11:22:22 INFO SparkDeploySchedulerBackend: Shutting down all executors
+16/07/20 11:22:22 INFO SparkDeploySchedulerBackend: Asking each executor to shut down
+16/07/20 11:22:22 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/07/20 11:22:22 INFO MemoryStore: MemoryStore cleared
+16/07/20 11:22:22 INFO BlockManager: BlockManager stopped
+16/07/20 11:22:22 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/07/20 11:22:22 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/07/20 11:22:22 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/07/20 11:22:22 INFO SparkContext: Successfully stopped SparkContext
+16/07/20 11:22:22 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+16/07/20 11:22:22 INFO ShutdownHookManager: Shutdown hook called
+16/07/20 11:22:22 INFO ShutdownHookManager: Deleting directory /tmp/spark-1e93ee40-2e69-4201-82d2-a07e17865390
+16/07/20 11:22:22 INFO ShutdownHookManager: Deleting directory /tmp/spark-1e93ee40-2e69-4201-82d2-a07e17865390/pyspark-79888c1e-9407-43ea-b153-340e2f52efe1
+16/07/20 11:22:22 INFO ShutdownHookManager: Deleting directory /tmp/spark-1e93ee40-2e69-4201-82d2-a07e17865390/httpd-25bb15ec-abc0-4535-863e-d2c9ee6074f5

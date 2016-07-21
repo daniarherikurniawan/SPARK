@@ -85,6 +85,14 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 10. Run the Spark as described in [this file](http://spark.apache.org/docs/latest/spark-standalone.html). The simple one is by running :
 	
 	``` ./sbin/start-all.sh ```
+	
+	or
+
+	``` 
+	./sbin/start-master.sh
+
+	./sbin/start-slave.sh spark://n1.testspark.cs331-uc.emulab.net:7077 --memory 1g --cores 2
+	```
 
 11. Create the payload. It depends on what kind of process you need. In my case, I want Spark to sort the array of integers in ascending order and then save the result in the folder generated_file/result_py. So I create a Python program to generate the integers by running:
 	
@@ -115,6 +123,23 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 
 ## 2. Unstructured Notes for Debugging
+
+### Check the bandwidth
+	We will use iperf tool to check the bandwidth, you can read the detail at : [iperf.fr](https://iperf.fr/). Here is the simple tutorial that suitable to our needs: [http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth](http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth). I wrapped it up in the following points:
+	- There is two syntax, the first to be run on the host and the second is for the client.
+	- The idea is iperf will transfer some amount of data from the client to the host and then they will record the bandwidth.
+	- Here is the script:
+		```
+		for the host/server (it will listen for the incoming package from the client) :
+		***iperf -s***   suppose that the IP is 10.1.1.3 
+
+		for the client :
+		***iperf -c 10.1.1.3***  
+
+		you should run the second script in every other node in order to know the bandwidth between the host and the specified client nodes
+
+		``` 
+
 
 ### Check which file is slowing down the git push :
 
@@ -201,11 +226,12 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 ### Additional notes
 - sha1sum file.jar
 - wget -O - "http://localhost:8080/" >> spark_home.html
-- cp SPARK/ backup_spark/ -r
-- check size : du -sh
+- copy folder: cp SPARK/ backup_spark/ -r
+- check size : du -sh file.txt
 
 
 ###Finding
+- we can specify minimum core to start the process
 - worker will connect to driver
 - worker will create executor as the number specified when submitting the app
 - CoarseGrainedExecutorBackend will be run by the worker 
