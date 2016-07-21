@@ -122,7 +122,47 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 
 
-## 2. Unstructured Notes for Debugging
+
+## 2. Configure Emulab
+
+### Create the ns file
+```
+set ns [new Simulator]                  
+source tb_compat.tcl
+
+set n1 [$ns node]
+set n2 [$ns node]
+set n3 [$ns node]
+set n4 [$ns node]
+
+set lan0 [$ns make-cloud "$n1 $n2 $n3 $n4" 100Mb 0ms]
+
+tb-set-node-lan-bandwidth $n2 $lan0 20Mb
+
+tb-set-node-os $n1 FEDORA15-DAGENT-JAVA
+tb-set-node-os $n2 FEDORA15-DAGENT-JAVA
+tb-set-node-os $n3 FEDORA15-DAGENT-JAVA
+tb-set-node-os $n4 FEDORA15-DAGENT-JAVA
+
+#d710
+tb-set-hardware $n1 pc3000
+tb-set-hardware $n2 pc3000
+tb-set-hardware $n3 pc3000
+tb-set-hardware $n4 pc3000
+
+tb-set-node-rpms $n1 /proj/cs331-uc/resources//iperf-2.0.5-3.fc15.i686.rpm
+tb-set-node-rpms $n2 /proj/cs331-uc/resources//iperf-2.0.5-3.fc15.i686.rpm
+tb-set-node-rpms $n3 /proj/cs331-uc/resources//iperf-2.0.5-3.fc15.i686.rpm
+tb-set-node-rpms $n4 /proj/cs331-uc/resources//iperf-2.0.5-3.fc15.i686.rpm
+
+$ns run
+```
+
+### Slow down the link/network
+> You can modify the bandwidth by declaring the necessary value in the ns file. The detail tutorial about the syntax can be found at [https://wiki.emulab.net/wiki/Emulab/wiki/nscommands](https://wiki.emulab.net/wiki/Emulab/wiki/nscommands) If you need to modify the bandwidth on the fly, then you can use the menu in the Emulab project called ***Modify Traffic Shaping***. You should check the *save* and then click the *execute* button
+
+
+## 3. Unstructured Notes for Debugging
 
 ### Check the bandwidth
 > We will use iperf tool to check the bandwidth, you can read the detail at : [iperf.fr](https://iperf.fr/). Here is the simple tutorial that suitable to our needs: [http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth](http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth). I wrapped it up in the following points:
