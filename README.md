@@ -126,6 +126,7 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 ### Check the bandwidth
 > We will use iperf tool to check the bandwidth, you can read the detail at : [iperf.fr](https://iperf.fr/). Here is the simple tutorial that suitable to our needs: [http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth](http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth). I wrapped it up in the following points:
+
 - There is two syntax, the first to be run on the host and the second is for the client.
 - The idea is iperf will transfer some amount of data from the client to the host and then they will record the bandwidth.
 - Here is the script:
