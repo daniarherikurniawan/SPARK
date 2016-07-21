@@ -118,17 +118,17 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 	Of course you need to know the URL in order to get the detail visualizations. You can get the URL by opening Spark visualization when you run Spark in your local machine. In Emulab, we cannot exactly see the web page. That is why you need to understand the bigger picture of the visualization before analyzing the downloaded html page from Emulab's node.
 
-	> Apparently, you don't need to download all the page manually. You can visit ***http://n1.testspark.cs331-uc.emulab.net:8080/ ***. The link is not always the same, it depends on your project name, your experiment name, and the port that is open in your Emulab server.
+	> Apparently, you don't need to download all the page manually. You can visit *http://n1.testspark.cs331-uc.emulab.net:8080/ *. The link is not always the same, it depends on your project name, your experiment name, and the port that is open in your Emulab server.
 
 
 
 ## 2. Unstructured Notes for Debugging
 
 ### Check the bandwidth
-	We will use iperf tool to check the bandwidth, you can read the detail at : [iperf.fr](https://iperf.fr/). Here is the simple tutorial that suitable to our needs: [http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth](http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth). I wrapped it up in the following points:
-	- There is two syntax, the first to be run on the host and the second is for the client.
-	- The idea is iperf will transfer some amount of data from the client to the host and then they will record the bandwidth.
-	- Here is the script:
+> We will use iperf tool to check the bandwidth, you can read the detail at : [iperf.fr](https://iperf.fr/). Here is the simple tutorial that suitable to our needs: [http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth](http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth). I wrapped it up in the following points:
+- There is two syntax, the first to be run on the host and the second is for the client.
+- The idea is iperf will transfer some amount of data from the client to the host and then they will record the bandwidth.
+- Here is the script:
 		```
 		for the host/server (it will listen for the incoming package from the client) :
 		***iperf -s***   suppose that the IP is 10.1.1.3 
