@@ -198,6 +198,7 @@ private[spark] class TaskSchedulerImpl(
   private[scheduler] def createTaskSetManager(
       taskSet: TaskSet,
       maxTaskFailures: Int): TaskSetManager = {
+    logInfo("DANIAR: CREATE TASK SET")
     new TaskSetManager(this, taskSet, maxTaskFailures)
   }
 
