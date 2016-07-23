@@ -166,13 +166,13 @@ class CoarseGrainedSchedulerBackend(scheduler: TaskSchedulerImpl, val rpcEnv: Rp
             }
           }
           // Note: some tests expect the reply to come after we put the executor in the map
-          logInfo("Daniarrrrr --- executorDataMap not contains(executorId)")
+//          logInfo("Daniarrrrr --- executorDataMap not contains(executorId)")
 //         I should provide the executorAddress.host with the worker IP
           context.reply(RegisteredExecutor(executorAddress.host))
 //          context.reply(RegisteredExecutor("192.168.1.11"))
           listenerBus.post(
             SparkListenerExecutorAdded(System.currentTimeMillis(), executorId, data))
-          logInfo("Daniarrrrr --- executorDataMap not contains(executorId)")
+//          logInfo("Daniarrrrr --- executorDataMap not contains(executorId)")
           makeOffers()
         }
 
@@ -202,7 +202,7 @@ class CoarseGrainedSchedulerBackend(scheduler: TaskSchedulerImpl, val rpcEnv: Rp
       val workOffers = activeExecutors.map { case (id, executorData) =>
         new WorkerOffer(id, executorData.executorHost, executorData.freeCores)
       }.toSeq
-      logInfo("DANIAR -- MAKE OFFERS TO all SLAVES" + activeExecutors)
+//      logInfo("DANIAR -- MAKE OFFERS TO all SLAVES" )
       launchTasks(scheduler.resourceOffers(workOffers))
     }
 
