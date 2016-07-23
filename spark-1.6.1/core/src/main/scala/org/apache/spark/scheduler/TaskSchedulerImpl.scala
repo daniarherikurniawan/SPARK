@@ -248,7 +248,18 @@ private[spark] class TaskSchedulerImpl(
       availableCpus: Array[Int],
       tasks: Seq[ArrayBuffer[TaskDescription]]) : Boolean = {
     var launchedTask = false
-    val sortedOffers = shuffledOffers.sortWith(_.executorId < _.executorId)
+    var sortedOffers = shuffledOffers.sortWith(_.executorId < _.executorId)
+
+    //daniar -start this condition only apply for 4 workers
+    for (i <- 0 until daniar_counter){
+      var temp0 = sortedOffers(0)
+      sortedOffers(0) = sortedOffers(1)
+      sortedOffers(1) = sortedOffers(2)
+      sortedOffers(2) = sortedOffers(3)
+      sortedOffers(3) = temp0
+    }
+    //daniar -end
+
 
     logInfo("DANIAR: DO HACK CHECK before loop  ^^^^^^^^^^^^^")
     for (i <- 0 until shuffledOffers.size) {
