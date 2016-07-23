@@ -11,9 +11,9 @@ fo = open("list_int", 'w')
 
 num = 0
 
-for num in range(0,6):
+for num in range(0,1):
 	print "generating iteration "+str(num)
-	array = random.sample(range(1, 10000000), 5000000)
+	array = random.sample(range(1, 10000000), 3000000)
 	random.shuffle(array)
 
 	# fo.write(str(array))
