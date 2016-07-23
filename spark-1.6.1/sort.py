@@ -8,7 +8,7 @@ if os.path.exists("../generated_file/result_py"):
 conf = SparkConf().setAppName("Sorting").setMaster("spark://n1.testspark.cs331-uc.emulab.net:7077")
 
 sc = SparkContext(conf=conf)
-text_file = sc.textFile("../generated_file/list_int",3)
+text_file = sc.textFile("../generated_file/list_int",1)
 counts = text_file.map(lambda a : (int(a),a)).sortByKey("true")
 
 #print counts.collect()
