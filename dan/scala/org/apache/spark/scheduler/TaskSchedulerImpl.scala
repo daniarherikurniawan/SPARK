@@ -264,10 +264,10 @@ private[spark] class TaskSchedulerImpl(
           for (task <- taskSet.resourceOffer(execId, host, maxLocality)) {
             //logInfo("martin -- we get the execid " + execId) //martin: FLAG
             //martin -- start
-            /*martin_counter += 1
+            martin_counter += 1
             if(martin_counter > 3) {
               martin_counter = 0
-            }*/
+            }
             //martin -- end
             tasks(i) += task
             val tid = task.taskId
