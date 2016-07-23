@@ -248,15 +248,12 @@ private[spark] class TaskSchedulerImpl(
       availableCpus: Array[Int],
       tasks: Seq[ArrayBuffer[TaskDescription]]) : Boolean = {
     var launchedTask = false
-    var sortedOffers = shuffledOffers.sortWith(_.executorId < _.executorId)
 
     //daniar -start this condition only apply for 4 workers
-    for (i <- 0 until daniar_counter){
-      var temp0 = sortedOffers(0)
-      sortedOffers(0) = sortedOffers(1)
-      sortedOffers(1) = sortedOffers(2)
-      sortedOffers(2) = sortedOffers(3)
-      sortedOffers(3) = temp0
+    if(daniar_counter <= 1){
+      var sortedOffers = shuffledOffers.sortWith(_.executorId < _.executorId)
+    }else{
+      var sortedOffers = shuffledOffers.sortWith(_.executorId > _.executorId)
     }
     //daniar -end
 
@@ -286,9 +283,9 @@ private[spark] class TaskSchedulerImpl(
             launchedTask = true
 
             daniar_counter += 1
-//            if(daniar_counter > 3) {
-//              daniar_counter = 0
-//            }
+            if(daniar_counter > 3) {
+              daniar_counter = 0
+            }
             logInfo("DANIAR: TASK LAUNCHED taskSet.name [stage] = "+taskSet.name +"  daniar_counter = "+daniar_counter)
           }
         } catch {
