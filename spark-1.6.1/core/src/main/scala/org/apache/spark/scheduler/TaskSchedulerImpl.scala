@@ -273,7 +273,7 @@ private[spark] class TaskSchedulerImpl(
             availableCpus(i) -= CPUS_PER_TASK
             assert(availableCpus(i) >= 0)
             launchedTask = true
-            logInfo("DANIAR: TASK LAUNCHED" )
+            logInfo("DANIAR: TASK LAUNCHED execId = "+execId )
           }
         } catch {
           case e: TaskNotSerializableException =>
@@ -285,7 +285,8 @@ private[spark] class TaskSchedulerImpl(
       }
 //      } // martin -- end
     }
-    logInfo("DANIAR: CHECK after loop           vvvvvvvvvvvv")
+    logInfo("DANIAR: CHECK after loop           vvvvvvvvvvvvv")
+    logInfo(" ")
     logInfo(" ")
     return launchedTask
   }
