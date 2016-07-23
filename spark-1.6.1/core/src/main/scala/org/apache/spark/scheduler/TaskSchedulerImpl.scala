@@ -263,7 +263,7 @@ private[spark] class TaskSchedulerImpl(
       tasks: Seq[ArrayBuffer[TaskDescription]]) : Boolean = {
     var launchedTask = false
 
-    val sortedOffers = getOffers(daniar_counter)\
+    val sortedOffers = getOffers(daniar_counter, shuffledOffers)
 
     logInfo("DANIAR: DO HACK CHECK before loop  ^^^^^^^^^^^^^")
     for (i <- 0 until shuffledOffers.size) {
