@@ -240,6 +240,20 @@ private[spark] class TaskSchedulerImpl(
       .format(manager.taskSet.id, manager.parent.name))
   }
 
+
+  //daniar -start this condition only apply for 4 workers
+  private def getOffers(
+       counter: Int,
+       shuffledOffers: Seq[WorkerOffer]
+     ) : Seq[WorkerOffer] = {
+    if (daniar_counter <= 1) {
+      return shuffledOffers.sortWith(_.executorId < _.executorId)
+    } else {
+      return shuffledOffers.sortWith(_.executorId > _.executorId)
+    }
+  }
+  //daniar -end
+
   private def resourceOfferSingleTaskSet(
       taskSet: TaskSetManager,
       maxLocality: TaskLocality,
@@ -249,14 +263,7 @@ private[spark] class TaskSchedulerImpl(
       tasks: Seq[ArrayBuffer[TaskDescription]]) : Boolean = {
     var launchedTask = false
 
-    //daniar -start this condition only apply for 4 workers
-    if(daniar_counter <= 1){
-      var sortedOffers = shuffledOffers.sortWith(_.executorId < _.executorId)
-    }else{
-      var sortedOffers = shuffledOffers.sortWith(_.executorId > _.executorId)
-    }
-    //daniar -end
-
+    val sortedOffers = getOffers(daniar_counter)\
 
     logInfo("DANIAR: DO HACK CHECK before loop  ^^^^^^^^^^^^^")
     for (i <- 0 until shuffledOffers.size) {
