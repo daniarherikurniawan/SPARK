@@ -1,0 +1,82 @@
+
+Master,Driver,W1,W2,W3,W4
+7 nodes connected to LAN?
+
+tevc???
+
+A B C D
+
+1st stage - 1a, 1b
+2nd stage - 2a, 2b
+
+
+Master, Driver, Worker (2)
+
+Worker -- some executor processes, one executor per job
+
+Job-sort : 
+3 stages … sort 
+2 stages … wordcount
+
+Input: 1000 numbers 
+
+2 partitions -- 2 tasks
+
+500 numbers (partition) -- HDFS -- RDD -- executor+worker1, sort, -- RDD (intermediate) -- TaskA
+
+500 numbers (partition) -- HDFS -- RDD -- executor+worker2, sort, -- RDD (intermediate) -- TaskB
+
+
+stage2:
+
+TaskC (worker1) -- shuffling -- RDD
+
+TaskD (worker2) -- shuffling -- RDD 
+
+
+
+
+Stage3:
+
+TaskC --- TaskE  -- write the entire data to HDFS file?
+TaskD --- TaskE 
+
+
+4 stages: A-read, B-sort1, C-sort2, D-write
+2 partitions
+
+A1-B1 ??
+A2-B2 ??
+Does A1 send something B2?? Is this 1-on-1 communication? Or all-to-all communication?
+
+B1-C1
+B1-C2
+B2-C1
+B2-C2
+(please confirm this is what happens)
+
+C1-D1
+C2-D2
+(please confim this is what happens)
+
+------------------------------------------------------------
+
+Deterministic placement:
+A1,B1 -- on W1
+A2,B2 -- on W2
+
+C1,D1 -- on W3
+C2,D2 -- on W4
+
+I want to delay W1 network card (w1.expername.emulab.net)
+
+Maybe no A1’ (NFS read from local file system)
+B1’ (backup task)
+
+----------------------------------------
+You need to see where the data transfer … 
+Where can you get something like data.size() … RDD.size() 
+Time it .. RPC … go deep to the framework code, Spark engine
+--------------------------------------
+
+
