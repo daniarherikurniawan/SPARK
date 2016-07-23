@@ -74,6 +74,7 @@ private[spark] class TaskSchedulerImpl(
   val CPUS_PER_TASK = conf.getInt("spark.task.cpus", 1)
 
   var daniar_counter = 0
+  var last_task_name = new String
   // TaskSetManagers are not thread safe, so any access to one should be synchronized
   // on this class.
   private val taskSetsByStageIdAndAttempt = new HashMap[Int, HashMap[Int, TaskSetManager]]
@@ -289,7 +290,12 @@ private[spark] class TaskSchedulerImpl(
             assert(availableCpus(i) >= 0)
             launchedTask = true
 
-            daniar_counter += 1
+            if(taskSet.name == last_task_name && daniar_counter%2 == 0){
+            }else {
+              last_task_name = taskSet.name
+              daniar_counter += 1
+            }
+
             if(daniar_counter > 3) {
               daniar_counter = 0
             }
