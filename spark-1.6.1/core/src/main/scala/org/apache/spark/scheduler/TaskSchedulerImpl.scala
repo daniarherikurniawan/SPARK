@@ -285,7 +285,7 @@ private[spark] class TaskSchedulerImpl(
       }
 //      } // martin -- end
     }
-    logInfo("DANIAR: CHECK after loop  vvvvvvvvvvvv")
+    logInfo("DANIAR: CHECK after loop           vvvvvvvvvvvv")
     logInfo(" ")
     return launchedTask
   }
