@@ -258,7 +258,7 @@ private[spark] class TaskSchedulerImpl(
 //      if (execId contains martin_counter.toString()) { // martin -- start
 
       val host = sortedOffers(i).host
-//      logInfo("DANIAR: DO CHECKu execId = "+execId+"  host = "+host)
+      logInfo("DANIAR: DO CHECKu execId = "+execId+"  host = "+host)
 //      val host = shuffledOffers(i).host
 //      executorId: String, host: String, cores: Int
       if (availableCpus(i) >= CPUS_PER_TASK) {
@@ -273,7 +273,7 @@ private[spark] class TaskSchedulerImpl(
             availableCpus(i) -= CPUS_PER_TASK
             assert(availableCpus(i) >= 0)
             launchedTask = true
-            logInfo("DANIAR: TASK LAUNCHED execId = "+execId )
+            logInfo("DANIAR: TASK LAUNCHED taskSet.name = "+taskSet.name )
           }
         } catch {
           case e: TaskNotSerializableException =>
