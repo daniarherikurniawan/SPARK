@@ -313,8 +313,8 @@ private[spark] class TaskSchedulerImpl(
 //      } // martin -- end
     }
 //    logInfo(">>DANIAR: CHECK after loop           vvvvvvvvvvvvv")
-    logInfo(" ")
-    logInfo(" ")
+//    logInfo(">> ")
+//    logInfo(">> ")
     return launchedTask
   }
 
