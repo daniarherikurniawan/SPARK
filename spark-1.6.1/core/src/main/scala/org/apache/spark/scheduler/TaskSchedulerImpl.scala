@@ -266,7 +266,7 @@ private[spark] class TaskSchedulerImpl(
 
     val sortedOffers = getOffers(daniar_counter, shuffledOffers)
 
-    logInfo("DANIAR: DO HACK CHECK before loop  ^^^^^^^^^^^^^")
+//    logInfo(">>DANIAR: DO HACK CHECK before loop  ^^^^^^^^^^^^^")
     for (i <- 0 until shuffledOffers.size) {
       val execId = sortedOffers(i).executorId
 
@@ -274,7 +274,7 @@ private[spark] class TaskSchedulerImpl(
 //      if (execId contains martin_counter.toString()) { // martin -- start
 
       val host = sortedOffers(i).host
-      logInfo("DANIAR: DO CHECK execId = "+execId+"  host = "+host)
+//      logInfo(">> DANIAR: DO CHECK execId = "+execId+"  host = "+host)
 //      val host = shuffledOffers(i).host
 //      executorId: String, host: String, cores: Int
       if (availableCpus(i) >= CPUS_PER_TASK) {
@@ -290,6 +290,7 @@ private[spark] class TaskSchedulerImpl(
             assert(availableCpus(i) >= 0)
             launchedTask = true
 
+            //this condition will only increment if the task is not speculatable task
             if(taskSet.name == last_task_name && daniar_counter%2 == 0){
             }else {
               last_task_name = taskSet.name
@@ -311,7 +312,7 @@ private[spark] class TaskSchedulerImpl(
       }
 //      } // martin -- end
     }
-    logInfo("DANIAR: CHECK after loop           vvvvvvvvvvvvv")
+//    logInfo(">>DANIAR: CHECK after loop           vvvvvvvvvvvvv")
     logInfo(" ")
     logInfo(" ")
     return launchedTask
