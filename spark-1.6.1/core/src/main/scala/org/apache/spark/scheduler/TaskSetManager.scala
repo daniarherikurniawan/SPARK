@@ -480,10 +480,11 @@ private[spark] class TaskSetManager(
           // a good proxy to task serialization time.
           // val timeTaken = clock.getTime() - startTime
           val taskName = s"task ${info.id} in stage ${taskSet.id}"
-          logInfo(s"Daniar: Important! Starting $taskName (TID $taskId, $host, partition ${task.partitionId}," +
+          logInfo(s"Daniar: START Important! Starting $taskName (TID $taskId, $host, partition ${task.partitionId}," +
             s"$taskLocality, ${serializedTask.limit} bytes)")
 
           sched.dagScheduler.taskStarted(task, info)
+          logInfo(s"Daniar: END Important! Starting $taskName ")
           return Some(new TaskDescription(taskId = taskId, attemptNumber = attemptNum, execId,
             taskName, index, serializedTask))
         }
