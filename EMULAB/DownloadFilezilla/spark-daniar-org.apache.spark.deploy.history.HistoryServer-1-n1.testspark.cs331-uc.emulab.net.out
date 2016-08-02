@@ -1,0 +1,26 @@
+/usr/java/jdk1.8.0_92/jre
+DANIAR
+NOTE: SPARK_PREPEND_CLASSES is set, placing locally compiled Spark classes ahead of assembly.
+Spark Command: /usr/java/jdk1.8.0_92/jre/bin/java -cp /proj/cs331-uc/daniar/SPARK/spark-1.6.1/conf/:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/core/target/scala-2.10/classes/:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/repl/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/mllib/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/bagel/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/graphx/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/streaming/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/tools/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/sql/catalyst/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/sql/core/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/sql/hive/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/sql/hive-thriftserver/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/yarn/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/launcher/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/network/common/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/network/shuffle/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/network/yarn/target/scala-2.10/classes:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/core/target/jars/*:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/assembly/target/scala-2.10/spark-assembly-1.6.1-hadoop2.7.2.jar -Xms1g -Xmx1g org.apache.spark.deploy.history.HistoryServer
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/08/01 00:30:41 INFO HistoryServer: Registered signal handlers for [TERM, HUP, INT]
+16/08/01 00:30:41 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/08/01 00:30:41 INFO SecurityManager: Changing view acls to: daniar
+16/08/01 00:30:41 INFO SecurityManager: Changing modify acls to: daniar
+16/08/01 00:30:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+Java HotSpot(TM) Server VM warning: You have loaded library /tmp/libnetty-transport-native-epoll1148143934113534332.so which might have disabled stack guard. The VM will try to fix the stack guard now.
+It's highly recommended that you fix the library with 'execstack -c <libfile>', or link it with '-z noexecstack'.
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.spark.deploy.history.HistoryServer$.main(HistoryServer.scala:247)
+	at org.apache.spark.deploy.history.HistoryServer.main(HistoryServer.scala)
+Caused by: java.lang.IllegalArgumentException: Log directory specified does not exist: file:/tmp/spark-events. Did you configure the correct one through spark.history.fs.logDirectory?
+	at org.apache.spark.deploy.history.FsHistoryProvider.org$apache$spark$deploy$history$FsHistoryProvider$$startPolling(FsHistoryProvider.scala:168)
+	at org.apache.spark.deploy.history.FsHistoryProvider.initialize(FsHistoryProvider.scala:120)
+	at org.apache.spark.deploy.history.FsHistoryProvider.<init>(FsHistoryProvider.scala:116)
+	at org.apache.spark.deploy.history.FsHistoryProvider.<init>(FsHistoryProvider.scala:49)
+	... 6 more

@@ -282,3 +282,6 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 	The task id is consist of two index X.Y. So the first task is marked as 0.0. If the task is duplicated, the Y index will be incremented. The 0.0 task will be duplicated to 0.1. If one of them is finished, the driver will ignore the other redundant tasks. 
 
 	The driver offers task to every worker that will be managed in this class. Since the number of partition is two, it will choose the most two available worker to run the task. So far, the worker that run both of the partition are always the same because I sorted the tasks by its taskid. 
+
+
+- 
