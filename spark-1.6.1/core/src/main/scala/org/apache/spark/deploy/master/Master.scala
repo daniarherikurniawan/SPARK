@@ -173,14 +173,17 @@ private[deploy] class Master(
       case "FILESYSTEM" =>
         val fsFactory =
           new FileSystemRecoveryModeFactory(conf, serializer)
+        logInfo("DANIAR HERE AT  MASTER SCALA DEPLOY FILESYSTEM mode ")
         (fsFactory.createPersistenceEngine(), fsFactory.createLeaderElectionAgent(this))
       case "CUSTOM" =>
+        logInfo("DANIAR HERE AT  MASTER SCALA DEPLOY CUSTOM StandaloneRecoveryModeFactory mode ")
         val clazz = Utils.classForName(conf.get("spark.deploy.recoveryMode.factory"))
         val factory = clazz.getConstructor(classOf[SparkConf], classOf[Serializer])
           .newInstance(conf, serializer)
           .asInstanceOf[StandaloneRecoveryModeFactory]
         (factory.createPersistenceEngine(), factory.createLeaderElectionAgent(this))
       case _ =>
+        logInfo("DANIAR HERE AT  MASTER SCALA DEPLOY BlackHolePersistenceEngine mode ")
         (new BlackHolePersistenceEngine(), new MonarchyLeaderAgent(this))
     }
     persistenceEngine = persistenceEngine_

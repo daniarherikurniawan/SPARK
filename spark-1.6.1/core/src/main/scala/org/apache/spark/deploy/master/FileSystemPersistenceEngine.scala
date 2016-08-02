@@ -41,6 +41,7 @@ private[master] class FileSystemPersistenceEngine(
   new File(dir).mkdir()
 
   override def persist(name: String, obj: Object): Unit = {
+    logInfo("DANIAR HERE AT FILE SYSTEM ENGINE : persist "+ name)
     serializeIntoFile(new File(dir + File.separator + name), obj)
   }
 
