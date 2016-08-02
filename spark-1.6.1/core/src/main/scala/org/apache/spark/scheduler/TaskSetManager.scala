@@ -835,7 +835,7 @@ private[spark] class TaskSetManager(
       val threshold = max(SPECULATION_MULTIPLIER * medianDuration * 2, 100)
       // TODO: Threshold should also look at standard deviation of task durations and have a lower
       // bound based on that.
-      logInfo("DANIAR CHANGE THE SPECULATION THRESHOLD = " + threshold)
+//      logInfo("DANIAR CHANGE THE SPECULATION THRESHOLD = " + threshold)
       logDebug("Task length threshold for speculation: " + threshold)
       for ((tid, info) <- taskInfos) {
         val index = info.index
