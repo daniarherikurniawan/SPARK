@@ -127,7 +127,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       values: Array[Any],
       level: StorageLevel,
       returnValues: Boolean): PutResult = {
-      logInfo("DANIAR HERE AT MEMORY STORE putArray")
+      logInfo("DANIAR HERE AT MEMORY STORE putArray "+values+"  blockID "+blockId)
     val droppedBlocks = new ArrayBuffer[(BlockId, BlockStatus)]
     if (level.deserialized) {
       val sizeEstimate = SizeEstimator.estimate(values.asInstanceOf[AnyRef])
@@ -145,7 +145,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       values: Iterator[Any],
       level: StorageLevel,
       returnValues: Boolean): PutResult = {
-    logInfo("DANIAR HERE AT MEMORY STORE putIterator")
+    logInfo("DANIAR HERE AT MEMORY STORE putIterator"+values)
     putIterator(blockId, values, level, returnValues, allowPersistToDisk = true)
   }
 
@@ -188,8 +188,9 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
   }
 
   override def getBytes(blockId: BlockId): Option[ByteBuffer] = {
-    logInfo("DANIAR HERE AT MEMORY STORE getBytes")
+    logInfo("DANIAR HERE AT MEMORY STORE getBytes ")
     val entry = entries.synchronized {
+      logInfo("HEUUUdd "+entries.get(blockId))
       entries.get(blockId)
     }
     if (entry == null) {
@@ -204,6 +205,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
   override def getValues(blockId: BlockId): Option[Iterator[Any]] = {
     logInfo("DANIAR HERE AT MEMORY STORE getValues")
     val entry = entries.synchronized {
+      logInfo("HEUUU "+entries.get(blockId))
       entries.get(blockId)
     }
     if (entry == null) {
@@ -338,7 +340,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
    * Return the RDD ID that a given block ID is from, or None if it is not an RDD block.
    */
   private def getRddId(blockId: BlockId): Option[Int] = {
-    logInfo("DANIAR HERE AT MEMORY STORE getRddId")
+    logInfo("DANIAR HERE AT MEMORY STORE getRddId "+blockId)
     blockId.asRDDId.map(_.rddId)
   }
 
