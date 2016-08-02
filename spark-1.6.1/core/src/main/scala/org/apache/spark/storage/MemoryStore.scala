@@ -195,7 +195,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
   override def getBytes(blockId: BlockId): Option[ByteBuffer] = {
     logInfo("DANIAR HERE AT MEMORY STORE getBytes ")
     val entry = entries.synchronized {
-      logInfo("HEUUU VALUES "+entries.get(blockId).values)
+      logInfo("HEUUU VALUES "+entries.get(blockId).toString())
       entries.get(blockId)
     }
     if (entry == null) {
