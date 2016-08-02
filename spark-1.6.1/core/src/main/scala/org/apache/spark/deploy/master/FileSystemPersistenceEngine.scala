@@ -53,8 +53,8 @@ private[master] class FileSystemPersistenceEngine(
 
   override def read[T: ClassTag](prefix: String): Seq[T] = {
 
-    logInfo("DANIAR HERE AT FILE SYSTEM ENGINE : read "+ _.getName.startsWith(prefix))
     val files = new File(dir).listFiles().filter(_.getName.startsWith(prefix))
+    logInfo("DANIAR HERE AT FILE SYSTEM ENGINE : read "+ dir)
     files.map(deserializeFromFile[T])
   }
 
