@@ -146,10 +146,10 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       level: StorageLevel,
       returnValues: Boolean): PutResult = {
     logInfo("DANIAR HERE AT MEMORY STORE putIterator "+values.size)
-
-    while (values.hasNext){
-      logInfo(values.next.toString())
-    }
+//
+//    while (values.hasNext){
+//      logInfo(values.next.toString())
+//    }
 
     putIterator(blockId, values, level, returnValues, allowPersistToDisk = true)
   }
@@ -195,7 +195,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
   override def getBytes(blockId: BlockId): Option[ByteBuffer] = {
     logInfo("DANIAR HERE AT MEMORY STORE getBytes ")
     val entry = entries.synchronized {
-      logInfo("HEUUUdd "+entries.get(blockId))
+      logInfo("HEUUU VALUES "+entries.get(blockId).values)
       entries.get(blockId)
     }
     if (entry == null) {
