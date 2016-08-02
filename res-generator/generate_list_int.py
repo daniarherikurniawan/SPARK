@@ -13,7 +13,7 @@ num = 0
 
 for num in range(0,2):
 	print "generating iteration "+str(num)
-	array = random.sample(range(1, 10000000), 2500000)
+	array = random.sample(range(1, 10000000), 2000000)
 	random.shuffle(array)
 
 	# fo.write(str(array))
