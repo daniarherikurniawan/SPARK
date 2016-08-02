@@ -127,7 +127,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       values: Array[Any],
       level: StorageLevel,
       returnValues: Boolean): PutResult = {
-      logInfo("DANIAR HERE AT MEMORY STORE putArray "+values.toString()+"  blockID "+blockId)
+      logInfo("DANIAR HERE AT MEMORY STORE putArray "+values+"  blockID "+blockId)
     val droppedBlocks = new ArrayBuffer[(BlockId, BlockStatus)]
     if (level.deserialized) {
       val sizeEstimate = SizeEstimator.estimate(values.asInstanceOf[AnyRef])
@@ -145,12 +145,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       values: Iterator[Any],
       level: StorageLevel,
       returnValues: Boolean): PutResult = {
-    logInfo("DANIAR HERE AT MEMORY STORE putIterator "+values.size)
-//
-//    while (values.hasNext){
-//      logInfo(values.next.toString())
-//    }
-
+    logInfo("DANIAR HERE AT MEMORY STORE putIterator"+values)
     putIterator(blockId, values, level, returnValues, allowPersistToDisk = true)
   }
 
@@ -193,9 +188,8 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
   }
 
   override def getBytes(blockId: BlockId): Option[ByteBuffer] = {
-    logInfo("DANIAR HERE AT MEMORY STORE getBytes ")
+    logInfo("DANIAR HERE AT MEMORY STORE getBytes "+entries.get(blockId))
     val entry = entries.synchronized {
-//      logInfo("HEUUU VALUES "+entries.get(blockId).toString())
       entries.get(blockId)
     }
     if (entry == null) {
