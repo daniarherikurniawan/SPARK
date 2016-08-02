@@ -127,6 +127,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       values: Array[Any],
       level: StorageLevel,
       returnValues: Boolean): PutResult = {
+      logInfo("DANIAR HERE AT MEMORY STORE putArray")
     val droppedBlocks = new ArrayBuffer[(BlockId, BlockStatus)]
     if (level.deserialized) {
       val sizeEstimate = SizeEstimator.estimate(values.asInstanceOf[AnyRef])
@@ -144,6 +145,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       values: Iterator[Any],
       level: StorageLevel,
       returnValues: Boolean): PutResult = {
+    logInfo("DANIAR HERE AT MEMORY STORE putIterator")
     putIterator(blockId, values, level, returnValues, allowPersistToDisk = true)
   }
 
@@ -186,6 +188,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
   }
 
   override def getBytes(blockId: BlockId): Option[ByteBuffer] = {
+    logInfo("DANIAR HERE AT MEMORY STORE getBytes")
     val entry = entries.synchronized {
       entries.get(blockId)
     }
@@ -199,6 +202,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
   }
 
   override def getValues(blockId: BlockId): Option[Iterator[Any]] = {
+    logInfo("DANIAR HERE AT MEMORY STORE getValues")
     val entry = entries.synchronized {
       entries.get(blockId)
     }
@@ -334,6 +338,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
    * Return the RDD ID that a given block ID is from, or None if it is not an RDD block.
    */
   private def getRddId(blockId: BlockId): Option[Int] = {
+    logInfo("DANIAR HERE AT MEMORY STORE getRddId")
     blockId.asRDDId.map(_.rddId)
   }
 
@@ -478,6 +483,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
 
   private def currentTaskAttemptId(): Long = {
     // In case this is called on the driver, return an invalid task attempt id.
+    logInfo("DANIAR HERE AT MEMORY STORE currentTaskAttemptId")
     Option(TaskContext.get()).map(_.taskAttemptId()).getOrElse(-1L)
   }
 
