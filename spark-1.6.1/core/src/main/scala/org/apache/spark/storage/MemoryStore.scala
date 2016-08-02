@@ -148,7 +148,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
     logInfo("DANIAR HERE AT MEMORY STORE putIterator "+values.size)
 
     while (values.hasNext){
-      logInfo(values.next)
+      logInfo(values.next.toString())
     }
 
     putIterator(blockId, values, level, returnValues, allowPersistToDisk = true)
