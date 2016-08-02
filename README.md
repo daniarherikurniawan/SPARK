@@ -102,7 +102,7 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 	``` 
 	for Emulab: 
-	./bin/spark-submit sort.py --master spark://n1.testspark.cs331-uc.emulab.net:7077 --deploy-mode cluster --num-executors 1
+	./bin/spark-submit sort.py --master spark://n1.testspark.cs331-uc.emulab.net:7077 --deploy-mode cluster --num-executors 4
 	
 	for localhost: 
 	./bin/spark-submit sort_localhost.py --master spark://daniar-X450JF:7077 --deploy-mode cluster --num-executors 1
@@ -284,4 +284,6 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 	The driver offers task to every worker that will be managed in this class. Since the number of partition is two, it will choose the most two available worker to run the task. So far, the worker that run both of the partition are always the same because I sorted the tasks by its taskid. 
 
 
-- 
+- FileSystemPersistenceEngine
+	 * Stores data in a single on-disk directory with one file per application and worker.
+	 * Files are deleted when applications and workers are removed.

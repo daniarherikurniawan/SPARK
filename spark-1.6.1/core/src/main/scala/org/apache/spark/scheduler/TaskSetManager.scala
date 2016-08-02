@@ -825,7 +825,7 @@ private[spark] class TaskSetManager(
     var foundTasks = false
     val minFinishedForSpeculation = (SPECULATION_QUANTILE * numTasks).floor.toInt
     logDebug("Checking for speculative tasks: minFinished = " + minFinishedForSpeculation)
-    logInfo("DANIAR CHANGE THE SPECULATION THRESHOLD minFinished = " + minFinishedForSpeculation)
+//    logInfo("DANIAR CHANGE THE SPECULATION THRESHOLD minFinished = " + minFinishedForSpeculation)
     if (tasksSuccessful >= minFinishedForSpeculation && tasksSuccessful > 0) {
       val time = clock.getTimeMillis()
       val durations = taskInfos.values.filter(_.successful).map(_.duration).toArray
@@ -835,6 +835,7 @@ private[spark] class TaskSetManager(
       val threshold = max(SPECULATION_MULTIPLIER * medianDuration * 2, 100)
       // TODO: Threshold should also look at standard deviation of task durations and have a lower
       // bound based on that.
+      logInfo("DANIAR CHANGE THE SPECULATION THRESHOLD = " + threshold)
       logDebug("Task length threshold for speculation: " + threshold)
       for ((tid, info) <- taskInfos) {
         val index = info.index
