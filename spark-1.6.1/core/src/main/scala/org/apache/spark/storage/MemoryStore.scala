@@ -127,7 +127,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       values: Array[Any],
       level: StorageLevel,
       returnValues: Boolean): PutResult = {
-      logInfo("DANIAR HERE AT MEMORY STORE putArray "+values+"  blockID "+blockId)
+      logInfo("DANIAR HERE AT MEMORY STORE putArray "+values.toString()+"  blockID "+blockId)
     val droppedBlocks = new ArrayBuffer[(BlockId, BlockStatus)]
     if (level.deserialized) {
       val sizeEstimate = SizeEstimator.estimate(values.asInstanceOf[AnyRef])
