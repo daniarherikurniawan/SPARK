@@ -256,7 +256,9 @@ private[spark] class Executor(
         val serializedDirectResult = ser.serialize(directResult)
         val resultSize = serializedDirectResult.limit
         logInfo("RESULT DANIAR valueBytes : "+valueBytes)
-
+        CharBuffer charBuffer = StandardCharsets.UTF_8.decode(valueBytes);
+        String text = charBuffer.toString();
+        System.out.println("UTF-8" + text);
         // directSend = sending directly back to the driver
         val serializedResult: ByteBuffer = {
           if (maxResultSize > 0 && resultSize > maxResultSize) {
