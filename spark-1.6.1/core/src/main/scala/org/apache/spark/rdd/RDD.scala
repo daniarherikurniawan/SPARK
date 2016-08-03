@@ -1469,7 +1469,7 @@ abstract class RDD[T: ClassTag](
       iter.map { x =>
         text.set(x.toString)
         (NullWritable.get(), text)
-        logInfo("RDD text : "+text)
+        logInfo("RDD text : "+x.toString)
       }
     }
     RDD.rddToPairRDDFunctions(r)(nullWritableClassTag, textClassTag, null)
