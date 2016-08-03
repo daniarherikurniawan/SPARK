@@ -246,9 +246,10 @@ class HadoopRDD[K, V](
           finished = !reader.next(key, value)
           sizeRead = sizeRead + 1
         } catch {
+          logInfo("Value DAN DANIAR d  size : "+sizeRead)
           case eof: EOFException =>
             finished = true
-            logInfo("Value DAN DANIAR " + value+"  size : "+sizeRead)
+            logInfo("Value DAN DANIAR  size : "+sizeRead)
         }
         if (!finished) {
           inputMetrics.incRecordsRead(1)
