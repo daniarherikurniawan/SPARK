@@ -236,15 +236,15 @@ class HadoopRDD[K, V](
         context.stageId, theSplit.index, context.attemptNumber, jobConf)
       reader = inputFormat.getRecordReader(split.inputSplit.value, jobConf, Reporter.NULL)
 
+      var sizeRead = 0
       // Register an on-task-completion callback to close the input stream.
       context.addTaskCompletionListener{ context => closeIfNeeded() }
       val key: K = reader.createKey()
       val value: V = reader.createValue()
-      var size = 0
       override def getNext(): (K, V) = {
         try {
           finished = !reader.next(key, value)
-          size = size + 1
+          sizeRead = sizeRead + 1
 //          logInfo("Value DAN DANIAR " + value)
         } catch {
           case eof: EOFException =>
