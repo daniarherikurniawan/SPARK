@@ -244,6 +244,7 @@ class HadoopRDD[K, V](
       override def getNext(): (K, V) = {
         try {
           finished = !reader.next(key, value)
+          logInfo("Value DAN DANIAR " + value)
         } catch {
           case eof: EOFException =>
             finished = true
