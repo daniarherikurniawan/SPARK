@@ -272,6 +272,7 @@ private[spark] class Executor(
             ser.serialize(new IndirectTaskResult[Any](blockId, resultSize))
           } else {
             logInfo(s"Finished $taskName (TID $taskId). $resultSize bytes result sent to driver")
+            logInfo("RESULT DANIAR : "+serializedDirectResult)
             serializedDirectResult
           }
         }
@@ -388,7 +389,7 @@ private[spark] class Executor(
     synchronized {
       // Fetch missing dependencies
       for ((name, timestamp) <- newFiles if currentFiles.getOrElse(name, -1L) < timestamp) {
-        logInfo("Fetching " + name + " with timestamp " + timestamp)
+        logInfo("Executor.scala Fetching " + name + " with timestamp " + timestamp)
         // Fetch file with useCache mode, close cache for local mode.
         Utils.fetchFile(name, new File(SparkFiles.getRootDirectory()), conf,
           env.securityManager, hadoopConf, timestamp, useCache = !isLocal)
