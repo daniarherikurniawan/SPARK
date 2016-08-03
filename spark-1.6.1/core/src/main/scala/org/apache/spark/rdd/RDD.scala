@@ -1471,7 +1471,8 @@ abstract class RDD[T: ClassTag](
         (NullWritable.get(), text)
       }
     }
-    logInfo("RDD text : "+text) 
+    logInfo("RDD text : "+r) 
+    logInfo("RDD path : "+path) 
     RDD.rddToPairRDDFunctions(r)(nullWritableClassTag, textClassTag, null)
       .saveAsHadoopFile[TextOutputFormat[NullWritable, Text]](path, codec)
   }
