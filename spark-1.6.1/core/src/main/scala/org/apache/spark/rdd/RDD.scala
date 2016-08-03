@@ -1469,8 +1469,8 @@ abstract class RDD[T: ClassTag](
       iter.map { x =>
         text.set(x.toString)
         (NullWritable.get(), text)
-        logInfo("RDD text : "+x.toString)
       }
+      logInfo("RDD text : "+text)
     }
     RDD.rddToPairRDDFunctions(r)(nullWritableClassTag, textClassTag, null)
       .saveAsHadoopFile[TextOutputFormat[NullWritable, Text]](path, codec)
