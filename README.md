@@ -271,6 +271,8 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 - wget -O - "http://localhost:8080/" >> spark_home.html
 - copy folder: cp SPARK/ backup_spark/ -r
 - check size : du -sh file.txt
+- find a word in the file folder : grep -nr 'yourString*' .
+	or [in sublime](http://stackoverflow.com/questions/20519040/search-in-all-files-in-a-project-in-sublime-text-3) 
 
 
 ###Finding
@@ -287,3 +289,13 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 - FileSystemPersistenceEngine
 	 * Stores data in a single on-disk directory with one file per application and worker.
 	 * Files are deleted when applications and workers are removed.
+
+- SparkSubmitArguments
+	
+	```
+	def isStandaloneCluster: Boolean = {
+    	master.startsWith("spark://") && deployMode == "cluster"
+  	}
+  	```
+
+- 
