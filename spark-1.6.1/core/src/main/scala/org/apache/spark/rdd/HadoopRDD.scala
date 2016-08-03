@@ -245,10 +245,10 @@ class HadoopRDD[K, V](
         try {
           finished = !reader.next(key, value)
           sizeRead = sizeRead + 1
-          logInfo("Value DAN DANIAR " + value+"  size : "+sizeRead)
         } catch {
           case eof: EOFException =>
             finished = true
+            logInfo("Value DAN DANIAR " + value+"  size : "+sizeRead)
         }
         if (!finished) {
           inputMetrics.incRecordsRead(1)
@@ -256,7 +256,6 @@ class HadoopRDD[K, V](
         (key, value)
       }
 
-      logInfo("DANIAR RDD READ INTEGER WITH TOTAL = " + sizeRead)
       override def close() {
         if (reader != null) {
           SqlNewHadoopRDDState.unsetInputFileName()
