@@ -26,6 +26,7 @@ import java.util.concurrent.{ConcurrentHashMap, TimeUnit}
 import scala.collection.JavaConverters._
 import scala.collection.mutable.{ArrayBuffer, HashMap}
 import scala.util.control.NonFatal
+import scala.language.postfixOps
 
 import org.apache.spark._
 import org.apache.spark.deploy.SparkHadoopUtil
