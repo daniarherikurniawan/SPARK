@@ -256,7 +256,7 @@ class HadoopRDD[K, V](
         (key, value)
       }
 
-      logInfo("DANIAR RDD READ INTEGER WITH TOTAL = " + size)
+      logInfo("DANIAR RDD READ INTEGER WITH TOTAL = " + sizeRead)
       override def close() {
         if (reader != null) {
           SqlNewHadoopRDDState.unsetInputFileName()
