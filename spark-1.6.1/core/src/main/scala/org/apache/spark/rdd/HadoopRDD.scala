@@ -247,7 +247,6 @@ class HadoopRDD[K, V](
           sizeRead = sizeRead + 1
         } catch {
           case eof: EOFException =>
-            logInfo("Value DAN DANIAR d  size : "+sizeRead)
             finished = true
         }
         if (!finished) {
