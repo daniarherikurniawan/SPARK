@@ -240,11 +240,12 @@ class HadoopRDD[K, V](
       context.addTaskCompletionListener{ context => closeIfNeeded() }
       val key: K = reader.createKey()
       val value: V = reader.createValue()
-
+      var size = 0
       override def getNext(): (K, V) = {
         try {
           finished = !reader.next(key, value)
-          logInfo("Value DAN DANIAR " + value)
+          size = size + 1
+//          logInfo("Value DAN DANIAR " + value)
         } catch {
           case eof: EOFException =>
             finished = true
@@ -255,6 +256,7 @@ class HadoopRDD[K, V](
         (key, value)
       }
 
+      logInfo("DANIAR RDD READ INTEGER WITH TOTAL = " + size)
       override def close() {
         if (reader != null) {
           SqlNewHadoopRDDState.unsetInputFileName()
