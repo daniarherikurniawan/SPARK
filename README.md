@@ -162,7 +162,18 @@ $ns run
 > You can modify the bandwidth by declaring the necessary value in the ns file. The detail tutorial about the syntax can be found at [https://wiki.emulab.net/wiki/Emulab/wiki/nscommands](https://wiki.emulab.net/wiki/Emulab/wiki/nscommands) If you need to modify the bandwidth on the fly, then you can use the menu in the Emulab project called ***Modify Traffic Shaping***. After entering the needed bandwidth value, you should check the **save** and then click the **execute** button.
 
 
+
 ## 3. Unstructured Notes for Debugging
+
+### Slow down the network card (NIC) of the link
+> Actually there are some other ways to do this as I mention in the section above. However the previous method seems less effective than this one. In this technique, we are using tevc. The detail about tevc and the delay syntax can be seen at [https://wiki.emulab.net/wiki/DelayImplementation](https://wiki.emulab.net/wiki/DelayImplementation), [https://wiki.emulab.net/wiki/Emulab/wiki/AdvancedExample](https://wiki.emulab.net/wiki/Emulab/wiki/AdvancedExample), and [https://www.emulab.net/tutorial/mobilewireless.php3](https://www.emulab.net/tutorial/mobilewireless.php3). These are the steps: 
+
+- Establish a ssh connection to any node in the cluster
+- /usr/testbed/bin/tevc -e proj/exp ***SYNTAX***
+- the reboot should not be needed, but I got an advise to do so
+- Reboot can also be trigerred from the tevc
+- Finally, check the link's bandwidth using iperf whether it is modified as we want
+
 
 ### Check the bandwidth
 > We will use iperf tool to check the bandwidth, you can read the detail at : [iperf.fr](https://iperf.fr/). Here is the simple tutorial that suitable to our needs: [http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth](http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth). I wrapped it up in the following points:
