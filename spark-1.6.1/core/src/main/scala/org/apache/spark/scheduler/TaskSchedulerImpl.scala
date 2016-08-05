@@ -289,7 +289,7 @@ private[spark] class TaskSchedulerImpl(
             availableCpus(i) -= CPUS_PER_TASK
             assert(availableCpus(i) >= 0)
             launchedTask = true
-
+            logInfo(">> DANIAR: sortedOffers = "+sortedOffers)
             //this condition will only increment if the task is not speculatable task
             logInfo("DANIAR: TASK LAUNCHED taskSet.name [stage] = "+taskSet.name +"  daniar_counter = "+daniar_counter)
             if(taskSet.name == last_task_name && daniar_counter%2 == 0){
