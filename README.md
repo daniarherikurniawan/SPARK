@@ -73,6 +73,7 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 9. Do some local development! You can modify the source in ***core*** folder as you need and then run:
 	
 	``` sudo build/sbt compile -mem 1500 evicted ```
+	``` sudo build/sbt compile -mem 60000 evicted ```
 	
 	To compile just the core and it just need a few minutes. 
 	***[Note: It will failed at the first try due to dependency error. But after the second try it will success]***
@@ -92,6 +93,8 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	./sbin/start-master.sh
 
 	./sbin/start-slave.sh spark://n1.testspark.cs331-uc.emulab.net:7077 --memory 1g --cores 2
+	./sbin/start-slave.sh spark://n1.testspark.cs331-uc.emulab.net:7077 --memory 60g --cores 8
+	./sbin/start-slave.sh spark://n1.testspark.cs331-uc.emulab.net:7077 --memory 1g --cores 8
 	```
 
 11. Create the payload. It depends on what kind of process you need. In my case, I want Spark to sort the array of integers in ascending order and then save the result in the folder generated_file/result_py. So I create a Python program to generate the integers by running:
@@ -320,6 +323,7 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 	or [in sublime](http://stackoverflow.com/questions/20519040/search-in-all-files-in-a-project-in-sublime-text-3) 
 - check available RAM : cat /proc/meminfo
 - add all new file to git : git add -A .
+
 
 ###Finding
 - we can specify minimum core to start the process
