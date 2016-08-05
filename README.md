@@ -199,7 +199,7 @@ characteristic could be applied to both sides via:
 
     tevc -e pid/eid now cloud-n1 MODIFY DEST=10.0.0.2 BANDWIDTH=1000 DELAY=5
     tevc -e pid/eid now cloud-n2 MODIFY DEST=10.0.0.1 BANDWIDTH=1000 DELAY=5
-    
+
 
 ### Check the bandwidth
 > We will use iperf tool to check the bandwidth, you can read the detail at : [iperf.fr](https://iperf.fr/). Here is the simple tutorial that suitable to our needs: [http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth](http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth). I wrapped it up in the following points:
@@ -239,6 +239,14 @@ between the host and the specified client nodes
 
 - **Now you can look at the file bigtosmall.txt in order to decide which files you want to remove from your Git history.**
 
+
+###Installing Java 8 on Ubuntu
+
+First you need to add webupd8team Java PPA repository in your system and install Oracle Java 8 using following set of commands.
+
+	$ sudo add-apt-repository ppa:webupd8team/java
+	$ sudo apt-get update
+	$ sudo apt-get install oracle-java8-installer
 
 
 ### Generate integer to be sorted:
@@ -310,7 +318,8 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 - check size : du -sh file.txt
 - find a word in the file folder : grep -nr 'yourString*' .
 	or [in sublime](http://stackoverflow.com/questions/20519040/search-in-all-files-in-a-project-in-sublime-text-3) 
-
+- check available RAM : cat /proc/meminfo
+- add all new file to git : git add -A .
 
 ###Finding
 - we can specify minimum core to start the process

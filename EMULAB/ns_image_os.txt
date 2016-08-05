@@ -1,0 +1,10 @@
+set ns [new Simulator]                  
+source tb_compat.tcl
+
+set n1 [$ns node]
+
+tb-set-node-os $n1 UBUNTU14-10-64-STD
+
+tb-set-hardware $n1 d710
+
+$ns run
