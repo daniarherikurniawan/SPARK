@@ -273,10 +273,11 @@ private[spark] class TaskSchedulerImpl(
       val execId = sortedOffers(i).executorId
 
       val host = sortedOffers(i).host
-      logInfo(">> DANIAR: DO CHECK execId = "+execId+"  host = "+host+"   daniar_counter = "+daniar_counter+"   condition = "(daniar_counter==execId) )
+      logInfo(">> DANIAR: DO CHECK execId = "+execId+"  host = "+host+"   daniar_counter = "+daniar_counter+"   condition = "+
+        (daniar_counter.toString()==execId) )
 //      val host = shuffledOffers(i).host
 //      executorId: String, host: String, cores: Int
-      if (execId == daniar_counter) {
+      if (execId == daniar_counter.toString()) {
 //        if (availableCpus(i) >= CPUS_PER_TASK) {
         try {
           for (task <- taskSet.resourceOffer(execId, host, maxLocality)) {
