@@ -248,9 +248,9 @@ private[spark] class TaskSchedulerImpl(
        shuffledOffers: Seq[WorkerOffer]
      ) : Seq[WorkerOffer] = {
     if (daniar_counter <= 1) {
-      return shuffledOffers.sortWith(_.executorId < _.executorId)
+      return shuffledOffers.sortWith(_.host < _.host)
     } else {
-      return shuffledOffers.sortWith(_.executorId > _.executorId)
+      return shuffledOffers.sortWith(_.host > _.host)
     }
   }
   //daniar -end
@@ -291,7 +291,9 @@ private[spark] class TaskSchedulerImpl(
             launchedTask = true
 
             //this condition will only increment if the task is not speculatable task
+            logInfo("DANIAR: TASK LAUNCHED taskSet.name [stage] = "+taskSet.name +"  daniar_counter = "+daniar_counter)
             if(taskSet.name == last_task_name && daniar_counter%2 == 0){
+              logInfo("DANIAR: TASK LAUNCHED SPECULATIVE!!!")
             }else {
               last_task_name = taskSet.name
               daniar_counter += 1
@@ -300,7 +302,6 @@ private[spark] class TaskSchedulerImpl(
             if(daniar_counter > 3) {
               daniar_counter = 0
             }
-            logInfo("DANIAR: TASK LAUNCHED taskSet.name [stage] = "+taskSet.name +"  daniar_counter = "+daniar_counter)
           }
         } catch {
           case e: TaskNotSerializableException =>
