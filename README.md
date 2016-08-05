@@ -114,10 +114,12 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	```
 bin/spark-submit will also read configuration options from conf/spark-defaults.conf, in which each line consists of a key and a value separated by whitespace. For example:
 
+	```
 	spark.master            spark://5.6.7.8:7077
 	spark.executor.memory   4g
 	spark.eventLog.enabled  true
 	spark.serializer        org.apache.spark.serializer.KryoSerializer
+	```
 
 
 13. The log files will be stored in folder [generated_driver_log](https://github.com/daniarherikurniawan/SPARK/tree/master/generated_driver_log).
