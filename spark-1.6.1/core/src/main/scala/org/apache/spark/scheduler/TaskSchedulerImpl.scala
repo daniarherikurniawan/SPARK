@@ -305,6 +305,7 @@ private[spark] class TaskSchedulerImpl(
           }
         } catch {
           case e: TaskNotSerializableException =>
+            logInfo("CATCH!!!! TaskNotSerializableException ")
             logError(s"Resource offer failed, task set ${taskSet.name} was not serializable")
             // Do not offer resources for this task, but don't throw an error to allow other
             // task sets to be submitted.
