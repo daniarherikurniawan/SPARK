@@ -273,7 +273,7 @@ private[spark] class TaskSchedulerImpl(
       val execId = sortedOffers(i).executorId
 
       val host = sortedOffers(i).host
-      logInfo(">> DANIAR: DO CHECK execId = "+execId+"  host = "+host)
+      logInfo(">> DANIAR: DO CHECK execId = "+execId+"  host = "+host+"   daniar_counter = "+daniar_counter+"   condition = "(daniar_counter==execId) )
 //      val host = shuffledOffers(i).host
 //      executorId: String, host: String, cores: Int
       if (execId == daniar_counter) {
