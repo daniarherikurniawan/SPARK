@@ -323,6 +323,7 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 	or [in sublime](http://stackoverflow.com/questions/20519040/search-in-all-files-in-a-project-in-sublime-text-3) 
 - check available RAM : cat /proc/meminfo
 - add all new file to git : git add -A .
+- check linux distribution type: lsb_release -a
 
 
 ###Finding
