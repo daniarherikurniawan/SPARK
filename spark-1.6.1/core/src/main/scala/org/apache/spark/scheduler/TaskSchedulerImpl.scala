@@ -284,8 +284,8 @@ private[spark] class TaskSchedulerImpl(
             taskIdToExecutorId(tid) = execId
             executorIdToTaskCount(execId) += 1
             executorsByHost(host) += execId
-            availableCpus(i) -= CPUS_PER_TASK
-            assert(availableCpus(i) >= 0)
+//            availableCpus(i) -= CPUS_PER_TASK
+//            assert(availableCpus(i) >= 0)
             launchedTask = true
             logInfo(">> DANIAR: sortedOffers = "+sortedOffers)
             //this condition will only increment if the task is not speculatable task
