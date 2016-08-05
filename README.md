@@ -1,6 +1,6 @@
 # SPARK
 
-> There are two parts of explanation in this file : **HowTo Run Spark on [Emulab](https://www.emulab.net/)** and **Unstructured Notes for Debugging**
+> There are three parts of explanation in this file : **HowTo Run Spark on [Emulab](https://www.emulab.net/)**, **Configuring Emulab**, and **Unstructured Notes for Debugging**
 
 
 
@@ -174,6 +174,32 @@ $ns run
 - Reboot can also be trigerred from the tevc
 - Finally, check the link's bandwidth using iperf whether it is modified as we want
 
+>BTW. From the user perspective, links and LANs can be shaped "statically" by
+specifying their characteristics once in the NS file, or dynamically by
+sending "shaping events" via a web page, client GUI, of the command line
+tool "tevc."
+
+>In both the simple-static and simple-dynamic models, tevc commands are
+used to assign characteristics to the various per-pair pipes created above.
+In the static case, this is done only at boot time.  In the dynamic case,
+it is done periodically throughout the lifetime of the experiment.  To
+accomplish this, the tevc MODIFY event is augmented with an additional
+DEST parameter.  The DEST parameter is used to identify a specific node
+pair pipe (the source is implied by the link object targeted by the tevc
+command).  If the DEST parameter is not given, then the modification is
+applied to the "default" pipe (i.e., the normal shaping behavior).  For
+example:
+
+    tevc -e pid/eid now cloud-n1 MODIFY DEST=10.0.0.2 BANDWIDTH=1000 DELAY=10
+
+Assuming 10.0.0.2 is "n2" in the diagram above, this would change n1's
+"to n2 pipe" to shape the bandwidth, and change n1's "from n2 pipe" to
+handle the delay.  If a more "balanced" shaping is desired, half of each
+characteristic could be applied to both sides via:
+
+    tevc -e pid/eid now cloud-n1 MODIFY DEST=10.0.0.2 BANDWIDTH=1000 DELAY=5
+    tevc -e pid/eid now cloud-n2 MODIFY DEST=10.0.0.1 BANDWIDTH=1000 DELAY=5
+    
 
 ### Check the bandwidth
 > We will use iperf tool to check the bandwidth, you can read the detail at : [iperf.fr](https://iperf.fr/). Here is the simple tutorial that suitable to our needs: [http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth](http://www.slashroot.in/iperf-how-test-network-speedperformancebandwidth). I wrapped it up in the following points:
