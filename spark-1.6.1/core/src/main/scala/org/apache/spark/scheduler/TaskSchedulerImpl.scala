@@ -74,6 +74,8 @@ private[spark] class TaskSchedulerImpl(
   val CPUS_PER_TASK = conf.getInt("spark.task.cpus", 1)
 
   var daniar_counter = 0
+  var counter = 0
+
   var last_task_name = new String
   // TaskSetManagers are not thread safe, so any access to one should be synchronized
   // on this class.
@@ -277,7 +279,15 @@ private[spark] class TaskSchedulerImpl(
 //        (daniar_counter.toString()==execId) )
 //      val host = shuffledOffers(i).host
 //      executorId: String, host: String, cores: Int
-      if (execId == daniar_counter.toString()) {
+      
+//      this should be here because in one loop can be executed twice
+      if("TaskSet_0"==taskSet.name || "TaskSet_1"==taskSet.name){
+        counter = daniar_counter%2
+      }else{
+        counter = daniar_counter%2 +2
+      }
+
+      if (execId == counter.toString()) {
 //        if (availableCpus(i) >= CPUS_PER_TASK) {
         try {
           for (task <- taskSet.resourceOffer(execId, host, maxLocality)) {
