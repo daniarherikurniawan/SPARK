@@ -253,6 +253,7 @@ private[spark] class TaskSchedulerImpl(
       return shuffledOffers.sortWith(_.host > _.host)
     }
   }
+
   //daniar -end
 
   private def resourceOfferSingleTaskSet(
@@ -274,7 +275,7 @@ private[spark] class TaskSchedulerImpl(
       logInfo(">> DANIAR: DO CHECK execId = "+execId+"  host = "+host)
 //      val host = shuffledOffers(i).host
 //      executorId: String, host: String, cores: Int
-      if (availableCpus(i) >= CPUS_PER_TASK) {
+//      if (availableCpus(i) >= CPUS_PER_TASK) {
         try {
           for (task <- taskSet.resourceOffer(execId, host, maxLocality)) {
             tasks(i) += task
@@ -307,7 +308,7 @@ private[spark] class TaskSchedulerImpl(
             // task sets to be submitted.
             return launchedTask
         }
-      }
+//      }
     }
 //    logInfo(">>DANIAR: CHECK after loop           vvvvvvvvvvvvv")
 //    logInfo(">> ")
