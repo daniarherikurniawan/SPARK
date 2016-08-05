@@ -270,11 +270,8 @@ private[spark] class TaskSchedulerImpl(
     for (i <- 0 until shuffledOffers.size) {
       val execId = sortedOffers(i).executorId
 
-
-//      if (execId contains martin_counter.toString()) { // martin -- start
-
       val host = sortedOffers(i).host
-//      logInfo(">> DANIAR: DO CHECK execId = "+execId+"  host = "+host)
+      logInfo(">> DANIAR: DO CHECK execId = "+execId+"  host = "+host)
 //      val host = shuffledOffers(i).host
 //      executorId: String, host: String, cores: Int
       if (availableCpus(i) >= CPUS_PER_TASK) {
@@ -311,11 +308,11 @@ private[spark] class TaskSchedulerImpl(
             return launchedTask
         }
       }
-//      } // martin -- end
     }
 //    logInfo(">>DANIAR: CHECK after loop           vvvvvvvvvvvvv")
 //    logInfo(">> ")
-//    logInfo(">> ")
+    logInfo(">> ")
+    logInfo(">> ")
     return launchedTask
   }
 
