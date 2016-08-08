@@ -279,7 +279,7 @@ private[spark] class TaskSchedulerImpl(
 //        (daniar_counter.toString()==execId) )
 //      val host = shuffledOffers(i).host
 //      executorId: String, host: String, cores: Int
-      
+
 //      this should be here because in one loop can be executed twice
       if("TaskSet_0"==taskSet.name || "TaskSet_1"==taskSet.name){
         counter = daniar_counter%2

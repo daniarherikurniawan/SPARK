@@ -96,6 +96,7 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	./sbin/start-slave.sh spark://n1.testspark.cs331-uc.emulab.net:7077 --memory 1g --cores 2
 	./sbin/start-slave.sh spark://n1.testspark.cs331-uc.emulab.net:7077 --memory 60g --cores 8
 	./sbin/start-slave.sh spark://n1.testspark.cs331-uc.emulab.net:7077 --memory 1g --cores 8
+	./sbin/start-slave.sh spark://n1.testspark.cs331-uc.emulab.net:7077 --memory 1g --cores 4
 	```
 
 11. Create the payload. It depends on what kind of process you need. In my case, I want Spark to sort the array of integers in ascending order and then save the result in the folder generated_file/result_py. So I create a Python program to generate the integers by running:
@@ -202,7 +203,8 @@ command).  If the DEST parameter is not given, then the modification is
 applied to the "default" pipe (i.e., the normal shaping behavior).  For
 example:
 
-    tevc -e pid/eid now cloud-n1 MODIFY DEST=10.0.0.2 BANDWIDTH=1000 DELAY=10
+	/usr/testbed/bin/tevc -e cs331-uc/TestSpark now cloud-n4 MODIFY BANDWIDTH=10000
+    tevc -e pid/eid now cloud-n4 MODIFY BANDWIDTH=1000 DELAY=10
 
 Assuming 10.0.0.2 is "n2" in the diagram above, this would change n1's
 "to n2 pipe" to shape the bandwidth, and change n1's "from n2 pipe" to
