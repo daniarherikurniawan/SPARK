@@ -75,6 +75,8 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	``` sudo build/sbt compile -mem 1500 evicted ```
 
 	``` sudo build/sbt compile -mem 60000 evicted ```
+
+	``` sudo build/sbt compile -mem 10000 evicted ```
 	
 	To compile just the core and it just need a few minutes. 
 	***[Note: It will failed at the first try due to dependency error. But after the second try it will success]***
