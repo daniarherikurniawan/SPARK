@@ -831,8 +831,8 @@ private[spark] class TaskSetManager(
       val durations = taskInfos.values.filter(_.successful).map(_.duration).toArray
       Arrays.sort(durations)
       val medianDuration = durations(min((0.5 * tasksSuccessful).round.toInt, durations.size - 1))
-//      val threshold = max(SPECULATION_MULTIPLIER * medianDuration, 100)
-      val threshold = max(SPECULATION_MULTIPLIER * medianDuration * 2, 100)
+      val threshold = max(SPECULATION_MULTIPLIER * medianDuration, 100)
+//      val threshold = max(SPECULATION_MULTIPLIER * medianDuration * 2, 100)
       // TODO: Threshold should also look at standard deviation of task durations and have a lower
       // bound based on that.
 //      logInfo("DANIAR CHANGE THE SPECULATION original THRESHOLD = " + (1.0*threshold/2))
