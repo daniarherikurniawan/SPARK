@@ -192,7 +192,7 @@ $ns run
 >BTW. From the user perspective, links and LANs can be shaped "statically" by
 specifying their characteristics once in the NS file, or dynamically by
 sending "shaping events" via a web page, client GUI, of the command line
-tool "tevc."
+tool "tevc." source: [https://wiki.emulab.net/wiki/Emulab/wiki/DelayImplementation](https://wiki.emulab.net/wiki/Emulab/wiki/DelayImplementation)
 
 >In both the simple-static and simple-dynamic models, tevc commands are
 used to assign characteristics to the various per-pair pipes created above.
