@@ -181,49 +181,34 @@ $ns run
 
 ```
 set ns [new Simulator]
-
 source tb_compat.tcl
 
 # set num nodes
-
 set maxnodes 3
 
 # to create LAN
-
 set lanstr ""
 
 # Create LAN including node from 1 to N
-
 for { set i 1 } { $i <= $maxnodes } { incr i } {
-
 set node($i) [$ns node]
-
 append lanstr "$node($i) "
-
 tb-set-node-os $node($i) UBUNTU14-64-STD-DAN
-
 tb-set-hardware $node($i) d710
-
 }
 
 # set lan here
-
 set lan0 [$ns make-lan "$lanstr" 1000Mb 0ms]
 
 # enable this to get rid of the delay node, as stated by emulab this
-
-# the delay will be implemented using tc on linux
-
-(https://wiki.emulab.net/Emulab/wiki/linkdelays)
+# the delay will be implemented using tc on linux (https://wiki.emulab.net/Emulab/wiki/linkdelays)
 
 tb-set-endnodeshaping $lan0 1
 
 # manually shape bandwidth of this node using its delay node
-
 tb-set-node-lan-bandwidth $node(2) $lan0 101Mb
 
 $ns rtproto Static
-
 $ns run
 ```
 
