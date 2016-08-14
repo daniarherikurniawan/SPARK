@@ -3,8 +3,8 @@ UPLINK=5000
 DEV=eth3
 
 # clean existing down- and uplink qdiscs, hide errors
-tc qdisc del dev $DEV root    2> /dev/null > /dev/null
-tc qdisc del dev $DEV ingress 2> /dev/null > /dev/null
+tc qdisc del dev $DEV root    
+tc qdisc del dev $DEV ingress 
 
 ###### uplink
 
@@ -29,4 +29,4 @@ tc qdisc add dev $DEV handle ffff: ingress
 # coming in too fast:
 
 tc filter add dev $DEV parent ffff: protocol ip prio 50 u32 match ip src \
-   0.0.0.0/0 flowid :1 police  rate 32000bps burst 10240  mpu 0 action drop/continue 
+   0.0.0.0/0 police  rate 32000bps burst 10240  mpu 0 action drop/continue 
