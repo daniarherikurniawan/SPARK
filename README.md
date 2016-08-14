@@ -225,6 +225,7 @@ $ns run
 >run tc :
 ``` 
 	git checkout limp.sh
+	git pull
 	chmod u+x limp.sh
 	sudo ./limp.sh
 ```

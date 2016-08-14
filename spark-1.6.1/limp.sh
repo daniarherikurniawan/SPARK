@@ -1,5 +1,5 @@
-DOWNLINK=500
-UPLINK=500
+DOWNLINK=5000
+UPLINK=5000
 DEV=eth3
 
 # clean existing down- and uplink qdiscs, hide errors
