@@ -228,6 +228,7 @@ $ns run
 	git pull
 	chmod u+x limp.sh
 	sudo ./limp.sh
+	iperf -s
 ```
 
 

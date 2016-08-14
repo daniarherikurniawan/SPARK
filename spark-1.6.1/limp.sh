@@ -29,4 +29,4 @@ tc qdisc add dev $DEV handle ffff: ingress
 # coming in too fast:
 
 tc filter add dev $DEV parent ffff: protocol ip prio 50 u32 match ip src \
-   0.0.0.0/0 police rate 100mbit burst 100k drop flowid :1
+   0.0.0.0/0 police rate 150mbit burst 1k drop flowid :1
