@@ -8,10 +8,10 @@ tc qdisc del dev $DEV ingress
 
 # install root CBQ
 tc qdisc add dev $DEV  root handle 1: cbq \
-avpkt 1000 bandwidth 100kbit
+avpkt 1000 bandwidth 200kbit
 
 tc class add dev $DEV  parent 1: classid 1:1 cbq \
-rate 100kbit allot 1500 prio 5 bounded isolated
+rate 50kbit allot 1500 prio 5 bounded isolated
 
 tc filter add dev $DEV  parent 1: protocol ip \
 prio 16 u32 match ip dst 0.0.0.0/0 flowid 1:1
