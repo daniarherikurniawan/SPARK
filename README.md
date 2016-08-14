@@ -217,10 +217,11 @@ tb-set-node-lan-bandwidth $node(2) $lan0 101Mb
 $ns rtproto Static
 $ns run
 ```
->clearing tc rules : 
+>clearing tc rules :
+``` 
 	sudo tc qdisc del dev eth0 root
 	sudo tc qdisc del dev eth0 ingress
-
+```
 
 
 ## 3. Unstructured Notes for Debugging
