@@ -10,7 +10,7 @@ tc qdisc del dev $DEV root
 tc qdisc add dev $DEV root handle 1: cbq avpkt 1000 bandwidth 100mbit
 
 #100Mbps
-tc class add dev $DEV parent 1: classid 1:1 cbq rate 500kbit allot 1500 prio 5 bounded isolated
+tc class add dev $DEV parent 1: classid 1:1 cbq rate 400kbit allot 1500 prio 5 bounded isolated
 
 
 #10Mbps
