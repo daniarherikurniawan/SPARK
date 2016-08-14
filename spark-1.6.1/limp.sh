@@ -23,10 +23,7 @@ tc qdisc add dev $DEV root handle 1: cbq avpkt 1000 bandwidth 150mbit
 #
 # attach ingress policer:
 
-tc qdisc add dev $DEV handle ffff: ingress
 
 # filter *everything* to it (0.0.0.0/0), drop everything that's
 # coming in too fast:
 
-tc filter add dev $DEV parent ffff: protocol ip prio 50 u32 match ip src \
-   0.0.0.0/0 police rate 150mbit burst 10k drop flowid :1
