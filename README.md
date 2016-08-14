@@ -222,6 +222,12 @@ $ns run
 	sudo tc qdisc del dev eth0 root
 	sudo tc qdisc del dev eth0 ingress
 ```
+>run tc :
+``` 
+	git checkout limp.sh
+	chmod u+x limp.sh
+	sudo ./limp.sh
+```
 
 
 ## 3. Unstructured Notes for Debugging

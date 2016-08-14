@@ -10,7 +10,7 @@ tc qdisc del dev $DEV ingress 2> /dev/null > /dev/null
 
 # install root CBQ
 
-tc qdisc add dev $DEV root handle 1: cbq avpkt 1000 bandwidth 100mbit 
+tc qdisc add dev $DEV root handle 1: cbq avpkt 1000 bandwidth 1000mbit 
 
 # shape everything at $UPLINK speed - this prevents huge queues in your
 # DSL modem which destroy latency:
