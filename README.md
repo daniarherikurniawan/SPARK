@@ -217,6 +217,9 @@ tb-set-node-lan-bandwidth $node(2) $lan0 101Mb
 $ns rtproto Static
 $ns run
 ```
+>clearing tc rules : 
+	sudo tc qdisc del dev eth0 root
+	sudo tc qdisc del dev eth0 ingress
 
 
 
@@ -379,6 +382,8 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 - check available RAM : cat /proc/meminfo
 - add all new file to git : git add -A .
 - check linux distribution type: lsb_release -a
+- check download big file : wget http://mirror.ufs.ac.za/linuxmint/stable/14/linuxmint-14-kde-dvd-64bit.iso
+
 
 
 ###Finding
