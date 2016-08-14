@@ -23,10 +23,11 @@ tc qdisc del dev $DEV ingress
 #
 # attach ingress policer:
 
-tc qdisc add dev $DEV handle 1:0 ingress
+tc qdisc add dev $DEV handle ffff: ingress
 
 # filter *everything* to it (0.0.0.0/0), drop everything that's
 # coming in too fast:
 
-tc filter add dev $DEV parent 1:0 protocol ip prio 50 u32 match ip tos 0x10 0xff police  rate 32000bps burst 10240  mpu 0 action drop
+tc filter add dev $DEV parent ffff: protocol ip prio 50 u32 match ip src \
+   0.0.0.0/0 police  rate 320mbps burst 10240  mpu 0 action drop
    # /continue 
