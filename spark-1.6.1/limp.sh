@@ -10,54 +10,11 @@ tc qdisc del dev $DEV ingress 2> /dev/null > /dev/null
 
 # install root CBQ
 
-tc qdisc add dev $DEV root handle 1: cbq avpkt 1000 bandwidth 1000mbit 
+tc qdisc add dev $DEV root handle 1: cbq avpkt 1000 bandwidth 150mbit 
 
 # shape everything at $UPLINK speed - this prevents huge queues in your
 # DSL modem which destroy latency:
 # main class
-
-tc class add dev $DEV parent 1: classid 1:1 cbq rate ${UPLINK}kbit \
-allot 1500 prio 5 bounded isolated 
-
-# high prio class 1:10:
-
-tc class add dev $DEV parent 1:1 classid 1:10 cbq rate ${UPLINK}kbit \
-   allot 1600 prio 1 avpkt 1000
-
-# bulk and default class 1:20 - gets slightly less traffic, 
-#  and a lower priority:
-
-tc class add dev $DEV parent 1:1 classid 1:20 cbq rate ${UPLINK}kbit \
-   allot 1600 prio 2 avpkt 1000
-
-# both get Stochastic Fairness:
-tc qdisc add dev $DEV parent 1:10 handle 10: sfq perturb 10
-tc qdisc add dev $DEV parent 1:20 handle 20: sfq perturb 10
-
-# start filters
-# TOS Minimum Delay (ssh, NOT scp) in 1:10:
-tc filter add dev $DEV parent 1:0 protocol ip prio 10 u32 \
-      match ip tos 0x10 0xff  flowid 1:10
-
-# ICMP (ip protocol 1) in the interactive class 1:10 so we 
-# can do measurements & impress our friends:
-tc filter add dev $DEV parent 1:0 protocol ip prio 11 u32 \
-	match ip protocol 1 0xff flowid 1:10
-
-# To speed up downloads while an upload is going on, put ACK packets in
-# the interactive class:
-
-tc filter add dev $DEV parent 1: protocol ip prio 12 u32 \
-   match ip protocol 6 0xff \
-   match u8 0x05 0x0f at 0 \
-   match u16 0x0000 0xffc0 at 2 \
-   match u8 0x10 0xff at 33 \
-   flowid 1:10
-
-# rest is 'non-interactive' ie 'bulk' and ends up in 1:20
-
-tc filter add dev $DEV parent 1: protocol ip prio 13 u32 \
-   match ip dst 0.0.0.0/0 flowid 1:20
 
 ########## downlink #############
 # slow downloads down to somewhat less than the real speed  to prevent 
@@ -72,4 +29,4 @@ tc qdisc add dev $DEV handle ffff: ingress
 # coming in too fast:
 
 tc filter add dev $DEV parent ffff: protocol ip prio 50 u32 match ip src \
-   0.0.0.0/0 police rate ${DOWNLINK}kbit burst 10k drop flowid :1
+   0.0.0.0/0 police rate 150mbit burst 10k drop flowid :1
