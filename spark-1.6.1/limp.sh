@@ -1,5 +1,3 @@
-DOWNLINK=100
-UPLINK=100
 DEV=eth3
 
 # clean existing down- and uplink qdiscs, hide errors
@@ -10,7 +8,7 @@ tc qdisc del dev $DEV ingress
 
 # install root CBQ
 tc qdisc add dev $DEV  root handle 1: cbq \
-avpkt 1000 bandwidth 2mbit
+avpkt 1000 bandwidth 200kbit
 
 tc class add dev $DEV  parent 1: classid 1:1 cbq \
 rate 700kbit allot 1500 prio 5 bounded isolated
