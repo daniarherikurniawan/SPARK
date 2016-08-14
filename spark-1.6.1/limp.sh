@@ -11,13 +11,13 @@ tc qdisc add dev $DEV root handle 1: cbq avpkt 1000 bandwidth 100mbit
 
 
 #10Mbps
-tc class add dev $DEV parent 1: classid 1:1 cbq rate 50kbit allot 1500 prio 5 bounded isolated
+# tc class add dev $DEV parent 1: classid 1:1 cbq rate 50kbit allot 1500 prio 5 bounded isolated
 
 #1Mbps
-#tc class add dev $DEV parent 1: classid 1:1 cbq rate 5kbit allot 1500 prio 5 bounded isolated
+# tc class add dev $DEV parent 1: classid 1:1 cbq rate 5kbit allot 1500 prio 5 bounded isolated
 
 #0.1Mbps
-#tc class add dev $DEV parent 1: classid 1:1 cbq rate 500 allot 1500 prio 5 bounded isolated
+tc class add dev $DEV parent 1: classid 1:1 cbq rate 500 allot 1500 prio 5 bounded isolated
 
 #0.01Mbps
 #tc class add dev $DEV parent 1: classid 1:1 cbq rate 35 allot 1500 prio 5 bounded isolated
