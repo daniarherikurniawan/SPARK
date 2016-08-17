@@ -1,4 +1,4 @@
-DEV=eth3
+DEV=eth0
 
 # clean existing down- and uplink qdiscs, hide errors
 tc qdisc del dev $DEV root   
