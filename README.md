@@ -253,6 +253,7 @@ run tc :
 
 	chmod +x speedtest-cli
 	./speedtest-cli
+```
 
 ## 3. Unstructured Notes for Debugging
 
