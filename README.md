@@ -233,6 +233,15 @@ run tc :
 	chmod u+x limp.sh
 	sudo ./limp.sh
 	iperf -s
+
+Throttling a sustained maximum rate
+
+So, let’s configure a sustained maximum rate using tc. In other words, lets configure Linux to never allow eth0 to use more than 1kbps regardless of port or application.
+
+ sudo tc qdisc add dev eth0 handle 1: root htb default 11
+ sudo tc class add dev eth0 parent 1: classid 1:1 htb rate 1kbps
+ sudo tc class add dev eth0 parent 1:1 classid 1:11 htb rate 1kbps
+
 ```
 
 
