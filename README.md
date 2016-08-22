@@ -222,11 +222,12 @@ $ns run
 	sudo tc qdisc del dev eth0 root
 	sudo tc qdisc del dev eth0 ingress
 ```
->run tc :
+> before running the tc, please check using **ifconfig** to make sure the ethernet id.
+run tc :
 ``` 
 	cd /proj/cs331-uc/daniar/SPARK/EMULAB/TC_Attachment
 	cd /proj/cs331-uc/daniar/SPARK/spark-1.6.1/
-	
+
 	git checkout limp.sh
 	git pull
 	chmod u+x limp.sh
