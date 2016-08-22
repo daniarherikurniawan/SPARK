@@ -247,7 +247,7 @@ run tc :
 	sudo tc class add dev eth4 parent 1:1 classid 1:11 htb rate 1mbps
 ```
 
-**check speed:**
+**Check the speed:**
 ```
 	wget -O speedtest-cli https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py
 
