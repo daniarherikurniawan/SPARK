@@ -234,10 +234,10 @@ run tc :
 	sudo ./limp.sh
 	iperf -s
 
-	Throttling a sustained maximum rate
+	**Throttling a sustained maximum rate
 
 	So, let’s configure a sustained maximum rate using tc. In other words, lets configure 
-	Linux to never allow eth0 to use more than 1kbps regardless of port or application.
+	Linux to never allow eth0 to use more than 1kbps regardless of port or application.**
 
 	sudo tc qdisc del dev eth4 root
 	sudo tc qdisc del dev eth4 ingress
@@ -247,6 +247,10 @@ run tc :
 	 sudo tc class add dev eth4 parent 1:1 classid 1:11 htb rate 1mbps
 
 
+	**check speed:**
+	wget -O speedtest-cli https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py
+	chmod +x speedtest-cli
+	./speedtest-cli
 
 ## 3. Unstructured Notes for Debugging
 
