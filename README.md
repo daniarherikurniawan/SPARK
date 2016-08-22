@@ -243,8 +243,8 @@ run tc :
 	sudo tc qdisc del dev eth4 ingress
 
 	sudo tc qdisc add dev eth4 handle 1: root htb default 11
-	sudo tc class add dev eth4 parent 1: classid 1:1 htb rate 1mbps
-	sudo tc class add dev eth4 parent 1:1 classid 1:11 htb rate 1mbps
+	sudo tc class add dev eth4 parent 1: classid 1:1 htb rate 100kbps
+	sudo tc class add dev eth4 parent 1:1 classid 1:11 htb rate 100kbps
 ```
 
 **Check the speed:**
