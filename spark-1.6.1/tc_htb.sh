@@ -1,5 +1,5 @@
 DEV=eth4
-
+[ ! -z $1 ] && DEV=$1
 tc qdisc del dev $DEV root
 
 tc qdisc add dev $DEV root handle 1: htb default 10
