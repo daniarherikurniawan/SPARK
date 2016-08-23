@@ -17,3 +17,5 @@ tc qdisc add dev $DEV parent 1:30 handle 30: sfq perturb 10
 # Add the filters which direct traffic to the right classes:
 tc filter add dev $DEV protocol ip parent 1:0 prio 1 u32 match ip dst 10.1.1.0/24 flowid 1:10
 tc filter add dev $DEV protocol ip parent 1:0 prio 1 u32 match ip dst 155.98.36.0/24 flowid 1:10
+tc filter add dev $DEV protocol ip parent 1:0 prio 1 u32 match ip src 10.1.1.0/24 flowid 1:10
+tc filter add dev $DEV protocol ip parent 1:0 prio 1 u32 match ip src 155.98.36.0/24 flowid 1:10
