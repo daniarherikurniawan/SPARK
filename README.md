@@ -300,6 +300,12 @@ run tc :
 	chmod u+x limp.sh
 	sudo ./limp.sh
 	iperf -s
+
+	git checkout tc_htb.sh
+	git pull
+	chmod u+x tc_htb.sh
+	sudo ./tc_htb.sh
+	iperf -s
 ```
 
 > **Throttling a sustained maximum rate**
