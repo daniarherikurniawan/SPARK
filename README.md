@@ -220,8 +220,8 @@ characteristic could be applied to both sides via:
     tevc -e pid/eid now cloud-n2 MODIFY DEST=10.0.0.1 BANDWIDTH=1000 DELAY=5
 
 
-
 ### Using tc Instead of tevc
+> source: [http://lartc.org/howto/lartc.qdisc.classful.html](http://lartc.org/howto/lartc.qdisc.classful.html)
 
 ```
 set ns [new Simulator]
@@ -273,7 +273,7 @@ People who have done measurements discover that CBQ is not always very accurate 
 In many circumstances however it works well. With the documentation provided here, you should be able to configure it to work well in most cases.
 
 
-### Hierarchical Token Bucket (Almost work)
+### Hierarchical Token Bucket (Almost work properly)
 
 Martin Devera (<devik>) rightly realised that CBQ is complex and does not seem optimized for many typical situations. His Hierarchical approach is well suited for setups where you have a fixed amount of bandwidth which you want to divide for different purposes, giving each purpose a guaranteed bandwidth, with the possibility of specifying how much bandwidth can be borrowed.
 
