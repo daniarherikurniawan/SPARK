@@ -244,12 +244,15 @@ HTB works just like CBQ but does not resort to idle time calculations to shape. 
 As your HTB configuration gets more complex, your configuration scales well. With CBQ it is already complex even in simple cases! HTB3 (check its homepage [http://luxik.cdi.cz/~devik/qos/htb/](http://luxik.cdi.cz/~devik/qos/htb/) for details on HTB versions) is now part of the official kernel sources (from 2.4.20-pre1 and 2.5.31 onwards). However, maybe you still need to get a HTB3 patched version of 'tc': HTB kernel and userspace parts must be the same major version, or 'tc' will not work with HTB.
 
 >clearing tc rules :
+
 ``` 
 	sudo tc qdisc del dev eth0 root
 	sudo tc qdisc del dev eth0 ingress
 ```
+
 > before running the tc, please check using **ifconfig** to make sure the ethernet id.
 run tc :
+
 ``` 
 	cd /proj/cs331-uc/daniar/SPARK/EMULAB/TC_Attachment
 	cd /proj/cs331-uc/daniar/SPARK/spark-1.6.1/
