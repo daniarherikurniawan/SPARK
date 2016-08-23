@@ -216,6 +216,7 @@ tb-set-node-lan-bandwidth $node(2) $lan0 101Mb
 
 $ns rtproto Static
 $ns run
+```
 
 ###The famous CBQ qdisc (Doesn't work)
 
