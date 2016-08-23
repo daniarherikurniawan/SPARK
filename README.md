@@ -265,7 +265,6 @@ run tc :
 ```
 
 > **Throttling a sustained maximum rate**
-
 > So, let’s configure a sustained maximum rate using tc. In other words, lets configure Linux to never allow eth0 to use more than 1kbps regardless of port or application.
 
 
@@ -278,7 +277,8 @@ run tc :
 	sudo tc class add dev eth4 parent 1:1 classid 1:11 htb rate 100kbps
 ```
 
-**Check the speed:**
+>**Check the speed:**
+
 ```
 	wget -O speedtest-cli https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py
 
