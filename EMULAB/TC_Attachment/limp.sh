@@ -46,6 +46,7 @@ tc filter add dev $DEV parent 1:0 protocol ip prio 11 u32 \
 
 # To speed up downloads while an upload is going on, put ACK packets in
 # the interactive class:
+# see protocols cat /etc/protocols
 
 tc filter add dev $DEV parent 1: protocol ip prio 12 u32 \
    match ip protocol 6 0xff \
