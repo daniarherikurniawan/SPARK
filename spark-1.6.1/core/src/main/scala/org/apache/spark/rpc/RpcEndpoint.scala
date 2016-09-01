@@ -91,7 +91,6 @@ private[spark] trait RpcEndpoint {
    */
   def onConnected(remoteAddress: RpcAddress): Unit = {
     // By default, do nothing.
-    logInfo("RPC DANIARR " + remoteAddress)
   }
 
   /**
