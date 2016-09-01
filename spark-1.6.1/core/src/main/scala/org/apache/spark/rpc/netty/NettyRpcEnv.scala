@@ -586,6 +586,7 @@ private[netty] class NettyRpcHandler(
       dispatcher.postToAll(RemoteProcessConnected(clientAddr))
     }
     val requestMessage = nettyEnv.deserialize[RequestMessage](client, message)
+    logInfo("DANIARRR rpc requestMessage: "requestMessage)
     if (requestMessage.senderAddress == null) {
       // Create a new message with the socket address of the client as the sender.
       RequestMessage(clientAddr, requestMessage.receiver, requestMessage.content)
