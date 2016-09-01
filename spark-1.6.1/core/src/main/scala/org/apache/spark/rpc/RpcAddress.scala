@@ -42,11 +42,9 @@ private[spark] object RpcAddress {
     RpcAddress(uriObj.getHost, uriObj.getPort)
   }
 
-    logInfo("DANIARR RpcAddress Return the [[RpcAddress]] represented by `uri")
   /** Returns the [[RpcAddress]] encoded in the form of "spark://host:port" */
   def fromSparkURL(sparkUrl: String): RpcAddress = {
     val (host, port) = Utils.extractHostPortFromSparkUrl(sparkUrl)
     RpcAddress(host, port)
   }
-    logInfo("DANIARR RpcAddress Returns the [[RpcAddress]] encoded in the form of spark://host:port")
 }
