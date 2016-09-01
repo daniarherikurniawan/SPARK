@@ -188,10 +188,10 @@ private[netty] class NettyRpcEnv(
   private[netty] def send(message: RequestMessage): Unit = {
     val remoteAddr = message.receiver.address
     if (remoteAddr == address) {
-      // Message to a local RPC endpoint.
+      logInfo( " Daniar RPC NETTY Message to a local RPC endpoint.")
       dispatcher.postOneWayMessage(message)
     } else {
-      // Message to a remote RPC endpoint.
+      logInfo( " Daniar RPC NETTY Message to a remote RPC endpoint.")
       postToOutbox(message.receiver, OneWayOutboxMessage(serialize(message)))
     }
   }
