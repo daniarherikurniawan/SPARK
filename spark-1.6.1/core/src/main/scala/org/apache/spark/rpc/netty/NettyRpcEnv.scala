@@ -188,10 +188,10 @@ private[netty] class NettyRpcEnv(
   private[netty] def send(message: RequestMessage): Unit = {
     val remoteAddr = message.receiver.address
     if (remoteAddr == address) {
-      logInfo("Daniar RPC NETTY RPC Env Message to a local RPC endpoint message: "+message+"      "+serialize(message))
+      // logInfo("Daniar RPC NETTY RPC Env Message to a local RPC endpoint message: "+message+"      "+serialize(message))
       dispatcher.postOneWayMessage(message)
     } else {
-      logInfo("Daniar RPC NETTY RPC Env Message to a remote RPC endpoint message: "+message+"      "+serialize(message))
+      // logInfo("Daniar RPC NETTY RPC Env Message to a remote RPC endpoint message: "+message+"      "+serialize(message))
       postToOutbox(message.receiver, OneWayOutboxMessage(serialize(message)))
     }
   }
@@ -586,7 +586,7 @@ private[netty] class NettyRpcHandler(
       dispatcher.postToAll(RemoteProcessConnected(clientAddr))
     }
     val requestMessage = nettyEnv.deserialize[RequestMessage](client, message)
-    logInfo("DANIARRR rpc requestMessage: "+requestMessage)
+    // logInfo("DANIARRR rpc requestMessage: "+requestMessage)
     if (requestMessage.senderAddress == null) {
       // Create a new message with the socket address of the client as the sender.
       RequestMessage(clientAddr, requestMessage.receiver, requestMessage.content)
