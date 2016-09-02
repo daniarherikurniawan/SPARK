@@ -61,7 +61,7 @@ private[netty] class RemoteNettyRpcCallContext(
   extends NettyRpcCallContext(senderAddress) {
 
   override protected def send(message: Any): Unit = {
-    logInfo("DANIAR RPC CALL CONTEXT Send message")
+    // logInfo("DANIAR RPC CALL CONTEXT Send message")
     val reply = nettyEnv.serialize(message)
     callback.onSuccess(reply)
   }
