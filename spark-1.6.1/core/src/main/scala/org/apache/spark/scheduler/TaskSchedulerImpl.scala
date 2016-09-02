@@ -269,7 +269,7 @@ private[spark] class TaskSchedulerImpl(
     var launchedTask = false
 
     val sortedOffers = getOffers(daniar_counter, shuffledOffers)
-
+    var old_counter = -1;
 //    logInfo(">>DANIAR: DO HACK CHECK before loop  ^^^^^^^^^^^^^")
     for (i <- 0 until shuffledOffers.size) {
       val execId = sortedOffers(i).executorId
@@ -281,7 +281,11 @@ private[spark] class TaskSchedulerImpl(
 //      executorId: String, host: String, cores: Int
 
 //      this should be here because in one loop can be executed twice
-      if("TaskSet_0"==taskSet.name || "TaskSet_1"==taskSet.name){
+      if(taskSet.name == last_task_name && daniar_counter%2 == 0){
+        // speculative task
+        old_counter = counter;
+        counter = 1;
+      }else if("TaskSet_0"==taskSet.name || "TaskSet_1"==taskSet.name){
         counter = daniar_counter%2
       }else{
         counter = daniar_counter%2 +2
@@ -303,7 +307,14 @@ private[spark] class TaskSchedulerImpl(
 //            logInfo(">> DANIAR: sortedOffers = "+sortedOffers)
             //this condition will only increment if the task is not speculatable task
             logInfo("DANIAR: TASK LAUNCHED taskSet.name [stage] = "+taskSet.name +"  daniar_counter = "+daniar_counter)
+            if(old_counter != -1){
+              // return the normal counter
+              counter = old_counter;
+              old_counter = -1;
+            }
+
             if(taskSet.name == last_task_name && daniar_counter%2 == 0){
+              // speculative contdition
               logInfo("DANIAR: TASK LAUNCHED SPECULATIVE!!!")
             }else {
               last_task_name = taskSet.name
