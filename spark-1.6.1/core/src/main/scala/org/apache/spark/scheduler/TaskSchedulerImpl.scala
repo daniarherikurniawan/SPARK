@@ -284,7 +284,7 @@ private[spark] class TaskSchedulerImpl(
       if(taskSet.name == last_task_name && daniar_counter%2 == 0){
         // speculative task
         old_counter = counter;
-        counter = 1;
+        counter = 0;
       // }else if("TaskSet_0"==taskSet.name || "TaskSet_2"==taskSet.name){
       }else if("TaskSet_0"==taskSet.name){
         counter = daniar_counter%2
