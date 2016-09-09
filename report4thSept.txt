@@ -1,24 +1,17 @@
-normal -> 53 s
-20Mbps -> 1.6 min (SE triggered)
-200Mbps -> 57 s 
-7Mbps -> 3.2 min (SE triggered)
-
-
-
-4 Task 
-
+=================================================
 Workload: 
 - Read from text file
 - Sort integers
-
-
-EXPERIMENT #1
 
 Task  Server
  A1 -> W1 
  A2 -> W2 	(will be throttled)
  B1 -> W3 	
  B2 -> W4 
+=================================================
+
+
+EXPERIMENT #1
 
 SE will always be run in W1
 Workload is run from W1. Therefore, W1 is driver node.
@@ -56,3 +49,96 @@ result:
   Stage_2 : 9 s
 	B1 : 9 s
 	B2 : 9 s
+
+- My analysis: 
+	1. Stage 2 always run in the same speed.
+	2. Stage 1 is getting slower because of W2.
+	3. It seems like the data already in W3 and W4 before
+	   Stage_2 is started
+
+
+
+
+EXPERIMENT #2
+
+SE will always be run in W1
+Workload is run from W2. Therefore, tasks in W2
+will get the data from local file and W2 is called driver node.
+
+result: 
+
+- 1 Mbps : 36 min (unfinished) 
+
+- 10 Mbps : 246 s (SE for A2 is trigerred) 
+  Stage_1 : 78 s
+	A1 : 13 s
+	A2 : 7 s (on W1 / backup task)
+  Stage_2 : 21 s
+	B1 : 15 s
+	B2 : 10 s
+
+- 100 Mbps : 37 s (SE for A2 is trigerred) 
+  Stage_1 : 15 s
+	A1 : 9 s
+	A2 : 12 s (on W2 / original task)
+  Stage_2 : 11 s
+	B1 : 10 s
+	B2 : 9 s
+
+- normal (950 Mbps each) : 26 s
+  Stage_1 : 11 s
+	A1 : 7 s
+	A2 : 10 s
+  Stage_2 : 10 s
+	B1 : 9 s
+	B2 : 9 s
+
+- My analysis: 
+	1. In my opinion, each task is responsible to send its
+	   result to other nodes before completing the stage. 
+	2. On 10 Mbps, although A2 can get data from its local and can process
+	   it in a short time, but it needs a long time to transfer
+	   its result to other nodes. That's why SE is triggered. 
+	3. Generally, the latency is higher than another experiment because
+	   W2 as a driver node is throttled. 
+
+
+
+EXPERIMENT #3
+
+SE will always be run in W2 to get the conditions when 
+SE is run on different worker but still in the same 
+node (slow node).
+Workload is run from W1. Therefore, W1 is driver node.
+
+result: 
+
+- 1 Mbps : 1 hour (unfinished) 
+
+- 10 Mbps : 138 s (SE for A2 is trigerred) 
+  Stage_1 : 84 s
+	A1 : 8 s
+	A2 : 42 s (on W2 / original task)
+  Stage_2 : 19 s
+	B1 : 19 s
+	B2 : 17 s
+
+- 100 Mbps : 31 s (SE for A2 is trigerred) 
+  Stage_1 : 14 s
+	A1 : 8 s
+	A2 : 12 s (on W2 / original task)
+  Stage_2 : 9 s
+	B1 : 8 s
+	B2 : 9 s
+
+- normal (950 Mbps each) : 25 s
+  Stage_1 : 11 s
+	A1 : 8 s
+	A2 : 10 s
+  Stage_2 : 10 s
+	B1 : 9 s
+	B2 : 9 s
+
+- My analysis: 
+	1. Time needed to transfer the result (W2's result) is included
+	   in Stage_1's processing time.  
