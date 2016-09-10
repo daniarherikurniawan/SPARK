@@ -93,6 +93,12 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	cp /proj/cs331-uc/daniar/SPARK/ . -r
 	cd SPARK/spark-1.6.1/
 
+	cd /tmp/
+	sync /proj/cs331-uc/daniar/SPARK/ . -r
+	cd SPARK/spark-1.6.1/
+
+	rsync /proj/cs331-uc/daniar/SPARK/spark-1.6.1/ . -r
+
 	time cp /tmp/SPARK/generated_file/list_int .
 	
 	time wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-i586.rpm"
