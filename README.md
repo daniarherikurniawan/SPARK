@@ -84,7 +84,8 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 	``` ./sbin/stop-all.sh ```
 
-	To stop any Spark instances.
+
+*9.1	To Prepare the Local Environment*
 
 	``` 
 	in local:
