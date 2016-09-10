@@ -1,0 +1,51 @@
+=================================================
+Workload: 
+- Read from text file
+- Sort integers
+
+Task  Server
+ A1 -> W1 
+ A2 -> W2 	(will be throttled)
+ B1 -> W3 	
+ B2 -> W4 
+=================================================
+
+
+EXPERIMENT #1
+
+SE will always be run in W1
+Workload is run from W1. Therefore, W1 is driver node.
+
+result: 
+
+- 1 Mbps : 900 s (SE for A2 is trigerred) 
+  Stage_1 : 840 s
+	A1 : 8 s
+	A2 : 7 s (on W1 / backup task)
+  Stage_2 : 10 s
+	B1 : 9 s
+	B2 : 9 s
+
+- 10 Mbps : 72 s (SE for A2 is trigerred) 
+  Stage_1 : 31 s
+	A1 : 8 s
+	A2 : 7 s (on W1 / backup task)
+  Stage_2 : 9 s
+	B1 : 9 s
+	B2 : 9 s
+
+- 100 Mbps : 32 s (SE for A2 is trigerred) 
+  Stage_1 : 15 s
+	A1 : 8 s
+	A2 : 12 s (on W2 / original task)
+  Stage_2 : 10 s
+	B1 : 9 s
+	B2 : 9 s
+
+- normal (950 Mbps each) : 23 s
+  Stage_1 : 9 s
+	A1 : 8 s
+	A2 : 8 s
+  Stage_2 : 10 s
+	B1 : 9 s
+	B2 : 10 s

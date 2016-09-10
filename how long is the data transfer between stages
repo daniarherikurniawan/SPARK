@@ -1,0 +1,102 @@
+how long is the data transfer between stages
+
+>> try it 
+tc will tell the OS instead
+tc ... 
+
+How do they set the network connection
+newConnection(socket.getIp());
+
+
+normal : 88, 87, 89 
+
+10 Mbps, the workload runs for X seconds, and SE was [triggered or not triggered?] 93, 88, 86, 86, 90
+
+1 Mbps, the workload runs for X seconds, and SE was [triggered or not triggered?] 93, 87, 86, 87, 89
+
+0.1 Mbps, the workload runs for X seconds, and SE was [triggered or not triggered?] 90, 87, 89
+
+0.01 Mbps, the workload runs for X seconds, and SE was [triggered or not triggered?] 92, 88, 86
+
+
+today
+
+[10.28.34] haryadi.gunawi: time cp /tmp/largefile /proj/...
+[10.28.50] haryadi.gunawi: time cp /proj/... /tmp/largfile
+
+
+Topology!!!!
+hadoop speculative execution
+https://people.eecs.berkeley.edu/~adj/publications/paper-files/osdi_late.pdf section 2.1
+
+http://ucare.cs.uchicago.edu/pdf/socc13-limplock.pdf section 5.1
+section 3 and 4
+
+struggler -> someone slower than the rest
+
+
+
+Stage3:
+
+TaskC --- TaskE  -- write the entire data to HDFS file?
+TaskD --- TaskE 
+
+
+4 stages: A-read, B-sort1, C-sort2, D-write (CONFIRMED)
+2 partitions
+
+Every stage there are two tasks (CONFIRMED)
+
+A1-B1 ??
+A2-B2 ??
+Does A1 send something B2?? Is this 1-on-1 communication? Or all-to-all communication?
+TODO: Confirm / understand the dataflow
+
+B1-C1
+B1-C2
+B2-C1      (w3 slow, so data transfer to C1 is slow)
+B2-C2      (w3 slow, so data transfer to C2 is slow)
+                 FLAW of current SE (it’s based on task progress score, the base SE does NOT expose
+                  The individual path bandwidths)
+                 The fact that C2 reads from B1 AND B2   …. But C2 only reports one progress score
+
+Driver ← (low progress score + B1-C1 + B2-C1) C1 ← B1 (1000 Mbps) .. B2 (1 Mbps)
+Driver ← (low progress score) C2 
+
+-------------------
+For (......) {
+   Start = gettimeofday()
+    Byte = readInput(byteBuffer[64KB]);  // C1 runs to get data from B1/B2       // network packet, (64 KB, HDFS)
+   End = gettimeofday();
+   Bw  = byte/(end-start);
+}
+----------------- 1 hour
+
+B1-C1:   999 Mbps, 998 Mbps,  865 Mbps, 
+B2-C1:       5 Mbps,     1 Mbps,     4 Mbps
+B1-C2:   999 Mbps, 998 Mbps,  865 Mbps, 
+B2-C2:       5 Mbps,     1 Mbps,     4 Mbps
+
+
+Progress score is important!!
+print the current time and the progress
+	how the progress score is increasing in each of the task 
+	progress score for each task (B1, B2)
+https://web.skype.com/xmmfallback?pic=0-eus-d5-30cae4631b0a1627c35c2299e47e605b
+
+Task
+- delay W2
+- monitor every task
+
+
+Daniar (september-1)
+
+Delay W2  (A2 → B2 transfer? Local file ;;;  NFS → A2 → B2)
+
+Delay 100, 10, and 1 Mbps
+
+In each scenario, report your observation about the progress score of EACH TASK.
+(who is fast, who is slow?)
+A1/A2/B1/B2/..: slow/fast (time to completion)
+
+In each scenario, check if SE is run or not

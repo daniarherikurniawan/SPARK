@@ -86,6 +86,15 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 	To stop any Spark instances.
 
+	``` 
+	in local:
+	
+	cd /tmp/
+	cp /proj/cs331-uc/daniar/SPARK/ . -r
+	cd SPARK/spark-1.6.1/
+
+	```
+
 10. Run the Spark as described in [this file](http://spark.apache.org/docs/latest/spark-standalone.html). The simple one is by running :
 	
 	``` ./sbin/start-all.sh ```
