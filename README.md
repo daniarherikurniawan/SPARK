@@ -87,8 +87,7 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 10	To Prepare the Local Environment
 
-	``` 
-	cd /tmp/
+	```  cd /tmp/
 	cp /proj/cs331-uc/daniar/SPARK/ . -r
 	cd SPARK/spark-1.6.1/
 
