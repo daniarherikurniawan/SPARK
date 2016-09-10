@@ -94,10 +94,8 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	cd SPARK/spark-1.6.1/
 
 	cd /tmp/
-	sync /proj/cs331-uc/daniar/SPARK/ . -r
+	rsync /proj/cs331-uc/daniar/ . -r
 	cd SPARK/spark-1.6.1/
-
-	rsync /proj/cs331-uc/daniar/SPARK/spark-1.6.1/ . -r
 
 	time cp /tmp/SPARK/generated_file/list_int .
 	
@@ -497,4 +495,4 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
   	}
   	```
 
-- 
+- Logging folder should be NFS to be accessible for every node
