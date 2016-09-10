@@ -85,7 +85,7 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	``` ./sbin/stop-all.sh ```
 
 
-*9.1	To Prepare the Local Environment*
+9.1	To Prepare the Local Environment
 
 	``` 
 	in local:
