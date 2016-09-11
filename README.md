@@ -364,6 +364,11 @@ iperf -c 10.1.1.3
 you should run the second script in every other node in order to know the bandwidth 
 between the host and the specified client nodes
 
+kill the iperf :
+
+ ps -ef | grep iperf
+ kill -9 
+
 ``` 
 
 
