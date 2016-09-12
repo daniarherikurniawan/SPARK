@@ -281,16 +281,18 @@ private[spark] class TaskSchedulerImpl(
 //      executorId: String, host: String, cores: Int
 
 //      this should be here because in one loop can be executed twice
-      if(taskSet.name == last_task_name && daniar_counter%2 == 0){
-        // speculative task
-        old_counter = counter;
-        counter = 0;
-      // }else if("TaskSet_0"==taskSet.name || "TaskSet_2"==taskSet.name){
-      }else if("TaskSet_0"==taskSet.name){
-        counter = daniar_counter%2
-      }else {
-        counter = daniar_counter%2 +2
-      }
+
+counter = 0;
+      // if(taskSet.name == last_task_name && daniar_counter%2 == 0){
+      //   // speculative task
+      //   old_counter = counter;
+      //   counter = 0;
+      // // }else if("TaskSet_0"==taskSet.name || "TaskSet_2"==taskSet.name){
+      // }else if("TaskSet_0"==taskSet.name){
+      //   counter = daniar_counter%2
+      // }else {
+      //   counter = daniar_counter%2 +2
+      // }
 
       if (execId == counter.toString()) {
 //        if (availableCpus(i) >= CPUS_PER_TASK) {
