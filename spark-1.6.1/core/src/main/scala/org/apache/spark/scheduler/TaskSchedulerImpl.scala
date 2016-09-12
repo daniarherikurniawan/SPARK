@@ -290,8 +290,10 @@ private[spark] class TaskSchedulerImpl(
       // }else if("TaskSet_0"==taskSet.name || "TaskSet_2"==taskSet.name){
       }else if("TaskSet_0"==taskSet.name || "TaskSet_1"==taskSet.name){
         counter = daniar_counter%2
-      }else {
-        counter = daniar_counter%2 +2
+      }else  if("TaskSet_2"==taskSet.name){
+        counter = 3
+      }else  if("TaskSet_3"==taskSet.name){
+        counter = 4
       }
 
       if (execId == counter.toString()) {
