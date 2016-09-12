@@ -10,5 +10,5 @@ conf = SparkConf().setAppName("Sorting").setMaster("spark://node-1.testspark.cs3
 sc = SparkContext(conf=conf)
 text_file = sc.textFile("../generated_file/list_int",2)
 counts = text_file.map(lambda a : (int(a),a)).sortByKey("true")
-# counts.saveAsTextFile("../generated_file/result_py")
+counts.saveAsTextFile("../generated_file/result_py")
 
