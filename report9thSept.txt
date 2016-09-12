@@ -49,3 +49,15 @@ result:
   Stage_2 : 10 s
 	B1 : 9 s
 	B2 : 10 s
+
+
+- tc-htb slowdown the NFS
+
+cd /tmp/
+cp /proj/cs331-uc/daniar/SPARK/ . -r
+cd SPARK/spark-1.6.1/
+
+Task 1
+
+Task 2      
+02:12:27
