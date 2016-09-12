@@ -92,9 +92,9 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 		cp /proj/cs331-uc/daniar/SPARK/ . -r
 		cd SPARK/spark-1.6.1/
 
-		cd /tmp/
-		rsync /proj/cs331-uc/daniar/ . -r
-		cd SPARK/spark-1.6.1/
+		git pull
+		setenv SPARK_PREPEND_CLASSES true 
+		sudo build/sbt compile -mem 1500 evicted
 
 		time cp /tmp/SPARK/generated_file/list_int .
 		
