@@ -1,7 +1,7 @@
 # SPARK_MEM=${SPARK_MEM:-5120m}
 # export SPARK_MEM
 export SPARK_PREPEND_CLASSES=true
-export SPARK_WORKER_INSTANCES=2
+# export SPARK_WORKER_INSTANCES=2
 # export SPARK_MASTER_IP='192.168.1.8'
 
 # Set JAVA_OPTS to be able to load native libraries and to set heap size
