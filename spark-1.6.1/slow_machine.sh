@@ -11,7 +11,7 @@ REMOTE_DEVICE_PRELUDE="eth"
 # asume only one local device per machine
 # LOCAL_DEVICE_PRELUDE="lo"
 # number of remote devices. eth0...eth${NUM_REMOTE_DEVICES} will be slowed down
-NUM_REMOTE_DEVICES=6
+NUM_REMOTE_DEVICES=4
 # ===============================================================================================================
 # FUNCTIONS
 # ===============================================================================================================
