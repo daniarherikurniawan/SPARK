@@ -139,6 +139,8 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 	
 	./bin/spark-submit sort_in_node.py --master spark://node-1.testspark.cs331-uc.emulab.net:7077 --deploy-mode cluster --num-executors 4
 	
+	./bin/spark-submit sort_in_node.py --master spark://node-5.sparknewtopology.cs331-uc.emulab.net:7077 --deploy-mode cluster --num-executors 4
+	
 	for localhost: 
 	./bin/spark-submit sort_localhost.py --master spark://daniar-X450JF:7077 --deploy-mode cluster --num-executors 1
 
