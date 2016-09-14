@@ -1,0 +1,34 @@
+set ns [new Simulator]
+source tb_compat.tcl
+
+# set num nodes
+set maxnodesInit 5
+
+# to create LAN
+set lanstr ""
+# to create LINK
+set linkstr ""
+
+set node2b [$ns node]
+tb-set-node-os $node2b UBUNTU14-64-STD-DAN
+tb-set-hardware $node2b d710
+
+# Initiate the OS and Hardware from 1 to 5
+for { set i 1 } { $i <= $maxnodesInit } { incr i } {
+	set node($i) [$ns node]
+	tb-set-node-os $node($i) UBUNTU14-64-STD-DAN
+	tb-set-hardware $node($i) d710
+	if {2 != $i} {
+    	append lanstr "$node($i) "
+    }
+    if {2 == $i} {
+    	set link($i) [$ns duplex-link $node($i) $node2b 1000Mb 0ms DropTail]
+    }
+
+}
+
+# set lan here
+set lan0 [$ns make-lan "$lanstr node2b" 1000Mb 0ms]
+
+$ns rtproto Static
+$ns run

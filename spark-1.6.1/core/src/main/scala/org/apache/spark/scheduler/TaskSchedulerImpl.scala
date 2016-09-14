@@ -281,17 +281,17 @@ private[spark] class TaskSchedulerImpl(
 //      executorId: String, host: String, cores: Int
 
 //      this should be here because in one loop can be executed twice
-      counter = daniar_counter%2
+      // counter = daniar_counter%2
        
-      // if(taskSet.name == last_task_name && daniar_counter%2 == 0){
-      //   // speculative task
-      //   old_counter = counter;
-      //   counter = 0;
-      // }else if("TaskSet_0"==taskSet.name || "TaskSet_1"==taskSet.name){
-      //   counter = daniar_counter%2
-      // }else {
-      //   counter = daniar_counter%2 +2
-      // }
+      if(taskSet.name == last_task_name && daniar_counter%2 == 0){
+        // speculative task
+        old_counter = counter;
+        counter = 0;
+      }else if("TaskSet_0"==taskSet.name || "TaskSet_1"==taskSet.name){
+        counter = daniar_counter%2
+      }else {
+        counter = daniar_counter%2 +2
+      }
 
       if (execId == counter.toString()) {
 //        if (availableCpus(i) >= CPUS_PER_TASK) {
@@ -307,25 +307,25 @@ private[spark] class TaskSchedulerImpl(
             assert(availableCpus(i) >= 0)
             launchedTask = true
     
-            // //this condition will only increment if the task is not speculatable task
-            // logInfo("DANIAR: TASK LAUNCHED taskSet.name [stage] = "+taskSet.name +"  daniar_counter = "+daniar_counter)
-            // if(old_counter != -1){
-            //   // return the normal counter
-            //   counter = old_counter;
-            //   old_counter = -1;
-            // }
+            //this condition will only increment if the task is not speculatable task
+            logInfo("DANIAR: TASK LAUNCHED taskSet.name [stage] = "+taskSet.name +"  daniar_counter = "+daniar_counter)
+            if(old_counter != -1){
+              // return the normal counter
+              counter = old_counter;
+              old_counter = -1;
+            }
 
-            // if(taskSet.name == last_task_name && daniar_counter%2 == 0){
-            //   // speculative contdition
-            //   logInfo("DANIAR: TASK LAUNCHED SPECULATIVE!!!")
-            // }else {
-            //   last_task_name = taskSet.name
-            //   daniar_counter += 1
-            // }
+            if(taskSet.name == last_task_name && daniar_counter%2 == 0){
+              // speculative contdition
+              logInfo("DANIAR: TASK LAUNCHED SPECULATIVE!!!")
+            }else {
+              last_task_name = taskSet.name
+              daniar_counter += 1
+            }
 
-            // if(daniar_counter > 3) {
-            //   daniar_counter = 0
-            // }
+            if(daniar_counter > 3) {
+              daniar_counter = 0
+            }
 
           }
         } catch {

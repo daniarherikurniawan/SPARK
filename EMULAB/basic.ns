@@ -1,29 +1,30 @@
-set ns [new Simulator]                  
+set ns [new Simulator]
 source tb_compat.tcl
 
-set n1 [$ns node]
-set n2 [$ns node]
-set n3 [$ns node]
-set n4 [$ns node]
+# set num nodes
+set maxnodes 5
 
-set lan0 [$ns make-cloud "$n1 $n2 $n3 $n4" 100Mb 0ms]
+# to create LAN
+set lanstr ""
 
-tb-set-node-lan-bandwidth $n2 $lan0 20Mb
+# Create LAN including node from 1 to N
+for { set i 1 } { $i <= $maxnodes } { incr i } {
+set node($i) [$ns node]
+append lanstr "$node($i) "
+tb-set-node-os $node($i) UBUNTU14-64-STD-DAN
+tb-set-hardware $node($i) d710
+}
 
-tb-set-node-os $n1 FEDORA15-DAGENT-JAVA
-tb-set-node-os $n2 FEDORA15-DAGENT-JAVA
-tb-set-node-os $n3 FEDORA15-DAGENT-JAVA
-tb-set-node-os $n4 FEDORA15-DAGENT-JAVA
+# set lan here
+set lan0 [$ns make-lan "$lanstr" 100Mb 0ms]
 
-#d710
-tb-set-hardware $n1 pc3000
-tb-set-hardware $n2 pc3000
-tb-set-hardware $n3 pc3000
-tb-set-hardware $n4 pc3000
+# enable this to get rid of the delay node, as stated by emulab this
+# the delay will be implemented using tc on linux (https://wiki.emulab.net/Emulab/wiki/linkdelays)
 
-tb-set-node-rpms $n1 /proj/cs331-uc/resources//iperf-2.0.5-3.fc15.i686.rpm
-tb-set-node-rpms $n2 /proj/cs331-uc/resources//iperf-2.0.5-3.fc15.i686.rpm
-tb-set-node-rpms $n3 /proj/cs331-uc/resources//iperf-2.0.5-3.fc15.i686.rpm
-tb-set-node-rpms $n4 /proj/cs331-uc/resources//iperf-2.0.5-3.fc15.i686.rpm
+# tb-set-endnodeshaping $lan0 1
 
+# manually shape bandwidth of this node using its delay node
+# tb-set-node-lan-bandwidth $node(2) $lan0 101Mb
+
+$ns rtproto Static
 $ns run
