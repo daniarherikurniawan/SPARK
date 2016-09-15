@@ -143,6 +143,9 @@ build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.0 -DskipTests clean package
 
 	./bin/spark-submit sort_in_node.py --master spark://node-5.sparknewtopology.cs331-uc.emulab.net:7077 --deploy-mode cluster --num-executors 4
 	
+	cd ../generated_file/result_py/
+	cd ../../spark-1.6.1/
+
 	for localhost: 
 	./bin/spark-submit sort_localhost.py --master spark://daniar-X450JF:7077 --deploy-mode cluster --num-executors 1
 
@@ -482,6 +485,8 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 - add all new file to git : git add -A .
 - check linux distribution type: lsb_release -a
 - check download big file : wget http://mirror.ufs.ac.za/linuxmint/stable/14/linuxmint-14-kde-dvd-64bit.iso
+- check file detail : ls -lh .
+
 
 
 
