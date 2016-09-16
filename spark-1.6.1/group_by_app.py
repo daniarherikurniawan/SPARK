@@ -5,5 +5,5 @@ conf = SparkConf().setAppName("Sorting").setMaster("spark://node-1.testspark.cs3
 
 sc = SparkContext(conf=conf)
 lines = sc.textFile("/proj/cs331-uc/daniar/SPARK/generated_file/list_int",2)
-result1 = lines.map(lambda a : (int(a),a))
-result2 = result1.groupByKey()
+result = lines.map(lambda a : (int(a),a)).distinct().groupByKey()
+
