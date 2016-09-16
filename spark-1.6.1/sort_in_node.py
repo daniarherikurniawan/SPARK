@@ -22,7 +22,8 @@ print("end the delay")
 
 output = sorted_array.collect()
 
-print("length of array in RDD : "+output.count())
+for (num, unitcount) in output:
+    print(num)
 
 # output.saveAsTextFile("/proj/cs331-uc/daniar/result_py")
 
