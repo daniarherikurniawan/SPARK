@@ -7,6 +7,8 @@ import shutil,os, sys, time
 #     shutil.rmtree("../generated_file/result_py")
 if os.path.exists("/proj/cs331-uc/daniar/result_py"):
     shutil.rmtree("/proj/cs331-uc/daniar/result_py")
+if os.path.exists("workfile"):
+    shutil.rmtree("workfile")
 #some of the configuration is set through declaration at spark-defaults.conf
 conf = SparkConf().setAppName("Sorting").setMaster("spark://node-1.testspark.cs331-uc.emulab.net:7077")
 # conf = SparkConf().setAppName("Sorting").setMaster("spark://node-5.sparknewtopology.cs331-uc.emulab.net:7077")
@@ -21,10 +23,11 @@ time.sleep(30)
 print("end the delay")
 
 output = sorted_array.collect()
-
+f = open('workfile', 'w')
 for (num, unitcount) in output:
-    print(num)
-
+	f.write(num)
+    # print(num)
+f.closed
 # output.saveAsTextFile("/proj/cs331-uc/daniar/result_py")
 
 # ./bin/spark-submit sort_in_node.py --master spark://daniar-X450JF:7077 --deploy-mode cluster --num-executors 4
