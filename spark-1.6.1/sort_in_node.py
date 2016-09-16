@@ -14,12 +14,12 @@ conf = SparkConf().setAppName("Sorting").setMaster("spark://node-1.testspark.cs3
 
 sc = SparkContext(conf=conf)
 
-lines = sc.read.text(sys.argv[1]).rdd.map(lambda r: r[0])
-sorted_array = lines.map(lambda a : (int(a),a)).sortByKey("true")
+# lines = spark.read.text(sys.argv[1]).rdd.map(lambda r: r[0])
+# sortedCount = lines.map(lambda a : (int(a),a)).sortByKey("true")
 
 
-# text_file = sc.textFile("../generated_file/list_int",2)
-# sorted_array = text_file.map(lambda a : (int(a),a)).sortByKey("true")
+text_file = sc.textFile("../generated_file/list_int",2)
+sorted_array = text_file.map(lambda a : (int(a),a)).sortByKey("true")
 
 print("start the delay. Inject TC!!")
 time.sleep(30)
