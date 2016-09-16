@@ -24,6 +24,6 @@ output = sorted_array.collect()
 
 print("length of array in RDD : "+output.count())
 
-output.saveAsTextFile("/proj/cs331-uc/daniar/result_py")
+# output.saveAsTextFile("/proj/cs331-uc/daniar/result_py")
 
 # ./bin/spark-submit sort_in_node.py --master spark://daniar-X450JF:7077 --deploy-mode cluster --num-executors 4
