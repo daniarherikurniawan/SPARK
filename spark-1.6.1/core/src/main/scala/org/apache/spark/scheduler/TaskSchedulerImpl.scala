@@ -295,7 +295,9 @@ private[spark] class TaskSchedulerImpl(
         counter = daniar_counter%2 +2
       }
 
-      logInfo("DANIAR: DELAY COUNTER IS STILL COUNTING  "+delay_counter)
+      if("TaskSet_3"==taskSet.name && delay_counter >= 0 )
+        logInfo("DANIAR:Inject Delay on W2!! DELAY COUNTER IS STILL COUNTING  "+delay_counter)
+      
       if (execId == counter.toString() && ( delay_counter == 400 || delay_counter <= 0  )) {
 //        if (availableCpus(i) >= CPUS_PER_TASK) {
         try {
