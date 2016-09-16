@@ -26,6 +26,6 @@ print("end the delay")
 # 	f.write(str(num)+"\n")
 #     # print(num)
 # f.closed
-output.saveAsTextFile("/proj/cs331-uc/daniar/result_py")
+sorted_array.saveAsTextFile("/proj/cs331-uc/daniar/result_py")
 
 # ./bin/spark-submit sort_in_node.py --master spark://daniar-X450JF:7077 --deploy-mode cluster --num-executors 4
