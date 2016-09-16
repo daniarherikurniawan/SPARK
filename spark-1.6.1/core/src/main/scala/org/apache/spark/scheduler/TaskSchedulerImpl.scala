@@ -75,7 +75,7 @@ private[spark] class TaskSchedulerImpl(
 
   var daniar_counter = 0
   var counter = 0
-  var delay_counter = 400
+  var delay_counter = 200
 
   var last_task_name = new String
   // TaskSetManagers are not thread safe, so any access to one should be synchronized
@@ -298,7 +298,7 @@ private[spark] class TaskSchedulerImpl(
       if("TaskSet_3"==taskSet.name && delay_counter >= 0 )
         logInfo("DANIAR:Inject Delay on W2!! DELAY COUNTER IS STILL COUNTING  "+delay_counter)
       
-      if (execId == counter.toString() && ( delay_counter == 400 || delay_counter <= 0  )) {
+      if (execId == counter.toString() && ( delay_counter == 200 || delay_counter <= 0  )) {
 //        if (availableCpus(i) >= CPUS_PER_TASK) {
         try {
           for (task <- taskSet.resourceOffer(execId, host, maxLocality)) {
