@@ -23,7 +23,7 @@ print("end the delay")
 output = sorted_array.collect()
 f = open('workfile', 'w')
 for (num, unitcount) in output:
-	f.write(str(num))
+	f.write(str(num)+"\n")
     # print(num)
 f.closed
 # output.saveAsTextFile("/proj/cs331-uc/daniar/result_py")
