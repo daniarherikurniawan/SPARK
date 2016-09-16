@@ -14,13 +14,16 @@ conf = SparkConf().setAppName("Sorting").setMaster("spark://node-1.testspark.cs3
 
 sc = SparkContext(conf=conf)
 text_file = sc.textFile("/proj/cs331-uc/daniar/SPARK/generated_file/list_int",2)
-counts = text_file.map(lambda a : (int(a),a)).sortByKey("true")
+sorted_array = text_file.map(lambda a : (int(a),a)).sortByKey("true")
 
 print("start the delay. Inject TC!!")
 time.sleep(30)
 print("end the delay")
 
-output = counts.collect()
+output = sorted_array.collect()
+
+print("length of array in RDD : "+output.count())
+
 output.saveAsTextFile("/proj/cs331-uc/daniar/result_py")
 
 # ./bin/spark-submit sort_in_node.py --master spark://daniar-X450JF:7077 --deploy-mode cluster --num-executors 4
