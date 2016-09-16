@@ -75,6 +75,7 @@ private[spark] class TaskSchedulerImpl(
 
   var daniar_counter = 0
   var counter = 0
+  var delay_counter = 15
 
   var last_task_name = new String
   // TaskSetManagers are not thread safe, so any access to one should be synchronized
@@ -287,13 +288,15 @@ private[spark] class TaskSchedulerImpl(
         // speculative task
         old_counter = counter;
         counter = 0;
-      }else if("TaskSet_0"==taskSet.name || "TaskSet_1"==taskSet.name){
+      }else if("TaskSet_0"==taskSet.name || "TaskSet_1"==taskSet.name || "TaskSet_2"==taskSet.name){
         counter = daniar_counter%2
       }else {
+        delay_counter = delay_counter - 1
         counter = daniar_counter%2 +2
       }
 
-      if (execId == counter.toString()) {
+      logInfo("DANIAR: DELAY COUNTER IS STILL COUNTING  "+delay_counter)
+      if (execId == counter.toString() && ( delay_counter == 15 || delay_counter == 0  )) {
 //        if (availableCpus(i) >= CPUS_PER_TASK) {
         try {
           for (task <- taskSet.resourceOffer(execId, host, maxLocality)) {
