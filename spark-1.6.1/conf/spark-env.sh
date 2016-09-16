@@ -1,7 +1,7 @@
 # SPARK_MEM=${SPARK_MEM:-5120m}
 # export SPARK_MEM
 export SPARK_PREPEND_CLASSES=true
-# export SPARK_WORKER_INSTANCES=2
+# export SPARK_WORKER_INSTANCES=4
 
 # export SPARK_LOCAL_IP=pc414.emulab.net
 
