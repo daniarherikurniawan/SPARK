@@ -14,7 +14,7 @@ conf = SparkConf().setAppName("Sorting").setMaster("spark://node-1.testspark.cs3
 
 sc = SparkContext(conf=conf)
 
-lines = spark.read.text(sys.argv[1]).rdd.map(lambda r: r[0])
+lines = sc.read.text(sys.argv[1]).rdd.map(lambda r: r[0])
 sorted_array = lines.map(lambda a : (int(a),a)).sortByKey("true")
 
 
