@@ -259,7 +259,7 @@ private[spark] class Executor(
 
         logInfo("RESULT DANIAR valueBytes : "+valueBytes)
         val charBuffer = valueBytes.asCharBuffer
-        logInfo("text : " + charBuffer)
+        logInfo("text : " + charBuffer.size())
         // directSend = sending directly back to the driver
         val serializedResult: ByteBuffer = {
           if (maxResultSize > 0 && resultSize > maxResultSize) {
