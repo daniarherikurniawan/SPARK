@@ -163,6 +163,7 @@ final class ShuffleBlockFetcherIterator(
             shuffleMetrics.incRemoteBlocksFetched(1)
           }
           logInfo("Got remote block " + blockId + " after " + Utils.getUsedTimeMs(startTime)+" buf : "+buf)
+          logInfo("The buffer size is : "+buf.size())
         }
 
         override def onBlockFetchFailure(blockId: String, e: Throwable): Unit = {
