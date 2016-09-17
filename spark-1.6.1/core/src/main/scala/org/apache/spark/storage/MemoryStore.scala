@@ -145,9 +145,9 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       values: Iterator[Any],
       level: StorageLevel,
       returnValues: Boolean): PutResult = {
-    logInfo("DANIAR HERE AT MEMORY STORE putIterator START "+blockId)
+    logInfo("DANIAR HERE AT MEMORY STORE putIterator START ")
     putIterator(blockId, values, level, returnValues, allowPersistToDisk = true)
-    logInfo("DANIAR HERE AT MEMORY STORE putIterator END "+blockId)
+    logInfo("DANIAR HERE AT MEMORY STORE putIterator END ")
   }
 
   /**
