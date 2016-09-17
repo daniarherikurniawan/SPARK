@@ -7,6 +7,10 @@ import shutil,os, sys, time
 #     shutil.rmtree("../generated_file/result_py")
 if os.path.exists("/proj/cs331-uc/daniar/result_py"):
     shutil.rmtree("/proj/cs331-uc/daniar/result_py")
+
+if os.path.exists("workfile"):
+    os.remove("workfile")
+    
 #some of the configuration is set through declaration at spark-defaults.conf
 conf = SparkConf().setAppName("Sorting").setMaster("spark://node-1.testspark.cs331-uc.emulab.net:7077")
 # conf = SparkConf().setAppName("Sorting").setMaster("spark://node-5.sparknewtopology.cs331-uc.emulab.net:7077")
