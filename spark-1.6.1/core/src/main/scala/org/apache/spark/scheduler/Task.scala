@@ -20,8 +20,10 @@ package org.apache.spark.scheduler
 import java.io.{ByteArrayOutputStream, DataInputStream, DataOutputStream}
 import java.nio.ByteBuffer
 
+import scala.collection.mutable.HashMap
+
 import org.apache.spark.metrics.MetricsSystem
-import org.apache.spark._
+import org.apache.spark.{Accumulator, SparkEnv, TaskContextImpl, TaskContext}
 import org.apache.spark.executor.TaskMetrics
 import org.apache.spark.memory.TaskMemoryManager
 import org.apache.spark.serializer.SerializerInstance
@@ -43,7 +45,7 @@ import org.apache.spark.util.Utils
  * @param stageId id of the stage this task belongs to
  * @param partitionId index of the number in the RDD
  */
-private[spark] abstract class Task[T] extends Logging(
+private[spark] abstract class Task[T](
     val stageId: Int,
     val stageAttemptId: Int,
     val partitionId: Int,
@@ -77,20 +79,20 @@ private[spark] abstract class Task[T] extends Logging(
       internalAccumulators,
       runningLocally = false)
 
-    logInfo(s"Running 2a 1 initialization")
+    // logInfo(s"Running 2a 1 initialization")
     TaskContext.setTaskContext(context)
     context.taskMetrics.setHostname(Utils.localHostName())
     context.taskMetrics.setAccumulatorsUpdater(context.collectInternalAccumulators)
     taskThread = Thread.currentThread()
-    logInfo(s"Running 2a 2 threading")
+    // logInfo(s"Running 2a 2 threading")
     if (_killed) {
       kill(interruptThread = false)
     }
     try {
-      logInfo(s"Running 2a 3 collectAccumulators")
+      // logInfo(s"Running 2a 3 collectAccumulators")
       (runTask(context), context.collectAccumulators())
     } finally {
-      logInfo(s"Running 2a 4 markTaskCompleted")
+      // logInfo(s"Running 2a 4 markTaskCompleted")
       context.markTaskCompleted()
       try {
         Utils.tryLogNonFatalError {
@@ -104,7 +106,7 @@ private[spark] abstract class Task[T] extends Logging(
           memoryManager.synchronized { memoryManager.notifyAll() }
         }
       } finally {
-        logInfo(s"Running 2a 5 TaskContext.unset")
+        // logInfo(s"Running 2a 5 TaskContext.unset")
         TaskContext.unset()
       }
     }
