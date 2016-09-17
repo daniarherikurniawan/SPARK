@@ -75,7 +75,7 @@ private[spark] class TaskSchedulerImpl(
 
   var daniar_counter = 0
   var counter = 0
-  var delay_counter = 100
+  var delay_counter = 150
   var hostW2 = "XX"
 
   var last_task_name = new String
@@ -299,7 +299,7 @@ private[spark] class TaskSchedulerImpl(
         logInfo(delay_counter +" DANIAR:Inject Delay on W2 : "+hostW2)
       }
       
-      if (execId == counter.toString() && ( delay_counter == 100 || delay_counter <= 0  )) {
+      if (execId == counter.toString() && ( delay_counter == 150 || delay_counter <= 0  )) {
 //        if (availableCpus(i) >= CPUS_PER_TASK) {
         try {
           for (task <- taskSet.resourceOffer(execId, host, maxLocality)) {
