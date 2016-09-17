@@ -1,22 +1,22 @@
 sudo tc qdisc del dev eth0 root
-sudo tc qdisc del dev eth2 root
+sudo tc qdisc del dev eth6 root
 sudo tc qdisc del dev lo root
 
 
 sudo tc qdisc add dev eth0 handle 1: root htb default 11
-sudo tc class add dev eth0 parent 1: classid 1:1 htb rate 0.1mbps
-sudo tc class add dev eth0 parent 1:1 classid 1:11 htb rate 0.1mbps
+sudo tc class add dev eth0 parent 1: classid 1:1 htb rate 0.125mbps
+sudo tc class add dev eth0 parent 1:1 classid 1:11 htb rate 0.125mbps
 
 sudo tc qdisc add dev lo handle 1: root htb default 11
-sudo tc class add dev lo parent 1: classid 1:1 htb rate 0.1mbps
-sudo tc class add dev lo parent 1:1 classid 1:11 htb rate 0.1mbps
+sudo tc class add dev lo parent 1: classid 1:1 htb rate 0.125mbps
+sudo tc class add dev lo parent 1:1 classid 1:11 htb rate 0.125mbps
 
-sudo tc qdisc add dev eth2 handle 1: root htb default 11
-sudo tc class add dev eth2 parent 1: classid 1:1 htb rate 0.1mbps
-sudo tc class add dev eth2 parent 1:1 classid 1:11 htb rate 0.1mbps
-
+sudo tc qdisc add dev eth6 handle 1: root htb default 11
+sudo tc class add dev eth6 parent 1: classid 1:1 htb rate 0.125mbps
+sudo tc class add dev eth6 parent 1:1 classid 1:11 htb rate 0.125mbps
 
 bmon
+
 
 # 1 mbps
 # 0.5 mbps

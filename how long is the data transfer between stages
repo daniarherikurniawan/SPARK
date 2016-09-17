@@ -173,3 +173,44 @@ set timing before and after
 
 follow the rdd
 inside rdd is buffer
+
+
+- start from the executor
+- get the buffer 
+- add timing 
+
+Delay: 0.125 MBps → 1 Mbps
+T5(W1)-->T7(W3)  → fast  (23 MBps)
+T5(W1)-->T8(W4) ---> fast  (~23 MBps)
+T6(W2)-->T7(W3)  → slow  (0.26 MBps)
+T6(W2)-->T8(W4)  → slow (0.24 MBps)
+Overall job latency: (expected ) 5 minutes
+
+TODO-1: 
+stage4 starts, 1-2 seconds, kill W2 (kill all spark applications;  kill -s 9 PID ;; ) 
+(manual --- just eyeball the monitor, both T7 and T8 already spend about 1-5 seconds, kill W2)
+Report the job latency → approximate if we implement PBSE and restart T6 elsewhere
+
+TODO-2:
+Variant of TODO-1:  instead of kill spark applications;  you enable TC by dropping 100% of the packets
+Let’s see if T7 and T8 got “network error connection” 
+REport the job latency (and observe what’s going on)
+
+TODO-3: 
+Either use TODO-1 or TODO-2 setups (the easiest one)
+Learn how T6 will be re-run in other node  (because T6 was deemed not functional from W2, so likely Spark will run T6 elsewhere)
+So what you’ll learn here is the **CONTROL FLOW** from: (a)  network failure/W2 crash → (b) some detection (who is detecting this??) → (c) the fact that T6 will be rerun elsewhere → (d) the fact that T7 and T8 are re-fetching the data from T6 from other node
+The most important thing is understanding the transition from (b) → (c), why?
+
+TODO-4:
+How heartbeat is sent by the executor/?? To the driver/master … and the application-driver checks all the progress score (??)
+
+TODO-5:
+Can you piggy back the number “23 MBps, and 0.24 Mbps” as part of the heartbeat
+T7.Heartbeat {      string [ 2 ] array =  {  “T5--T7--23” ;  “T6--T7--0.26” }
+T8.Heartbeat {      string [ 2 ] array =  {  “T5--T8--24” ;  “T6--T8--0.25” }
+Driver: aha, I see those values,  you can declare T6 is slow 
+So the driver knowing that T6 is slow → it will TRIGGER the step (b) → (c)
+Suppose there is a function:  recover(aTask);
+
+
