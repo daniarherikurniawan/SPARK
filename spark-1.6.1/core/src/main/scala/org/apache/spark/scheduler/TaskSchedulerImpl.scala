@@ -76,6 +76,7 @@ private[spark] class TaskSchedulerImpl(
   var daniar_counter = 0
   var counter = 0
   var delay_counter = 100
+  var hostW2 = "XX"
 
   var last_task_name = new String
   // TaskSetManagers are not thread safe, so any access to one should be synchronized
@@ -268,7 +269,6 @@ private[spark] class TaskSchedulerImpl(
       availableCpus: Array[Int],
       tasks: Seq[ArrayBuffer[TaskDescription]]) : Boolean = {
     var launchedTask = false
-    var hostW2 = "XX"
     val sortedOffers = getOffers(daniar_counter, shuffledOffers)
     var old_counter = -1;
 //    logInfo(">>DANIAR: DO HACK CHECK before loop  ^^^^^^^^^^^^^")
@@ -313,7 +313,7 @@ private[spark] class TaskSchedulerImpl(
             assert(availableCpus(i) >= 0)
             launchedTask = true
             
-            if(execId == "1")
+            if(counter == 1)
               hostW2 = host
 
             //this condition will only increment if the task is not speculatable task
