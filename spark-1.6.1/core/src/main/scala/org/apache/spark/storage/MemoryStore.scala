@@ -133,12 +133,13 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       val sizeEstimate = SizeEstimator.estimate(values.asInstanceOf[AnyRef])
       tryToPut(blockId, values, sizeEstimate, deserialized = true, droppedBlocks)
       PutResult(sizeEstimate, Left(values.iterator), droppedBlocks)
+      logInfo("DANIAR HERE AT PUT ARRAY End")
     } else {
       val bytes = blockManager.dataSerialize(blockId, values.iterator)
       tryToPut(blockId, bytes, bytes.limit, deserialized = false, droppedBlocks)
       PutResult(bytes.limit(), Right(bytes.duplicate()), droppedBlocks)
+      logInfo("DANIAR HERE AT PUT ARRAY End")
     }
-    logInfo("DANIAR HERE AT PUT ARRAY End")
   }
 
   override def putIterator(
