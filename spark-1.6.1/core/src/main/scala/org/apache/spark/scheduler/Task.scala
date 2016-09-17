@@ -78,16 +78,21 @@ private[spark] abstract class Task[T](
       metricsSystem,
       internalAccumulators,
       runningLocally = false)
+
+    logInfo(s"Running 2a 1 initialization")
     TaskContext.setTaskContext(context)
     context.taskMetrics.setHostname(Utils.localHostName())
     context.taskMetrics.setAccumulatorsUpdater(context.collectInternalAccumulators)
     taskThread = Thread.currentThread()
+    logInfo(s"Running 2a 2 threading")
     if (_killed) {
       kill(interruptThread = false)
     }
     try {
+      logInfo(s"Running 2a 3 collectAccumulators")
       (runTask(context), context.collectAccumulators())
     } finally {
+      logInfo(s"Running 2a 4 markTaskCompleted")
       context.markTaskCompleted()
       try {
         Utils.tryLogNonFatalError {
@@ -101,6 +106,7 @@ private[spark] abstract class Task[T](
           memoryManager.synchronized { memoryManager.notifyAll() }
         }
       } finally {
+        logInfo(s"Running 2a 5 TaskContext.unset")
         TaskContext.unset()
       }
     }
