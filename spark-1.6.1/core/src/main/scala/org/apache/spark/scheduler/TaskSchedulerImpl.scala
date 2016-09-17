@@ -313,7 +313,7 @@ private[spark] class TaskSchedulerImpl(
             assert(availableCpus(i) >= 0)
             launchedTask = true
             
-            if(taskId == "1")
+            if(execId == "1")
               hostW2 = host
 
             //this condition will only increment if the task is not speculatable task
