@@ -127,7 +127,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       values: Array[Any],
       level: StorageLevel,
       returnValues: Boolean): PutResult = {
-      logInfo("DANIAR HERE AT MEMORY STORE putArray "+values+"  blockID "+blockId)
+      logInfo("DANIAR HERE AT PUT ARRAY "+values+"  blockID "+blockId)
     val droppedBlocks = new ArrayBuffer[(BlockId, BlockStatus)]
     if (level.deserialized) {
       val sizeEstimate = SizeEstimator.estimate(values.asInstanceOf[AnyRef])
@@ -138,6 +138,7 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       tryToPut(blockId, bytes, bytes.limit, deserialized = false, droppedBlocks)
       PutResult(bytes.limit(), Right(bytes.duplicate()), droppedBlocks)
     }
+    logInfo("DANIAR HERE AT PUT ARRAY End")
   }
 
   override def putIterator(
@@ -168,18 +169,18 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       returnValues: Boolean,
       allowPersistToDisk: Boolean): PutResult = {
 
-    logInfo("DANIAR HERE AT MEMORY STORE inside putIterator ")
+    logInfo("DANIAR HERE AT PUT ITERATOR ")
     val droppedBlocks = new ArrayBuffer[(BlockId, BlockStatus)]
     val unrolledValues = unrollSafely(blockId, values, droppedBlocks)
     unrolledValues match {
       case Left(arrayValues) =>
-        logInfo("DANIAR HERE AT MEMORY STORE inside putIterator case Left")
+        logInfo("DANIAR HERE AT PUT ITERATOR  case Left")
         // Values are fully unrolled in memory, so store them as an array
         val res = putArray(blockId, arrayValues, level, returnValues)
         droppedBlocks ++= res.droppedBlocks
         PutResult(res.size, res.data, droppedBlocks)
       case Right(iteratorValues) =>
-        logInfo("DANIAR HERE AT MEMORY STORE inside putIterator case Right")
+        logInfo("DANIAR HERE AT PUT ITERATOR  case Right")
         // Not enough space to unroll this block; drop to disk if applicable
         if (level.useDisk && allowPersistToDisk) {
           logWarning(s"Persisting block $blockId to disk instead.")
