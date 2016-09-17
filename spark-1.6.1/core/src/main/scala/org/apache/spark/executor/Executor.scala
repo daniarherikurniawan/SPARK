@@ -189,6 +189,7 @@ private[spark] class Executor(
       var taskStart: Long = 0
       startGCTime = computeTotalGcTime()
 
+      logInfo(s"Running 1 startGCTime")
       try {
         val (taskFiles, taskJars, taskBytes) = Task.deserializeWithDependencies(serializedTask)
         updateDependencies(taskFiles, taskJars)
@@ -205,20 +206,26 @@ private[spark] class Executor(
           throw new TaskKilledException
         }
 
+        logInfo(s"Running 2")
+
         logDebug("Task " + taskId + "'s epoch is " + task.epoch)
         env.mapOutputTracker.updateEpoch(task.epoch)
 
         // Run the actual task and measure its runtime.
         taskStart = System.currentTimeMillis()
+        logInfo(s"Running 2a taskStart")
         var threwException = true
         val (value, accumUpdates) = try {
           val res = task.run(
             taskAttemptId = taskId,
             attemptNumber = attemptNumber,
             metricsSystem = env.metricsSystem)
+
+          logInfo(s"Running 3aa in try")
           threwException = false
           res
         } finally {
+          logInfo(s"Running 2b in Finally")
           val freedMemory = taskMemoryManager.cleanUpAllAllocatedMemory()
           if (freedMemory > 0) {
             val errMsg = s"Managed memory leak detected; size = $freedMemory bytes, TID = $taskId"
@@ -229,6 +236,8 @@ private[spark] class Executor(
             }
           }
         }
+
+        logInfo(s"Running 3")
         val taskFinish = System.currentTimeMillis()
 
         // If the task has been killed, let's fail it.
@@ -236,6 +245,7 @@ private[spark] class Executor(
           throw new TaskKilledException
         }
 
+        logInfo(s"Running 4 after taskFinish")
         val resultSer = env.serializer.newInstance()
         val beforeSerialization = System.currentTimeMillis()
         val valueBytes = resultSer.serialize(value)
