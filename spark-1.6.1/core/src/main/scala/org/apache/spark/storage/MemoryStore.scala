@@ -188,7 +188,6 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
         } else {
           PutResult(0, Left(iteratorValues), droppedBlocks)
         }
-        logInfo("DANIAR HERE AT MEMORY STORE putIterator END")
     }
 
   }
