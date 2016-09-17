@@ -288,6 +288,8 @@ private[spark] class BlockManager(
    */
   override def getBlockData(blockId: BlockId): ManagedBuffer = {
     if (blockId.isShuffle) {
+      val mb = shuffleManager.shuffleBlockResolver.getBlockData(blockId.asInstanceOf[ShuffleBlockId])
+      logInfo("Daniar on BlockManager: "+mb.size())
       shuffleManager.shuffleBlockResolver.getBlockData(blockId.asInstanceOf[ShuffleBlockId])
     } else {
       val blockBytesOpt = doGetLocal(blockId, asBlockResult = false)
@@ -299,6 +301,7 @@ private[spark] class BlockManager(
         throw new BlockNotFoundException(blockId.toString)
       }
     }
+
   }
 
   /**
