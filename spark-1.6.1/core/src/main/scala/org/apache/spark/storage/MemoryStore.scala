@@ -147,7 +147,6 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       returnValues: Boolean): PutResult = {
     logInfo("DANIAR HERE AT MEMORY STORE putIterator START"+values)
     putIterator(blockId, values, level, returnValues, allowPersistToDisk = true)
-    logInfo("DANIAR HERE AT MEMORY STORE putIterator END"+values)
   }
 
   /**
@@ -168,15 +167,19 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
       level: StorageLevel,
       returnValues: Boolean,
       allowPersistToDisk: Boolean): PutResult = {
+
+    logInfo("DANIAR HERE AT MEMORY STORE inside putIterator ")
     val droppedBlocks = new ArrayBuffer[(BlockId, BlockStatus)]
     val unrolledValues = unrollSafely(blockId, values, droppedBlocks)
     unrolledValues match {
       case Left(arrayValues) =>
+        logInfo("DANIAR HERE AT MEMORY STORE inside putIterator case Left")
         // Values are fully unrolled in memory, so store them as an array
         val res = putArray(blockId, arrayValues, level, returnValues)
         droppedBlocks ++= res.droppedBlocks
         PutResult(res.size, res.data, droppedBlocks)
       case Right(iteratorValues) =>
+        logInfo("DANIAR HERE AT MEMORY STORE inside putIterator case Right")
         // Not enough space to unroll this block; drop to disk if applicable
         if (level.useDisk && allowPersistToDisk) {
           logWarning(s"Persisting block $blockId to disk instead.")
@@ -186,6 +189,8 @@ private[spark] class MemoryStore(blockManager: BlockManager, memoryManager: Memo
           PutResult(0, Left(iteratorValues), droppedBlocks)
         }
     }
+
+    logInfo("DANIAR HERE AT MEMORY STORE putIterator END")
   }
 
   override def getBytes(blockId: BlockId): Option[ByteBuffer] = {
