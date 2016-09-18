@@ -103,6 +103,7 @@ class BlockManagerMasterEndpoint(
       context.reply(true)
 
     case RemoveExecutor(execId) =>
+      logInfo("in BlockManagerMasterEndpoint RemoveExecutor receiveAndReply")
       removeExecutor(execId)
       context.reply(true)
 
@@ -111,6 +112,7 @@ class BlockManagerMasterEndpoint(
       stop()
 
     case BlockManagerHeartbeat(blockManagerId) =>
+      logInfo("in BlockManagerMasterEndpoint BlockManagerHeartbeat receiveAndReply")
       context.reply(heartbeatReceived(blockManagerId))
 
     case HasCachedBlocks(executorId) =>

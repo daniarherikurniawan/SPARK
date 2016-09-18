@@ -101,7 +101,7 @@ private[netty] class Inbox(
         message match {
           case RpcMessage(_sender, content, context) =>
             try {
-              logInfo("Inbox.scala  process receiveAndReply called _sender, content, endpoint :"+_sender+" "+content +" "+endpoint)
+//              logInfo("Inbox.scala  process receiveAndReply called _sender, content, endpoint :"+_sender+" "+content +" "+endpoint)
               endpoint.receiveAndReply(context).applyOrElse[Any, Unit](content, { msg =>
                 throw new SparkException(s"Unsupported message $message from ${_sender}")
               })
