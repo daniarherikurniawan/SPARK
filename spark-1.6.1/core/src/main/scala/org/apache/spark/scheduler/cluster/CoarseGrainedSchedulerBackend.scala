@@ -188,6 +188,7 @@ class CoarseGrainedSchedulerBackend(scheduler: TaskSchedulerImpl, val rpcEnv: Rp
         context.reply(true)
 
       case RemoveExecutor(executorId, reason) =>
+        logInfo("Daniar at coarsegrainedSchedulerBackend RemoveExecutor")
         removeExecutor(executorId, reason)
         context.reply(true)
 

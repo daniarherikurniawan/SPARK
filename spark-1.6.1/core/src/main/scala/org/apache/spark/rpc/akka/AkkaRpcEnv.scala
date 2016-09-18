@@ -160,6 +160,7 @@ private[spark] class AkkaRpcEnv private[akka] (
     val needReply = m.needReply
     val pf: PartialFunction[Any, Unit] =
       if (needReply) {
+        logInfo("Akka processMessage receiveAndReply called")
         endpoint.receiveAndReply(new RpcCallContext {
           override def sendFailure(e: Throwable): Unit = {
             _sender ! AkkaFailure(e)
