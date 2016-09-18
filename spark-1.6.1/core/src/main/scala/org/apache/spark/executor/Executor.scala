@@ -437,7 +437,9 @@ private[spark] class Executor(
     val tasksMetrics = new ArrayBuffer[(Long, TaskMetrics)]()
     val curGCTime = computeTotalGcTime()
 
+    logInfo("DANIAR in EXECUTOR : reportHeartBeat")
     for (taskRunner <- runningTasks.values().asScala) {
+      logInfo("DANIAR in EXECUTOR : for (taskRunner <- runningTasks) taskId: "+taskRunner.taskId)
       if (taskRunner.task != null) {
         taskRunner.task.metrics.foreach { metrics =>
           metrics.updateShuffleReadMetrics()
