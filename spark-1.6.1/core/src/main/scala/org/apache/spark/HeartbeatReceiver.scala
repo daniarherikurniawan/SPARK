@@ -194,6 +194,7 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
   }
 
   private def expireDeadHosts(): Unit = {
+    logInfo("executorLOST TaskSchedulerImpl CALLED!!!")
     logInfo("in expireDeadHosts : Checking for hosts with no recent heartbeats in HeartbeatReceiver. executorTimeoutMs: "+executorTimeoutMs)
     val now = clock.getTimeMillis()
     for ((executorId, lastSeenMs) <- executorLastSeen) {

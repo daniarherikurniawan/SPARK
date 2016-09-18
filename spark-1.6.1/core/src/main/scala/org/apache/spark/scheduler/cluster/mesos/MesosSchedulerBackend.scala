@@ -402,6 +402,7 @@ private[spark] class MesosSchedulerBackend(
 
   private def recordSlaveLost(d: SchedulerDriver, slaveId: SlaveID, reason: ExecutorLossReason) {
     inClassLoader() {
+      logInfo("executorLOST TaskSchedulerImpl CALLED!!!")
       logInfo("Mesos slave lost: " + slaveId.getValue)
       removeExecutor(slaveId.getValue, reason.toString)
       scheduler.executorLost(slaveId.getValue, reason)
