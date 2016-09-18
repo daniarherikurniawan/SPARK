@@ -1,6 +1,7 @@
 speculative_logs.txt
 note_important.txt
 todo_list.txt
+EMULAB/DownloadFilezilla/
 #spark-1.6.1/assembly/target/
 #spark-1.6.1/bagel/target/
 #spark-1.6.1/build/zinc-0.3.5.3/
