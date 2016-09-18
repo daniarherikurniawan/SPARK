@@ -61,7 +61,7 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
   def this(sc: SparkContext) {
     this(sc, new SystemClock)
   }
-
+  logInfo("DANIAR HEARTBEAT!!!!!!!!! first")
   sc.addSparkListener(this)
 
   override val rpcEnv: RpcEnv = sc.env.rpcEnv
@@ -104,6 +104,7 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
 
   override def receiveAndReply(context: RpcCallContext): PartialFunction[Any, Unit] = {
 
+    logInfo("DANIAR HEARTBEAT receiveAndReply")
     // Messages sent and received locally
     case ExecutorRegistered(executorId) =>
       executorLastSeen(executorId) = clock.getTimeMillis()
