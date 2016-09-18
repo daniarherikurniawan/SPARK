@@ -112,7 +112,7 @@ class BlockManagerMasterEndpoint(
       stop()
 
     case BlockManagerHeartbeat(blockManagerId) =>
-      logInfo("in BlockManagerMasterEndpoint BlockManagerHeartbeat receiveAndReply")
+      // logInfo("in BlockManagerMasterEndpoint BlockManagerHeartbeat receiveAndReply")
       context.reply(heartbeatReceived(blockManagerId))
 
     case HasCachedBlocks(executorId) =>
