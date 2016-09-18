@@ -273,7 +273,7 @@ class CoarseGrainedSchedulerBackend(scheduler: TaskSchedulerImpl, val rpcEnv: Rp
           }
           totalCoreCount.addAndGet(-executorInfo.totalCores)
           totalRegisteredExecutors.addAndGet(-1)
-          logInfo("executorLOST TaskSchedulerImpl CALLED!!!")
+          logInfo("in CoarseGrained Scheduler removeExecutor executorLOST TaskSchedulerImpl CALLED!!!")
           scheduler.executorLost(executorId, if (killed) ExecutorKilled else reason)
           listenerBus.post(
             SparkListenerExecutorRemoved(System.currentTimeMillis(), executorId, reason.toString))
