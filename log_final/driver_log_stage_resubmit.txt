@@ -1,0 +1,682 @@
+DANIAR
+NOTE: SPARK_PREPEND_CLASSES is set, placing locally compiled Spark classes ahead of assembly.
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/09/17 23:46:35 INFO SparkContext: Running Spark version 1.6.1
+16/09/17 23:46:35 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/09/17 23:46:35 WARN SparkConf: In Spark 1.0 and later spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone and LOCAL_DIRS in YARN).
+16/09/17 23:46:35 INFO SecurityManager: Changing view acls to: daniar
+16/09/17 23:46:35 INFO SecurityManager: Changing modify acls to: daniar
+16/09/17 23:46:35 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(daniar); users with modify permissions: Set(daniar)
+16/09/17 23:46:36 INFO Utils: Successfully started service 'sparkDriver' on port 56629.
+16/09/17 23:46:36 INFO Slf4jLogger: Slf4jLogger started
+16/09/17 23:46:36 INFO Remoting: Starting remoting
+16/09/17 23:46:36 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@155.98.36.86:60771]
+16/09/17 23:46:36 INFO Utils: Successfully started service 'sparkDriverActorSystem' on port 60771.
+16/09/17 23:46:36 INFO SparkEnv: Registering MapOutputTracker
+16/09/17 23:46:36 INFO SparkEnv: Registering BlockManagerMaster
+16/09/17 23:46:36 INFO DiskBlockManager: Created local directory at /tmp/temporary_storage/blockmgr-72a4fa2e-9530-4956-be88-308192254eff
+16/09/17 23:46:36 INFO MemoryStore: MemoryStore started with capacity 2.7 GB
+16/09/17 23:46:36 INFO SparkEnv: Registering OutputCommitCoordinator
+16/09/17 23:46:37 INFO Server: jetty-8.y.z-SNAPSHOT
+16/09/17 23:46:37 INFO AbstractConnector: Started SelectChannelConnector@0.0.0.0:4040
+16/09/17 23:46:37 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+16/09/17 23:46:37 INFO SparkUI: Started SparkUI at http://155.98.36.86:4040
+16/09/17 23:46:37 INFO HttpFileServer: HTTP File server directory is /tmp/temporary_storage/spark-bca653b5-3a10-4905-9805-6b3a4f45dab3/httpd-100de684-ef20-42fe-9d37-2bbb064655f3
+16/09/17 23:46:37 INFO HttpServer: Starting HTTP Server
+16/09/17 23:46:37 INFO Server: jetty-8.y.z-SNAPSHOT
+16/09/17 23:46:37 INFO AbstractConnector: Started SocketConnector@0.0.0.0:52648
+16/09/17 23:46:37 INFO Utils: Successfully started service 'HTTP file server' on port 52648.
+16/09/17 23:46:37 INFO Utils: Copying /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py to /tmp/temporary_storage/spark-bca653b5-3a10-4905-9805-6b3a4f45dab3/userFiles-425d5ae7-aea1-47e6-85c1-968c3acadfd9/sort_in_node.py
+16/09/17 23:46:37 INFO SparkContext: Added file file:/proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py at http://155.98.36.86:52648/files/sort_in_node.py with timestamp 1474177597359
+16/09/17 23:46:37 INFO SparkDeploySchedulerBackend: DaniarrronStartCoarse
+16/09/17 23:46:37 INFO AppClient$ClientEndpoint: Connecting to master spark://node-1.testspark.cs331-uc.emulab.net:7077...
+16/09/17 23:46:37 INFO SparkDeploySchedulerBackend: Connected to Spark cluster with app ID app-20160917234637-0024
+16/09/17 23:46:37 INFO TaskSchedulerImpl: Starting speculative execution thread
+16/09/17 23:46:37 INFO AppClient$ClientEndpoint: Executor added: app-20160917234637-0024/0 on worker-20160917134045-155.98.36.23-60844 (155.98.36.23:60844) with 4 cores
+16/09/17 23:46:37 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160917234637-0024/0 on hostPort 155.98.36.23:60844 with 4 cores, 4.0 GB RAM
+16/09/17 23:46:37 INFO AppClient$ClientEndpoint: Executor added: app-20160917234637-0024/1 on worker-20160917232007-155.98.36.36-33568 (155.98.36.36:33568) with 4 cores
+16/09/17 23:46:37 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160917234637-0024/1 on hostPort 155.98.36.36:33568 with 4 cores, 4.0 GB RAM
+16/09/17 23:46:37 INFO AppClient$ClientEndpoint: Executor added: app-20160917234637-0024/2 on worker-20160917130941-155.98.36.32-50060 (155.98.36.32:50060) with 4 cores
+16/09/17 23:46:37 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160917234637-0024/2 on hostPort 155.98.36.32:50060 with 4 cores, 4.0 GB RAM
+16/09/17 23:46:37 INFO AppClient$ClientEndpoint: Executor added: app-20160917234637-0024/3 on worker-20160917124450-155.98.36.33-45193 (155.98.36.33:45193) with 4 cores
+16/09/17 23:46:37 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160917234637-0024/3 on hostPort 155.98.36.33:45193 with 4 cores, 4.0 GB RAM
+16/09/17 23:46:37 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35344.
+16/09/17 23:46:37 INFO NettyBlockTransferService: Server created on 35344
+16/09/17 23:46:37 INFO BlockManagerMaster: Trying to register BlockManager
+16/09/17 23:46:37 INFO BlockManagerMasterEndpoint: Registering block manager 155.98.36.86:35344 with 2.7 GB RAM, BlockManagerId(driver, 155.98.36.86, 35344)
+16/09/17 23:46:37 INFO BlockManagerMaster: Registered BlockManager
+16/09/17 23:46:37 INFO AppClient$ClientEndpoint: Executor updated: app-20160917234637-0024/0 is now RUNNING
+16/09/17 23:46:37 INFO AppClient$ClientEndpoint: Executor updated: app-20160917234637-0024/2 is now RUNNING
+16/09/17 23:46:37 INFO AppClient$ClientEndpoint: Executor updated: app-20160917234637-0024/3 is now RUNNING
+16/09/17 23:46:37 INFO AppClient$ClientEndpoint: Executor updated: app-20160917234637-0024/1 is now RUNNING
+16/09/17 23:46:38 INFO EventLoggingListener: Logging events to file:/proj/cs331-uc/daniar/SPARK/generated_driver_log/app-20160917234637-0024
+16/09/17 23:46:38 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:38 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:38 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:38 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:38 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:38 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:38 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:38 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:38 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:38 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:38 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:39 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:39 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:39 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:39 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:39 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:39 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:39 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:39 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:39 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:39 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:40 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:40 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:40 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:40 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:40 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:40 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:40 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:40 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:40 INFO SparkDeploySchedulerBackend:  CoarseGrainedSchedulerBackendScala: Daniarrrr --- RegisterExecutor null
+16/09/17 23:46:40 INFO SparkDeploySchedulerBackend: CoarseGrainedSchedulerBackend: martin -- execAdr is null pc733.emulab.net:36263
+16/09/17 23:46:40 INFO SparkDeploySchedulerBackend: Registered executor NettyRpcEndpointRef(null) (pc733.emulab.net:36263) with ID 3
+16/09/17 23:46:40 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:40 INFO BlockManagerMasterEndpoint: Registering block manager pc733.emulab.net:46474 with 2.7 GB RAM, BlockManagerId(3, pc733.emulab.net, 46474)
+16/09/17 23:46:40 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:41 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:41 INFO SparkDeploySchedulerBackend:  CoarseGrainedSchedulerBackendScala: Daniarrrr --- RegisterExecutor null
+16/09/17 23:46:41 INFO SparkDeploySchedulerBackend: CoarseGrainedSchedulerBackend: martin -- execAdr is null pc723.emulab.net:52087
+16/09/17 23:46:41 INFO SparkDeploySchedulerBackend: Registered executor NettyRpcEndpointRef(null) (pc723.emulab.net:52087) with ID 0
+16/09/17 23:46:41 INFO SparkDeploySchedulerBackend:  CoarseGrainedSchedulerBackendScala: Daniarrrr --- RegisterExecutor null
+16/09/17 23:46:41 INFO SparkDeploySchedulerBackend: CoarseGrainedSchedulerBackend: martin -- execAdr is null pc736.emulab.net:43061
+16/09/17 23:46:41 INFO SparkDeploySchedulerBackend: Registered executor NettyRpcEndpointRef(null) (pc736.emulab.net:43061) with ID 1
+16/09/17 23:46:41 INFO SparkDeploySchedulerBackend:  CoarseGrainedSchedulerBackendScala: Daniarrrr --- RegisterExecutor null
+16/09/17 23:46:41 INFO SparkDeploySchedulerBackend: CoarseGrainedSchedulerBackend: martin -- execAdr is null pc732.emulab.net:46400
+16/09/17 23:46:41 INFO SparkDeploySchedulerBackend: Registered executor NettyRpcEndpointRef(null) (pc732.emulab.net:46400) with ID 2
+16/09/17 23:46:41 INFO SparkDeploySchedulerBackend: DANIAR DO THE HACK in SparkDeploySchedulerBackend.scala
+16/09/17 23:46:41 INFO SparkDeploySchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+16/09/17 23:46:41 INFO BlockManagerMasterEndpoint: Registering block manager pc723.emulab.net:45850 with 2.7 GB RAM, BlockManagerId(0, pc723.emulab.net, 45850)
+16/09/17 23:46:41 INFO BlockManagerMasterEndpoint: Registering block manager pc736.emulab.net:35038 with 2.7 GB RAM, BlockManagerId(1, pc736.emulab.net, 35038)
+16/09/17 23:46:41 INFO BlockManagerMasterEndpoint: Registering block manager pc732.emulab.net:41235 with 2.7 GB RAM, BlockManagerId(2, pc732.emulab.net, 41235)
+16/09/17 23:46:41 INFO MemoryStore: DANIAR HERE AT MEMORY STORE putIterator STARTnon-empty iterator
+16/09/17 23:46:41 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR 
+16/09/17 23:46:41 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:41 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:41 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR  case Left
+16/09/17 23:46:41 INFO MemoryStore: DANIAR HERE AT PUT ARRAY [Ljava.lang.Object;@7e61b4d2  blockID broadcast_0
+16/09/17 23:46:41 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:41 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 232.0 KB, free 232.0 KB)
+16/09/17 23:46:41 INFO MemoryStore: DANIAR HERE before PutResult level.deserialized == true
+16/09/17 23:46:41 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:41 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 21.8 KB, free 253.8 KB)
+16/09/17 23:46:41 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 155.98.36.86:35344 (size: 21.8 KB, free: 2.7 GB)
+16/09/17 23:46:41 INFO SparkContext: Created broadcast 0 from textFile at NativeMethodAccessorImpl.java:-2
+16/09/17 23:46:41 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getValues
+16/09/17 23:46:41 INFO MemoryStore: HEUUU MemoryEntry([Ljava.lang.Object;@7e61b4d2,237544,true)
+16/09/17 23:46:42 INFO FileInputFormat: Total input paths to process : 1
+16/09/17 23:46:42 INFO SparkContext: Starting job: sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21
+16/09/17 23:46:42 INFO DAGScheduler: Got job 0 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21) with 2 output partitions
+16/09/17 23:46:42 INFO DAGScheduler: Final stage: ResultStage 0 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21)
+16/09/17 23:46:42 INFO DAGScheduler: Parents of final stage: List()
+16/09/17 23:46:42 INFO DAGScheduler: Missing parents: List()
+16/09/17 23:46:42 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[2] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21), which has no missing parents
+16/09/17 23:46:42 INFO MemoryStore: DANIAR HERE AT MEMORY STORE putIterator STARTnon-empty iterator
+16/09/17 23:46:42 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR 
+16/09/17 23:46:42 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:42 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:42 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR  case Left
+16/09/17 23:46:42 INFO MemoryStore: DANIAR HERE AT PUT ARRAY [Ljava.lang.Object;@1846941e  blockID broadcast_1
+16/09/17 23:46:42 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:42 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 6.1 KB, free 259.9 KB)
+16/09/17 23:46:42 INFO MemoryStore: DANIAR HERE before PutResult level.deserialized == true
+16/09/17 23:46:42 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:42 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.7 KB, free 263.6 KB)
+16/09/17 23:46:42 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 155.98.36.86:35344 (size: 3.7 KB, free: 2.7 GB)
+16/09/17 23:46:42 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1007
+16/09/17 23:46:42 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 0 (PythonRDD[2] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21)
+16/09/17 23:46:42 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks
+16/09/17 23:46:42 INFO TaskSetManager: SAPIIIIIIIIIIIII  TaskSet 0.0
+16/09/17 23:46:42 INFO TaskSchedulerImpl: DANIAR: FINISH SUBMIT TASK SET
+16/09/17 23:46:42 INFO TaskSetManager: Daniar: START Important! Starting task 0.0 in stage 0.0 (TID 0, pc723.emulab.net, partition 0,PROCESS_LOCAL, 2215 bytes)
+16/09/17 23:46:42 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@20e8c53c    ResultTask(0, 0)
+16/09/17 23:46:42 INFO TaskSetManager: Daniar: END Important! Starting task 0.0 in stage 0.0 
+16/09/17 23:46:42 INFO TaskSchedulerImpl: DANIAR: TASK LAUNCHED taskSet.name [stage] = TaskSet_0  daniar_counter = 0
+16/09/17 23:46:42 INFO TaskSetManager: Daniar: START Important! Starting task 1.0 in stage 0.0 (TID 1, pc736.emulab.net, partition 1,PROCESS_LOCAL, 2215 bytes)
+16/09/17 23:46:42 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@85cd6fa    ResultTask(0, 1)
+16/09/17 23:46:42 INFO TaskSetManager: Daniar: END Important! Starting task 1.0 in stage 0.0 
+16/09/17 23:46:42 INFO TaskSchedulerImpl: DANIAR: TASK LAUNCHED taskSet.name [stage] = TaskSet_0  daniar_counter = 1
+16/09/17 23:46:42 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/09/17 23:46:42 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/09/17 23:46:42 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getBytes MemoryEntry(java.nio.HeapByteBuffer[pos=0 lim=3804 cap=3804],3804,false)
+16/09/17 23:46:42 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getBytes MemoryEntry(java.nio.HeapByteBuffer[pos=0 lim=3804 cap=3804],3804,false)
+16/09/17 23:46:42 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on pc723.emulab.net:45850 (size: 3.7 KB, free: 2.7 GB)
+16/09/17 23:46:42 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on pc736.emulab.net:35038 (size: 3.7 KB, free: 2.7 GB)
+16/09/17 23:46:43 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getBytes MemoryEntry(java.nio.HeapByteBuffer[pos=0 lim=22319 cap=22319],22319,false)
+16/09/17 23:46:43 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on pc723.emulab.net:45850 (size: 21.8 KB, free: 2.7 GB)
+16/09/17 23:46:43 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getBytes MemoryEntry(java.nio.HeapByteBuffer[pos=0 lim=22319 cap=22319],22319,false)
+16/09/17 23:46:43 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on pc736.emulab.net:35038 (size: 21.8 KB, free: 2.7 GB)
+16/09/17 23:46:49 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers1
+16/09/17 23:46:49 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 7179 ms on pc736.emulab.net (1/2)
+16/09/17 23:46:49 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers0
+16/09/17 23:46:49 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 7311 ms on pc723.emulab.net (2/2)
+16/09/17 23:46:49 INFO DAGScheduler: ResultStage 0 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21) finished in 7.317 s
+16/09/17 23:46:49 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+16/09/17 23:46:49 INFO DAGScheduler: Job 0 finished: sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21, took 7.461300 s
+16/09/17 23:46:49 INFO SparkContext: Starting job: sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21
+16/09/17 23:46:49 INFO DAGScheduler: Got job 1 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21) with 2 output partitions
+16/09/17 23:46:49 INFO DAGScheduler: Final stage: ResultStage 1 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21)
+16/09/17 23:46:49 INFO DAGScheduler: Parents of final stage: List()
+16/09/17 23:46:49 INFO DAGScheduler: Missing parents: List()
+16/09/17 23:46:49 INFO DAGScheduler: Submitting ResultStage 1 (PythonRDD[3] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21), which has no missing parents
+16/09/17 23:46:49 INFO MemoryStore: DANIAR HERE AT MEMORY STORE putIterator STARTnon-empty iterator
+16/09/17 23:46:49 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR 
+16/09/17 23:46:49 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:49 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:49 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR  case Left
+16/09/17 23:46:49 INFO MemoryStore: DANIAR HERE AT PUT ARRAY [Ljava.lang.Object;@35d909c3  blockID broadcast_2
+16/09/17 23:46:49 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:49 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 5.9 KB, free 269.5 KB)
+16/09/17 23:46:49 INFO MemoryStore: DANIAR HERE before PutResult level.deserialized == true
+16/09/17 23:46:49 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:49 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.7 KB, free 273.2 KB)
+16/09/17 23:46:49 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 155.98.36.86:35344 (size: 3.7 KB, free: 2.7 GB)
+16/09/17 23:46:49 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1007
+16/09/17 23:46:49 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 1 (PythonRDD[3] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21)
+16/09/17 23:46:49 INFO TaskSchedulerImpl: Adding task set 1.0 with 2 tasks
+16/09/17 23:46:49 INFO TaskSetManager: SAPIIIIIIIIIIIII  TaskSet 1.0
+16/09/17 23:46:49 INFO TaskSchedulerImpl: DANIAR: FINISH SUBMIT TASK SET
+16/09/17 23:46:49 INFO TaskSetManager: Daniar: START Important! Starting task 0.0 in stage 1.0 (TID 2, pc723.emulab.net, partition 0,PROCESS_LOCAL, 2215 bytes)
+16/09/17 23:46:49 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@7bad498e    ResultTask(1, 0)
+16/09/17 23:46:49 INFO TaskSetManager: Daniar: END Important! Starting task 0.0 in stage 1.0 
+16/09/17 23:46:49 INFO TaskSchedulerImpl: DANIAR: TASK LAUNCHED taskSet.name [stage] = TaskSet_1  daniar_counter = 2
+16/09/17 23:46:49 INFO TaskSetManager: Daniar: START Important! Starting task 1.0 in stage 1.0 (TID 3, pc736.emulab.net, partition 1,PROCESS_LOCAL, 2215 bytes)
+16/09/17 23:46:49 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@7a28cc13    ResultTask(1, 1)
+16/09/17 23:46:49 INFO TaskSetManager: Daniar: END Important! Starting task 1.0 in stage 1.0 
+16/09/17 23:46:49 INFO TaskSchedulerImpl: DANIAR: TASK LAUNCHED taskSet.name [stage] = TaskSet_1  daniar_counter = 3
+16/09/17 23:46:49 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/09/17 23:46:49 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/09/17 23:46:49 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getBytes MemoryEntry(java.nio.HeapByteBuffer[pos=0 lim=3786 cap=3786],3786,false)
+16/09/17 23:46:49 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getBytes MemoryEntry(java.nio.HeapByteBuffer[pos=0 lim=3786 cap=3786],3786,false)
+16/09/17 23:46:49 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on pc723.emulab.net:45850 (size: 3.7 KB, free: 2.7 GB)
+16/09/17 23:46:49 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on pc736.emulab.net:35038 (size: 3.7 KB, free: 2.7 GB)
+16/09/17 23:46:54 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers0
+16/09/17 23:46:54 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 4428 ms on pc723.emulab.net (1/2)
+16/09/17 23:46:54 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers1
+16/09/17 23:46:54 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 5110 ms on pc736.emulab.net (2/2)
+16/09/17 23:46:54 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+16/09/17 23:46:54 INFO DAGScheduler: ResultStage 1 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21) finished in 5.114 s
+16/09/17 23:46:54 INFO DAGScheduler: Job 1 finished: sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21, took 5.129011 s
+16/09/17 23:46:54 INFO SparkContext: Starting job: collect at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:27
+16/09/17 23:46:54 INFO DAGScheduler: Registering RDD 5 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21)
+16/09/17 23:46:54 INFO DAGScheduler: Got job 2 (collect at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:27) with 2 output partitions
+16/09/17 23:46:54 INFO DAGScheduler: Final stage: ResultStage 3 (collect at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:27)
+16/09/17 23:46:54 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 2)
+16/09/17 23:46:54 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 2)
+16/09/17 23:46:54 INFO DAGScheduler: Submitting ShuffleMapStage 2 (PairwiseRDD[5] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21), which has no missing parents
+16/09/17 23:46:54 INFO MemoryStore: DANIAR HERE AT MEMORY STORE putIterator STARTnon-empty iterator
+16/09/17 23:46:54 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR 
+16/09/17 23:46:54 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:54 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:54 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR  case Left
+16/09/17 23:46:54 INFO MemoryStore: DANIAR HERE AT PUT ARRAY [Ljava.lang.Object;@57d900b4  blockID broadcast_3
+16/09/17 23:46:54 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:54 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 7.5 KB, free 280.7 KB)
+16/09/17 23:46:54 INFO MemoryStore: DANIAR HERE before PutResult level.deserialized == true
+16/09/17 23:46:54 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:46:54 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.7 KB, free 285.4 KB)
+16/09/17 23:46:54 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 155.98.36.86:35344 (size: 4.7 KB, free: 2.7 GB)
+16/09/17 23:46:54 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1007
+16/09/17 23:46:54 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 2 (PairwiseRDD[5] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21)
+16/09/17 23:46:54 INFO TaskSchedulerImpl: Adding task set 2.0 with 2 tasks
+16/09/17 23:46:54 INFO TaskSetManager: SAPIIIIIIIIIIIII  TaskSet 2.0
+16/09/17 23:46:54 INFO TaskSchedulerImpl: DANIAR: FINISH SUBMIT TASK SET
+16/09/17 23:46:54 INFO TaskSetManager: Daniar: START Important! Starting task 0.0 in stage 2.0 (TID 4, pc723.emulab.net, partition 0,PROCESS_LOCAL, 2204 bytes)
+16/09/17 23:46:54 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@34945936    ShuffleMapTask(2, 0)
+16/09/17 23:46:54 INFO TaskSetManager: Daniar: END Important! Starting task 0.0 in stage 2.0 
+16/09/17 23:46:54 INFO TaskSchedulerImpl: DANIAR: TASK LAUNCHED taskSet.name [stage] = TaskSet_2  daniar_counter = 0
+16/09/17 23:46:54 INFO TaskSetManager: Daniar: START Important! Starting task 1.0 in stage 2.0 (TID 5, pc736.emulab.net, partition 1,PROCESS_LOCAL, 2204 bytes)
+16/09/17 23:46:54 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@6bb30ff5    ShuffleMapTask(2, 1)
+16/09/17 23:46:54 INFO TaskSetManager: Daniar: END Important! Starting task 1.0 in stage 2.0 
+16/09/17 23:46:54 INFO TaskSchedulerImpl: DANIAR: TASK LAUNCHED taskSet.name [stage] = TaskSet_2  daniar_counter = 1
+16/09/17 23:46:54 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/09/17 23:46:54 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/09/17 23:46:54 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getBytes MemoryEntry(java.nio.HeapByteBuffer[pos=0 lim=4829 cap=4829],4829,false)
+16/09/17 23:46:54 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getBytes MemoryEntry(java.nio.HeapByteBuffer[pos=0 lim=4829 cap=4829],4829,false)
+16/09/17 23:46:54 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on pc736.emulab.net:35038 (size: 4.7 KB, free: 2.7 GB)
+16/09/17 23:46:54 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on pc723.emulab.net:45850 (size: 4.7 KB, free: 2.7 GB)
+16/09/17 23:47:03 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers1
+16/09/17 23:47:03 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 5) in 8347 ms on pc736.emulab.net (1/2)
+16/09/17 23:47:04 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers0
+16/09/17 23:47:04 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 4) in 9667 ms on pc723.emulab.net (2/2)
+16/09/17 23:47:04 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+16/09/17 23:47:04 INFO DAGScheduler: ShuffleMapStage 2 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21) finished in 9.668 s
+16/09/17 23:47:04 INFO DAGScheduler: looking for newly runnable stages
+16/09/17 23:47:04 INFO DAGScheduler: running: Set()
+16/09/17 23:47:04 INFO DAGScheduler: waiting: Set(ResultStage 3)
+16/09/17 23:47:04 INFO DAGScheduler: failed: Set()
+16/09/17 23:47:04 INFO DAGScheduler: Submitting ResultStage 3 (PythonRDD[8] at collect at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:27), which has no missing parents
+16/09/17 23:47:04 INFO MemoryStore: DANIAR HERE AT MEMORY STORE putIterator STARTnon-empty iterator
+16/09/17 23:47:04 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR 
+16/09/17 23:47:04 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:47:04 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:47:04 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR  case Left
+16/09/17 23:47:04 INFO MemoryStore: DANIAR HERE AT PUT ARRAY [Ljava.lang.Object;@2c2a8206  blockID broadcast_4
+16/09/17 23:47:04 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:47:04 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 5.1 KB, free 290.5 KB)
+16/09/17 23:47:04 INFO MemoryStore: DANIAR HERE before PutResult level.deserialized == true
+16/09/17 23:47:04 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:47:04 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 3.2 KB, free 293.7 KB)
+16/09/17 23:47:04 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 155.98.36.86:35344 (size: 3.2 KB, free: 2.7 GB)
+16/09/17 23:47:04 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1007
+16/09/17 23:47:04 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 3 (PythonRDD[8] at collect at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:27)
+16/09/17 23:47:04 INFO TaskSchedulerImpl: Adding task set 3.0 with 2 tasks
+16/09/17 23:47:04 INFO TaskSetManager: SAPIIIIIIIIIIIII  TaskSet 3.0
+16/09/17 23:47:04 INFO TaskSchedulerImpl: DANIAR: FINISH SUBMIT TASK SET
+16/09/17 23:47:04 INFO TaskSchedulerImpl: 149 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:04 INFO TaskSchedulerImpl: 148 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:04 INFO TaskSchedulerImpl: 147 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:04 INFO TaskSchedulerImpl: 146 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:04 INFO TaskSchedulerImpl: 145 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:04 INFO TaskSchedulerImpl: 144 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:04 INFO TaskSchedulerImpl: 143 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:04 INFO TaskSchedulerImpl: 142 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:05 INFO TaskSchedulerImpl: 141 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:05 INFO TaskSchedulerImpl: 140 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:05 INFO TaskSchedulerImpl: 139 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:05 INFO TaskSchedulerImpl: 138 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:05 INFO TaskSchedulerImpl: 137 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:05 INFO TaskSchedulerImpl: 136 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:05 INFO TaskSchedulerImpl: 135 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:05 INFO TaskSchedulerImpl: 134 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:06 INFO TaskSchedulerImpl: 133 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:06 INFO TaskSchedulerImpl: 132 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:06 INFO TaskSchedulerImpl: 131 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:06 INFO TaskSchedulerImpl: 130 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:06 INFO TaskSchedulerImpl: 129 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:06 INFO TaskSchedulerImpl: 128 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:06 INFO TaskSchedulerImpl: 127 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:06 INFO TaskSchedulerImpl: 126 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:07 INFO TaskSchedulerImpl: 125 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:07 INFO TaskSchedulerImpl: 124 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:07 INFO TaskSchedulerImpl: 123 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:07 INFO TaskSchedulerImpl: 122 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:07 INFO TaskSchedulerImpl: 121 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:07 INFO TaskSchedulerImpl: 120 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:07 INFO TaskSchedulerImpl: 119 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:07 INFO TaskSchedulerImpl: 118 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:08 INFO TaskSchedulerImpl: 117 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:08 INFO TaskSchedulerImpl: 116 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:08 INFO TaskSchedulerImpl: 115 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:08 INFO TaskSchedulerImpl: 114 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:08 INFO TaskSchedulerImpl: 113 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:08 INFO TaskSchedulerImpl: 112 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:08 INFO TaskSchedulerImpl: 111 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:08 INFO TaskSchedulerImpl: 110 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:09 INFO TaskSchedulerImpl: 109 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:09 INFO TaskSchedulerImpl: 108 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:09 INFO TaskSchedulerImpl: 107 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:09 INFO TaskSchedulerImpl: 106 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:09 INFO TaskSchedulerImpl: 105 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:09 INFO TaskSchedulerImpl: 104 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:09 INFO TaskSchedulerImpl: 103 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:09 INFO TaskSchedulerImpl: 102 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:10 INFO TaskSchedulerImpl: 101 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:10 INFO TaskSchedulerImpl: 100 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:10 INFO TaskSchedulerImpl: 99 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:10 INFO TaskSchedulerImpl: 98 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:10 INFO TaskSchedulerImpl: 97 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:10 INFO TaskSchedulerImpl: 96 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:10 INFO TaskSchedulerImpl: 95 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:10 INFO TaskSchedulerImpl: 94 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:11 INFO TaskSchedulerImpl: 93 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:11 INFO TaskSchedulerImpl: 92 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:11 INFO TaskSchedulerImpl: 91 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:11 INFO TaskSchedulerImpl: 90 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:11 INFO TaskSchedulerImpl: 89 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:11 INFO TaskSchedulerImpl: 88 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:11 INFO TaskSchedulerImpl: 87 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:11 INFO TaskSchedulerImpl: 86 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:12 INFO TaskSchedulerImpl: 85 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:12 INFO TaskSchedulerImpl: 84 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:12 INFO TaskSchedulerImpl: 83 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:12 INFO TaskSchedulerImpl: 82 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:12 INFO TaskSchedulerImpl: 81 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:12 INFO TaskSchedulerImpl: 80 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:12 INFO TaskSchedulerImpl: 79 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:12 INFO TaskSchedulerImpl: 78 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:13 INFO TaskSchedulerImpl: 77 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:13 INFO TaskSchedulerImpl: 76 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:13 INFO TaskSchedulerImpl: 75 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:13 INFO TaskSchedulerImpl: 74 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:13 INFO TaskSchedulerImpl: 73 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:13 INFO TaskSchedulerImpl: 72 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:13 INFO TaskSchedulerImpl: 71 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:13 INFO TaskSchedulerImpl: 70 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:14 INFO TaskSchedulerImpl: 69 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:14 INFO TaskSchedulerImpl: 68 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:14 INFO TaskSchedulerImpl: 67 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:14 INFO TaskSchedulerImpl: 66 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:14 INFO TaskSchedulerImpl: 65 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:14 INFO TaskSchedulerImpl: 64 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:14 INFO TaskSchedulerImpl: 63 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:14 INFO TaskSchedulerImpl: 62 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:15 INFO TaskSchedulerImpl: 61 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:15 INFO TaskSchedulerImpl: 60 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:15 INFO TaskSchedulerImpl: 59 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:15 INFO TaskSchedulerImpl: 58 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:15 INFO TaskSchedulerImpl: 57 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:15 INFO TaskSchedulerImpl: 56 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:15 INFO TaskSchedulerImpl: 55 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:15 INFO TaskSchedulerImpl: 54 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:16 INFO TaskSchedulerImpl: 53 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:16 INFO TaskSchedulerImpl: 52 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:16 INFO TaskSchedulerImpl: 51 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:16 INFO TaskSchedulerImpl: 50 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:16 INFO TaskSchedulerImpl: 49 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:16 INFO TaskSchedulerImpl: 48 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:16 INFO TaskSchedulerImpl: 47 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:16 INFO TaskSchedulerImpl: 46 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:17 INFO TaskSchedulerImpl: 45 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:17 INFO TaskSchedulerImpl: 44 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:17 INFO TaskSchedulerImpl: 43 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:17 INFO TaskSchedulerImpl: 42 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:17 INFO TaskSchedulerImpl: 41 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:17 INFO TaskSchedulerImpl: 40 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:17 INFO TaskSchedulerImpl: 39 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:17 INFO TaskSchedulerImpl: 38 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:18 INFO TaskSchedulerImpl: 37 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:18 INFO TaskSchedulerImpl: 36 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:18 INFO TaskSchedulerImpl: 35 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:18 INFO TaskSchedulerImpl: 34 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:18 INFO TaskSchedulerImpl: 33 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:18 INFO TaskSchedulerImpl: 32 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:18 INFO TaskSchedulerImpl: 31 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:18 INFO TaskSchedulerImpl: 30 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:19 INFO TaskSchedulerImpl: 29 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:19 INFO TaskSchedulerImpl: 28 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:19 INFO TaskSchedulerImpl: 27 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:19 INFO TaskSchedulerImpl: 26 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:19 INFO TaskSchedulerImpl: 25 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:19 INFO TaskSchedulerImpl: 24 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:19 INFO TaskSchedulerImpl: 23 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:19 INFO TaskSchedulerImpl: 22 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:20 INFO TaskSchedulerImpl: 21 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:20 INFO TaskSchedulerImpl: 20 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:20 INFO TaskSchedulerImpl: 19 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:20 INFO TaskSchedulerImpl: 18 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:20 INFO TaskSchedulerImpl: 17 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:20 INFO TaskSchedulerImpl: 16 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:20 INFO TaskSchedulerImpl: 15 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:20 INFO TaskSchedulerImpl: 14 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:21 INFO TaskSchedulerImpl: 13 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:21 INFO TaskSchedulerImpl: 12 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:21 INFO TaskSchedulerImpl: 11 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:21 INFO TaskSchedulerImpl: 10 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:21 INFO TaskSchedulerImpl: 9 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:21 INFO TaskSchedulerImpl: 8 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:21 INFO TaskSchedulerImpl: 7 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:21 INFO TaskSchedulerImpl: 6 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:22 INFO TaskSchedulerImpl: 5 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:22 INFO TaskSchedulerImpl: 4 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:22 INFO TaskSchedulerImpl: 3 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:22 INFO TaskSchedulerImpl: 2 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:22 INFO TaskSchedulerImpl: 1 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:22 INFO TaskSchedulerImpl: 0 DANIAR:Inject Delay on W2 : pc736.emulab.net
+16/09/17 23:47:22 INFO TaskSetManager: Daniar: START Important! Starting task 0.0 in stage 3.0 (TID 6, pc732.emulab.net, partition 0,ANY, 1951 bytes)
+16/09/17 23:47:22 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@1810ab2c    ResultTask(3, 0)
+16/09/17 23:47:22 INFO TaskSetManager: Daniar: END Important! Starting task 0.0 in stage 3.0 
+16/09/17 23:47:22 INFO TaskSchedulerImpl: DANIAR: TASK LAUNCHED taskSet.name [stage] = TaskSet_3  daniar_counter = 2
+16/09/17 23:47:22 INFO TaskSetManager: Daniar: START Important! Starting task 1.0 in stage 3.0 (TID 7, pc733.emulab.net, partition 1,ANY, 1951 bytes)
+16/09/17 23:47:22 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@5e7afb34    ResultTask(3, 1)
+16/09/17 23:47:22 INFO TaskSetManager: Daniar: END Important! Starting task 1.0 in stage 3.0 
+16/09/17 23:47:22 INFO TaskSchedulerImpl: DANIAR: TASK LAUNCHED taskSet.name [stage] = TaskSet_3  daniar_counter = 3
+16/09/17 23:47:22 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/09/17 23:47:22 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/09/17 23:47:22 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getBytes MemoryEntry(java.nio.HeapByteBuffer[pos=0 lim=3226 cap=3226],3226,false)
+16/09/17 23:47:22 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getBytes MemoryEntry(java.nio.HeapByteBuffer[pos=0 lim=3226 cap=3226],3226,false)
+16/09/17 23:47:23 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on pc732.emulab.net:41235 (size: 3.2 KB, free: 2.7 GB)
+16/09/17 23:47:23 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on pc733.emulab.net:46474 (size: 3.2 KB, free: 2.7 GB)
+16/09/17 23:47:23 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to pc732.emulab.net:46400
+16/09/17 23:47:23 INFO MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 165 bytes
+16/09/17 23:47:23 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to pc733.emulab.net:36263
+
+16/09/17 23:47:40 ERROR TaskSchedulerImpl: Lost executor 1 on pc736.emulab.net: Remote RPC client disassociated. Likely due to containers exceeding thresholds, or network issues. Check driver logs for WARN messages.
+16/09/17 23:47:40 INFO AppClient$ClientEndpoint: Executor updated: app-20160917234637-0024/1 is now EXITED (Command exited with code 137)
+16/09/17 23:47:40 INFO SparkDeploySchedulerBackend: Executor app-20160917234637-0024/1 removed: Command exited with code 137
+16/09/17 23:47:40 INFO DAGScheduler: Executor lost: 1 (epoch 1)
+16/09/17 23:47:40 INFO SparkDeploySchedulerBackend: Asked to remove non-existent executor 1
+16/09/17 23:47:40 INFO BlockManagerMasterEndpoint: Trying to remove executor 1 from BlockManagerMaster.
+16/09/17 23:47:40 INFO AppClient$ClientEndpoint: Executor added: app-20160917234637-0024/4 on worker-20160917232007-155.98.36.36-33568 (155.98.36.36:33568) with 4 cores
+16/09/17 23:47:40 INFO SparkDeploySchedulerBackend: Granted executor ID app-20160917234637-0024/4 on hostPort 155.98.36.36:33568 with 4 cores, 4.0 GB RAM
+16/09/17 23:47:40 INFO BlockManagerMasterEndpoint: Removing block manager BlockManagerId(1, pc736.emulab.net, 35038)
+16/09/17 23:47:40 INFO BlockManagerMaster: Removed 1 successfully in removeExecutor
+16/09/17 23:47:40 INFO ShuffleMapStage: ShuffleMapStage 2 is now unavailable on executor 1 (1/2, false)
+16/09/17 23:47:46 INFO AppClient$ClientEndpoint: Executor updated: app-20160917234637-0024/4 is now LOST (worker lost)
+16/09/17 23:47:46 INFO SparkDeploySchedulerBackend: Executor app-20160917234637-0024/4 removed: worker lost
+16/09/17 23:47:46 INFO SparkDeploySchedulerBackend: Asked to remove non-existent executor 4
+16/09/17 23:48:03 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers3
+16/09/17 23:48:03 WARN TaskSetManager: Lost task 1.0 in stage 3.0 (TID 7, pc733.emulab.net): FetchFailed(BlockManagerId(1, pc736.emulab.net, 35038), shuffleId=0, mapId=1, reduceId=1, message=
+org.apache.spark.shuffle.FetchFailedException: Failed to connect to pc736.emulab.net/155.98.36.36:35038
+	at org.apache.spark.storage.ShuffleBlockFetcherIterator.throwFetchFailedException(ShuffleBlockFetcherIterator.scala:324)
+	at org.apache.spark.storage.ShuffleBlockFetcherIterator.next(ShuffleBlockFetcherIterator.scala:301)
+	at org.apache.spark.storage.ShuffleBlockFetcherIterator.next(ShuffleBlockFetcherIterator.scala:51)
+	at scala.collection.Iterator$$anon$11.next(Iterator.scala:328)
+	at scala.collection.Iterator$$anon$13.hasNext(Iterator.scala:371)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:327)
+	at org.apache.spark.util.CompletionIterator.hasNext(CompletionIterator.scala:32)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:39)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:327)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:727)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1157)
+	at org.apache.spark.api.python.PythonRDD$.writeIteratorToStream(PythonRDD.scala:452)
+	at org.apache.spark.api.python.PythonRunner$WriterThread$$anonfun$run$3.apply(PythonRDD.scala:280)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1765)
+	at org.apache.spark.api.python.PythonRunner$WriterThread.run(PythonRDD.scala:239)
+Caused by: java.io.IOException: Failed to connect to pc736.emulab.net/155.98.36.36:35038
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: pc736.emulab.net/155.98.36.36:35038
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+
+)
+16/09/17 23:48:03 INFO DAGScheduler: Marking ResultStage 3 (collect at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:27) as failed due to a fetch failure from ShuffleMapStage 2 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21)
+16/09/17 23:48:03 INFO DAGScheduler: ResultStage 3 (collect at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:27) failed in 58.632 s
+16/09/17 23:48:03 INFO DAGScheduler: Resubmitting ShuffleMapStage 2 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21) and ResultStage 3 (collect at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:27) due to fetch failure
+16/09/17 23:48:03 INFO DAGScheduler: Resubmitting failed stages
+16/09/17 23:48:03 INFO DAGScheduler: Submitting ShuffleMapStage 2 (PairwiseRDD[5] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21), which has no missing parents
+16/09/17 23:48:03 INFO MemoryStore: DANIAR HERE AT MEMORY STORE putIterator STARTnon-empty iterator
+16/09/17 23:48:03 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR 
+16/09/17 23:48:03 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:48:03 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:48:03 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR  case Left
+16/09/17 23:48:03 INFO MemoryStore: DANIAR HERE AT PUT ARRAY [Ljava.lang.Object;@29f36570  blockID broadcast_5
+16/09/17 23:48:03 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:48:03 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 7.5 KB, free 301.2 KB)
+16/09/17 23:48:03 INFO MemoryStore: DANIAR HERE before PutResult level.deserialized == true
+16/09/17 23:48:03 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:48:03 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 4.7 KB, free 305.9 KB)
+16/09/17 23:48:03 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 155.98.36.86:35344 (size: 4.7 KB, free: 2.7 GB)
+16/09/17 23:48:03 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1007
+16/09/17 23:48:03 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 2 (PairwiseRDD[5] at sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21)
+16/09/17 23:48:03 INFO TaskSchedulerImpl: Adding task set 2.1 with 1 tasks
+16/09/17 23:48:03 INFO TaskSetManager: SAPIIIIIIIIIIIII  TaskSet 2.1
+16/09/17 23:48:03 INFO TaskSchedulerImpl: DANIAR: FINISH SUBMIT TASK SET
+16/09/17 23:48:03 INFO TaskSetManager: Daniar: START Important! Starting task 0.0 in stage 2.1 (TID 8, pc723.emulab.net, partition 1,PROCESS_LOCAL, 2204 bytes)
+16/09/17 23:48:03 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@59b37996    ShuffleMapTask(2, 1)
+16/09/17 23:48:03 INFO TaskSetManager: Daniar: END Important! Starting task 0.0 in stage 2.1 
+16/09/17 23:48:03 INFO TaskSchedulerImpl: DANIAR: TASK LAUNCHED taskSet.name [stage] = TaskSet_2  daniar_counter = 0
+16/09/17 23:48:03 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/09/17 23:48:03 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getBytes MemoryEntry(java.nio.HeapByteBuffer[pos=0 lim=4829 cap=4829],4829,false)
+16/09/17 23:48:03 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on pc723.emulab.net:45850 (size: 4.7 KB, free: 2.7 GB)
+16/09/17 23:48:03 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers2
+16/09/17 23:48:03 WARN TaskSetManager: Lost task 0.0 in stage 3.0 (TID 6, pc732.emulab.net): FetchFailed(BlockManagerId(1, pc736.emulab.net, 35038), shuffleId=0, mapId=1, reduceId=0, message=
+org.apache.spark.shuffle.FetchFailedException: Failed to connect to pc736.emulab.net/155.98.36.36:35038
+	at org.apache.spark.storage.ShuffleBlockFetcherIterator.throwFetchFailedException(ShuffleBlockFetcherIterator.scala:324)
+	at org.apache.spark.storage.ShuffleBlockFetcherIterator.next(ShuffleBlockFetcherIterator.scala:301)
+	at org.apache.spark.storage.ShuffleBlockFetcherIterator.next(ShuffleBlockFetcherIterator.scala:51)
+	at scala.collection.Iterator$$anon$11.next(Iterator.scala:328)
+	at scala.collection.Iterator$$anon$13.hasNext(Iterator.scala:371)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:327)
+	at org.apache.spark.util.CompletionIterator.hasNext(CompletionIterator.scala:32)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:39)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:327)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:727)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1157)
+	at org.apache.spark.api.python.PythonRDD$.writeIteratorToStream(PythonRDD.scala:452)
+	at org.apache.spark.api.python.PythonRunner$WriterThread$$anonfun$run$3.apply(PythonRDD.scala:280)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1765)
+	at org.apache.spark.api.python.PythonRunner$WriterThread.run(PythonRDD.scala:239)
+Caused by: java.io.IOException: Failed to connect to pc736.emulab.net/155.98.36.36:35038
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:216)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:167)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:90)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: pc736.emulab.net/155.98.36.36:35038
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+
+)
+16/09/17 23:48:03 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+16/09/17 23:48:03 INFO DAGScheduler: Resubmitting ShuffleMapStage 2 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21) and ResultStage 3 (collect at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:27) due to fetch failure
+16/09/17 23:48:03 INFO DAGScheduler: Resubmitting failed stages
+16/09/17 23:48:11 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers0
+16/09/17 23:48:11 INFO TaskSetManager: Finished task 0.0 in stage 2.1 (TID 8) in 8519 ms on pc723.emulab.net (1/1)
+16/09/17 23:48:11 INFO TaskSchedulerImpl: Removed TaskSet 2.1, whose tasks have all completed, from pool 
+16/09/17 23:48:11 INFO DAGScheduler: ShuffleMapStage 2 (sortByKey at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:21) finished in 8.521 s
+16/09/17 23:48:11 INFO DAGScheduler: looking for newly runnable stages
+16/09/17 23:48:11 INFO DAGScheduler: running: Set()
+16/09/17 23:48:11 INFO DAGScheduler: waiting: Set(ResultStage 3)
+16/09/17 23:48:11 INFO DAGScheduler: failed: Set()
+16/09/17 23:48:11 INFO DAGScheduler: Submitting ResultStage 3 (PythonRDD[8] at collect at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:27), which has no missing parents
+16/09/17 23:48:11 INFO MemoryStore: DANIAR HERE AT MEMORY STORE putIterator STARTnon-empty iterator
+16/09/17 23:48:11 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR 
+16/09/17 23:48:11 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:48:11 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:48:11 INFO MemoryStore: DANIAR HERE AT PUT ITERATOR  case Left
+16/09/17 23:48:11 INFO MemoryStore: DANIAR HERE AT PUT ARRAY [Ljava.lang.Object;@81f4eea  blockID broadcast_6
+16/09/17 23:48:11 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:48:11 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 5.1 KB, free 311.0 KB)
+16/09/17 23:48:11 INFO MemoryStore: DANIAR HERE before PutResult level.deserialized == true
+16/09/17 23:48:11 INFO MemoryStore: DANIAR HERE AT MEMORY STORE currentTaskAttemptId
+16/09/17 23:48:11 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 3.2 KB, free 314.2 KB)
+16/09/17 23:48:11 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 155.98.36.86:35344 (size: 3.2 KB, free: 2.7 GB)
+16/09/17 23:48:11 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1007
+16/09/17 23:48:11 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 3 (PythonRDD[8] at collect at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:27)
+16/09/17 23:48:11 INFO TaskSchedulerImpl: Adding task set 3.1 with 2 tasks
+16/09/17 23:48:11 INFO TaskSetManager: SAPIIIIIIIIIIIII  TaskSet 3.1
+16/09/17 23:48:11 INFO TaskSchedulerImpl: DANIAR: FINISH SUBMIT TASK SET
+16/09/17 23:48:15 INFO TaskSetManager: Daniar: START Important! Starting task 0.0 in stage 3.1 (TID 9, pc733.emulab.net, partition 0,ANY, 1951 bytes)
+16/09/17 23:48:15 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@4d2d6d5f    ResultTask(3, 0)
+16/09/17 23:48:15 INFO TaskSetManager: Daniar: END Important! Starting task 0.0 in stage 3.1 
+16/09/17 23:48:15 INFO TaskSchedulerImpl: DANIAR: TASK LAUNCHED taskSet.name [stage] = TaskSet_3  daniar_counter = 1
+16/09/17 23:48:15 INFO TaskSetManager: Daniar: START Important! Starting task 1.0 in stage 3.1 (TID 10, pc723.emulab.net, partition 1,NODE_LOCAL, 1951 bytes)
+16/09/17 23:48:15 INFO DAGScheduler: DANIAR DAGScheduler.scala  org.apache.spark.scheduler.TaskInfo@7c9e9c8b    ResultTask(3, 1)
+16/09/17 23:48:15 INFO TaskSetManager: Daniar: END Important! Starting task 1.0 in stage 3.1 
+16/09/17 23:48:15 INFO TaskSchedulerImpl: DANIAR: TASK LAUNCHED taskSet.name [stage] = TaskSet_3  daniar_counter = 2
+16/09/17 23:48:15 INFO TaskSchedulerImpl: DANIAR: TASK LAUNCHED SPECULATIVE!!!
+16/09/17 23:48:15 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/09/17 23:48:15 INFO SparkDeploySchedulerBackend: Daniarrr:  Before assigning any tasks it should be no random assignment [should be printed once]
+16/09/17 23:48:15 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getBytes MemoryEntry(java.nio.HeapByteBuffer[pos=0 lim=3226 cap=3226],3226,false)
+16/09/17 23:48:15 INFO MemoryStore: DANIAR HERE AT MEMORY STORE getBytes MemoryEntry(java.nio.HeapByteBuffer[pos=0 lim=3226 cap=3226],3226,false)
+16/09/17 23:48:15 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on pc733.emulab.net:46474 (size: 3.2 KB, free: 2.7 GB)
+16/09/17 23:48:15 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on pc723.emulab.net:45850 (size: 3.2 KB, free: 2.7 GB)
+16/09/17 23:48:15 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to pc733.emulab.net:36263
+16/09/17 23:48:15 INFO MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 154 bytes
+16/09/17 23:48:15 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to pc723.emulab.net:52087
+16/09/17 23:48:28 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 155.98.36.86:35344 in memory (size: 4.7 KB, free: 2.7 GB)
+16/09/17 23:48:28 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers0
+16/09/17 23:48:28 INFO BlockManagerInfo: Removed broadcast_5_piece0 on pc723.emulab.net:45850 in memory (size: 4.7 KB, free: 2.7 GB)
+16/09/17 23:48:28 INFO TaskSetManager: Finished task 1.0 in stage 3.1 (TID 10) in 13184 ms on pc723.emulab.net (1/2)
+16/09/17 23:48:32 INFO SparkDeploySchedulerBackend: daniarrr -- makeOffers3
+16/09/17 23:48:32 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 155.98.36.86:35344 in memory (size: 3.2 KB, free: 2.7 GB)
+16/09/17 23:48:32 INFO BlockManagerInfo: Removed broadcast_4_piece0 on pc733.emulab.net:46474 in memory (size: 3.2 KB, free: 2.7 GB)
+16/09/17 23:48:32 INFO BlockManagerInfo: Removed broadcast_4_piece0 on pc732.emulab.net:41235 in memory (size: 3.2 KB, free: 2.7 GB)
+16/09/17 23:48:32 INFO ContextCleaner: Cleaned accumulator 5
+16/09/17 23:48:32 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 155.98.36.86:35344 in memory (size: 4.7 KB, free: 2.7 GB)
+16/09/17 23:48:32 INFO BlockManagerInfo: Removed broadcast_3_piece0 on pc723.emulab.net:45850 in memory (size: 4.7 KB, free: 2.7 GB)
+16/09/17 23:48:32 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 155.98.36.86:35344 in memory (size: 3.7 KB, free: 2.7 GB)
+16/09/17 23:48:32 INFO TaskSetManager: Finished task 0.0 in stage 3.1 (TID 9) in 16772 ms on pc733.emulab.net (2/2)
+16/09/17 23:48:32 INFO TaskSchedulerImpl: Removed TaskSet 3.1, whose tasks have all completed, from pool 
+16/09/17 23:48:32 INFO DAGScheduler: ResultStage 3 (collect at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:27) finished in 20.321 s
+16/09/17 23:48:32 INFO DAGScheduler: Job 2 finished: collect at /proj/cs331-uc/daniar/SPARK/spark-1.6.1/sort_in_node.py:27, took 97.459920 s
+16/09/17 23:48:32 INFO BlockManagerInfo: Removed broadcast_2_piece0 on pc723.emulab.net:45850 in memory (size: 3.7 KB, free: 2.7 GB)
+16/09/17 23:48:32 INFO ContextCleaner: Cleaned accumulator 3
+16/09/17 23:48:32 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 155.98.36.86:35344 in memory (size: 3.7 KB, free: 2.7 GB)
+16/09/17 23:48:32 INFO BlockManagerInfo: Removed broadcast_1_piece0 on pc723.emulab.net:45850 in memory (size: 3.7 KB, free: 2.7 GB)
+16/09/17 23:48:32 INFO ContextCleaner: Cleaned accumulator 2
+16/09/17 23:48:38 INFO SparkContext: Invoking stop() from shutdown hook
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/metrics/json,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages/stage/kill,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/api,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/static,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/executors/threadDump/json,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/executors/threadDump,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/executors/json,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/executors,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/environment/json,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/environment,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/storage/rdd/json,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/storage/rdd,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/storage/json,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/storage,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages/pool/json,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages/pool,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages/stage/json,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages/stage,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages/json,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/stages,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/jobs/job/json,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/jobs/job,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/jobs/json,null}
+16/09/17 23:48:38 INFO ContextHandler: stopped o.e.j.s.ServletContextHandler{/jobs,null}
+16/09/17 23:48:38 INFO SparkUI: Stopped Spark web UI at http://155.98.36.86:4040
+16/09/17 23:48:38 INFO SparkDeploySchedulerBackend: Shutting down all executors
+16/09/17 23:48:38 INFO SparkDeploySchedulerBackend: Asking each executor to shut down
+16/09/17 23:48:38 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/09/17 23:48:38 INFO MemoryStore: MemoryStore cleared
+16/09/17 23:48:38 INFO BlockManager: BlockManager stopped
+16/09/17 23:48:38 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/09/17 23:48:38 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/09/17 23:48:38 INFO SparkContext: Successfully stopped SparkContext
+16/09/17 23:48:38 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/09/17 23:48:38 INFO ShutdownHookManager: Shutdown hook called
+16/09/17 23:48:38 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+16/09/17 23:48:38 INFO ShutdownHookManager: Deleting directory /tmp/temporary_storage/spark-bca653b5-3a10-4905-9805-6b3a4f45dab3/pyspark-4167033e-ded3-42d7-aff2-f8c4ad02fbc9
+16/09/17 23:48:38 INFO ShutdownHookManager: Deleting directory /tmp/temporary_storage/spark-bca653b5-3a10-4905-9805-6b3a4f45dab3/httpd-100de684-ef20-42fe-9d37-2bbb064655f3
+16/09/17 23:48:38 INFO ShutdownHookManager: Deleting directory /tmp/temporary_storage/spark-bca653b5-3a10-4905-9805-6b3a4f45dab3
