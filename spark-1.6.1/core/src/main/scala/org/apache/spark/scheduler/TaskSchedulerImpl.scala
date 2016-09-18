@@ -78,8 +78,6 @@ private[spark] class TaskSchedulerImpl(
   var delay_counter = 150
   var hostW1 = "XX"
   var hostW2 = "XX"
-  var hostW3 = "XX"
-  var hostW4 = "XX"
 
   var last_task_name = new String
   // TaskSetManagers are not thread safe, so any access to one should be synchronized
@@ -301,9 +299,6 @@ private[spark] class TaskSchedulerImpl(
       if("TaskSet_3"==taskSet.name && delay_counter >= 0 ){
         logInfo(delay_counter +" DANIAR:Inject Delay on W2: "+hostW2)
         logInfo(" W1 : "+hostW1)
-        logInfo(" W2 : "+hostW2)
-        logInfo(" W2 : "+hostW3)
-        logInfo(" W3 : "+hostW4)
       }
       
       if (execId == counter.toString() && ( delay_counter == 150 || delay_counter <= 0  )) {
@@ -325,12 +320,6 @@ private[spark] class TaskSchedulerImpl(
 
             if(counter == 1)
               hostW2 = host
-
-            if(counter == 2)
-              hostW3 = host
-
-            if(counter == 3)
-              hostW4 = host
 
             //this condition will only increment if the task is not speculatable task
             logInfo("DANIAR: TASK LAUNCHED taskSet.name [stage] = "+taskSet.name +"  daniar_counter = "+daniar_counter)
