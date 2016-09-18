@@ -302,7 +302,7 @@ class CoarseGrainedSchedulerBackend(scheduler: TaskSchedulerImpl, val rpcEnv: Rp
 
       if (shouldDisable) {
         logInfo(s"Disabling executor $executorId.")
-        logInfo("in Coarse grained scheduler executorLOST TaskSchedulerImpl CALLED!!!")
+        logInfo(" TaskSchedulerImpl CALLED!!!")
         scheduler.executorLost(executorId, LossReasonPending)
       }
 

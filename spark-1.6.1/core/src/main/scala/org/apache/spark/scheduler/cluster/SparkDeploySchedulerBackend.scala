@@ -136,6 +136,7 @@ private[spark] class SparkDeploySchedulerBackend(
   }
 
   override def executorRemoved(fullId: String, message: String, exitStatus: Option[Int]) {
+    logInfo("in executorRemoved who is the caller")
     val reason: ExecutorLossReason = exitStatus match {
       case Some(code) => ExecutorExited(code, exitCausedByApp = true, message)
       case None => SlaveLost(message)
