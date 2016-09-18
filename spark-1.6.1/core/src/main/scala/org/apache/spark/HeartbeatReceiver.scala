@@ -194,10 +194,13 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
   }
 
   private def expireDeadHosts(): Unit = {
-    logTrace("Checking for hosts with no recent heartbeats in HeartbeatReceiver.")
+    logInfo("in expireDeadHosts : Checking for hosts with no recent heartbeats in HeartbeatReceiver. executorTimeoutMs: "+executorTimeoutMs)
     val now = clock.getTimeMillis()
     for ((executorId, lastSeenMs) <- executorLastSeen) {
+      logInfo(" executorId, lastSeenMs :"+executorId+"  "+lastSeenMs)
       if (now - lastSeenMs > executorTimeoutMs) {
+        logInfo(s"Removing executor $executorId with no recent heartbeats: " +
+          s"${now - lastSeenMs} ms exceeds timeout $executorTimeoutMs ms")
         logWarning(s"Removing executor $executorId with no recent heartbeats: " +
           s"${now - lastSeenMs} ms exceeds timeout $executorTimeoutMs ms")
         scheduler.executorLost(executorId, SlaveLost("Executor heartbeat " +
@@ -219,6 +222,7 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
     if (timeoutCheckingTask != null) {
       timeoutCheckingTask.cancel(true)
     }
+    logInfo("DANIAR: onStop() KILLING EXECUTOR!")
     eventLoopThread.shutdownNow()
     killExecutorThread.shutdownNow()
   }
