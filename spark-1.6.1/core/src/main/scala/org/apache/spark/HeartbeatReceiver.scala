@@ -104,18 +104,21 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
 
   override def receiveAndReply(context: RpcCallContext): PartialFunction[Any, Unit] = {
 
-    logInfo("DANIAR HEARTBEAT receiveAndReply")
     // Messages sent and received locally
     case ExecutorRegistered(executorId) =>
+      logInfo("DANIAR HEARTBEAT receiveAndReply case ExecutorRegistered")
       executorLastSeen(executorId) = clock.getTimeMillis()
       context.reply(true)
     case ExecutorRemoved(executorId) =>
+      logInfo("DANIAR HEARTBEAT receiveAndReply case ExecutorRemoved")
       executorLastSeen.remove(executorId)
       context.reply(true)
     case TaskSchedulerIsSet =>
+      logInfo("DANIAR HEARTBEAT receiveAndReply case TaskSchedulerIsSet")
       scheduler = sc.taskScheduler
       context.reply(true)
     case ExpireDeadHosts =>
+      logInfo("DANIAR HEARTBEAT receiveAndReply case ExpireDeadHosts")
       expireDeadHosts()
       context.reply(true)
 
