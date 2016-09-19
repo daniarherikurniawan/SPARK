@@ -224,7 +224,8 @@ class DAGScheduler(
       taskMetrics: Array[(Long, Int, Int, TaskMetrics)], // (taskId, stageId, stateAttempt, metrics)
       blockManagerId: BlockManagerId): Boolean = {
     listenerBus.post(SparkListenerExecutorMetricsUpdate(execId, taskMetrics))
-    logInfo("=============== Daniarrr: executorHeartbeatReceived" )
+    logInfo("=============== Daniarrr: executorHeartbeatReceived "+blockManagerMaster.driverEndpoint )
+    logInfo("=============== taskMetrics "+taskMetrics )
     blockManagerMaster.driverEndpoint.askWithRetry[Boolean](
       BlockManagerHeartbeat(blockManagerId), new RpcTimeout(600 seconds, "BlockManagerHeartbeat"))
   }
