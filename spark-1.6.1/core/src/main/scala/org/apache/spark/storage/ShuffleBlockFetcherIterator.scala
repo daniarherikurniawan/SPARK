@@ -158,7 +158,7 @@ final class ShuffleBlockFetcherIterator(
             // Increment the ref count because we need to pass this to a different thread.
             // This needs to be released after use.
             buf.retain()
-            logInfo("Send buffer to: "+address.host)
+            logInfo("Send buffer to: "+req.address+" from: "+address.host)
             results.put(new SuccessFetchResult(BlockId(blockId), address, sizeMap(blockId), buf))
             logInfo("       size is: "+buf.size)
             logInfo("")
@@ -204,11 +204,13 @@ final class ShuffleBlockFetcherIterator(
           val (blockId, size) = iterator.next()
           // Skip empty blocks
           if (size > 0) {
+            logInfo("Dannnn oy = Size > 0")
             curBlocks += ((blockId, size))
             remoteBlocks += blockId
             numBlocksToFetch += 1
             curRequestSize += size
           } else if (size < 0) {
+            logInfo("Dannnn oy = Size < 0")
             throw new BlockException(blockId, "Negative block size " + size)
           }
           if (curRequestSize >= targetRequestSize) {
@@ -218,9 +220,11 @@ final class ShuffleBlockFetcherIterator(
             logInfo(s"Creating fetch request of $curRequestSize at $address")
             curRequestSize = 0
           }
+            logInfo("Dannnn oy = ========== = iterator")
         }
         // Add in the final request
         if (curBlocks.nonEmpty) {
+            logInfo("Dannnn oy = ======== ======= = curBlocks.nonEmpty")
           remoteRequests += new FetchRequest(address, curBlocks)
         }
       }
