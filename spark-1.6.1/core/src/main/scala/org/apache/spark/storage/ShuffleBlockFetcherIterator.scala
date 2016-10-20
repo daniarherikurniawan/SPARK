@@ -295,7 +295,7 @@ final class ShuffleBlockFetcherIterator(
     val result = currentResult
     val stopFetchWait = System.currentTimeMillis()
     shuffleMetrics.incFetchWaitTime(stopFetchWait - startFetchWait)
-
+    logInfo("Wooooooooooy Daniar next()==>")
     result match {
       case SuccessFetchResult(_, _, size, _) => bytesInFlight -= size
       case _ =>
@@ -321,6 +321,7 @@ final class ShuffleBlockFetcherIterator(
     // Send fetch requests up to maxBytesInFlight
     while (fetchRequests.nonEmpty &&
       (bytesInFlight == 0 || bytesInFlight + fetchRequests.front.size <= maxBytesInFlight)) {
+      logInfo("Wooooooooooy Daniar fetchUpToMaxBytes ==>")
       sendRequest(fetchRequests.dequeue())
     }
   }
