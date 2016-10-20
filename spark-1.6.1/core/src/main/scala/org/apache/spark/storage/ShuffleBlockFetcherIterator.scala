@@ -158,7 +158,10 @@ final class ShuffleBlockFetcherIterator(
             // Increment the ref count because we need to pass this to a different thread.
             // This needs to be released after use.
             buf.retain()
+            logInfo("Send buffer to: "+address.host)
             results.put(new SuccessFetchResult(BlockId(blockId), address, sizeMap(blockId), buf))
+            logInfo("       size is: "+buf.size)
+            logInfo("")
             shuffleMetrics.incRemoteBytesRead(buf.size)
             shuffleMetrics.incRemoteBlocksFetched(1)
           }
