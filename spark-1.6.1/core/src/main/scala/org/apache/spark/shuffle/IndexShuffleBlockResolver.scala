@@ -50,7 +50,7 @@ private[spark] class IndexShuffleBlockResolver(
   private val transportConf = SparkTransportConf.fromSparkConf(conf, "shuffle")
 
   def getDataFile(shuffleId: Int, mapId: Int): File = {
-    logInfo("DANIAR at IndexShuffleBlockResolver getDataFile")
+    logInfo("DANIAR at IndexShuffleBlockResolver getDataFile shuffleId: "+shuffleId)
     blockManager.diskBlockManager.getFile(ShuffleDataBlockId(shuffleId, mapId, NOOP_REDUCE_ID))
   }
 
@@ -189,7 +189,7 @@ private[spark] class IndexShuffleBlockResolver(
     // find out the consolidated file, then the offset within that from our index
     val indexFile = getIndexFile(blockId.shuffleId, blockId.mapId)
 
-    logInfo("Daniar at IndexShuffleBlockResolver getBlockData indexFile: "+indexFile)
+    logInfo("Daniar at IndexShuffleBlockResolver getBlockData blockId.shuffleId: "+blockId.shuffleId)
     val in = new DataInputStream(new FileInputStream(indexFile))
     try {
       ByteStreams.skipFully(in, blockId.reduceId * 8)

@@ -61,7 +61,7 @@ private[spark] class DiskBlockManager(blockManager: BlockManager, conf: SparkCon
     val hash = Utils.nonNegativeHash(filename)
     val dirId = hash % localDirs.length
     val subDirId = (hash / localDirs.length) % subDirsPerLocalDir
-    logInfo("Daniarrr at DiskBlockManager getFile")
+    logInfo("Daniarrr at DiskBlockManager getFile dirId: "+dirId)
     // Create the subdirectory if it doesn't already exist
     val subDir = subDirs(dirId).synchronized {
       val old = subDirs(dirId)(subDirId)
