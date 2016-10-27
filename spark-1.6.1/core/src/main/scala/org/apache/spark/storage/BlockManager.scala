@@ -292,10 +292,10 @@ private[spark] class BlockManager(
     logInfo("Daniar on getBlockData: ++++++++++")
     if (blockId.isShuffle) {
       val mb = shuffleManager.shuffleBlockResolver.getBlockData(blockId.asInstanceOf[ShuffleBlockId])
-      logInfo("Daniar on BlockManager: "+mb.size())
+      logInfo("Daniar on BlockManager IS SHUFFLED : "+mb.size())
       shuffleManager.shuffleBlockResolver.getBlockData(blockId.asInstanceOf[ShuffleBlockId])
     } else {
-      logInfo("Daniar on getBlockData blockId is NOT shuffled")
+      logInfo("Daniar on getBlockData blockId is NOT shuffled ============")
       val blockBytesOpt = doGetLocal(blockId, asBlockResult = false)
         .asInstanceOf[Option[ByteBuffer]]
       if (blockBytesOpt.isDefined) {
