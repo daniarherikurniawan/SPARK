@@ -189,7 +189,7 @@ private[spark] class IndexShuffleBlockResolver(
     // find out the consolidated file, then the offset within that from our index
     val indexFile = getIndexFile(blockId.shuffleId, blockId.mapId)
 
-    logInfo("Daniar at IndexShuffleBlockResolver getBlockData ++++++++++++++")
+    logInfo("Daniar at IndexShuffleBlockResolver getBlockData indexFile: "+indexFile)
     val in = new DataInputStream(new FileInputStream(indexFile))
     try {
       ByteStreams.skipFully(in, blockId.reduceId * 8)
