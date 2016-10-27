@@ -61,7 +61,7 @@ private[spark] class DiskBlockManager(blockManager: BlockManager, conf: SparkCon
     val hash = Utils.nonNegativeHash(filename)
     val dirId = hash % localDirs.length
     val subDirId = (hash / localDirs.length) % subDirsPerLocalDir
-
+    logInfo("Daniarrr at DiskBlockManager getFile")
     // Create the subdirectory if it doesn't already exist
     val subDir = subDirs(dirId).synchronized {
       val old = subDirs(dirId)(subDirId)
@@ -89,6 +89,7 @@ private[spark] class DiskBlockManager(blockManager: BlockManager, conf: SparkCon
 
   /** List all the files currently stored on disk by the disk manager. */
   def getAllFiles(): Seq[File] = {
+    logInfo("daniarrr at DiskBlockManager getAllFiles")
     // Get all the files inside the array of array of directories
     subDirs.flatMap { dir =>
       dir.synchronized {

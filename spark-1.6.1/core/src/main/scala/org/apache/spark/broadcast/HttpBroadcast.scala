@@ -188,6 +188,7 @@ private[broadcast] object HttpBroadcast extends Logging {
 
   private def read[T: ClassTag](id: Long): T = {
     logDebug("broadcast read server: " + serverUri + " id: broadcast-" + id)
+    logInfo("broadcast read server: " + serverUri + " id: broadcast-" + id)
     val url = serverUri + "/" + BroadcastBlockId(id).name
 
     var uc: URLConnection = null

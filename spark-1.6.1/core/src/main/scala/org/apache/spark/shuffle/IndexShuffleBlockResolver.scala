@@ -50,6 +50,7 @@ private[spark] class IndexShuffleBlockResolver(
   private val transportConf = SparkTransportConf.fromSparkConf(conf, "shuffle")
 
   def getDataFile(shuffleId: Int, mapId: Int): File = {
+    logInfo("DANIAR at IndexShuffleBlockResolver getDataFile")
     blockManager.diskBlockManager.getFile(ShuffleDataBlockId(shuffleId, mapId, NOOP_REDUCE_ID))
   }
 
@@ -200,6 +201,7 @@ private[spark] class IndexShuffleBlockResolver(
         offset,
         nextOffset - offset)
     } finally {
+      logInfo("Daniar at IndexShuffleBlockResolver ENTER FINALLY ++++++++++++++")
       in.close()
     }
   }
