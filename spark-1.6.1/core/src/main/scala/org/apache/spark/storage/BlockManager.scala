@@ -471,11 +471,11 @@ private[spark] class BlockManager(
         }
 
         val level = info.level
-        logDebug(s"Level for block $blockId is $level")
+        logInfo(s"Level for block $blockId is $level")
 
         // Look for the block in memory
         if (level.useMemory) {
-          logDebug(s"Getting block $blockId from memory")
+          logInfo(s"Getting block $blockId from memory")
           val result = if (asBlockResult) {
             memoryStore.getValues(blockId).map(new BlockResult(_, DataReadMethod.Memory, info.size))
           } else {
@@ -485,13 +485,13 @@ private[spark] class BlockManager(
             case Some(values) =>
               return result
             case None =>
-              logDebug(s"Block $blockId not found in memory")
+              logInfo(s"Block $blockId not found in memory")
           }
         }
 
         // Look for the block in external block store
         if (level.useOffHeap) {
-          logDebug(s"Getting block $blockId from ExternalBlockStore")
+          logInfo(s"Getting block $blockId from ExternalBlockStore")
           if (externalBlockStore.contains(blockId)) {
             val result = if (asBlockResult) {
               externalBlockStore.getValues(blockId)
@@ -503,14 +503,14 @@ private[spark] class BlockManager(
               case Some(values) =>
                 return result
               case None =>
-                logDebug(s"Block $blockId not found in ExternalBlockStore")
+                logInfo(s"Block $blockId not found in ExternalBlockStore")
             }
           }
         }
 
         // Look for block on disk, potentially storing it back in memory if required
         if (level.useDisk) {
-          logDebug(s"Getting block $blockId from disk")
+          logInfo(s"Getting block $blockId from disk")
           val bytes: ByteBuffer = diskStore.getBytes(blockId) match {
             case Some(b) => b
             case None =>
@@ -568,7 +568,7 @@ private[spark] class BlockManager(
         }
       }
     } else {
-      logDebug(s"Block $blockId not registered locally")
+      logInfo(s"Block $blockId not registered locally")
     }
     None
   }
@@ -577,7 +577,7 @@ private[spark] class BlockManager(
    * Get block from remote block managers.
    */
   def getRemote(blockId: BlockId): Option[BlockResult] = {
-    logDebug(s"Getting remote block $blockId")
+    logInfo(s"Getting remote block $blockId")
     doGetRemote(blockId, asBlockResult = true).asInstanceOf[Option[BlockResult]]
   }
 
@@ -585,7 +585,7 @@ private[spark] class BlockManager(
    * Get block from remote block managers as serialized bytes.
    */
   def getRemoteBytes(blockId: BlockId): Option[ByteBuffer] = {
-    logDebug(s"Getting remote block $blockId as bytes")
+    logInfo(s"Getting remote block $blockId as bytes")
     doGetRemote(blockId, asBlockResult = false).asInstanceOf[Option[ByteBuffer]]
   }
 
