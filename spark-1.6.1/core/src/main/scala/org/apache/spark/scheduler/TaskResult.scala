@@ -48,6 +48,7 @@ class DirectTaskResult[T](var valueBytes: ByteBuffer, var accumUpdates: Map[Long
 
   override def writeExternal(out: ObjectOutput): Unit = Utils.tryOrIOException {
 
+    logInfo("Task Result writeExternal-------------")
     out.writeInt(valueBytes.remaining);
     Utils.writeByteBuffer(valueBytes, out)
 
@@ -61,6 +62,7 @@ class DirectTaskResult[T](var valueBytes: ByteBuffer, var accumUpdates: Map[Long
 
   override def readExternal(in: ObjectInput): Unit = Utils.tryOrIOException {
 
+    logInfo("Task Result readExternal-------------")
     val blen = in.readInt()
     val byteVal = new Array[Byte](blen)
     in.readFully(byteVal)
