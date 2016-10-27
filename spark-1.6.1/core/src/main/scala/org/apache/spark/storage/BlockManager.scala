@@ -174,6 +174,7 @@ private[spark] class BlockManager(
    * service if configured.
    */
   def initialize(appId: String): Unit = {
+    logInfo("in BlockManager initialize")
     blockTransferService.init(this)
     shuffleClient.init(appId)
 
@@ -287,6 +288,8 @@ private[spark] class BlockManager(
    * cannot be read successfully.
    */
   override def getBlockData(blockId: BlockId): ManagedBuffer = {
+
+    logInfo("Daniar on getBlockData: ++++++++++")
     if (blockId.isShuffle) {
       val mb = shuffleManager.shuffleBlockResolver.getBlockData(blockId.asInstanceOf[ShuffleBlockId])
       logInfo("Daniar on BlockManager: "+mb.size())
@@ -308,6 +311,7 @@ private[spark] class BlockManager(
    * Put the block locally, using the given storage level.
    */
   override def putBlockData(blockId: BlockId, data: ManagedBuffer, level: StorageLevel): Unit = {
+    logInfo("Daniar on putBlockData: ++++++++++")
     putBytes(blockId, data.nioByteBuffer(), level)
   }
 
@@ -316,6 +320,7 @@ private[spark] class BlockManager(
    * NOTE: This is mainly for testing, and it doesn't fetch information from external block store.
    */
   def getStatus(blockId: BlockId): Option[BlockStatus] = {
+    logInfo("Daniar on getStatus: ++++++++++")
     blockInfo.get(blockId).map { info =>
       val memSize = if (memoryStore.contains(blockId)) memoryStore.getSize(blockId) else 0L
       val diskSize = if (diskStore.contains(blockId)) diskStore.getSize(blockId) else 0L
@@ -412,6 +417,7 @@ private[spark] class BlockManager(
     val startTimeMs = System.currentTimeMillis
     val locations = master.getLocations(blockIds).toArray
     logDebug("Got multiple block location in %s".format(Utils.getUsedTimeMs(startTimeMs)))
+    logInfo("Got multiple block location in %s".format(Utils.getUsedTimeMs(startTimeMs)))
     locations
   }
 
@@ -419,6 +425,7 @@ private[spark] class BlockManager(
    * Get block from local block manager.
    */
   def getLocal(blockId: BlockId): Option[BlockResult] = {
+    logInfo(s"Getting local block $blockId")
     logDebug(s"Getting local block $blockId")
     doGetLocal(blockId, asBlockResult = true).asInstanceOf[Option[BlockResult]]
   }
@@ -428,6 +435,7 @@ private[spark] class BlockManager(
    */
   def getLocalBytes(blockId: BlockId): Option[ByteBuffer] = {
     logDebug(s"Getting local block $blockId as bytes")
+    logInfo(s"Getting local block $blockId as bytes")
     // As an optimization for map output fetches, if the block is for a shuffle, return it
     // without acquiring a lock; the disk store never deletes (recent) items so this should work
     if (blockId.isShuffle) {

@@ -53,7 +53,7 @@ class DirectTaskResult[T](var valueBytes: ByteBuffer, var accumUpdates: Map[Long
 
     out.writeInt(accumUpdates.size)
     for ((key, value) <- accumUpdates) {
-    logInfo("Task Result writeExternal-------------")
+    // logInfo("Task Result writeExternal-------------")
       out.writeLong(key)
       out.writeObject(value)
     }
@@ -71,7 +71,7 @@ class DirectTaskResult[T](var valueBytes: ByteBuffer, var accumUpdates: Map[Long
     if (numUpdates == 0) {
       accumUpdates = null
     } else {
-    logInfo("Task Result readExternal-------------")
+    // logInfo("Task Result readExternal-------------")
       val _accumUpdates = mutable.Map[Long, Any]()
       for (i <- 0 until numUpdates) {
         _accumUpdates(in.readLong()) = in.readObject()
