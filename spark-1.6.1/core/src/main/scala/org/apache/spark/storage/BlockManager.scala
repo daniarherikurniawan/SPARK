@@ -1000,6 +1000,7 @@ private[spark] class BlockManager(
    * Read a block consisting of a single object.
    */
   def getSingle(blockId: BlockId): Option[Any] = {
+    logInfo("getSingle  +++++++++++++")
     get(blockId).map(_.data.next())
   }
 
@@ -1290,6 +1291,7 @@ private[spark] object BlockManager extends Logging {
 
     val blockManagers = new HashMap[BlockId, Seq[String]]
     for (i <- 0 until blockIds.length) {
+      logInfo("blockIdsToHosts ++++++++++++")
       blockManagers(blockIds(i)) = blockLocations(i).map(_.host)
     }
     blockManagers.toMap
