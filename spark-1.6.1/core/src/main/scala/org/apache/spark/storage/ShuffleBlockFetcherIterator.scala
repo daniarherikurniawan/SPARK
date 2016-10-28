@@ -142,6 +142,14 @@ final class ShuffleBlockFetcherIterator(
   private[this] def sendRequest(req: FetchRequest) {
     logInfo("Sending request for %d blocks (%s) from %s".format(
       req.blocks.size, Utils.bytesToString(req.size), req.address.hostPort))
+    
+    val writer = new PrintWriter(
+      new File("/proj/cs331-uc/daniar/data_host/"+req.address.host))
+
+    logInfo("FILE data_host IS WRITTEN IN NFS!!! /proj/cs331-uc/daniar/data_host/ ")
+
+    writer.close()
+
     bytesInFlight += req.size
 
     // so we can look up the size of each blockID
@@ -168,11 +176,12 @@ final class ShuffleBlockFetcherIterator(
           logInfo("Got remote block " + blockId + " after " + Utils.getUsedTimeMs(startTime)+" buf : "+buf)
           logInfo("The buffer size is : "+buf.size())
 
-          val writer = new PrintWriter(new File("/proj/cs331-uc/daniar/transfer_status/"+address.host+" "+blockId+" "+Utils.getUsedTimeMs(startTime)+".txt" ))
-          writer.write("Hello Scala")
+          val writer = new PrintWriter(
+            new File("/proj/cs331-uc/daniar/transfer_status/"+address.host+" "+blockId+" "+
+              Utils.getUsedTimeMs(startTime)))
 
           logInfo("FILE IS WRITTEN IN NFS!!! /proj/cs331-uc/daniar/transfer_status/ ")
-          
+
           writer.close()
         }
 
