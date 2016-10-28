@@ -442,7 +442,7 @@ private[spark] class Executor(
     for (taskRunner <- runningTasks.values().asScala) {
       logInfo("DANIAR in EXECUTOR : for (taskRunner <- runningTasks) taskId: "+taskRunner.taskId)
 
-      val total_latency = 0;
+      var total_latency = 0;
       for (file <- new File("/proj/cs331-uc/daniar/transfer_status/").listFiles.map(_.getName)) { 
         val global_var = file.split("\\s+")
         total_latency = total_latency + global_var(2).toInt 
