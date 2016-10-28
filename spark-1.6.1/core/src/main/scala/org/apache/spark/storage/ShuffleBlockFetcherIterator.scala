@@ -168,7 +168,7 @@ final class ShuffleBlockFetcherIterator(
           logInfo("Got remote block " + blockId + " after " + Utils.getUsedTimeMs(startTime)+" buf : "+buf)
           logInfo("The buffer size is : "+buf.size())
 
-          val writer = new PrintWriter(new File("/tmp/test_"+address.host+".txt" ))
+          val writer = new PrintWriter(new File("/proj/cs331-uc/daniar/test_"+address.host+".txt" ))
 
           writer.write("Hello Scala")
           writer.close()
