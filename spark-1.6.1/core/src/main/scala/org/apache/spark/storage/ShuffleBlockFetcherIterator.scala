@@ -16,8 +16,8 @@
  */
 
 package org.apache.spark.storage
-
-import java.io.InputStream
+import java.io._
+// import java.io.InputStream
 import java.util.concurrent.LinkedBlockingQueue
 
 import scala.collection.mutable.{ArrayBuffer, HashSet, Queue}
@@ -167,6 +167,11 @@ final class ShuffleBlockFetcherIterator(
           }
           logInfo("Got remote block " + blockId + " after " + Utils.getUsedTimeMs(startTime)+" buf : "+buf)
           logInfo("The buffer size is : "+buf.size())
+
+          val writer = new PrintWriter(new File("/tmp/test_"+address.host+".txt" ))
+
+          writer.write("Hello Scala")
+          writer.close()
         }
 
         override def onBlockFetchFailure(blockId: String, e: Throwable): Unit = {
