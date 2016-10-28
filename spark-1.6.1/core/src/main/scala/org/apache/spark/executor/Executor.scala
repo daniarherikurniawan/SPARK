@@ -17,7 +17,8 @@
 
 package org.apache.spark.executor
 
-import java.io.{File, NotSerializableException}
+import java.io._
+// import java.io.{File, NotSerializableException}
 import java.lang.management.ManagementFactory
 import java.net.URL
 import java.nio.ByteBuffer
@@ -440,6 +441,11 @@ private[spark] class Executor(
     logInfo("DANIAR in EXECUTOR : reportHeartBeat")
     for (taskRunner <- runningTasks.values().asScala) {
       logInfo("DANIAR in EXECUTOR : for (taskRunner <- runningTasks) taskId: "+taskRunner.taskId)
+
+      for (file <- new File("/proj/cs331-uc/daniar/transfer_status/").listFiles) { 
+        logInfo("                                       File: "+file)
+      }
+
       if (taskRunner.task != null) {
         taskRunner.task.metrics.foreach { metrics =>
           metrics.updateShuffleReadMetrics()
