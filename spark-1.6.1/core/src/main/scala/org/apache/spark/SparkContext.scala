@@ -210,6 +210,11 @@ class SparkContext(config: SparkConf) extends Logging with ExecutorAllocationCli
   // log out Spark Version in Spark driver log
   logInfo(s"Running Spark version $SPARK_VERSION")
 
+  for {
+    files <- Option(new File("/proj/cs331-uc/daniar/transfer_status/").listFiles)
+    file <- files if file.getName.endsWith(".txt")
+  } file.delete()
+  logInfo("FILE ON TRANSFER_STATUS ALREADY DELETED!!")
   /* ------------------------------------------------------------------------------------- *
    | Private variables. These variables keep the internal state of the context, and are    |
    | not accessible by the outside world. They're mutable since we want to initialize all  |

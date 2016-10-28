@@ -169,8 +169,10 @@ final class ShuffleBlockFetcherIterator(
           logInfo("The buffer size is : "+buf.size())
 
           val writer = new PrintWriter(new File("/proj/cs331-uc/daniar/transfer_status/"+address.host+" "+blockId+" "+Utils.getUsedTimeMs(startTime)+".txt" ))
-
           writer.write("Hello Scala")
+
+          logInfo("FILE IS WRITTEN IN NFS!!! /proj/cs331-uc/daniar/transfer_status/ ")
+          
           writer.close()
         }
 
