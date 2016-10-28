@@ -442,7 +442,7 @@ private[spark] class Executor(
     for (taskRunner <- runningTasks.values().asScala) {
       logInfo("DANIAR in EXECUTOR : for (taskRunner <- runningTasks) taskId: "+taskRunner.taskId)
 
-      for (file <- new File("/proj/cs331-uc/daniar/transfer_status/").listFiles) { 
+      for (file <- new File("/proj/cs331-uc/daniar/transfer_status/").listFiles.map(_.getName)) { 
         logInfo("                                       File: "+file)
       }
 
