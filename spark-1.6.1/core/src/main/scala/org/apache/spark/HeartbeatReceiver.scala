@@ -241,7 +241,7 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
     for ((executorId, lastSeenMs) <- executorLastSeen) {
       logInfo(" executorId, lastSeenMs :"+executorId+"  "+lastSeenMs)
       logInfo(" executorId : "+executorId+ "     slowExecutor: "+slowExecutor+
-        "   boolean: "+(now - lastSeenMs > executorTimeoutMs  || executorId == slowExecutor))
+        "   boolean: "+( executorId == slowExecutor))
       if (now - lastSeenMs > executorTimeoutMs  || executorId == slowExecutor) {
         logInfo(s"Removing executor $executorId with no recent heartbeats: " +
           s"${now - lastSeenMs} ms exceeds timeout $executorTimeoutMs ms")
