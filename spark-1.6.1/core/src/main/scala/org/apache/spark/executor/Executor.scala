@@ -464,7 +464,7 @@ private[spark] class Executor(
         /*checking the unfinished task*/
         for (file <- new File("/proj/cs331-uc/daniar/task_started/").listFiles.map(_.getName)) { 
           val unfinished_task = file.split("\\s+")
-          val time_spent = Utils.getUsedTimeMs(unfinished_task(1).toLong)
+          val time_spent = System.currentTimeMillis - unfinished_task(1).toLong
           logInfo("                                       unfinished_task: "+unfinished_task(0))
           logInfo("                                       time spent : "+time_spent +" ms")
 
