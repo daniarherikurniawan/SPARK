@@ -232,6 +232,13 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
           if(time_spent > threshold){
             logInfo("                                            KILLLLL!!! : "+unfinished_task(0))
             slowExecutor = unfinished_task(1).toInt
+
+
+            /*delete the unfinished task on killed executor*/
+            for {
+              files <- Option(new File("/proj/cs331-uc/daniar/task_started/").listFiles)
+              file <- files if file.getName.startsWith(unfinished_task(0))
+            } file.delete()
           }
         }
 
@@ -240,8 +247,9 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
 
     for ((executorId, lastSeenMs) <- executorLastSeen) {
       logInfo(" executorId, lastSeenMs :"+executorId+"  "+lastSeenMs)
-      logInfo(" executorId : "+executorId+ "     slowExecutor: "+slowExecutor+
-        "   boolean: "+( executorId.toInt == slowExecutor))
+      if( executorId.toInt == slowExecutor){
+        logInfo("EXECUTOR ID "+executorId+" IS REMOVED BECAUSE OF SLOW BANDWIDTH")
+      }
       if (now - lastSeenMs > executorTimeoutMs  || executorId.toInt == slowExecutor) {
         logInfo(s"Removing executor $executorId with no recent heartbeats: " +
           s"${now - lastSeenMs} ms exceeds timeout $executorTimeoutMs ms")
