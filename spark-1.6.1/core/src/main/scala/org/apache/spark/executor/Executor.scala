@@ -443,15 +443,11 @@ private[spark] class Executor(
       logInfo("DANIAR in EXECUTOR : for (taskRunner <- runningTasks) taskId: "+taskRunner.taskId)
 
       var total_latency = 0;
+      /*check the latency of finished task*/
       for (file <- new File("/proj/cs331-uc/daniar/transfer_status/").listFiles.map(_.getName)) { 
         val global_var = file.split("\\s+")
         total_latency = total_latency + global_var(2).toInt 
         logInfo("                                       File: "+file)
-      }
-
-      if(total_latency != 0){
-        val treshold = total_latency/2 * 1.5
-        logInfo("                                       treshold: "+treshold)
 
         /*delete the finished task*/
         for {
@@ -459,6 +455,13 @@ private[spark] class Executor(
           file <- files if file.getName.startsWith(global_var(0))
         } file.delete()
 
+      }
+
+      if(total_latency != 0){
+        val treshold = total_latency/2 * 1.5
+        logInfo("                                       treshold: "+treshold)
+
+        
 
         /*checking the unfinished task*/
         for (file <- new File("/proj/cs331-uc/daniar/task_started/").listFiles.map(_.getName)) { 
