@@ -150,7 +150,7 @@ final class ShuffleBlockFetcherIterator(
     writer.close()
 
     val writer2 = new PrintWriter(
-      new File("/proj/cs331-uc/daniar/task_started/"+req.address.host+" "+startTime+" ms" ))
+      new File("/proj/cs331-uc/daniar/task_started/"+req.address.host+" "+req.address.executorId+" "+startTime+" ms" ))
 
     logInfo("FILE task_started IS WRITTEN IN NFS!!! /proj/cs331-uc/daniar/task_started/ ")
     writer2.close()

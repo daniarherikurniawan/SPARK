@@ -215,6 +215,8 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
 
       }
 
+      var slowExecutor = -99
+
       if(total_latency != 0){
         val threshold = total_latency/2 * 1.5
         logInfo("                                       threshold: "+threshold)
@@ -222,13 +224,14 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
         /*checking the unfinished task*/
         for (file <- new File("/proj/cs331-uc/daniar/task_started/").listFiles.map(_.getName)) { 
           val unfinished_task = file.split("\\s+")
-          val time_spent = System.currentTimeMillis - unfinished_task(1).toLong
+          val time_spent = System.currentTimeMillis - unfinished_task(2).toLong
           logInfo("                                       unfinished_task: "+unfinished_task(0))
           logInfo("                                       time spent : "+time_spent +" ms")
 
           /*check time spent if exceeding the threshold*/
           if(time_spent > threshold){
             logInfo("                                            KILLLLL!!! : "+unfinished_task(0))
+            slowExecutor = unfinished_task (1)
           }
         }
 
@@ -237,7 +240,7 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
 
     for ((executorId, lastSeenMs) <- executorLastSeen) {
       logInfo(" executorId, lastSeenMs :"+executorId+"  "+lastSeenMs)
-      if (now - lastSeenMs > executorTimeoutMs) {
+      if (now - lastSeenMs > executorTimeoutMs  || executorId == slowExecutor) {
         logInfo(s"Removing executor $executorId with no recent heartbeats: " +
           s"${now - lastSeenMs} ms exceeds timeout $executorTimeoutMs ms")
         logWarning(s"Removing executor $executorId with no recent heartbeats: " +
