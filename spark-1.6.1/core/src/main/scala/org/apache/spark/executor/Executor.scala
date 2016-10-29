@@ -458,16 +458,20 @@ private[spark] class Executor(
       }
 
       if(total_latency != 0){
-        val treshold = total_latency/2 * 1.5
-        logInfo("                                       treshold: "+treshold)
-
-        
+        val threshold = total_latency/2 * 1.5
+        logInfo("                                       threshold: "+threshold)
 
         /*checking the unfinished task*/
         for (file <- new File("/proj/cs331-uc/daniar/task_started/").listFiles.map(_.getName)) { 
           val unfinished_task = file.split("\\s+")
+          val time_spent = Utils.getUsedTimeMs(unfinished_task(1).toLong)
           logInfo("                                       unfinished_task: "+unfinished_task(0))
-          logInfo("                                       time spent : "+Utils.getUsedTimeMs(unfinished_task(1).toLong) +" ms")
+          logInfo("                                       time spent : "+time_spent +" ms")
+
+          /*check time spent if exceeding the threshold*/
+          if(time_spent > threshold){
+            logInfo("                                            KILLLLL!!! : "+unfinished_task(0))
+          }
         }
 
       }
