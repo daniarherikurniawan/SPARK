@@ -17,6 +17,7 @@
 
 package org.apache.spark
 
+import java.io._
 import java.util.concurrent.{ScheduledFuture, TimeUnit}
 
 import scala.collection.mutable
