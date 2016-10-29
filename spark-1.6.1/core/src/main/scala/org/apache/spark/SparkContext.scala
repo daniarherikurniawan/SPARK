@@ -226,7 +226,7 @@ class SparkContext(config: SparkConf) extends Logging with ExecutorAllocationCli
     file <- files if file.getName.endsWith("ms")
   } file.delete()
 
-
+  logInfo("Test!!! "+Utils.DEFAULT_DRIVER_MEM_MB)
   logInfo("FILE ON TRANSFER_STATUS ALREADY DELETED!!")
   /* ------------------------------------------------------------------------------------- *
    | Private variables. These variables keep the internal state of the context, and are    |
