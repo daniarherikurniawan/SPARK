@@ -534,8 +534,8 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 - Each stage is run sequentially  
 - Currently, there are 2 tasks for each stage. We can specify number of tasks in every stage by changing ```2``` at file sort_in_node.py: ```text_file = sc.textFile("/proj/cs331-uc/daniar/SPARK/generated_file/list_int",2)``` 
 - About workload:
-	- 4000000 random array of integers at /proj/cs331-uc/daniar/SPARK/generated_file/list_int
-	- size: 31 Mb
+	- The application will sort 4.000.000 random array of integers at /proj/cs331-uc/daniar/SPARK/generated_file/list_int
+	- size: 31 MB
 	- snippet of sort_in_array.py
 		```
 		sc = SparkContext(conf=conf)
