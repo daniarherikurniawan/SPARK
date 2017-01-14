@@ -538,9 +538,9 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 		```
 		sc = SparkContext(conf=conf)
 		text_file = sc.textFile("/proj/cs331-uc/daniar/SPARK/generated_file/list_int",2)
-		sorted_array = text_file.map(lambda a : (int(a),a)).sortByKey("true")
+		sorted_array = text_file.map(lambda a : (int(a),a)).***sortByKey***("true")
 
-		output = sorted_array.collect()
+		output = sorted_array.***collect***()
 		
 		f = open('workfile', 'w')
 		for (num, unitcount) in output:
