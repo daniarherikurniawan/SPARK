@@ -549,7 +549,7 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 			f.write(str(num)+"\n")
 		f.closed 
 		```
-- About the scenarion:
+- About the scenario:
 	- slaves / worker identified by W, so there are W1, W2, W3, W4
 	- Every task on Stage 0 (1st stage), Stage 1, and Stage 2 are run on W1 and W2. The tasks of a single stage will be divided evenly(if possible) at W1 and W2. In this case, we only have 2 task, so each worker / slave will run a single task.
 	- Stage 3 (4th stage) is run on W3 and W4.
