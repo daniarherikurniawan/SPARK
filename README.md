@@ -516,3 +516,11 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
   	```
 
 - Logging folder should be NFS to be accessible for every node
+
+
+### How To Run
+- open ssh at all five nodes
+- execute ```cd /proj/cs331-uc/daniar/SPARK/spark-1.6.1/``` on every node
+- at node 1 : ```./sbin/start-master.sh```
+- at another node : ```./sbin/start-slave.sh spark://node-1.testspark.cs331-uc.emulab.net:7077 --memory 10g --cores 4```
+- submit task by executing this : ```./bin/spark-submit sort_in_node.py --master spark://node-1.testspark.cs331-uc.emulab.net:7077 --deploy-mode cluster --num-executors 4```
