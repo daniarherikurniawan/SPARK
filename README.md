@@ -517,6 +517,13 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 
 - Logging folder should be NFS to be accessible for every node
 
+### Current Configuration
+- There are 5 nodes
+- 1 master
+- 4 slaves
+- There are 3 Job 
+- We can specify number of tasks in a stage by changing ```2``` at file sort_in_node.py: ```text_file = sc.textFile("/proj/cs331-uc/daniar/SPARK/generated_file/list_int",2)``` 
+- There are 4 Stages
 
 ### How To Run
 - open ssh at all five nodes
