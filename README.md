@@ -521,9 +521,20 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 - There are 5 nodes
 - 1 master
 - 4 slaves
-- There are 3 Job 
-- We can specify number of tasks in a stage by changing ```2``` at file sort_in_node.py: ```text_file = sc.textFile("/proj/cs331-uc/daniar/SPARK/generated_file/list_int",2)``` 
+- There are 3 Job (Depend on our application)
+	- Job 0: sortByKey
+		- Stage 0 : sortByKey
+	- Job 1: sortByKey
+		- Stage 1 : sortByKey
+	- Job 2: collect
+		- Stage 2 : sortByKey
+		- Stage 3 : collect
+
+- Currently, there are 2 tasks for each stage. We can specify number of tasks in every stage by changing ```2``` at file sort_in_node.py: ```text_file = sc.textFile("/proj/cs331-uc/daniar/SPARK/generated_file/list_int",2)``` 
 - There are 4 Stages
+- About workload:
+	- 4000000 random array of integers at /proj/cs331-uc/daniar/SPARK/generated_file/list_int
+	- size: 31 Mb
 
 ### How To Run
 - open ssh at all five nodes
