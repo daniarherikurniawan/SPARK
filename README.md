@@ -580,7 +580,7 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 		sudo tc class add dev eth4 parent 1: classid 1:1 htb rate 0.125mbps
 		sudo tc class add dev eth4 parent 1:1 classid 1:11 htb rate 0.125mbps
 		```
-	- After running that command, SPARK will kill that node (W2). To restart, clear the htb, and restart the stave :
+	- After running that command, SPARK will kill that slow node (W2) automatically (***when PBSE is implemented***). To restart, clear the htb, and restart the stave :
 		```
 		sudo tc qdisc del dev eth0 root
 		sudo tc qdisc del dev eth2 root
