@@ -534,7 +534,9 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 - About workload:
 	- 4000000 random array of integers at /proj/cs331-uc/daniar/SPARK/generated_file/list_int
 	- size: 31 Mb
-	- 	sc = SparkContext(conf=conf)
+	- snippet of sort_in_array.py
+		```
+		sc = SparkContext(conf=conf)
 		text_file = sc.textFile("/proj/cs331-uc/daniar/SPARK/generated_file/list_int",2)
 		sorted_array = text_file.map(lambda a : (int(a),a)).sortByKey("true")
 
@@ -544,6 +546,7 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 		for (num, unitcount) in output:
 			f.write(str(num)+"\n")
 		f.closed 
+		```
 
 ### How To Run
 - open ssh at all five nodes
