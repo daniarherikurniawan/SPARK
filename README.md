@@ -529,12 +529,21 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 	- Job 2: collect
 		- Stage 2 : sortByKey
 		- Stage 3 : collect
-
+- Obviously, there are 4 Stages 
 - Currently, there are 2 tasks for each stage. We can specify number of tasks in every stage by changing ```2``` at file sort_in_node.py: ```text_file = sc.textFile("/proj/cs331-uc/daniar/SPARK/generated_file/list_int",2)``` 
-- There are 4 Stages
 - About workload:
 	- 4000000 random array of integers at /proj/cs331-uc/daniar/SPARK/generated_file/list_int
 	- size: 31 Mb
+	- ```sc = SparkContext(conf=conf)
+		text_file = sc.textFile("/proj/cs331-uc/daniar/SPARK/generated_file/list_int",2)
+		sorted_array = text_file.map(lambda a : (int(a),a)).sortByKey("true")
+
+		output = sorted_array.collect()
+		
+		f = open('workfile', 'w')
+		for (num, unitcount) in output:
+			f.write(str(num)+"\n")
+		f.closed ```
 
 ### How To Run
 - open ssh at all five nodes
