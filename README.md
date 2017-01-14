@@ -580,15 +580,18 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 		sudo tc class add dev eth4 parent 1: classid 1:1 htb rate 0.125mbps
 		sudo tc class add dev eth4 parent 1:1 classid 1:11 htb rate 0.125mbps
 		```
-	- After running that command, SPARK will kill that node (W2). To restart, kill java application and clear the htb by :
+	- After running that command, SPARK will kill that node (W2). To restart, clear the htb, and restart the stave :
 		```
-		pkill -f java
-
 		sudo tc qdisc del dev eth0 root
 		sudo tc qdisc del dev eth2 root
 		sudo tc qdisc del dev eth3 root
 		sudo tc qdisc del dev eth4 root
 		sudo tc qdisc del dev lo root
+
+		./sbin/stop-slave.sh
+
+		./sbin/start-slave.sh spark://node-1.testspark.cs331-uc.emulab.net:7077 --memory 10g --cores 4
+		
 		```
 
 
