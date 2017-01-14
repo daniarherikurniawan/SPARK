@@ -530,11 +530,14 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 		- Stage 2 : sortByKey
 		- Stage 3 : collect
 - Obviously, there are 4 Stages 
+- Parallelism only occurs when running tasks inside single stage
+- Each stage is run sequentially  
 - Currently, there are 2 tasks for each stage. We can specify number of tasks in every stage by changing ```2``` at file sort_in_node.py: ```text_file = sc.textFile("/proj/cs331-uc/daniar/SPARK/generated_file/list_int",2)``` 
 - About workload:
 	- 4000000 random array of integers at /proj/cs331-uc/daniar/SPARK/generated_file/list_int
 	- size: 31 Mb
-	- snippet of sort_in_array.py```
+	- snippet of sort_in_array.py
+		```
 		sc = SparkContext(conf=conf)
 		text_file = sc.textFile("/proj/cs331-uc/daniar/SPARK/generated_file/list_int",2)
 		sorted_array = text_file.map(lambda a : (int(a),a)).sortByKey("true")
@@ -546,6 +549,48 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 			f.write(str(num)+"\n")
 		f.closed 
 		```
+- About the scenarion:
+	- slaves / worker identified by W, so there are W1, W2, W3, W4
+	- Every task on Stage 0 (1st stage), Stage 1, and Stage 2 are run on W1 and W2. The tasks of a single stage will be divided evenly(if possible) at W1 and W2. In this case, we only have 2 task, so each worker / slave will run a single task.
+	- Stage 3 (4th stage) is run on W3 and W4.
+	- When stage 3 is running, it needs data that are stored in W1 and W2 (from the previous stage).
+	- ***We will throttle W2 (decrease the BW to 1 Mbps)***
+
+- About throttling
+	- using [HTB](https://github.com/daniarherikurniawan/SPARK#hierarchical-token-bucket-almost-work-properly), part of ***tc tools***
+	- command for htb:
+		```
+		sudo tc qdisc add dev eth0 handle 1: root htb default 11
+		sudo tc class add dev eth0 parent 1: classid 1:1 htb rate 0.125mbps
+		sudo tc class add dev eth0 parent 1:1 classid 1:11 htb rate 0.125mbps
+
+		sudo tc qdisc add dev eth2 handle 1: root htb default 11
+		sudo tc class add dev eth2 parent 1: classid 1:1 htb rate 0.125mbps
+		sudo tc class add dev eth2 parent 1:1 classid 1:11 htb rate 0.125mbps
+
+		sudo tc qdisc add dev eth3 handle 1: root htb default 11
+		sudo tc class add dev eth3 parent 1: classid 1:1 htb rate 0.125mbps
+		sudo tc class add dev eth3 parent 1:1 classid 1:11 htb rate 0.125mbps
+
+		sudo tc qdisc add dev lo handle 1: root htb default 11
+		sudo tc class add dev lo parent 1: classid 1:1 htb rate 0.125mbps
+		sudo tc class add dev lo parent 1:1 classid 1:11 htb rate 0.125mbps
+
+		sudo tc qdisc add dev eth4 handle 1: root htb default 11
+		sudo tc class add dev eth4 parent 1: classid 1:1 htb rate 0.125mbps
+		sudo tc class add dev eth4 parent 1:1 classid 1:11 htb rate 0.125mbps
+		```
+	- After running that command, SPARK will kill that node (W2). To restart, kill java application and clear the htb by :
+		```
+		pkill -f java
+
+		sudo tc qdisc del dev eth0 root
+		sudo tc qdisc del dev eth2 root
+		sudo tc qdisc del dev eth3 root
+		sudo tc qdisc del dev eth4 root
+		sudo tc qdisc del dev lo root
+		```
+
 
 ### How To Run
 - open ssh at all five nodes
