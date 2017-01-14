@@ -521,7 +521,7 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 ### How To Run
 - open ssh at all five nodes
 - execute ```cd /proj/cs331-uc/daniar/SPARK/spark-1.6.1/``` on every node
-- at node 1 : ```./sbin/start-master.sh```
-- at another node : ```./sbin/start-slave.sh spark://node-1.testspark.cs331-uc.emulab.net:7077 --memory 10g --cores 4```
+- at node 1 execute : ```./sbin/start-master.sh```
+- at another node execute : ```./sbin/start-slave.sh spark://node-1.testspark.cs331-uc.emulab.net:7077 --memory 10g --cores 4```
 	if you change --cores 4, you should edit SparkDeploySchedulerBackend.scala on ```totalCoreCount.get() >= numberOfCore * numberOfSlave ```
-- submit task by executing this : ```./bin/spark-submit sort_in_node.py --master spark://node-1.testspark.cs331-uc.emulab.net:7077 --deploy-mode cluster --num-executors 4```
+- submit task by executing this on any node : ```./bin/spark-submit sort_in_node.py --master spark://node-1.testspark.cs331-uc.emulab.net:7077 --deploy-mode cluster --num-executors 4```
