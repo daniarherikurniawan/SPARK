@@ -150,7 +150,7 @@ private[spark] class SparkDeploySchedulerBackend(
 
    // totalCoreCount.get() >= totalExpectedCores * minRegisteredRatio
     // totalCoreCount.get() >= 8*4 //d430
-    totalCoreCount.get() >= 1*4 //d710
+    totalCoreCount.get() >= 2*4 //d710
     // totalCoreCount.get() >= 2*4
   }
 
