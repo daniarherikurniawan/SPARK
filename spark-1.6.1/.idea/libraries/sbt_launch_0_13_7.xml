@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="sbt-launch-0.13.7">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/build/sbt-launch-0.13.7.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

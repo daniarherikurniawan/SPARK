@@ -95,6 +95,9 @@ sudo rm -rf *
 cd /tmp/
 sudo rm -rf *
 
-sudo apt-get install bmon
+sudo apt-get update
+sudo apt-get install bmon 
+y
+bmon
 
 MapOutputTrackerMaster:

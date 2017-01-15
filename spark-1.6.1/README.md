@@ -17,6 +17,9 @@ guide, on the [project web page](http://spark.apache.org/documentation.html)
 and [project wiki](https://cwiki.apache.org/confluence/display/SPARK).
 This README file only contains basic setup instructions.
 
+## Open Code On Intellij Idea
+just follow [this](https://linbojin.github.io/2016/01/09/Reading-Spark-Souce-Code-in-IntelliJ-IDEA/)
+
 ## Building Spark
 
 Spark is built using [Apache Maven](http://maven.apache.org/).

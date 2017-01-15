@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="TestSerDe">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/sql/hive/src/test/resources/data/files/TestSerDe.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

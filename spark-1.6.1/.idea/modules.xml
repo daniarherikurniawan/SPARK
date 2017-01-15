@@ -2,72 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/network/yarn/target/streams/$global/assemblyOption/$global/streams/assembly/assembly.iml" filepath="$PROJECT_DIR$/network/yarn/target/streams/$global/assemblyOption/$global/streams/assembly/assembly.iml" />
-      <module fileurl="file://$PROJECT_DIR$/launcher/src/main/main.iml" filepath="$PROJECT_DIR$/launcher/src/main/main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sql/hive/src/main/main1.iml" filepath="$PROJECT_DIR$/sql/hive/src/main/main1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sql/hive-thriftserver/src/main/main10.iml" filepath="$PROJECT_DIR$/sql/hive-thriftserver/src/main/main10.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dev/audit-release/maven_app_core/src/main/main11.iml" filepath="$PROJECT_DIR$/dev/audit-release/maven_app_core/src/main/main11.iml" />
-      <module fileurl="file://$PROJECT_DIR$/repl/scala-2.11/src/main/main12.iml" filepath="$PROJECT_DIR$/repl/scala-2.11/src/main/main12.iml" />
-      <module fileurl="file://$PROJECT_DIR$/examples/src/main/main13.iml" filepath="$PROJECT_DIR$/examples/src/main/main13.iml" />
-      <module fileurl="file://$PROJECT_DIR$/extras/kinesis-asl/src/main/main14.iml" filepath="$PROJECT_DIR$/extras/kinesis-asl/src/main/main14.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sql/catalyst/src/main/main15.iml" filepath="$PROJECT_DIR$/sql/catalyst/src/main/main15.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sql/core/src/main/main16.iml" filepath="$PROJECT_DIR$/sql/core/src/main/main16.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tags/src/main/main17.iml" filepath="$PROJECT_DIR$/tags/src/main/main17.iml" />
-      <module fileurl="file://$PROJECT_DIR$/network/yarn/src/main/main18.iml" filepath="$PROJECT_DIR$/network/yarn/src/main/main18.iml" />
-      <module fileurl="file://$PROJECT_DIR$/core/src/main/main19.iml" filepath="$PROJECT_DIR$/core/src/main/main19.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tools/src/main/main2.iml" filepath="$PROJECT_DIR$/tools/src/main/main2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/repl/scala-2.10/src/main/main20.iml" filepath="$PROJECT_DIR$/repl/scala-2.10/src/main/main20.iml" />
-      <module fileurl="file://$PROJECT_DIR$/extras/spark-ganglia-lgpl/src/main/main21.iml" filepath="$PROJECT_DIR$/extras/spark-ganglia-lgpl/src/main/main21.iml" />
-      <module fileurl="file://$PROJECT_DIR$/repl/src/main/main22.iml" filepath="$PROJECT_DIR$/repl/src/main/main22.iml" />
-      <module fileurl="file://$PROJECT_DIR$/external/kafka/src/main/main23.iml" filepath="$PROJECT_DIR$/external/kafka/src/main/main23.iml" />
-      <module fileurl="file://$PROJECT_DIR$/streaming/src/main/main24.iml" filepath="$PROJECT_DIR$/streaming/src/main/main24.iml" />
-      <module fileurl="file://$PROJECT_DIR$/external/flume/src/main/main25.iml" filepath="$PROJECT_DIR$/external/flume/src/main/main25.iml" />
-      <module fileurl="file://$PROJECT_DIR$/external/twitter/src/main/main26.iml" filepath="$PROJECT_DIR$/external/twitter/src/main/main26.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mllib/src/main/main27.iml" filepath="$PROJECT_DIR$/mllib/src/main/main27.iml" />
-      <module fileurl="file://$PROJECT_DIR$/external/flume-sink/src/main/main28.iml" filepath="$PROJECT_DIR$/external/flume-sink/src/main/main28.iml" />
-      <module fileurl="file://$PROJECT_DIR$/yarn/src/main/main29.iml" filepath="$PROJECT_DIR$/yarn/src/main/main29.iml" />
-      <module fileurl="file://$PROJECT_DIR$/graphx/src/main/main3.iml" filepath="$PROJECT_DIR$/graphx/src/main/main3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/external/mqtt/src/main/main4.iml" filepath="$PROJECT_DIR$/external/mqtt/src/main/main4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/network/common/src/main/main5.iml" filepath="$PROJECT_DIR$/network/common/src/main/main5.iml" />
-      <module fileurl="file://$PROJECT_DIR$/external/zeromq/src/main/main6.iml" filepath="$PROJECT_DIR$/external/zeromq/src/main/main6.iml" />
-      <module fileurl="file://$PROJECT_DIR$/network/shuffle/src/main/main7.iml" filepath="$PROJECT_DIR$/network/shuffle/src/main/main7.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bagel/src/main/main8.iml" filepath="$PROJECT_DIR$/bagel/src/main/main8.iml" />
-      <module fileurl="file://$PROJECT_DIR$/unsafe/src/main/main9.iml" filepath="$PROJECT_DIR$/unsafe/src/main/main9.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dev/audit-release/sbt_app_core/sbt_app_core.iml" filepath="$PROJECT_DIR$/dev/audit-release/sbt_app_core/sbt_app_core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dev/audit-release/sbt_app_ganglia/sbt_app_ganglia.iml" filepath="$PROJECT_DIR$/dev/audit-release/sbt_app_ganglia/sbt_app_ganglia.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dev/audit-release/sbt_app_graphx/sbt_app_graphx.iml" filepath="$PROJECT_DIR$/dev/audit-release/sbt_app_graphx/sbt_app_graphx.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dev/audit-release/sbt_app_hive/sbt_app_hive.iml" filepath="$PROJECT_DIR$/dev/audit-release/sbt_app_hive/sbt_app_hive.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dev/audit-release/sbt_app_kinesis/sbt_app_kinesis.iml" filepath="$PROJECT_DIR$/dev/audit-release/sbt_app_kinesis/sbt_app_kinesis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dev/audit-release/sbt_app_sql/sbt_app_sql.iml" filepath="$PROJECT_DIR$/dev/audit-release/sbt_app_sql/sbt_app_sql.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dev/audit-release/sbt_app_streaming/sbt_app_streaming.iml" filepath="$PROJECT_DIR$/dev/audit-release/sbt_app_streaming/sbt_app_streaming.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mllib/src/main/scala/org/apache/spark/spark.iml" filepath="$PROJECT_DIR$/mllib/src/main/scala/org/apache/spark/spark.iml" />
-      <module fileurl="file://$PROJECT_DIR$/yarn/target/target.iml" filepath="$PROJECT_DIR$/yarn/target/target.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sql/catalyst/src/test/test.iml" filepath="$PROJECT_DIR$/sql/catalyst/src/test/test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sql/core/src/test/test1.iml" filepath="$PROJECT_DIR$/sql/core/src/test/test1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/repl/scala-2.10/src/test/test10.iml" filepath="$PROJECT_DIR$/repl/scala-2.10/src/test/test10.iml" />
-      <module fileurl="file://$PROJECT_DIR$/external/kafka/src/test/test11.iml" filepath="$PROJECT_DIR$/external/kafka/src/test/test11.iml" />
-      <module fileurl="file://$PROJECT_DIR$/core/src/test/test12.iml" filepath="$PROJECT_DIR$/core/src/test/test12.iml" />
-      <module fileurl="file://$PROJECT_DIR$/external/twitter/src/test/test13.iml" filepath="$PROJECT_DIR$/external/twitter/src/test/test13.iml" />
-      <module fileurl="file://$PROJECT_DIR$/network/common/src/test/test14.iml" filepath="$PROJECT_DIR$/network/common/src/test/test14.iml" />
-      <module fileurl="file://$PROJECT_DIR$/repl/src/test/test15.iml" filepath="$PROJECT_DIR$/repl/src/test/test15.iml" />
-      <module fileurl="file://$PROJECT_DIR$/yarn/src/test/test16.iml" filepath="$PROJECT_DIR$/yarn/src/test/test16.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mllib/src/test/test17.iml" filepath="$PROJECT_DIR$/mllib/src/test/test17.iml" />
-      <module fileurl="file://$PROJECT_DIR$/extras/java8-tests/src/test/test18.iml" filepath="$PROJECT_DIR$/extras/java8-tests/src/test/test18.iml" />
-      <module fileurl="file://$PROJECT_DIR$/launcher/src/test/test19.iml" filepath="$PROJECT_DIR$/launcher/src/test/test19.iml" />
-      <module fileurl="file://$PROJECT_DIR$/external/zeromq/src/test/test2.iml" filepath="$PROJECT_DIR$/external/zeromq/src/test/test2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/extras/kinesis-asl/src/test/test20.iml" filepath="$PROJECT_DIR$/extras/kinesis-asl/src/test/test20.iml" />
-      <module fileurl="file://$PROJECT_DIR$/external/flume-sink/src/test/test21.iml" filepath="$PROJECT_DIR$/external/flume-sink/src/test/test21.iml" />
-      <module fileurl="file://$PROJECT_DIR$/docker-integration-tests/src/test/test22.iml" filepath="$PROJECT_DIR$/docker-integration-tests/src/test/test22.iml" />
-      <module fileurl="file://$PROJECT_DIR$/external/mqtt/src/test/test23.iml" filepath="$PROJECT_DIR$/external/mqtt/src/test/test23.iml" />
-      <module fileurl="file://$PROJECT_DIR$/graphx/src/test/test24.iml" filepath="$PROJECT_DIR$/graphx/src/test/test24.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sql/hive/src/test/test25.iml" filepath="$PROJECT_DIR$/sql/hive/src/test/test25.iml" />
-      <module fileurl="file://$PROJECT_DIR$/repl/scala-2.11/src/test/test3.iml" filepath="$PROJECT_DIR$/repl/scala-2.11/src/test/test3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/external/flume/src/test/test4.iml" filepath="$PROJECT_DIR$/external/flume/src/test/test4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/network/shuffle/src/test/test5.iml" filepath="$PROJECT_DIR$/network/shuffle/src/test/test5.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sql/hive/compatibility/src/test/test6.iml" filepath="$PROJECT_DIR$/sql/hive/compatibility/src/test/test6.iml" />
-      <module fileurl="file://$PROJECT_DIR$/streaming/src/test/test7.iml" filepath="$PROJECT_DIR$/streaming/src/test/test7.iml" />
-      <module fileurl="file://$PROJECT_DIR$/unsafe/src/test/test8.iml" filepath="$PROJECT_DIR$/unsafe/src/test/test8.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sql/hive-thriftserver/src/test/test9.iml" filepath="$PROJECT_DIR$/sql/hive-thriftserver/src/test/test9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/assembly/spark-assembly_2.10.iml" filepath="$PROJECT_DIR$/assembly/spark-assembly_2.10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/spark-core_2.10.iml" filepath="$PROJECT_DIR$/core/spark-core_2.10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spark-parent_2.10.iml" filepath="$PROJECT_DIR$/spark-parent_2.10.iml" />
     </modules>
   </component>
 </project>
