@@ -87,8 +87,8 @@
       <file leaf-file-name="ContextCleaner.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/ContextCleaner.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+            <state relative-caret-position="234">
+              <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -98,8 +98,8 @@
         <entry file="file://$PROJECT_DIR$/../README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="237">
-                <caret line="587" column="39" selection-start-line="587" selection-start-column="39" selection-end-line="587" selection-end-column="39" />
+              <first_editor relative-caret-position="147">
+                <caret line="589" column="22" selection-start-line="589" selection-start-column="22" selection-end-line="589" selection-end-column="22" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -534,14 +534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/ContextCleaner.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/scheduler/DAGScheduler.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -562,11 +554,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/ContextCleaner.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="237">
-            <caret line="587" column="39" selection-start-line="587" selection-start-column="39" selection-end-line="587" selection-end-column="39" />
+          <first_editor relative-caret-position="147">
+            <caret line="589" column="22" selection-start-line="589" selection-start-column="22" selection-end-line="589" selection-end-column="22" />
             <folding />
           </first_editor>
           <second_editor />
