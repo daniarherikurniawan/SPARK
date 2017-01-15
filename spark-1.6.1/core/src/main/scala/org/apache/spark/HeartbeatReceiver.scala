@@ -232,7 +232,8 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
           /* check time spent if exceeding the threshold */
           if(time_spent > threshold){
             logInfo("                                         KILLLLL!!! : " + unfinished_task(0))
-            slowExecutor = unfinished_task(1).toInt
+            // disabling PBSE
+            //            slowExecutor = unfinished_task(1).toInt
 
 
             /* delete the unfinished task on killed executor */
