@@ -196,18 +196,19 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
 
   private def expireDeadHosts(): Unit = {
     logInfo("executorLOST TaskSchedulerImpl CALLED!!!")
-    logInfo("in expireDeadHosts : Checking for hosts with no recent heartbeats in HeartbeatReceiver. executorTimeoutMs: "+executorTimeoutMs)
+    logInfo("in expireDeadHosts : Checking for hosts with no recent " +
+      "heartbeats in HeartbeatReceiver. executorTimeoutMs: " + executorTimeoutMs)
     val now = clock.getTimeMillis()
 
-    /*Daniar's code*/
-       var total_latency = 0;
-      /*check the latency of finished task*/
-      for (file <- new File("/proj/cs331-uc/daniar/transfer_status/").listFiles.map(_.getName)) { 
+    /* Daniar's code */
+    var total_latency = 0
+      /* check the latency of finished task */
+      for (file <- new File("/proj/cs331-uc/daniar/transfer_status/").listFiles.map(_.getName)){
         val global_var = file.split("\\s+")
-        total_latency = total_latency + global_var(2).toInt 
-        logInfo("                                       File: "+file)
+        total_latency = total_latency + global_var(2).toInt
+        logInfo("                                       File: " + file)
 
-        /*delete the finished task*/
+        /* delete the finished task */
         for {
           files <- Option(new File("/proj/cs331-uc/daniar/task_started/").listFiles)
           file <- files if file.getName.startsWith(global_var(0))
@@ -219,22 +220,22 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
 
       if(total_latency != 0){
         val threshold = total_latency/2 * 1.5
-        logInfo("                                       threshold: "+threshold)
+        logInfo("                                       threshold: " + threshold)
 
-        /*checking the unfinished task*/
-        for (file <- new File("/proj/cs331-uc/daniar/task_started/").listFiles.map(_.getName)) { 
+        /* checking the unfinished task */
+        for (file <- new File("/proj/cs331-uc/daniar/task_started/").listFiles.map(_.getName)) {
           val unfinished_task = file.split("\\s+")
           val time_spent = System.currentTimeMillis - unfinished_task(2).toLong
-          logInfo("                                       unfinished_task: "+unfinished_task(0))
-          logInfo("                                       time spent : "+time_spent +" ms")
+          logInfo("                                       unfinished_task: " + unfinished_task(0))
+          logInfo("                                       time spent : " + time_spent + " ms")
 
-          /*check time spent if exceeding the threshold*/
+          /* check time spent if exceeding the threshold */
           if(time_spent > threshold){
-            logInfo("                                            KILLLLL!!! : "+unfinished_task(0))
+            logInfo("                                         KILLLLL!!! : " + unfinished_task(0))
             slowExecutor = unfinished_task(1).toInt
 
 
-            /*delete the unfinished task on killed executor*/
+            /* delete the unfinished task on killed executor */
             for {
               files <- Option(new File("/proj/cs331-uc/daniar/task_started/").listFiles)
               file <- files if file.getName.startsWith(unfinished_task(0))
@@ -246,9 +247,9 @@ private[spark] class HeartbeatReceiver(sc: SparkContext, clock: Clock)
 
 
     for ((executorId, lastSeenMs) <- executorLastSeen) {
-      logInfo(" executorId, lastSeenMs :"+executorId+"  "+lastSeenMs)
+      logInfo(" executorId, lastSeenMs :" + executorId + "  " + lastSeenMs)
       if( executorId.toInt == slowExecutor){
-        logInfo("EXECUTOR ID "+executorId+" IS REMOVED BECAUSE OF SLOW BANDWIDTH")
+        logInfo("EXECUTOR ID " + executorId + " IS REMOVED BECAUSE OF SLOW BANDWIDTH")
       }
       if (now - lastSeenMs > executorTimeoutMs  || executorId.toInt == slowExecutor) {
         logInfo(s"Removing executor $executorId with no recent heartbeats: " +

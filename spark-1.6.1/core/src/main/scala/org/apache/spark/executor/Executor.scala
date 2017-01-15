@@ -268,7 +268,7 @@ private[spark] class Executor(
         val serializedDirectResult = ser.serialize(directResult)
         val resultSize = serializedDirectResult.limit
 
-        logInfo("RESULT DANIAR valueBytes : "+valueBytes)
+        logInfo("RESULT DANIAR valueBytes : " + valueBytes)
         val charBuffer = valueBytes.asCharBuffer
         logInfo("text : " + charBuffer.length())
         // directSend = sending directly back to the driver
@@ -287,7 +287,7 @@ private[spark] class Executor(
             ser.serialize(new IndirectTaskResult[Any](blockId, resultSize))
           } else {
             logInfo(s"Finished $taskName (TID $taskId). $resultSize bytes result sent to driver")
-            logInfo("RESULT DANIAR : "+serializedDirectResult)
+            logInfo("RESULT DANIAR : " + serializedDirectResult)
             serializedDirectResult
           }
         }
@@ -440,41 +440,7 @@ private[spark] class Executor(
 
     logInfo("DANIAR in EXECUTOR : reportHeartBeat")
     for (taskRunner <- runningTasks.values().asScala) {
-      logInfo("DANIAR in EXECUTOR : for (taskRunner <- runningTasks) taskId: "+taskRunner.taskId)
-
-      // var total_latency = 0;
-      // /*check the latency of finished task*/
-      // for (file <- new File("/proj/cs331-uc/daniar/transfer_status/").listFiles.map(_.getName)) { 
-      //   val global_var = file.split("\\s+")
-      //   total_latency = total_latency + global_var(2).toInt 
-      //   logInfo("                                       File: "+file)
-
-      //   /*delete the finished task*/
-      //   for {
-      //     files <- Option(new File("/proj/cs331-uc/daniar/task_started/").listFiles)
-      //     file <- files if file.getName.startsWith(global_var(0))
-      //   } file.delete()
-
-      // }
-
-      // if(total_latency != 0){
-      //   val threshold = total_latency/2 * 1.5
-      //   logInfo("                                       threshold: "+threshold)
-
-      //   /*checking the unfinished task*/
-      //   for (file <- new File("/proj/cs331-uc/daniar/task_started/").listFiles.map(_.getName)) { 
-      //     val unfinished_task = file.split("\\s+")
-      //     val time_spent = System.currentTimeMillis - unfinished_task(1).toLong
-      //     logInfo("                                       unfinished_task: "+unfinished_task(0))
-      //     logInfo("                                       time spent : "+time_spent +" ms")
-
-      //     /*check time spent if exceeding the threshold*/
-      //     if(time_spent > threshold){
-      //       logInfo("                                            KILLLLL!!! : "+unfinished_task(0))
-      //     }
-      //   }
-
-      // }
+      logInfo("DANIAR in EXECUTOR : for (taskRunner <- runningTasks) taskId: " + taskRunner.taskId)
 
       if (taskRunner.task != null) {
         taskRunner.task.metrics.foreach { metrics =>
