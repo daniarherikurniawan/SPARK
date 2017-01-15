@@ -144,13 +144,14 @@ final class ShuffleBlockFetcherIterator(
       req.blocks.size, Utils.bytesToString(req.size), req.address.hostPort))
     
     val writer = new PrintWriter(
-      new File("/proj/cs331-uc/daniar/data_host/"+req.address.host))
+      new File("/proj/cs331-uc/daniar/data_host/" + req.address.host))
 
     logInfo("FILE data_host IS WRITTEN IN NFS!!! /proj/cs331-uc/daniar/data_host/ ")
     writer.close()
 
     val writer2 = new PrintWriter(
-      new File("/proj/cs331-uc/daniar/task_started/"+req.address.host+" "+req.address.executorId+" "+startTime+" ms" ))
+      new File("/proj/cs331-uc/daniar/task_started/" + req.address.host + " " +
+        req.address.executorId + " " + startTime + " ms" ))
 
     logInfo("FILE task_started IS WRITTEN IN NFS!!! /proj/cs331-uc/daniar/task_started/ ")
     writer2.close()
@@ -171,18 +172,19 @@ final class ShuffleBlockFetcherIterator(
             // Increment the ref count because we need to pass this to a different thread.
             // This needs to be released after use.
             buf.retain()
-            logInfo("Send buffer to: "+req.address+" from: "+address.host)
+            logInfo("Send buffer to: " + req.address + " from: " + address.host)
             results.put(new SuccessFetchResult(BlockId(blockId), address, sizeMap(blockId), buf))
-            logInfo("       size is: "+buf.size)
+            logInfo("       size is: " + buf.size)
             logInfo("")
             shuffleMetrics.incRemoteBytesRead(buf.size)
             shuffleMetrics.incRemoteBlocksFetched(1)
           }
-          logInfo("Got remote block " + blockId + " after " + Utils.getUsedTimeMs(startTime)+" buf : "+buf)
-          logInfo("The buffer size is : "+buf.size())
+          logInfo("Got remote block " + blockId + " after " +
+            Utils.getUsedTimeMs(startTime) + " buf : " + buf)
+          logInfo("The buffer size is : " + buf.size())
 
           val writer = new PrintWriter(
-            new File("/proj/cs331-uc/daniar/transfer_status/"+address.host+" "+blockId+" "+
+            new File("/proj/cs331-uc/daniar/transfer_status/" + address.host + " " + blockId + " " +
               Utils.getUsedTimeMs(startTime)))
 
           logInfo("FILE IS WRITTEN IN NFS!!! /proj/cs331-uc/daniar/transfer_status/ ")
