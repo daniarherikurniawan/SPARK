@@ -2,6 +2,9 @@
 
 > There are three parts of explanation in this file : **HowTo Run Spark on [Emulab](https://www.emulab.net/)**, **Configuring Emulab**, and **Unstructured Notes for Debugging**
 
+## Open Code On Intellij Idea
+just follow [this](https://linbojin.github.io/2016/01/09/Reading-Spark-Souce-Code-in-IntelliJ-IDEA/)
+
 
 
 ## 1. HowTo Run Spark on [Emulab](https://www.emulab.net/)
