@@ -99,7 +99,7 @@ abstract class BlockTransferService extends ShuffleClient with Closeable with Lo
           result.success(new NioManagedBuffer(ret))
         }
       })
-
+    logInfo("Daniar: on BlockTransferService Is This what I am looking for??")
     Await.result(result.future, Duration.Inf)
   }
 
