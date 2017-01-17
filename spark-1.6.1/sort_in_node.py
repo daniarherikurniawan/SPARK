@@ -1,6 +1,6 @@
 from pyspark import SparkContext,SparkConf
 import shutil,os, sys, time
-
+import org.apache.log4j.{Level, Logger}
 
 # non-spark code
 # if os.path.exists("../generated_file/result_py"):
@@ -17,6 +17,10 @@ conf = SparkConf().setAppName("Sorting").setMaster("spark://node-1.testspark.cs3
 # conf = SparkConf().setAppName("Sorting").setMaster("spark://daniar-X450JF:7077")
 
 sc = SparkContext(conf=conf)
+
+val rootLogger = Logger.getRootLogger()
+rootLogger.setLevel(Level.ALL)
+
 text_file = sc.textFile("/proj/cs331-uc/daniar/SPARK/generated_file/list_int",2)
 sorted_array = text_file.map(lambda a : (int(a),a)).sortByKey("true")
 

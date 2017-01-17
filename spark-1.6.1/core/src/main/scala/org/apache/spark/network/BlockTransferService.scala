@@ -115,7 +115,7 @@ abstract class BlockTransferService extends ShuffleClient with Closeable with Lo
       blockId: BlockId,
       blockData: ManagedBuffer,
       level: StorageLevel): Unit = {
-    logInfo("Daniar: on BlockTransferService uploadBlockSync Is This what I am looking for??")
+//    logInfo("Daniar: on BlockTransferService uploadBlockSync Is This what I am looking for??")
     Await.result(uploadBlock(hostname, port, execId, blockId, blockData, level), Duration.Inf)
   }
 }

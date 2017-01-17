@@ -607,9 +607,11 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 - Edit ShuffleBlockFetcherIterator.scala
 - Edit Executor.scala
 - Edit HeartbeatReceiver.scala
+- Edit log4j-defaults-repl.properties to activate all log
 - Documentation on progress
 - Analyzed file
 	1. Investigate who call onBlockFetchSuccess on ShuffleBlockFetcherIterator.scala
-		- BlockTransferService.scala
-			vfldvmldfvm
+		- BlockTransferService.scala NO
+		- 
+
 	2. X
