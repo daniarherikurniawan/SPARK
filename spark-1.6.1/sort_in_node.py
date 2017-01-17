@@ -1,6 +1,6 @@
 from pyspark import SparkContext,SparkConf
 import shutil,os, sys, time
-import org.apache.log4j.{Level, Logger}
+import org.apache.log4j
 
 # non-spark code
 # if os.path.exists("../generated_file/result_py"):
