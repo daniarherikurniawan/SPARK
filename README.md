@@ -604,9 +604,9 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 
 ### How To Compile
 	```
-		git pull
-		setenv SPARK_PREPEND_CLASSES true 
-		sudo build/sbt compile -mem 1500 evicted
+	git pull
+	setenv SPARK_PREPEND_CLASSES true 
+	sudo build/sbt compile -mem 1500 evicted
 	```
 
 ### PBSE Implementation
