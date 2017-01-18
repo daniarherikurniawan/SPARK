@@ -234,6 +234,7 @@ private[spark] class BlockManager(
   private def reportAllBlocks(): Unit = {
     logInfo(s"Reporting ${blockInfo.size} blocks to the master.")
     for ((blockId, info) <- blockInfo) {
+      logInfo("Daniar in BlockManager reportAllBlocks")
       val status = getCurrentBlockStatus(blockId, info)
       if (!tryToReportBlockStatus(blockId, info, status)) {
         logError(s"Failed to report $blockId to master; giving up.")
@@ -260,6 +261,7 @@ private[spark] class BlockManager(
    */
   private def asyncReregister(): Unit = {
     asyncReregisterLock.synchronized {
+      logInfo("Daniar in BlockManager asyncReregister")
       if (asyncReregisterTask == null) {
         asyncReregisterTask = Future[Unit] {
           // This is a blocking action and should run in futureExecutionContext which is a cached
@@ -291,8 +293,9 @@ private[spark] class BlockManager(
 
     logInfo("Daniar on getBlockData: ++++++++++")
     if (blockId.isShuffle) {
-      val mb = shuffleManager.shuffleBlockResolver.getBlockData(blockId.asInstanceOf[ShuffleBlockId])
-      logInfo("Daniar on BlockManager IS SHUFFLED : "+mb.size())
+      val mb = shuffleManager.shuffleBlockResolver.
+        getBlockData(blockId.asInstanceOf[ShuffleBlockId])
+      logInfo("Daniar on BlockManager IS SHUFFLED : " + mb.size())
       shuffleManager.shuffleBlockResolver.getBlockData(blockId.asInstanceOf[ShuffleBlockId])
     } else {
       logInfo("Daniar on getBlockData blockId is NOT shuffled ============")
@@ -336,6 +339,7 @@ private[spark] class BlockManager(
    * may not know of).
    */
   def getMatchingBlockIds(filter: BlockId => Boolean): Seq[BlockId] = {
+      logInfo("Daniar in BlockManager getMatchingBlockIds 2017")
     (blockInfo.keys ++ diskBlockManager.getAllBlocks()).filter(filter).toSeq
   }
 
@@ -359,6 +363,7 @@ private[spark] class BlockManager(
       // Re-registering will report our new block for free.
       asyncReregister()
     }
+    logInfo("Daniar in BlockManager reportBlockStatus 2017")
     logDebug(s"Told master about block $blockId")
   }
 
@@ -373,6 +378,7 @@ private[spark] class BlockManager(
       status: BlockStatus,
       droppedMemorySize: Long = 0L): Boolean = {
     if (info.tellMaster) {
+      logInfo("Daniar in BlockManager tryToReportBlockStatus 2017")
       val storageLevel = status.storageLevel
       val inMemSize = Math.max(status.memSize, droppedMemorySize)
       val inExternalBlockStoreSize = status.externalBlockStoreSize
@@ -391,6 +397,7 @@ private[spark] class BlockManager(
    */
   private def getCurrentBlockStatus(blockId: BlockId, info: BlockInfo): BlockStatus = {
     info.synchronized {
+      logInfo("Daniar in BlockManager getCurrentBlockStatus 2017")
       info.level match {
         case null =>
           BlockStatus(StorageLevel.NONE, 0L, 0L, 0L)
@@ -596,7 +603,9 @@ private[spark] class BlockManager(
     var numFetchFailures = 0
     for (loc <- locations) {
       logDebug(s"Getting remote block $blockId from $loc")
+      logInfo(s"Getting remote block $blockId from $loc")
       val data = try {
+        logInfo(" Daniar on BlockManager Getting remote block inside try ")
         blockTransferService.fetchBlockSync(
           loc.host, loc.port, loc.executorId, blockId.toString).nioByteBuffer()
       } catch {
@@ -615,6 +624,7 @@ private[spark] class BlockManager(
       }
 
       if (data != null) {
+        logInfo(s"The value of block $blockId is not null")
         if (asBlockResult) {
           return Some(new BlockResult(
             dataDeserialize(blockId, data),
@@ -654,6 +664,8 @@ private[spark] class BlockManager(
       tellMaster: Boolean = true,
       effectiveStorageLevel: Option[StorageLevel] = None): Seq[(BlockId, BlockStatus)] = {
     require(values != null, "Values is null")
+    logInfo("Daniar on BlockManager putIterator")
+
     doPut(blockId, IteratorValues(values), level, tellMaster, effectiveStorageLevel)
   }
 
@@ -1120,6 +1132,8 @@ private[spark] class BlockManager(
    */
   def removeBlock(blockId: BlockId, tellMaster: Boolean = true): Unit = {
     logDebug(s"Removing block $blockId")
+    logInfo(s"Removing block $blockId")
+
     val info = blockInfo.get(blockId).orNull
     if (info != null) {
       info.synchronized {
@@ -1211,6 +1225,8 @@ private[spark] class BlockManager(
 
   /** Serializes into a byte buffer. */
   def dataSerialize(blockId: BlockId, values: Iterator[Any]): ByteBuffer = {
+    logInfo("Daniar on BlockManager dataSerialize")
+
     val byteStream = new ByteArrayOutputStream(4096)
     dataSerializeStream(blockId, byteStream, values)
     ByteBuffer.wrap(byteStream.toByteArray)
@@ -1221,6 +1237,8 @@ private[spark] class BlockManager(
    * the iterator is reached.
    */
   def dataDeserialize(blockId: BlockId, bytes: ByteBuffer): Iterator[Any] = {
+    logInfo("Daniar on BlockManager dataDeserialize")
+
     bytes.rewind()
     dataDeserializeStream(blockId, new ByteBufferInputStream(bytes, true))
   }
@@ -1231,6 +1249,8 @@ private[spark] class BlockManager(
    */
   def dataDeserializeStream(blockId: BlockId, inputStream: InputStream): Iterator[Any] = {
     val stream = new BufferedInputStream(inputStream)
+    logInfo("Daniar on BlockManager dataDeserializeStream")
+
     defaultSerializer
       .newInstance()
       .deserializeStream(wrapForCompression(blockId, stream))
@@ -1239,6 +1259,8 @@ private[spark] class BlockManager(
 
   def stop(): Unit = {
     blockTransferService.close()
+    logInfo("Daniar on BlockManager blockTransferService.close")
+
     if (shuffleClient ne blockTransferService) {
       // Closing should be idempotent, but maybe not for the NioBlockTransferService.
       shuffleClient.close()

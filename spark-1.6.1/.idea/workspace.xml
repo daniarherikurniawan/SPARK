@@ -23,7 +23,7 @@
     <favorites_list name="spark-parent_2.10" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42648846">
+    <splitter split-orientation="horizontal" split-proportion="0.54979616">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="TaskSchedulerImpl.scala" pinned="false" current-in-tab="false">
@@ -39,11 +39,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BlockManager.scala" pinned="false" current-in-tab="false">
+          <file leaf-file-name="BlockManager.scala" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/storage/BlockManager.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2070">
-                  <caret line="176" column="28" selection-start-line="176" selection-start-column="16" selection-end-line="176" selection-end-column="28" />
+                <state relative-caret-position="560">
+                  <caret line="1315" column="40" selection-start-line="1315" selection-start-column="40" selection-end-line="1316" selection-end-column="45" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -87,11 +87,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ShuffleBlockFetcherIterator.scala" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ShuffleBlockFetcherIterator.scala" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/storage/ShuffleBlockFetcherIterator.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="161" column="5" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
+                <state relative-caret-position="240">
+                  <caret line="171" column="90" selection-start-line="171" selection-start-column="90" selection-end-line="171" selection-end-column="90" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                     <element signature="e#835#851#0" expanded="true" />
@@ -137,7 +137,7 @@
           <file leaf-file-name="ShuffleBlockFetcherIteratorSuite.scala" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/core/src/test/scala/org/apache/spark/storage/ShuffleBlockFetcherIteratorSuite.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1770">
+                <state relative-caret-position="0">
                   <caret line="149" column="26" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
                   <folding>
                     <element signature="n#!!doc" expanded="false" />
@@ -146,49 +146,13 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BlockTransferService.scala" pinned="false" current-in-tab="false">
+          <file leaf-file-name="BlockTransferService.scala" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/network/BlockTransferService.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="261">
-                  <caret line="95" column="37" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
+                <state relative-caret-position="215">
+                  <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="NettyBlockTransferService.scala" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/network/netty/NettyBlockTransferService.scala">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="96" column="10" selection-start-line="96" selection-start-column="10" selection-end-line="96" selection-end-column="10" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="OneForOneBlockFetcher.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/network/shuffle/src/main/java/org/apache/spark/network/shuffle/OneForOneBlockFetcher.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="600">
-                  <caret line="67" column="64" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
-                  <folding>
-                    <element signature="imports" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sort_in_node.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sort_in_node.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#42#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -219,6 +183,7 @@
         <option value="$MAVEN_REPOSITORY$/org/apache/spark/spark-network-shuffle_2.10/1.6.1/spark-network-shuffle_2.10-1.6.1.jar!/org/apache/spark/network/shuffle/ShuffleClient.class" />
         <option value="$PROJECT_DIR$/core/src/main/scala/org/apache/spark/shuffle/BlockStoreShuffleReader.scala" />
         <option value="$PROJECT_DIR$/core/src/main/scala/org/apache/spark/network/netty/NettyBlockTransferService.scala" />
+        <option value="$PROJECT_DIR$/core/src/main/scala/org/apache/spark/storage/BlockManager.scala" />
       </list>
     </option>
   </component>
@@ -232,7 +197,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="1441" />
     <option name="y" value="146" />
-    <option name="width" value="1698" />
+    <option name="width" value="1769" />
     <option name="height" value="931" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -712,7 +677,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1441" y="146" width="1698" height="931" extended-state="0" />
+    <frame x="1441" y="146" width="1769" height="931" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1128,30 +1093,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/test/scala/org/apache/spark/storage/ShuffleBlockFetcherIteratorSuite.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1770">
+        <state relative-caret-position="0">
           <caret line="149" column="26" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sort_in_node.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/network/shuffle/src/main/java/org/apache/spark/network/shuffle/OneForOneBlockFetcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="67" column="64" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1172,16 +1117,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/storage/BlockManager.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="176" column="28" selection-start-line="176" selection-start-column="16" selection-end-line="176" selection-end-column="28" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-network-shuffle_2.10/1.6.1/spark-network-shuffle_2.10-1.6.1.jar!/org/apache/spark/network/shuffle/ShuffleClient.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1190,10 +1125,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sort_in_node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/shuffle/src/main/java/org/apache/spark/network/shuffle/OneForOneBlockFetcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="67" column="64" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/network/netty/NettyBlockTransferService.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/storage/ShuffleBlockFetcherIterator.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="161" column="5" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
+        <state relative-caret-position="240">
+          <caret line="171" column="90" selection-start-line="171" selection-start-column="90" selection-end-line="171" selection-end-column="90" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#835#851#0" expanded="true" />
@@ -1203,18 +1168,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/network/BlockTransferService.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="95" column="37" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
+        <state relative-caret-position="215">
+          <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/network/netty/NettyBlockTransferService.scala">
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/storage/BlockManager.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="96" column="10" selection-start-line="96" selection-start-column="10" selection-end-line="96" selection-end-column="10" />
+        <state relative-caret-position="560">
+          <caret line="1315" column="40" selection-start-line="1315" selection-start-column="40" selection-end-line="1316" selection-end-column="45" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
