@@ -106,6 +106,7 @@ private[spark] class BlockStoreShuffleReader[K, C](
         val sorter =
           new ExternalSorter[K, C, C](context, ordering = Some(keyOrd), serializer = Some(ser))
         sorter.insertAll(aggregatedIter)
+        logInfo("Daniar on BlockStoreShuffleReader keyOrdering match")
         context.taskMetrics().incMemoryBytesSpilled(sorter.memoryBytesSpilled)
         context.taskMetrics().incDiskBytesSpilled(sorter.diskBytesSpilled)
         context.internalMetricsToAccumulators(

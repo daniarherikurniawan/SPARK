@@ -618,6 +618,6 @@ sudo build/sbt compile -mem 1500 evicted
 - Analyzed file
 	1. Investigate who call onBlockFetchSuccess on ShuffleBlockFetcherIterator.scala
 		- BlockTransferService.scala NO
-		- BlockStoreShuffleReader Maybe
+		- BlockStoreShuffleReader No
 
-	2. X
+	2. Investigate fetchBlocks Maybe
