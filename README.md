@@ -622,7 +622,8 @@ sudo build/sbt compile -mem 1500 evicted
 
 	2. Investigate fetchBlocks Maybe
 		- NettyBlockTransferService NO
-		- BlockManager Maybe
+		- BlockManager NO
+		- OneForOneBlockFetcher.java Maybe
 
 	17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator: Send buffer to: BlockManagerId(1, pc841.emulab.net, 47953) from: pc841.emulab.net
 17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator:        size is: 14266118

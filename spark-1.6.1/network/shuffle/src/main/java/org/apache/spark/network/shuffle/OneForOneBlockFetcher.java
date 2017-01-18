@@ -69,6 +69,7 @@ public class OneForOneBlockFetcher {
     @Override
     public void onSuccess(int chunkIndex, ManagedBuffer buffer) {
       // On receipt of a chunk, pass it upwards as a block.
+      logger.info("On receipt of a chunk, pass it upwards as a block. JAVA");
       listener.onBlockFetchSuccess(blockIds[chunkIndex], buffer);
     }
 
@@ -96,6 +97,7 @@ public class OneForOneBlockFetcher {
         try {
           streamHandle = (StreamHandle) BlockTransferMessage.Decoder.fromByteBuffer(response);
           logger.trace("Successfully opened blocks {}, preparing to fetch chunks.", streamHandle);
+          logger.info("Successfully opened blocks {}, preparing to fetch chunks. JAVA");
 
           // Immediately request all chunks -- we expect that the total size of the request is
           // reasonable due to higher level chunking in [[ShuffleBlockFetcherIterator]].

@@ -171,6 +171,8 @@ final class ShuffleBlockFetcherIterator(
           if (!isZombie) {
             // Increment the ref count because we need to pass this to a different thread.
             // This needs to be released after use.
+            logInfo("Send buffer to: " + req.address + " before buf.retain")
+
             buf.retain()
             logInfo("Send buffer to: " + req.address + " from: " + address.host)
             results.put(new SuccessFetchResult(BlockId(blockId), address, sizeMap(blockId), buf))
