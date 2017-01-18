@@ -87,13 +87,19 @@ class NettyBlockTransferService(conf: SparkConf, securityManager: SecurityManage
     try {
       val blockFetchStarter = new RetryingBlockFetcher.BlockFetchStarter {
         override def createAndStart(blockIds: Array[String], listener: BlockFetchingListener) {
+          logInfo(s"Daniar on NettyBlockTransferService: createAndStart" +
+            s" from $host:$port (executor id $execId)")
           val client = clientFactory.createClient(host, port)
           new OneForOneBlockFetcher(client, appId, execId, blockIds.toArray, listener).start()
         }
       }
+      logInfo(s"Daniar on NettyBlockTransferService: in between " +
+        s"from $host:$port (executor id $execId)")
 
       val maxRetries = transportConf.maxIORetries()
       if (maxRetries > 0) {
+        logInfo(s"Daniar on NettyBlockTransferService: maxRetries Fetch blocks from" +
+          s" $host:$port (executor id $execId)")
         // Note this Fetcher will correctly handle maxRetries == 0; we avoid it just in case there's
         // a bug in this code. We should remove the if statement once we're sure of the stability.
         new RetryingBlockFetcher(transportConf, blockFetchStarter, blockIds, listener).start()
@@ -120,6 +126,7 @@ class NettyBlockTransferService(conf: SparkConf, securityManager: SecurityManage
       level: StorageLevel): Future[Unit] = {
     val result = Promise[Unit]()
     val client = clientFactory.createClient(hostname, port)
+    logInfo("Daniar on NettyBlockTransferService: uploadBlock")
 
     // StorageLevel is serialized as bytes using our JavaSerializer. Everything else is encoded
     // using our binary protocol.
@@ -128,8 +135,12 @@ class NettyBlockTransferService(conf: SparkConf, securityManager: SecurityManage
     // Convert or copy nio buffer into array in order to serialize it.
     val nioBuffer = blockData.nioByteBuffer()
     val array = if (nioBuffer.hasArray) {
+      logInfo("Daniar on NettyBlockTransferService: nioBuffer.hasArray")
+
       nioBuffer.array()
     } else {
+      logInfo("Daniar on NettyBlockTransferService: else nioBuffer.hasArray")
+
       val data = new Array[Byte](nioBuffer.remaining())
       nioBuffer.get(data)
       data
@@ -139,10 +150,12 @@ class NettyBlockTransferService(conf: SparkConf, securityManager: SecurityManage
       new RpcResponseCallback {
         override def onSuccess(response: ByteBuffer): Unit = {
           logTrace(s"Successfully uploaded block $blockId")
+          logInfo("Daniar on NettyBlockTransferService: RpcResponseCallback onSuccess")
           result.success((): Unit)
         }
         override def onFailure(e: Throwable): Unit = {
           logError(s"Error while uploading block $blockId", e)
+          logInfo("Daniar on NettyBlockTransferService: RpcResponseCallback onFailure")
           result.failure(e)
         }
       })
@@ -151,6 +164,8 @@ class NettyBlockTransferService(conf: SparkConf, securityManager: SecurityManage
   }
 
   override def close(): Unit = {
+    logInfo("Daniar on NettyBlockTransferService: close")
+
     if (server != null) {
       server.close()
     }

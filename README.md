@@ -621,3 +621,10 @@ sudo build/sbt compile -mem 1500 evicted
 		- BlockStoreShuffleReader No
 
 	2. Investigate fetchBlocks Maybe
+
+	17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator: Send buffer to: BlockManagerId(1, pc841.emulab.net, 47953) from: pc841.emulab.net
+17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator:        size is: 14266118
+17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator: 
+17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator: Wooooooooooy Daniar next()==>
+17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator: Got remote block shuffle_0_1_1 after  241846 ms buf : NettyManagedBuffer{buf=DuplicatedByteBuf(ridx: 13, widx: 14266131, cap: 14266131, unwrapped: CompositeByteBuf(ridx: 13, widx: 14266131, cap: 14266131, components=15))}
+17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator: The buffer size is : 14266118
