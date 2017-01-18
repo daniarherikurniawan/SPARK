@@ -603,11 +603,11 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 - submit task by executing this on any node : ```./bin/spark-submit sort_in_node.py --master spark://node-1.testspark.cs331-uc.emulab.net:7077 --deploy-mode cluster --num-executors 4```
 
 ### How To Compile
-	```
-	git pull
-	setenv SPARK_PREPEND_CLASSES true 
-	sudo build/sbt compile -mem 1500 evicted
-	```
+```
+git pull
+setenv SPARK_PREPEND_CLASSES true 
+sudo build/sbt compile -mem 1500 evicted
+```
 
 ### PBSE Implementation
 - Edit ShuffleBlockFetcherIterator.scala
