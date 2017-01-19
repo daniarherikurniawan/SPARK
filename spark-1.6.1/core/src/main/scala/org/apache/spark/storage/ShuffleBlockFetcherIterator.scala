@@ -406,8 +406,11 @@ object ShuffleBlockFetcherIterator {
    * @param blocks Sequence of tuple, where the first element is the block id,
    *               and the second element is the estimated size, used to calculate bytesInFlight.
    */
-  case class FetchRequest(address: BlockManagerId, blocks: Seq[(BlockId, Long)]) {
+  case class FetchRequest (
+                            address: BlockManagerId,
+                            blocks: Seq[(BlockId, Long)]) extends Logging{
     val size = blocks.map(_._2).sum
+    logInfo(" Daniar on ShuffleBlockFetcherIterator case class FetchRequest size = " + size)
   }
 
   /**
@@ -431,7 +434,8 @@ object ShuffleBlockFetcherIterator {
       address: BlockManagerId,
       size: Long,
       buf: ManagedBuffer)
-    extends FetchResult {
+    extends FetchResult with Logging{
+    logInfo(" Daniar on ShuffleBlockFetcherIterator case class SuccessFetchResult size = " + size)
     require(buf != null)
     require(size >= 0)
   }
