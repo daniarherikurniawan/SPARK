@@ -217,6 +217,9 @@ final class ShuffleBlockFetcherIterator(
     // Tracks total number of blocks (including zero sized blocks)
     var totalBlocks = 0
     for ((address, blockInfos) <- blocksByAddress) {
+      logInfo("Daniar on ShuffleBlockFetcherIterator for ((address, blockInfos)" +
+        " <- blocksByAddress) " + address.host)
+
       totalBlocks += blockInfos.size
       if (address.executorId == blockManager.blockManagerId.executorId) {
         // Filter out zero-sized blocks
@@ -227,6 +230,7 @@ final class ShuffleBlockFetcherIterator(
         var curRequestSize = 0L
         var curBlocks = new ArrayBuffer[(BlockId, Long)]
         while (iterator.hasNext) {
+          logInfo("Daniar on ShuffleBlockFetcherIterator iterator.hasNext")
           val (blockId, size) = iterator.next()
           // Skip empty blocks
           if (size > 0) {
@@ -246,11 +250,11 @@ final class ShuffleBlockFetcherIterator(
             logInfo(s"Creating fetch request of $curRequestSize at $address")
             curRequestSize = 0
           }
-            logInfo("Dannnn oy = ========== = iterator")
         }
         // Add in the final request
         if (curBlocks.nonEmpty) {
-            logInfo("Dannnn oy = ======== ======= = curBlocks.toString()" + curBlocks.toString())
+            logInfo("Daniar on ShuffleBlockFetcherIterator curBlocks.toString()"
+              + curBlocks.toString())
           remoteRequests += new FetchRequest(address, curBlocks)
         }
       }
@@ -321,6 +325,7 @@ final class ShuffleBlockFetcherIterator(
    * Throws a FetchFailedException if the next block could not be fetched.
    */
   override def next(): (BlockId, InputStream) = {
+        logInfo("Daniar on ShuffleBlockFetcherIterator in next():")
     numBlocksProcessed += 1
     val startFetchWait = System.currentTimeMillis()
     currentResult = results.take()
@@ -333,7 +338,6 @@ final class ShuffleBlockFetcherIterator(
     }
     // Send fetch requests up to maxBytesInFlight
     fetchUpToMaxBytes()
-//    logInfo("Got local blocks in " + Utils.getUsedTimeMs(startTime))
     result match {
       case FailureFetchResult(blockId, address, e) =>
         throwFetchFailedException(blockId, address, e)

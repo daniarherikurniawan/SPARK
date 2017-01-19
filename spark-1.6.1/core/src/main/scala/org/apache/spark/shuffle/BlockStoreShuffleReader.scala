@@ -48,6 +48,7 @@ private[spark] class BlockStoreShuffleReader[K, C](
       blockManager,
       mapOutputTracker.getMapSizesByExecutorId(handle.shuffleId, startPartition, endPartition),
       // Note: we use getSizeAsMb when no suffix is provided for backwards compatibility
+      logInfo("Daniar on BlockStoreShuffleReader new ShuffleBlockFetcherIterator")
 //      SparkEnv.get.conf.getSizeAsMb("spark.reducer.maxSizeInFlight", "48m") * 1024 * 1024)
       SparkEnv.get.conf.getSizeAsMb("spark.reducer.maxSizeInFlight", "1m") * 1024 * 1024)
 
