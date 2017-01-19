@@ -165,6 +165,7 @@ final class ShuffleBlockFetcherIterator(
     val address = req.address
     shuffleClient.fetchBlocks(address.host, address.port, address.executorId, blockIds.toArray,
       new BlockFetchingListener {
+        logInfo("on ShuffleBlockFetcherIterator fetchBlocks on BlockFetchingListener!!!! 2017")
         override def onBlockFetchSuccess(blockId: String, buf: ManagedBuffer): Unit = {
           // Only add the buffer to results queue if the iterator is not zombie,
           // i.e. cleanup() has not been called yet.
