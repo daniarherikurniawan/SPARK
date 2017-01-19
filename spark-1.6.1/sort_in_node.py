@@ -12,9 +12,10 @@ if os.path.exists("workfile"):
     os.remove("workfile")
     
 #some of the configuration is set through declaration at spark-defaults.conf
-conf = SparkConf().setAppName("Sorting").setMaster("spark://node-1.testspark.cs331-uc.emulab.net:7077")
+conf = SparkConf().setAppName("Sorting").setMaster("spark://node-1.testspark.cs331-uc.emulab.net:7077").set("spark.reducer.maxSizeInFlight", "1m")
 # conf = SparkConf().setAppName("Sorting").setMaster("spark://node-5.sparknewtopology.cs331-uc.emulab.net:7077")
 # conf = SparkConf().setAppName("Sorting").setMaster("spark://daniar-X450JF:7077")
+
 
 sc = SparkContext(conf=conf)
 # sc.setLogLevel("ALL")
