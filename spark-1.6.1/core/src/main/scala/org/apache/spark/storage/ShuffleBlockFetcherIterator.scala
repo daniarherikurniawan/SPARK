@@ -250,7 +250,7 @@ final class ShuffleBlockFetcherIterator(
         }
         // Add in the final request
         if (curBlocks.nonEmpty) {
-            logInfo("Dannnn oy = ======== ======= = curBlocks.nonEmpty")
+            logInfo("Dannnn oy = ======== ======= = curBlocks.toString()" + curBlocks.toString())
           remoteRequests += new FetchRequest(address, curBlocks)
         }
       }
@@ -270,6 +270,8 @@ final class ShuffleBlockFetcherIterator(
       val blockId = iter.next()
       try {
         val buf = blockManager.getBlockData(blockId)
+        logInfo("Daniar on = fetchLocalBlocks iterator")
+
         shuffleMetrics.incLocalBlocksFetched(1)
         shuffleMetrics.incLocalBytesRead(buf.size)
         buf.retain()

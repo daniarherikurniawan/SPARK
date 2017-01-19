@@ -627,9 +627,19 @@ sudo build/sbt compile -mem 1500 evicted
 		- BlockManager NO
 		- OneForOneBlockFetcher.java NO
 
-	17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator: Send buffer to: BlockManagerId(1, pc841.emulab.net, 47953) from: pc841.emulab.net
-17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator:        size is: 14266118
-17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator: 
-17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator: Wooooooooooy Daniar next()==>
-17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator: Got remote block shuffle_0_1_1 after  241846 ms buf : NettyManagedBuffer{buf=DuplicatedByteBuf(ridx: 13, widx: 14266131, cap: 14266131, unwrapped: CompositeByteBuf(ridx: 13, widx: 14266131, cap: 14266131, components=15))}
-17/01/17 22:47:53 INFO ShuffleBlockFetcherIterator: The buffer size is : 14266118
+	3. ShuffleBlockFetcherIterator
+		- Log: hasNext ??  numBlocksProcessed: X numBlocksToFetch Y
+		- block is represented by data that is stored in other node. In current config, there are only counted as 2 different blocks
+		- maxBytesInFlight = 50 MB (according to code in ShuffleBlockFetcherIterator)
+		```
+		    logInfo("on BlockStoreShuffleReader Iterator")
+
+		    val blockFetcherItr = new ShuffleBlockFetcherIterator(
+	      	context,
+	      	blockManager.shuffleClient,
+	      	blockManager,
+	      	mapOutputTracker.getMapSizesByExecutorId(handle.shuffleId, startPartition, endPartition),
+	      	// Note: we use getSizeAsMb when no suffix is provided for backwards compatibility
+	      	SparkEnv.get.conf.getSizeAsMb("spark.reducer.maxSizeInFlight", "48m") * 1024 * 1024)
+		```
+		- The current data in each node is 16.7 MB so it is counted as one transfer/flight
