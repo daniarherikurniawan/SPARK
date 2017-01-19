@@ -563,6 +563,8 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 	- using [HTB](https://github.com/daniarherikurniawan/SPARK#hierarchical-token-bucket-almost-work-properly), part of ***tc tools***
 	- command for htb:
 		```
+		this needs 5.5 min to complete the task without PBSE
+
 		sudo tc qdisc add dev eth0 handle 1: root htb default 11
 		sudo tc class add dev eth0 parent 1: classid 1:1 htb rate 0.125mbps
 		sudo tc class add dev eth0 parent 1:1 classid 1:11 htb rate 0.125mbps
@@ -582,6 +584,30 @@ setenv M2 /users/daniar/MAVEN/apache-maven-3.3.3
 		sudo tc qdisc add dev eth4 handle 1: root htb default 11
 		sudo tc class add dev eth4 parent 1: classid 1:1 htb rate 0.125mbps
 		sudo tc class add dev eth4 parent 1:1 classid 1:11 htb rate 0.125mbps
+
+
+		this needs 2.8 min to complete the task without PBSE: (Prefer this for testing)
+
+		sudo tc qdisc add dev eth0 handle 1: root htb default 11
+		sudo tc class add dev eth0 parent 1: classid 1:1 htb rate 0.325mbps
+		sudo tc class add dev eth0 parent 1:1 classid 1:11 htb rate 0.325mbps
+
+		sudo tc qdisc add dev eth2 handle 1: root htb default 11
+		sudo tc class add dev eth2 parent 1: classid 1:1 htb rate 0.325mbps
+		sudo tc class add dev eth2 parent 1:1 classid 1:11 htb rate 0.325mbps
+
+		sudo tc qdisc add dev eth3 handle 1: root htb default 11
+		sudo tc class add dev eth3 parent 1: classid 1:1 htb rate 0.325mbps
+		sudo tc class add dev eth3 parent 1:1 classid 1:11 htb rate 0.325mbps
+
+		sudo tc qdisc add dev lo handle 1: root htb default 11
+		sudo tc class add dev lo parent 1: classid 1:1 htb rate 0.325mbps
+		sudo tc class add dev lo parent 1:1 classid 1:11 htb rate 0.325mbps
+
+		sudo tc qdisc add dev eth4 handle 1: root htb default 11
+		sudo tc class add dev eth4 parent 1: classid 1:1 htb rate 0.325mbps
+		sudo tc class add dev eth4 parent 1:1 classid 1:11 htb rate 0.325mbps
+
 		```
 	- After running that command, SPARK will kill that slow node (W2) automatically (***when PBSE is implemented***). To restart, clear the htb effect by :
 		```
