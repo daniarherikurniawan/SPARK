@@ -642,4 +642,14 @@ sudo build/sbt compile -mem 1500 evicted
 	      	// Note: we use getSizeAsMb when no suffix is provided for backwards compatibility
 	      	SparkEnv.get.conf.getSizeAsMb("spark.reducer.maxSizeInFlight", "48m") * 1024 * 1024)
 		```
+			code to change the maxSizeInFlight
+		```
+		spark-1.6.1/docs/configuration.md:
+  		<tr><th>Property Name</th><th>Default</th><th>Meaning</th></tr>
+  		<tr>
+  			<td><code>spark.reducer.maxSizeInFlight</code></td>
+  			<td>48m</td>
+  			<td>
+		```
+
 		- The current data in each node is 16.7 MB so it is counted as one transfer/flight
