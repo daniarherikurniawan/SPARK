@@ -328,7 +328,7 @@ final class ShuffleBlockFetcherIterator(
     }
     // Send fetch requests up to maxBytesInFlight
     fetchUpToMaxBytes()
-
+//    logInfo("Got local blocks in " + Utils.getUsedTimeMs(startTime))
     result match {
       case FailureFetchResult(blockId, address, e) =>
         throwFetchFailedException(blockId, address, e)
@@ -404,9 +404,9 @@ private class BufferReleasingInputStream(
   }
 
   override def read(b: Array[Byte], off: Int, len: Int): Int = {
-    logInfo(" Daniar on ShuffleBlockFetcherIterator private class " +
-      "BufferReleasingInputStream on read(b: " + b.toString +
-      ", off: " + off + " , len: " + len + ")")
+//    logInfo(" Daniar on ShuffleBlockFetcherIterator private class " +
+//      "BufferReleasingInputStream on read(b: " + b.toString +
+//      ", off: " + off + " , len: " + len + ")")
     delegate.read(b, off, len)
   }
 
