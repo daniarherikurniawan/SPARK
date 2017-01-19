@@ -405,7 +405,8 @@ private class BufferReleasingInputStream(
 
   override def read(b: Array[Byte], off: Int, len: Int): Int = {
     logInfo(" Daniar on ShuffleBlockFetcherIterator private class " +
-      "BufferReleasingInputStream on read(b: Array[Byte], off: Int, len: Int)")
+      "BufferReleasingInputStream on read(b: " + b.toString +
+      ", off: " + off + " , len: " + len + ")")
     delegate.read(b, off, len)
   }
 
