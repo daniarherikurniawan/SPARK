@@ -677,5 +677,9 @@ sudo build/sbt compile -mem 1500 evicted
   			<td>48m</td>
   			<td>
 		```
+		or just edit the sort_in_node.py (this is what I did)
+		```
+		.set("spark.reducer.maxSizeInFlight", "1m")
+		```
 
 		- The current data in each node is 16.7 MB so it is counted as one transfer/flight
