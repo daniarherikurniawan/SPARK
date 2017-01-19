@@ -682,4 +682,5 @@ sudo build/sbt compile -mem 1500 evicted
 		.set("spark.reducer.maxSizeInFlight", "1m")
 		```
 
-		- The current data in each node is 16.7 MB so it is counted as one transfer/flight
+		- The current data in each node is 16.7 MB so it is counted as one transfer/flight. Whem I change the maxSizeInFlight to 1 MB, both of the transfers from Slow and Fast node will have almost the same latency. I believe it is caused by the limited number of thread in Worker. To transfer 16.7 MB, it needs around 16 threads, but the number of threads should be the same with the number of tasks (2). So the transfer (fetching data)  from fast node will be affected by slow node because they need to wait until there is available thread to fetch the data. Therefore, the latency is almost the same (only differ by hundreds of ms).
+		- So, if I need to monitor the BW as real time as possible, I should get an access to data chunk transfer. Transferring 16.7 MB spents 4 min. Right now, I cannot see the progress of data transferr in that 4 min. I will find it on RPC modules.
