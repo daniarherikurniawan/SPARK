@@ -304,7 +304,11 @@ final class ShuffleBlockFetcherIterator(
     logInfo("Got local blocks in " + Utils.getUsedTimeMs(startTime))
   }
 
-  override def hasNext: Boolean = numBlocksProcessed < numBlocksToFetch
+  override def hasNext: Boolean = {
+    logInfo("Wooooooooooy Daniar hasNext ??  numBlocksProcessed: " +
+      numBlocksProcessed + " numBlocksToFetch " + numBlocksToFetch)
+    numBlocksProcessed < numBlocksToFetch
+  }
 
   /**
    * Fetches the next (BlockId, InputStream). If a task fails, the ManagedBuffers
@@ -321,7 +325,6 @@ final class ShuffleBlockFetcherIterator(
     val result = currentResult
     val stopFetchWait = System.currentTimeMillis()
     shuffleMetrics.incFetchWaitTime(stopFetchWait - startFetchWait)
-    logInfo("Wooooooooooy Daniar next()==>")
     result match {
       case SuccessFetchResult(_, _, size, _) => bytesInFlight -= size
       case _ =>
@@ -347,7 +350,7 @@ final class ShuffleBlockFetcherIterator(
     // Send fetch requests up to maxBytesInFlight
     while (fetchRequests.nonEmpty &&
       (bytesInFlight == 0 || bytesInFlight + fetchRequests.front.size <= maxBytesInFlight)) {
-      logInfo("Wooooooooooy Daniar fetchUpToMaxBytes ==>")
+      logInfo("Wooooooooooy Daniar fetchUpToMaxBytes ==> bytesInFlight " + bytesInFlight)
       sendRequest(fetchRequests.dequeue())
     }
   }

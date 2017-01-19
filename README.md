@@ -620,6 +620,7 @@ sudo build/sbt compile -mem 1500 evicted
 		- BlockTransferService.scala NO
 		- BlockStoreShuffleReader No
 		- BufferReleasingInputStream NO
+		- TaskMetrics IMPORTANT! (BW could be included in this class)
 
 	2. Investigate fetchBlocks Maybe
 		- NettyBlockTransferService NO
