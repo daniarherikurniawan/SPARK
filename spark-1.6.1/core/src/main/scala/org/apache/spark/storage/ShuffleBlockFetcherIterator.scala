@@ -369,12 +369,19 @@ final class ShuffleBlockFetcherIterator(
 private class BufferReleasingInputStream(
     private val delegate: InputStream,
     private val iterator: ShuffleBlockFetcherIterator)
-  extends InputStream {
+  extends InputStream with Logging{
   private[this] var closed = false
 
-  override def read(): Int = delegate.read()
+  override def read(): Int = {
+    logInfo(" Daniar on ShuffleBlockFetcherIterator private class " +
+      "BufferReleasingInputStream on read")
+
+    delegate.read()
+  }
 
   override def close(): Unit = {
+    logInfo(" Daniar on ShuffleBlockFetcherIterator private class " +
+      "BufferReleasingInputStream on close")
     if (!closed) {
       delegate.close()
       iterator.releaseCurrentResultBuffer()
@@ -390,9 +397,17 @@ private class BufferReleasingInputStream(
 
   override def markSupported(): Boolean = delegate.markSupported()
 
-  override def read(b: Array[Byte]): Int = delegate.read(b)
+  override def read(b: Array[Byte]): Int = {
+    logInfo(" Daniar on ShuffleBlockFetcherIterator private class " +
+      "BufferReleasingInputStream on read(b: Array[Byte])")
+    delegate.read(b)
+  }
 
-  override def read(b: Array[Byte], off: Int, len: Int): Int = delegate.read(b, off, len)
+  override def read(b: Array[Byte], off: Int, len: Int): Int = {
+    logInfo(" Daniar on ShuffleBlockFetcherIterator private class " +
+      "BufferReleasingInputStream on read(b: Array[Byte], off: Int, len: Int)")
+    delegate.read(b, off, len)
+  }
 
   override def reset(): Unit = delegate.reset()
 }
