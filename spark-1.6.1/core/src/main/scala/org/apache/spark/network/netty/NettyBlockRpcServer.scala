@@ -51,7 +51,7 @@ class NettyBlockRpcServer(
       responseContext: RpcResponseCallback): Unit = {
     val message = BlockTransferMessage.Decoder.fromByteBuffer(rpcMessage)
     logTrace(s"Received request: $message")
-
+    logInfo(s"Daniar on NettyBlockRpcServer Received request: $message")
     message match {
       case openBlocks: OpenBlocks =>
         val blocks: Seq[ManagedBuffer] =
