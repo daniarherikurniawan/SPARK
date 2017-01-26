@@ -51,13 +51,15 @@ class NettyBlockRpcServer(
       responseContext: RpcResponseCallback): Unit = {
     val message = BlockTransferMessage.Decoder.fromByteBuffer(rpcMessage)
     logTrace(s"Received request: $message")
-    logInfo(s"Daniar on NettyBlockRpcServer Received request: $message")
+    logInfo(s"Daniar #Clue on NettyBlockRpcServer Received request: $message")
     message match {
       case openBlocks: OpenBlocks =>
         val blocks: Seq[ManagedBuffer] =
           openBlocks.blockIds.map(BlockId.apply).map(blockManager.getBlockData)
         val streamId = streamManager.registerStream(appId, blocks.iterator.asJava)
         logTrace(s"Registered streamId $streamId with ${blocks.size} buffers")
+        logInfo(s" Daniar #Clue on NettyBlockRpcServer openBlocks Registered streamId $streamId " +
+          s"with ${blocks.size} buffers")
         responseContext.onSuccess(new StreamHandle(streamId, blocks.size).toByteBuffer)
 
       case uploadBlock: UploadBlock =>
@@ -65,6 +67,7 @@ class NettyBlockRpcServer(
         val level: StorageLevel =
           serializer.newInstance().deserialize(ByteBuffer.wrap(uploadBlock.metadata))
         val data = new NioManagedBuffer(ByteBuffer.wrap(uploadBlock.blockData))
+        logInfo("Daniar #Clue on NettyBlockRpcServer uploadBlock")
         blockManager.putBlockData(BlockId(uploadBlock.blockId), data, level)
         responseContext.onSuccess(ByteBuffer.allocate(0))
     }

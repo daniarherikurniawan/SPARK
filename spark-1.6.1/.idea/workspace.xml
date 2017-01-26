@@ -80,8 +80,8 @@
           <file leaf-file-name="NettyBlockRpcServer.scala" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/network/netty/NettyBlockRpcServer.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="380">
-                  <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+                <state relative-caret-position="395">
+                  <caret line="58" column="74" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -710,13 +710,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/conf/spark-env.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/spark-defaults.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1120,10 +1113,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-network-common_2.10/1.6.1/spark-network-common_2.10-1.6.1.jar!/org/apache/spark/network/client/RpcResponseCallback.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/network/netty/NettyBlockRpcServer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+        <state relative-caret-position="395">
+          <caret line="58" column="74" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
