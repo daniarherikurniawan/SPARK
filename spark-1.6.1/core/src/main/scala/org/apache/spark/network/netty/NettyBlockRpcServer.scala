@@ -61,6 +61,7 @@ class NettyBlockRpcServer(
         logInfo(s" Daniar #Clue on NettyBlockRpcServer openBlocks Registered streamId $streamId " +
           s"with ${blocks.size} buffers")
         responseContext.onSuccess(new StreamHandle(streamId, blocks.size).toByteBuffer)
+        logInfo("Daniar #Clue on NettyBlockRpcServer OpenBlocks responseContext.onSuccess")
 
       case uploadBlock: UploadBlock =>
         // StorageLevel is serialized as bytes using our JavaSerializer.
@@ -70,6 +71,7 @@ class NettyBlockRpcServer(
         logInfo("Daniar #Clue on NettyBlockRpcServer uploadBlock")
         blockManager.putBlockData(BlockId(uploadBlock.blockId), data, level)
         responseContext.onSuccess(ByteBuffer.allocate(0))
+        logInfo("Daniar #Clue on NettyBlockRpcServer uploadBlock responseContext.onSuccess" )
     }
   }
 
