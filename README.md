@@ -655,7 +655,7 @@ sudo build/sbt compile -mem 1500 evicted
 
 	3. ShuffleBlockFetcherIterator
 		- Log: hasNext ??  numBlocksProcessed: X numBlocksToFetch Y
-		- block is represented by data that is stored in other node. In current config, there are only counted as 2 different blocks
+		- block is represented by data that is stored in other node. In this current configuration, there are only counted as 2 different blocks
 		- maxBytesInFlight = 50 MB (according to code in ShuffleBlockFetcherIterator)
 		```
 		    logInfo("on BlockStoreShuffleReader Iterator")
@@ -682,5 +682,10 @@ sudo build/sbt compile -mem 1500 evicted
 		.set("spark.reducer.maxSizeInFlight", "1m")
 		```
 
-		- The current data in each node is 16.7 MB so it is counted as one transfer/flight. Whem I change the maxSizeInFlight to 1 MB, both of the transfers from Slow and Fast node will have almost the same latency. I believe it is caused by the limited number of thread in Worker. To transfer 16.7 MB, it needs around 16 threads, but the number of threads should be the same with the number of tasks (2). So the transfer (fetching data)  from fast node will be affected by slow node because they need to wait until there is available thread to fetch the data. Therefore, the latency is almost the same (only differ by hundreds of ms).
-		- So, if I need to monitor the BW as real time as possible, I should get an access to data chunk transfer. Transferring 16.7 MB spents 4 min. Right now, I cannot see the progress of data transferr in that 4 min. I will find it on RPC modules.
+		- The current data in each node is 16.7 MB so it is counted as one transfer/flight. But when I change the maxSizeInFlight to 1 MB, both of the transfers from Slow and Fast node will have almost the same latency (elapsed time of data fetching  W1 -> W3 and W2(slow)-> W3 are the same). I believe it is caused by the limited number of thread in Worker. To transfer 16.7 MB, it needs around 16 threads, but the number of threads should be the same with the number of tasks (2). So the transfer (fetching data)  from fast node will be affected by slow node because they need to wait until there is available thread to fetch the data. Therefore, the latency is almost the same (only differ by hundreds of ms).
+		- So, if I need to monitor the BW as real time as possible, I should get an access to data chunk transfer. Transferring 16.7 MB spents 4 min. Right now, I cannot see the progress of data transfer in that 4 min. I will find it on RPC modules.
+
+	4. NettyBlockRpcServer
+		- The rpc for transferring each block is managed by this class
+		- The maximum size of each block is 50 MB. The current data on each node is 16.7 MB, so it is counted as a single block.
+		- 
