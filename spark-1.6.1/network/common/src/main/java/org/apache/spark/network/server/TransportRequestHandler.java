@@ -190,7 +190,7 @@ public class TransportRequestHandler extends MessageHandler<RequestMessage> {
         public void operationComplete(ChannelFuture future) throws Exception {
           if (future.isSuccess()) {
             logger.trace(String.format("Sent result %s to client %s", result, remoteAddress));
-            logger.info(String.format("Daniar Feb 2017 TransportRequestHandler Sent result %s to client %s", result, remoteAddress));
+            // logger.info(String.format("Daniar Feb 2017 TransportRequestHandler Sent result %s to client %s", result, remoteAddress));
           } else {
             logger.error(String.format("Error sending result %s to %s; closing connection",
               result, remoteAddress), future.cause());
