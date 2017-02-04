@@ -113,6 +113,7 @@ public class TransportRequestHandler extends MessageHandler<RequestMessage> {
     final String client = NettyUtils.getRemoteAddress(channel);
 
     logger.trace("Received req from {} to fetch block {}", client, req.streamChunkId);
+    logger.info("Daniar Feb 2017 Received req from {} to fetch block {}", client, req.streamChunkId);
 
     ManagedBuffer buf;
     try {
@@ -133,6 +134,8 @@ public class TransportRequestHandler extends MessageHandler<RequestMessage> {
     final String client = NettyUtils.getRemoteAddress(channel);
     ManagedBuffer buf;
     try {
+      logger.info(String.format("Daniar Feb 2017 TransportRequestHandler processStreamRequest client " + client));
+
       buf = streamManager.openStream(req.streamId);
     } catch (Exception e) {
       logger.error(String.format(
@@ -187,6 +190,7 @@ public class TransportRequestHandler extends MessageHandler<RequestMessage> {
         public void operationComplete(ChannelFuture future) throws Exception {
           if (future.isSuccess()) {
             logger.trace(String.format("Sent result %s to client %s", result, remoteAddress));
+            logger.info(String.format("Daniar Feb 2017 TransportRequestHandler Sent result %s to client %s", result, remoteAddress));
           } else {
             logger.error(String.format("Error sending result %s to %s; closing connection",
               result, remoteAddress), future.cause());

@@ -636,6 +636,7 @@ sudo build/sbt compile -mem 1500 evicted
 ```
 
 ### PBSE Implementation
+- Open intellijIdea at ./opt/idea/bin/idea.sh
 - Edit ShuffleBlockFetcherIterator.scala
 - Edit Executor.scala
 - Edit HeartbeatReceiver.scala
@@ -688,4 +689,4 @@ sudo build/sbt compile -mem 1500 evicted
 	4. NettyBlockRpcServer
 		- The rpc for transferring each block is managed by this class
 		- The maximum size of each block is 50 MB. The current data on each node is 16.7 MB, so it is counted as a single block.
-		- 
+		

@@ -33,10 +33,13 @@ import org.apache.spark.network.util.JavaUtils;
 import org.apache.spark.network.util.LimitedInputStream;
 import org.apache.spark.network.util.TransportConf;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * A {@link ManagedBuffer} backed by a segment in a file.
  */
 public final class FileSegmentManagedBuffer extends ManagedBuffer {
+  private final Logger logger = LoggerFactory.getLogger(FileSegmentManagedBuffer.class);
   private final TransportConf conf;
   private final File file;
   private final long offset;
@@ -65,6 +68,7 @@ public final class FileSegmentManagedBuffer extends ManagedBuffer {
         channel.position(offset);
         while (buf.remaining() != 0) {
           if (channel.read(buf) == -1) {
+            logger.info("Daniar Feb 2017 on nioByteBuffer buf.remaining()"+buf.remaining());
             throw new IOException(String.format("Reached EOF before filling buffer\n" +
               "offset=%s\nfile=%s\nbuf.remaining=%s",
               offset, file.getAbsoluteFile(), buf.remaining()));
