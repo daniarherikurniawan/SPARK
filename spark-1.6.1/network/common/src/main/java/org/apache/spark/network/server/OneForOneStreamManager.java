@@ -63,12 +63,14 @@ public class OneForOneStreamManager extends StreamManager {
   public OneForOneStreamManager() {
     // For debugging purposes, start with a random stream id to help identifying different streams.
     // This does not need to be globally unique, only unique to this class.
+    logger.info("Daniar Feb 2017 on OneForOneStreamManager Constructor");
     nextStreamId = new AtomicLong((long) new Random().nextInt(Integer.MAX_VALUE) * 1000);
     streams = new ConcurrentHashMap<Long, StreamState>();
   }
 
   @Override
   public void registerChannel(Channel channel, long streamId) {
+    logger.info("Daniar Feb 2017 on registerChannel");
     if (streams.containsKey(streamId)) {
       streams.get(streamId).associatedChannel = channel;
     }
@@ -76,6 +78,7 @@ public class OneForOneStreamManager extends StreamManager {
 
   @Override
   public ManagedBuffer getChunk(long streamId, int chunkIndex) {
+    logger.info("Daniar Feb 2017 on ManagedBuffer getChunk");
     StreamState state = streams.get(streamId);
     if (chunkIndex != state.curChunk) {
       throw new IllegalStateException(String.format(
@@ -136,6 +139,7 @@ public class OneForOneStreamManager extends StreamManager {
    * allowed to fetch from this stream.
    */
   public long registerStream(String appId, Iterator<ManagedBuffer> buffers) {
+    logger.info("Daniar Feb 2017 on registerStream");
     long myStreamId = nextStreamId.getAndIncrement();
     streams.put(myStreamId, new StreamState(appId, buffers));
     return myStreamId;
